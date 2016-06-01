@@ -1,0 +1,18 @@
+slave:
+    build: tests/cmbserver/.
+
+modbusd:
+    build: .
+    volumes:
+        - /tmp:/tmp
+    links:
+        - slave
+    #command: valgrind --leak-check=full --verbose /usr/bin/modbusd /etc/modbusd/modbusd.json
+
+goclient:
+    build: tests/goclient/.
+    volumes_from:
+        - modbusd
+    links:
+        - slave
+    
