@@ -1,0 +1,18 @@
+slave:
+    build: /drone/test/c-modbus-slave/.
+    dockerfile: /drone/test/c-modbus-slave/Dockerfile
+
+modbusd:
+    image: edgepro/modbusd:x86
+    volumes:
+        - /tmp:/tmp
+    links:
+        - slave
+
+dummypsmbtcp:
+    build: /drone/test/dummy-psmbtcp/.
+    dockerfile: /drone/test/dummy-psmbtcp/Dockerfile
+    volumes_from:
+        - modbusd
+    links:
+        - slave

@@ -1,0 +1,12 @@
+.vscode
+image
+license
+tests
+.gitignore
+.git
+*.md
+gendoc.sh
+docker-compose.yml
+.travis.yml
+Dockerfile
+Dockerfile.arm

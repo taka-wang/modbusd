@@ -1,3 +1,11 @@
+.secrets.yml
+
+
+doc/html/
+
+#VS Code
+.vscode/
+
 # Object files
 *.o
 *.ko
@@ -30,3 +38,5 @@
 
 # Debug files
 *.dSYM/
+
+tests/json_test/build

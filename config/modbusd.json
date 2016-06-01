@@ -1,0 +1,12 @@
+{
+    "syslog": 1,
+    "zmq": 
+    {
+        "sub": "ipc:///tmp/to.modbus",
+        "pub": "ipc:///tmp/from.modbus"
+    },
+    "mbtcp":
+    {
+        "connect_timeout": 200000
+    }
+}

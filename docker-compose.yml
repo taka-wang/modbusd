@@ -1,0 +1,19 @@
+slave:
+    image: takawang/c-modbus-slave
+
+modbusd:
+    build: .
+    #dockerfile: Dockerfile.alpine
+    volumes:
+        - /tmp:/tmp
+    links:
+        - slave
+    #command: valgrind --leak-check=full --verbose /usr/bin/modbusd /etc/modbusd/modbusd.json
+
+dummypsmbtcp:
+    build: test/dummy-psmbtcp/.
+    volumes_from:
+        - modbusd
+    links:
+        - slave
+    
