@@ -390,7 +390,7 @@ bool mbtcp_get_connection_status(mbtcp_handle_s *handle)
 {
     BEGIN(enable_syslog);
     
-    if ((handle) == NULL)
+    if (handle == NULL)
     {
         ERR(enable_syslog, "NULL handle");
         return false;
