@@ -24,7 +24,7 @@ Modbus master daemon
 
 ## Implemented libmodbus function codes
 
-| FC    | Description            | Max Len | API                                                                                                                                                 |
+| FC    | Description            | #Len    | API                                                                                                                                                 |
 |:-----:|------------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | 0x01  | read coils             |  2000   |[int modbus_read_bits(modbus_t *ctx, int addr, int nb, uint8_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_bits.html)                       |  
 | 0x02  | read discrete input    |  2000   |[int modbus_read_input_bits(modbus_t *ctx, int addr, int nb, uint8_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_input_bits.html)           |
