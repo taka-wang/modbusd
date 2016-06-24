@@ -205,7 +205,7 @@ func TestModbus(t *testing.T) {
 
 	s.Assert("`4X Table: -20000` Read/Write int16 value test: FC6, FC3", func(log sugar.Log) bool {
 		// =============== write part ==============
-		writeReq := MbWriteSingleReq{
+		writeReq := MbSingleWriteReq{
 			hostName,
 			portNum,
 			1,
