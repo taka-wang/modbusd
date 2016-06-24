@@ -246,7 +246,7 @@ func TestModbus(t *testing.T) {
 		if r2.Status != "ok" {
 			return false
 		}
-		if r2.Data[0] != -20000 {
+		if r2.Data[0] != 0xB1E0 {
 			return false
 		}
 		return true
@@ -321,8 +321,8 @@ func subscriber() (string, string) {
 	receiver.SetSubscribe(filter) // filter frame 1
 	for {
 		msg, _ := receiver.RecvMessage(0)
-		fmt.Println(msg[0]) // frame 1: method
-		fmt.Println(msg[1]) // frame 2: command
+		//fmt.Println(msg[0]) // frame 1: method
+		//fmt.Println(msg[1]) // frame 2: command
 		return msg[0], msg[1]
 	}
 }
