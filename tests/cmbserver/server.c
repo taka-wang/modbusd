@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
     modbus_t *ctx;
     modbus_mapping_t *mb_mapping;
 
-    ctx = modbus_new_tcp(ip, 1502);
+    ctx = modbus_new_tcp(ip, 502);
     modbus_set_debug(ctx, TRUE);
 
     // allocate memory map
@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
     }
 
 
-    printf("start listening at: %s, port:%d\n", ip, 1502);
+    printf("start listening at: %s, port:%d\n", ip, 502);
 
     s = modbus_tcp_listen(ctx, 1); // only one connection allow
     modbus_tcp_accept(ctx, &s);
