@@ -271,7 +271,7 @@ func TestModbus(t *testing.T) {
 			portNum,
 			1,
 			rand.Int63n(10000000), // tid
-			"fc6",
+			"fc15",
 			10, // addr
 			10,
 			[]uint16{1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000},
