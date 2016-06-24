@@ -88,7 +88,7 @@ func gen() string {
 	cmd, err := json.Marshal(command) // marshal to json string
 	if err != nil {
 		fmt.Println("json err:", err)
-		return
+		return ""
 	}
 	return string(cmd)
 }
