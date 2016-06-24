@@ -57,12 +57,12 @@ int main(int argc, char *argv[])
     const uint8_t UT_INPUT_BITS_TAB[] = { 0xAC, 0xDB, 0x35 };
     const uint16_t UT_INPUT_BITS_NB = 0x16;
 
-    // 1x
+    // 1x; little endian set
     modbus_set_bits_from_bytes(mb_mapping->tab_input_bits, 0, UT_INPUT_BITS_NB,
                                UT_INPUT_BITS_TAB);
 
-    const uint16_t UT_INPUT_REGISTERS_NB = 0x1;
-    const uint16_t UT_INPUT_REGISTERS_TAB[] = { 0x000A };
+    const uint16_t UT_INPUT_REGISTERS_NB = 0x3;
+    const uint16_t UT_INPUT_REGISTERS_TAB[] = { 0x000A, 0x000B, 0x000C };
     
     // Initialize INPUT REGISTERS: 3x
     for (int i=0; i < UT_INPUT_REGISTERS_NB; i++) {
