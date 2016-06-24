@@ -61,7 +61,7 @@ type MbWriteSingleReq struct {
 	Cmd   string `json:"cmd"`
 	Addr  uint16 `json:"addr"`
 	Len   uint16 `json:"len"`
-	Data  uint16 `json:data`
+	Data  int32  `json:data`
 }
 
 func TestModbus(t *testing.T) {
