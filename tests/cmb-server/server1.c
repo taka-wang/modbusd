@@ -46,10 +46,12 @@ int main(int argc, char *argv[])
         return -1;
     }
 
+    printf("start listening at: %s, %d", ip, port);
+
     s = modbus_tcp_listen(ctx, 1); // only one connection allow
     modbus_tcp_accept(ctx, &s);
 
-    printf("start listening at: %d", port);
+    
     for (;;) {
         uint8_t query[MODBUS_TCP_MAX_ADU_LENGTH];
         int rc;
