@@ -23,7 +23,7 @@ uint16_t *tab_registers;        // 4x
 int main(int argc, char *argv[])
 {
     printf("init server\n");
-    char * ip = NULL;
+    static char * ip = NULL;
     switch (argc)
     {
         case 1:
