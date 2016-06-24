@@ -32,7 +32,7 @@ type MbReadReq struct {
 	Tid   int64  `json:"tid"`
 	Cmd   string `json:"cmd"`
 	Addr  uint16 `json:"addr"`
-	Len   uint16 `json:"len"`
+	Len   uint16 `json:"len,omitempty"`
 }
 
 // MbReadRes Modbus tcp read response
@@ -42,8 +42,8 @@ type MbReadRes struct {
 	Status string   `json:status`
 }
 
-// MbWriteReq Modbus tcp write request
-type MbWriteReq struct {
+// MbMultipleWriteReq Modbus tcp write request
+type MbMultipleWriteReq struct {
 	IP    string   `json:"ip"`
 	Port  string   `json:"port"`
 	Slave uint8    `json:"slave"`
@@ -54,8 +54,8 @@ type MbWriteReq struct {
 	Data  []uint16 `json:data`
 }
 
-// MbWriteReq Modbus tcp write request
-type MbWriteSingleReq struct {
+// MbSingleWriteReq Modbus tcp write request
+type MbSingleWriteReq struct {
 	IP    string `json:"ip"`
 	Port  string `json:"port"`
 	Slave uint8  `json:"slave"`
@@ -83,7 +83,7 @@ func TestModbus(t *testing.T) {
 
 	s.Assert("`4X Table: 60000` Read/Write uint16 value test: FC6, FC3", func(log sugar.Log) bool {
 		// =============== write part ==============
-		writeReq := MbWriteSingleReq{
+		writeReq := MbSingleWriteReq{
 			hostName,
 			portNum,
 			1,
@@ -118,7 +118,7 @@ func TestModbus(t *testing.T) {
 			rand.Int63n(10000000),
 			"fc3",
 			10,
-			1, // should be optional
+			//1, // should be optional
 		}
 
 		readReqStr, _ := json.Marshal(readReq) // marshal to json string
@@ -144,7 +144,7 @@ func TestModbus(t *testing.T) {
 
 	s.Assert("`4X Table: 30000` Read/Write int16 value test: FC6, FC3", func(log sugar.Log) bool {
 		// =============== write part ==============
-		writeReq := MbWriteSingleReq{
+		writeReq := MbSingleWriteReq{
 			hostName,
 			portNum,
 			1,
@@ -266,7 +266,7 @@ func TestModbus(t *testing.T) {
 
 	s.Assert("`4X Table` Multiple read/write test: FC16, FC3", func(log sugar.Log) bool {
 		// =============== write part ==============
-		writeReq := MbWriteReq{
+		writeReq := MbMultipleWriteReq{
 			hostName,
 			portNum,
 			1,
@@ -334,7 +334,7 @@ func TestModbus(t *testing.T) {
 
 	s.Assert("`0X Table` Single read/write test:FC5, FC1", func(log sugar.Log) bool {
 		// =============== write part ==============
-		writeReq := MbWriteSingleReq{
+		writeReq := MbSingleWriteReq{
 			hostName,
 			portNum,
 			1,
@@ -395,7 +395,7 @@ func TestModbus(t *testing.T) {
 
 	s.Assert("`0X Table` Multiple read/write test: FC15, FC1", func(log sugar.Log) bool {
 		// =============== write part ==============
-		writeReq := MbWriteReq{
+		writeReq := MbMultipleWriteReq{
 			hostName,
 			portNum,
 			1,
