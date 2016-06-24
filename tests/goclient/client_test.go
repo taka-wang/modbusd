@@ -79,7 +79,7 @@ func TestModbus(t *testing.T) {
 
 	s := sugar.New(nil)
 
-	s.Title("4x table read/write test")
+	s.Title("4X table read/write test: FC3, FC6, FC16")
 
 	s.Assert("`4X Table: 60000` Read/Write uint16 value test", func(log sugar.Log) bool {
 		// =============== write part ==============
@@ -330,54 +330,83 @@ func TestModbus(t *testing.T) {
 		return true
 	})
 
-	s.Title("0x table read/write test")
+	s.Title("0X table read/write test: FC1, FC5, FC15")
 
-	// TODO: single read/write
+	s.Assert("`0X Table` Single read/write test", func(log sugar.Log) bool {
+		// =============== write part ==============
+		writeReq := MbWriteSingleReq{
+			hostName,
+			portNum,
+			1,
+			rand.Int63n(10000000), // tid
+			"fc5",
+			1234, // addr
+			1,    // should be optional
+			1,
+		}
 
-	// TODO: multiple read/write
+		writeReqStr, _ := json.Marshal(writeReq) // marshal to json string
+		go publisher(string(writeReqStr))
+		_, s1 := subscriber()
+		log("req: %s", string(writeReqStr))
+		log("res: %s", s1)
 
-	s.Assert("`Function 1` should work", func(log sugar.Log) bool {
-		log("Hello")
-		go publisher(gen())
-		a, b := subscriber()
-		log("Get method:%s", a)
-		log("Get json:%s", b)
-
-		var s MbReadRes
-		if err := json.Unmarshal([]byte(b), &s); err != nil {
+		// parse resonse
+		var r1 MbRes
+		if err := json.Unmarshal([]byte(s1), &r1); err != nil {
 			fmt.Println("json err:", err)
 		}
-		log("Get status %s", s.Status)
+		// check reponse
+		if r1.Status != "ok" {
+			return false
+		}
+
+		// =============== read part ==============
+		readReq := MbReadReq{
+			hostName,
+			portNum,
+			1,
+			rand.Int63n(10000000),
+			"fc1",
+			1234,
+			1, // should be optional
+		}
+
+		readReqStr, _ := json.Marshal(readReq) // marshal to json string
+		go publisher(string(readReqStr))
+		_, s2 := subscriber()
+		log("req: %s", string(readReqStr))
+		log("res: %s", s2)
+
+		// parse resonse
+		var r2 MbReadRes
+		if err := json.Unmarshal([]byte(s2), &r2); err != nil {
+			fmt.Println("json err:", err)
+		}
+		// check reponse
+		if r2.Status != "ok" {
+			return false
+		}
+		if r2.Data[0] != 1 {
+			return false
+		}
 		return true
 	})
-	s.Assert("`Function 2` should work", func(log sugar.Log) bool {
-		log("World")
-		go publisher(gen())
-		a, b := subscriber()
-		log("Get method:%s", a)
-		log("Get json:%s", b)
+
+	s.Assert("`0X Table` Multiple read/write test", func(log sugar.Log) bool {
 		return true
 	})
 
-}
+	s.Title("1X table read/write test: FC2")
 
-func gen() string {
-	command := MbReadReq{
-		"127.0.0.1",
-		"502",
-		1,
-		12,
-		"fc1",
-		10,
-		10,
-	}
+	s.Assert("`1X Table` read test", func(log sugar.Log) bool {
+		return true
+	})
 
-	cmd, err := json.Marshal(command) // marshal to json string
-	if err != nil {
-		fmt.Println("json err:", err)
-		return ""
-	}
-	return string(cmd)
+	s.Title("3X table read/write test: FC4")
+	s.Assert("`3X Table` read test", func(log sugar.Log) bool {
+		return true
+	})
 }
 
 // generic tcp publisher
