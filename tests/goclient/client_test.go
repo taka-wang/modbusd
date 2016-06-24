@@ -84,7 +84,10 @@ func WriteMultiReqBuilder(cmd string, addr uint16, len uint16, data []uint16) Mb
 	}
 }
 
-func TestModbus(t *testing.T) {
+//========= Test cases ==============================
+
+// 4X
+func TestHoldingRegisters(t *testing.T) {
 	s := sugar.New(nil)
 	portNum = "502"
 
@@ -275,6 +278,23 @@ func TestModbus(t *testing.T) {
 		return true
 	})
 
+}
+
+// 0x
+func TestCoils(t *testing.T) {
+	s := sugar.New(nil)
+	portNum = "502"
+
+	// generalize host reslove for docker/local env
+	host, err := net.LookupHost("slave")
+	if err != nil {
+		fmt.Println("local run")
+		hostName = "127.0.0.1"
+	} else {
+		fmt.Println("docker run")
+		hostName = host[0] //docker
+	}
+
 	s.Title("0X table test: FC1, FC5, FC15")
 
 	s.Assert("`0X Table` Single read/write test:FC5, FC1", func(log sugar.Log) bool {
@@ -367,6 +387,22 @@ func TestModbus(t *testing.T) {
 		return true
 
 	})
+}
+
+// 1x
+func TestDiscretesInput(t *testing.T) {
+	s := sugar.New(nil)
+	portNum = "502"
+
+	// generalize host reslove for docker/local env
+	host, err := net.LookupHost("slave")
+	if err != nil {
+		fmt.Println("local run")
+		hostName = "127.0.0.1"
+	} else {
+		fmt.Println("docker run")
+		hostName = host[0] //docker
+	}
 
 	s.Title("1X table test: FC2")
 
@@ -389,6 +425,22 @@ func TestModbus(t *testing.T) {
 		}
 		return true
 	})
+}
+
+// 3X
+func TestInputRegisters(t *testing.T) {
+	s := sugar.New(nil)
+	portNum = "502"
+
+	// generalize host reslove for docker/local env
+	host, err := net.LookupHost("slave")
+	if err != nil {
+		fmt.Println("local run")
+		hostName = "127.0.0.1"
+	} else {
+		fmt.Println("docker run")
+		hostName = host[0] //docker
+	}
 
 	s.Title("3X table read test: FC4")
 	s.Assert("`3X Table` read test:FC4", func(log sugar.Log) bool {
