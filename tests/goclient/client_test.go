@@ -67,13 +67,14 @@ type MbWriteSingleReq struct {
 }
 
 func TestModbus(t *testing.T) {
+	var hostName string
 	host, err := net.LookupHost("slave")
 	if err != nil {
 		fmt.Println(err)
+		hostName = "127.0.0.1"
+	} else {
+		hostName = host[0] //docker
 	}
-
-	hostName := host[0] //docker
-	//hostName := "127.0.0.1"
 	portNum := "502"
 
 	s := sugar.New(nil)
