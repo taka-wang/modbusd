@@ -8,6 +8,7 @@ import (
 	zmq "github.com/taka-wang/zmq3"
 )
 
+// MbReadReq Modbus tcp read request
 type MbReadReq struct {
 	IP    string `json:"ip"`
 	Port  string `json:"port"`
@@ -16,6 +17,37 @@ type MbReadReq struct {
 	Cmd   string `json:"cmd"`
 	Addr  int    `json:"addr"`
 	Len   int    `json:"len"`
+}
+
+// MbReadRes Modbus tcp read response
+type MbReadRes struct {
+	Tid    int64    `json:"tid"`
+	Data   []string `json:data`
+	Status string   `json:status`
+}
+
+// MbWriteReq Modbus tcp write request
+type MbWriteReq struct {
+	IP    string   `json:"ip"`
+	Port  string   `json:"port"`
+	Slave int      `json:"slave"`
+	Tid   int64    `json:"tid"`
+	Cmd   string   `json:"cmd"`
+	Addr  int      `json:"addr"`
+	Len   int      `json:"len"`
+	Data  []string `json:data`
+}
+
+// MbRes Modbus tcp generic response
+type MbRes struct {
+	Tid    int64  `json:"tid"`
+	Status string `json:status`
+}
+
+type MbTimeoutReq struct {
+	Tid  int64  `json:"tid"`
+	Cmd  string `json:"cmd"`
+	Data int64  `json:data`
 }
 
 func main() {
@@ -28,8 +60,8 @@ func main() {
 
 func publisher() {
 	command := MbReadReq{
-		"172.17.0.2",
-		"502",
+		"127.0.0.1",
+		"1502",
 		1,
 		12,
 		"fc1",
