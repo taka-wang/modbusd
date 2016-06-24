@@ -74,7 +74,7 @@ func TestModbus(t *testing.T) {
 
 	hostName := host[0] //docker
 	//hostName := "127.0.0.1"
-	portNum := "1502"
+	portNum := "502"
 
 	s := sugar.New(nil)
 
@@ -299,7 +299,7 @@ func TestModbus(t *testing.T) {
 func gen() string {
 	command := MbReadReq{
 		"127.0.0.1",
-		"1502",
+		"502",
 		1,
 		12,
 		"fc1",
