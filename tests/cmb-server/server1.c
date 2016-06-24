@@ -5,34 +5,51 @@
  */
 
 #include <stdio.h>
-#ifndef _MSC_VER
 #include <unistd.h>
-#endif
 #include <stdlib.h>
 #include <errno.h>
-
 #include <modbus.h>
 
-int main(void)
+int main(int argc, char *argv[])
 {
+    char * ip = NULL;
+    int port = 1502;
+
+    switch (argc)
+    {
+        case 1:
+            ip = "127.0.0.1";
+        case 2:
+            port = argv[0];
+            break;
+        case 3:
+            port = argv[0];
+            ip = argv[1];
+            break;
+        default:
+            fprintf(stderr, "Usage: %s port ip_addr", argv[0]);
+            return -1;
+    }
+
     int s = -1;
     modbus_t *ctx;
     modbus_mapping_t *mb_mapping;
 
-    ctx = modbus_new_tcp("127.0.0.1", 1502);
-    /* modbus_set_debug(ctx, TRUE); */
+    ctx = modbus_new_tcp(ip, port);
+    modbus_set_debug(ctx, TRUE);
 
-    mb_mapping = modbus_mapping_new(10000, 10000, 10000, 10000);
-    if (mb_mapping == NULL) {
-        fprintf(stderr, "Failed to allocate the mapping: %s\n",
-                modbus_strerror(errno));
+    mb_mapping = modbus_mapping_new(10000, 10000, 10000, 10000); // max
+    if (mb_mapping == NULL)
+    {
+        fprintf(stderr, "Failed to allocate the mapping: %s\n", modbus_strerror(errno));
         modbus_free(ctx);
         return -1;
     }
 
-    s = modbus_tcp_listen(ctx, 1);
+    s = modbus_tcp_listen(ctx, 1); // only one connection allow
     modbus_tcp_accept(ctx, &s);
 
+    printf("start listening at: %d", )
     for (;;) {
         uint8_t query[MODBUS_TCP_MAX_ADU_LENGTH];
         int rc;

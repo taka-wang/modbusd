@@ -12,7 +12,7 @@
 
 int enable_syslog  = 1;                 // syslog flag
 static cJSON * config_json;             // config in cJSON object format
-static char *config_fname = "";         // config filename
+static char *config_fname = NULL;       // config filename
 static char *ipc_sub      = "ipc:///tmp/to.modbus";
 static char *ipc_pub      = "ipc:///tmp/from.modbus";
 extern uint32_t tcp_conn_timeout_usec;  // from modbusd.c
