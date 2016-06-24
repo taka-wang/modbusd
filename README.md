@@ -27,7 +27,7 @@ Modbus master daemon
 | FC    | Description            | #Len    | API                                                                                                                                                 |
 |:-----:|------------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | 0x01  | read coils             |  2000   |[int modbus_read_bits(modbus_t *ctx, int addr, int nb, uint8_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_bits.html)                       |  
-| 0x02  | read discrete input    |  2000   |[int modbus_read_input_bits(modbus_t *ctx, int addr, int nb, uint8_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_input_bits.html)           |
+| 0x02  | read discrete inputs   |  2000   |[int modbus_read_input_bits(modbus_t *ctx, int addr, int nb, uint8_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_input_bits.html)           |
 | 0x03  | read holding registers |  125    |[int modbus_read_registers(modbus_t *ctx, int addr, int nb, uint16_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_registers.html)            |
 | 0x04  | read input registers   |  125    |[int modbus_read_input_registers(modbus_t *ctx, int addr, int nb, uint16_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_input_registers.html)|
 | 0x05  | write single coil      |   -     |[int modbus_write_bit(modbus_t *ctx, int addr, int status)](http://libmodbus.org/docs/v3.1.4/modbus_write_bit.html)                                  |
@@ -70,7 +70,7 @@ Modbus master daemon
 }
 ```
 
-### <- mbtcp read reponse
+### <- mbtcp read response
 ```javascript
 {
 	"tid": 1,
@@ -79,14 +79,27 @@ Modbus master daemon
 }
 ```
 
-### -> mbtcp write request
+### -> mbtcp single write request
 ```javascript
 {
 	"ip": "192.168.3.2",
 	"port": "502",
 	"slave": 22,
 	"tid": 1,
-	"cmd": "fc5",
+	"cmd": "fc6",
+	"addr": 80,
+	"data": [1,2,3,4]
+}
+```
+
+### -> mbtcp multiple write request
+```javascript
+{
+	"ip": "192.168.3.2",
+	"port": "502",
+	"slave": 22,
+	"tid": 1,
+	"cmd": "fc16",
 	"addr": 80,
 	"len": 4,
 	"data": [1,2,3,4]
