@@ -60,12 +60,13 @@ func TestModbus(t *testing.T) {
 		log("Hello")
 		return true
 	})
+	/*
+		go subscriber()
+		publisher()
+		for {
 
-	go subscriber()
-	publisher()
-	for {
-
-	}
+		}
+	*/
 }
 
 func publisher() {
