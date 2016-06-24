@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"testing"
 	"time"
 
 	"github.com/marksalpeter/sugar"
@@ -51,7 +52,7 @@ type MbTimeoutReq struct {
 	Data int64  `json:data`
 }
 
-func main() {
+func main(m *testing.M) {
 	s := sugar.New(nil)
 	s.Title("modbus test")
 
