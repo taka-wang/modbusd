@@ -67,13 +67,44 @@ typedef char * (*mbtcp_fc)(mbtcp_handle_s *handle, cJSON *req);
 ================================================== */
 
 /**
- * @brief Generic modbus (TCP/RTU) error response handler.
+ * @brief Set modbusd success response string without data (i.e., write func)
+ *
+ * @param tid Transaction ID.
+ * @return Modbus ok response string in JSON format.
+ */ 
+char * set_modbus_success_resp_str(int tid);
+
+/**
+ * @brief Set modbusd success response string with data (i.e., read func)
+ *
+ * @param tid Transaction ID.
+ * @param json_arr cJSON pointer to data array
+ * @return Modbus ok response string in JSON format.
+ */ 
+char * set_modbus_success_resp_str_with_data(int tid, cJSON * json_arr);
+
+/**
+ * @brief Set modbusd fail response string.
  *
  * @param tid Transaction ID.
  * @param reason Fail reason string.
  * @return Modbus response string in JSON format.
  */
-char * modbus_set_error_resp(int tid, const char *reason);
+char * set_modbus_fail_resp_str(int tid, const char *reason);
+
+/**
+ * @brief Set modbusd fail response string with error number.
+ *
+ * @param tid Transaction ID.
+ * @param handle Mbtcp handle.
+ * @param errnum Error number from modbus tcp handle.
+ * @return Modbus error response string in JSON format.
+ */ 
+char * set_modbus_fail_resp_str_with_errno(int tid, mbtcp_handle_s *handle, int errnum);
+
+/* ==================================================
+ *  modbus tcp (mbtcp)
+================================================== */
 
 /**
  * @brief Init mbtcp handle (to hashtable) and try to connect
