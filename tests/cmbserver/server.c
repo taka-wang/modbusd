@@ -44,7 +44,8 @@ int main(int argc, char *argv[])
     modbus_set_debug(ctx, TRUE);
 
     // allocate memory map
-    mb_mapping = modbus_mapping_new(10000, 10000, 10000, 10000); // max
+    //mb_mapping = modbus_mapping_new(10000, 10000, 10000, 10000); // max
+     mb_mapping = modbus_mapping_new(500, 500, 500, 500); // max
     if (mb_mapping == NULL)
     {
         fprintf(stderr, "Failed to allocate the mapping: %s\n", modbus_strerror(errno));
