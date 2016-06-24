@@ -58,14 +58,14 @@ func TestModbus(t *testing.T) {
 
 	s.Assert("`Function 1` should work", func(log sugar.Log) bool {
 		log("Hello")
-		go subscriber()
-		publisher()
+		go publisher()
+		subscriber()
 		return true
 	})
 	s.Assert("`Function 2` should work", func(log sugar.Log) bool {
-		log("Hello")
-		go subscriber()
-		publisher()
+		log("World")
+		go publisher()
+		subscriber()
 		return true
 	})
 }
@@ -91,9 +91,9 @@ func publisher() {
 	sender.Connect("ipc:///tmp/to.modbus")
 
 	for {
+		time.Sleep(time.Duration(1) * time.Second)
 		sender.Send("tcp", zmq.SNDMORE) // frame 1
 		sender.Send(string(cmd), 0)     // convert to string; frame 2
-		time.Sleep(time.Duration(100) * time.Millisecond)
 		break
 	}
 }
