@@ -2,6 +2,8 @@
  * Copyright © 2008-2014 Stéphane Raimbault <stephane.raimbault@gmail.com>
  *
  * SPDX-License-Identifier: BSD-3-Clause
+ *
+ * Modified by Taka
  */
 
 #include <stdio.h>
@@ -43,7 +45,7 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    printf("start listening at: %s, %d\n", ip, 1502);
+    printf("start listening at: %s\n", ip, 1502);
 
     s = modbus_tcp_listen(ctx, 1); // only one connection allow
     modbus_tcp_accept(ctx, &s);

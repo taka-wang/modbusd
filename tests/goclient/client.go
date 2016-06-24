@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/marksalpeter/sugar"
 	zmq "github.com/taka-wang/zmq3"
 )
 
@@ -51,6 +52,14 @@ type MbTimeoutReq struct {
 }
 
 func main() {
+	s := sugar.New(nil)
+	s.Title("modbus test")
+
+	s.Assert("`Function 1` should work", func(log sugar.Log) bool {
+		log("Hello")
+		return true
+	})
+
 	go subscriber()
 	publisher()
 	for {
