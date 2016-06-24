@@ -34,9 +34,9 @@ script:
 - docker build -t $MODBUS_SERVER_IMG tests/cmbserver/.
 - if [ ! -z "$TRAVIS_TAG" ]; then docker tag $MODBUS_SERVER_IMG:latest $MODBUS_SERVER_IMG:$TRAVIS_TAG; fi && docker push $MODBUS_SERVER_IMG
 
-### build zclient image
-- docker build -t $MODBUS_ZCLIENT_IMG tests/zclient/.
-- if [ ! -z "$TRAVIS_TAG" ]; then docker tag $MODBUS_ZCLIENT_IMG:latest $MODBUS_ZCLIENT_IMG:$TRAVIS_TAG; fi && docker push $MODBUS_ZCLIENT_IMG
+### build goclient image
+- docker build -t $MODBUS_GOCLIENT_IMG tests/goclient/.
+- if [ ! -z "$TRAVIS_TAG" ]; then docker tag $MODBUS_GOCLIENT_IMG:latest $MODBUS_GOCLIENT_IMG:$TRAVIS_TAG; fi && docker push $MODBUS_GOCLIENT_IMG
 
 ### build modbusd image
 - docker build -t $MODBUSD_IMG .
@@ -49,11 +49,11 @@ script:
 #- docker run -v /tmp:/tmp --link $MODBUS_SERVER_NAME -itd --name=$MODBUSD_NAME $MODBUSD_IMG /bin/sh -c "valgrind --log-file="/tmp/valgrind.log" --tool=memcheck --leak-check=full --show-leak-kinds=all --verbose /usr/bin/modbusd /etc/modbusd/modbusd.json"
 - docker run -v /tmp:/tmp --link $MODBUS_SERVER_NAME -itd --name=$MODBUSD_NAME $MODBUSD_IMG
 
-### run zclient
-- docker run -v /tmp:/tmp --link $MODBUS_SERVER_NAME -it --name=$MODBUS_ZCLIENT_NAME $MODBUS_ZCLIENT_IMG /bin/sh -c "node client3"
+### run goclient
+- docker run -v /tmp:/tmp --link $MODBUS_SERVER_NAME -it --name=$MODBUS_GOCLIENT_NAME $MODBUS_GOCLIENT_IMG
 
 ### print valgrind
-#- docker run -v /tmp:/tmp -it --name=$VALGRIND_NAME $MODBUS_ZCLIENT_IMG /bin/sh -c "cat /tmp/valgrind.log"
+#- docker run -v /tmp:/tmp -it --name=$VALGRIND_NAME $MODBUS_GOCLIENT_IMG /bin/sh -c "cat /tmp/valgrind.log"
 
 ### stop all containers
 #- docker stop $MODBUS_SERVER_NAME $MODBUSD_NAME $VALGRIND_NAME
@@ -71,11 +71,11 @@ env:
   - GH_REPO_REF: github.com/taka-wang/modbusd.git
   
   - MODBUS_SERVER_IMG=takawang/modbus-cserver
-  - MODBUS_ZCLIENT_IMG=takawang/modbus-zclient
+  - MODBUS_GOCLIENT_IMG=takawang/modbus-goclient
   - MODBUSD_IMG=takawang/modbusd
 
   - MODBUS_SERVER_NAME=slave
-  - MODBUS_ZCLIENT_NAME=zclient  
+  - MODBUS_GOCLIENT_NAME=goclient  
   - MODBUSD_NAME=modbusd
   - VALGRIND_NAME=valgrind
 

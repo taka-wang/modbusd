@@ -235,7 +235,7 @@ We do continuous integration and update docker images after git push by [Travis 
 You can download pre-built docker images according to the following commands.
 
 - docker pull [takawang/modbus-cserver](https://hub.docker.com/r/takawang/modbus-cserver/)
-- docker pull [takawang/modbus-zclient](https://hub.docker.com/r/takawang/modbus-zclient/)
+- docker pull [takawang/modbus-goclient](https://hub.docker.com/r/takawang/modbus-goclient/)
 - docker pull [takawang/modbusd](https://hub.docker.com/r/takawang/modbusd/)
 
 
@@ -244,7 +244,7 @@ You can download pre-built docker images according to the following commands.
 # build simulation server image
 docker build -t takawang/modbus-cserver tests/cmbserver/.
 # build zclient image
-docker build -t takawang/modbus-zclient tests/zclient/.
+docker build -t takawang/modbus-goclient tests/goclient/.
 # build modbusd image
 docker build -t takawang/modbusd .
 
@@ -253,7 +253,7 @@ docker run -itd --name=slave takawang/cmodbus-server
 # run modbusd
 docker run -v /tmp:/tmp --link slave -it --name=modbusd takawang/modbusd
 # run zclient
-docker run -v /tmp:/tmp -it --link slave takawang/modbus-zclient
+docker run -v /tmp:/tmp -it --link slave takawang/modbus-goclient
 ```
 
 ### Docker composer
@@ -275,7 +275,7 @@ ctrl+c
 You can download pre-built docker images according to the following commands.
 
 - docker pull [takawang/arm-modbus-cserver](https://hub.docker.com/r/takawang/arm-modbus-cserver/)
-- docker pull [takawang/arm-modbus-zclient](https://hub.docker.com/r/takawang/arm-modbus-zclient/)
+- docker pull [takawang/arm-modbus-goclient](https://hub.docker.com/r/takawang/arm-modbus-goclient/)
 - docker pull [takawang/arm-modbusd](https://hub.docker.com/r/takawang/arm-modbusd/)
 
 
@@ -284,7 +284,7 @@ You can download pre-built docker images according to the following commands.
 # build simulation server image
 docker build -t takawang/arm-modbus-cserver -f tests/cmbserver/Dockerfile.arm .
 # build zclient image
-docker build -t takawang/arm-modbus-zclient tests/zclient/Dockerfile.arm .
+docker build -t takawang/arm-modbus-goclient tests/zclient/Dockerfile.arm .
 # build modbusd image
 docker build -t takawang/arm-modbusd -f Dockerfile.arm .
 
@@ -293,7 +293,7 @@ docker run -itd --name=slave takawang/arm-modbus-cserver
 # run modbusd
 docker run -v /tmp:/tmp --link slave -it --name=modbusd takawang/arm-modbusd
 # run zclient
-docker run -v /tmp:/tmp -it --link slave takawang/arm-modbus-zclient
+docker run -v /tmp:/tmp -it --link slave takawang/arm-modbus-goclient
 ```
 
 ## Deployment Diagram
