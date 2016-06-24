@@ -10,7 +10,6 @@ RUN go get github.com/marksalpeter/sugar
 
 ## Load app files
 ADD . /go
-RUN go get
 
 ## Default command
 CMD ["go", "test", "-v"]
