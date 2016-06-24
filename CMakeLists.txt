@@ -8,7 +8,7 @@ project(modbusd C)
 set(CMAKE_VERBOSE_MAKEFILE ON)
 set(bin_name modbusd)
 set(modbus_include /usr/local/include/modbus)
-set(bin_source json/cJSON.c json.c main.c modbusd.c mbtcp.c)
+set(bin_source json/cJSON.c json.c modbusd.c mbtcp.c main.c)
 
 # Appends the cmake/modules path to MAKE_MODULE_PATH variable.
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
