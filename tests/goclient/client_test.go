@@ -66,15 +66,18 @@ type MbSingleWriteReq struct {
 }
 
 func TestModbus(t *testing.T) {
+	portNum := "502"
+
+	// generalize host reslove for docker/local env
 	var hostName string
 	host, err := net.LookupHost("slave")
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("local run")
 		hostName = "127.0.0.1"
 	} else {
+		fmt.Println("docker run")
 		hostName = host[0] //docker
 	}
-	portNum := "502"
 
 	s := sugar.New(nil)
 
