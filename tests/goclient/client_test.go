@@ -81,7 +81,7 @@ func TestModbus(t *testing.T) {
 
 	s.Title("4X table read/write test: FC3, FC6, FC16")
 
-	s.Assert("`4X Table: 60000` Read/Write uint16 value test", func(log sugar.Log) bool {
+	s.Assert("`4X Table: 60000` Read/Write uint16 value test: FC6, FC3", func(log sugar.Log) bool {
 		// =============== write part ==============
 		writeReq := MbWriteSingleReq{
 			hostName,
@@ -142,7 +142,7 @@ func TestModbus(t *testing.T) {
 		return true
 	})
 
-	s.Assert("`4X Table: 30000` Read/Write int16 value test", func(log sugar.Log) bool {
+	s.Assert("`4X Table: 30000` Read/Write int16 value test: FC6, FC3", func(log sugar.Log) bool {
 		// =============== write part ==============
 		writeReq := MbWriteSingleReq{
 			hostName,
@@ -203,7 +203,7 @@ func TestModbus(t *testing.T) {
 		return true
 	})
 
-	s.Assert("`4X Table: -20000` Read/Write int16 value test", func(log sugar.Log) bool {
+	s.Assert("`4X Table: -20000` Read/Write int16 value test: FC6, FC3", func(log sugar.Log) bool {
 		// =============== write part ==============
 		writeReq := MbWriteSingleReq{
 			hostName,
@@ -264,7 +264,7 @@ func TestModbus(t *testing.T) {
 		return true
 	})
 
-	s.Assert("`4X Table` Write multiple registers", func(log sugar.Log) bool {
+	s.Assert("`4X Table` Multiple read/write test: FC16, FC3", func(log sugar.Log) bool {
 		// =============== write part ==============
 		writeReq := MbWriteReq{
 			hostName,
@@ -332,7 +332,7 @@ func TestModbus(t *testing.T) {
 
 	s.Title("0X table read/write test: FC1, FC5, FC15")
 
-	s.Assert("`0X Table` Single read/write test", func(log sugar.Log) bool {
+	s.Assert("`0X Table` Single read/write test:FC5, FC1", func(log sugar.Log) bool {
 		// =============== write part ==============
 		writeReq := MbWriteSingleReq{
 			hostName,
@@ -393,8 +393,71 @@ func TestModbus(t *testing.T) {
 		return true
 	})
 
-	s.Assert("`0X Table` Multiple read/write test", func(log sugar.Log) bool {
+	s.Assert("`0X Table` Multiple read/write test: FC15, FC1", func(log sugar.Log) bool {
+		// =============== write part ==============
+		writeReq := MbWriteReq{
+			hostName,
+			portNum,
+			1,
+			rand.Int63n(10000000), // tid
+			"fc15",
+			100, // addr
+			10,
+			[]uint16{0, 1, 1, 1, 0, 0, 0, 1, 0, 1},
+		}
+
+		writeReqStr, _ := json.Marshal(writeReq) // marshal to json string
+		go publisher(string(writeReqStr))
+		_, s1 := subscriber()
+		log("req: %s", string(writeReqStr))
+		log("res: %s", s1)
+
+		// parse resonse
+		var r1 MbRes
+		if err := json.Unmarshal([]byte(s1), &r1); err != nil {
+			fmt.Println("json err:", err)
+		}
+		// check reponse
+		if r1.Status != "ok" {
+			return false
+		}
+
+		// =============== read part ==============
+		readReq := MbReadReq{
+			hostName,
+			portNum,
+			1,
+			rand.Int63n(10000000),
+			"fc1",
+			100,
+			10,
+		}
+
+		readReqStr, _ := json.Marshal(readReq) // marshal to json string
+		go publisher(string(readReqStr))
+		_, s2 := subscriber()
+		log("req: %s", string(readReqStr))
+		log("res: %s", s2)
+
+		// parse resonse
+		var r2 MbReadRes
+		if err := json.Unmarshal([]byte(s2), &r2); err != nil {
+			fmt.Println("json err:", err)
+		}
+		// check reponse
+		if r2.Status != "ok" {
+			return false
+		}
+
+		var index uint16
+		for index = 0; index < readReq.Len; index++ {
+			if writeReq.Data[index] != uint16(r2.Data[index]) {
+				return false
+			}
+		}
+
 		return true
+
 	})
 
 	s.Title("1X table read/write test: FC2")
