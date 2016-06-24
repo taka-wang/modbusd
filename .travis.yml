@@ -31,7 +31,7 @@ addons:
 script:
 
 ### build modbus slave server image
-- docker build -t $MODBUS_SERVER_IMG tests/mbserver/.
+- docker build -t $MODBUS_SERVER_IMG tests/cmbserver/.
 - if [ ! -z "$TRAVIS_TAG" ]; then docker tag $MODBUS_SERVER_IMG:latest $MODBUS_SERVER_IMG:$TRAVIS_TAG; fi && docker push $MODBUS_SERVER_IMG
 
 ### build zclient image
@@ -70,7 +70,7 @@ env:
   - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile
   - GH_REPO_REF: github.com/taka-wang/modbusd.git
   
-  - MODBUS_SERVER_IMG=takawang/modbus-server
+  - MODBUS_SERVER_IMG=takawang/modbus-cserver
   - MODBUS_ZCLIENT_IMG=takawang/modbus-zclient
   - MODBUSD_IMG=takawang/modbusd
 

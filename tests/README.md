@@ -1,33 +1,9 @@
 #Tests
 
-[![Node version](https://img.shields.io/badge/node-4.x-brightgreen.svg)](https://nodejs.org/dist/v4.4.5/)
+Integration test
 
-Unit test cases
-
-# Test files
-- test.c   (C code for low level function test)
-- zclient  (naive zmq client to send request to modbusd)
-- mbserver (naive modbus tcp simulation server)
-
-# Install node.js 4.x & zmq binding on ubuntu
-
-```bash
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
-sudo apt-get install -y nodejs
-sudo npm install -g zmq              # zmq lib
-```
-
-# Build
-- for c code 
-```bash
-mkdir build 
-cd build
-cmake ..
-make 
-./test
-```
-
-- for zclient and mbserver
-```bash
-sudo npm install
-```
+- `cmbserver` dummy modbus slave simulator in C (based on libmodbus)
+- `mbserver` [Deprecated :x:] dummy modbus slave simulator in node.js
+- `goclient` modbusd test cases in golang
+- `zclient` [Deprecated :x:]  modbusd test cases in node.js
+- `cunit` modbusd unit test
