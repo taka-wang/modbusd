@@ -16,8 +16,6 @@ int main(int argc, char *argv[])
 {
     printf("init server\n");
     char * ip = NULL;
-    int port = 1502;
-
     switch (argc)
     {
         case 1:
@@ -61,7 +59,7 @@ int main(int argc, char *argv[])
     }
 
 
-    printf("start listening at: %s\n", ip, 1502);
+    printf("start listening at: %s\n, port:%d", ip, 1502);
 
     s = modbus_tcp_listen(ctx, 1); // only one connection allow
     modbus_tcp_accept(ctx, &s);
