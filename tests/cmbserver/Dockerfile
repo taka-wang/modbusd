@@ -1,7 +1,7 @@
 #
 # modbus simulation slave
 #
-FROM takawang/ubuntu-czmq
+FROM takawang/ubuntu-modbus
 MAINTAINER Taka Wang <taka@cmwang.net>
 
 ## Load app files
