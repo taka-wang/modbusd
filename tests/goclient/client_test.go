@@ -10,6 +10,18 @@ import (
 	zmq "github.com/taka-wang/zmq3"
 )
 
+// MbRes Modbus tcp generic response
+type MbRes struct {
+	Tid    int64  `json:"tid"`
+	Status string `json:status`
+}
+
+type MbTimeoutReq struct {
+	Tid  int64  `json:"tid"`
+	Cmd  string `json:"cmd"`
+	Data int64  `json:data`
+}
+
 // MbReadReq Modbus tcp read request
 type MbReadReq struct {
 	IP    string `json:"ip"`
@@ -40,18 +52,6 @@ type MbWriteReq struct {
 	Data  []string `json:data`
 }
 
-// MbRes Modbus tcp generic response
-type MbRes struct {
-	Tid    int64  `json:"tid"`
-	Status string `json:status`
-}
-
-type MbTimeoutReq struct {
-	Tid  int64  `json:"tid"`
-	Cmd  string `json:"cmd"`
-	Data int64  `json:data`
-}
-
 func TestModbus(t *testing.T) {
 	s := sugar.New(nil)
 	s.Title("modbus test")
@@ -62,6 +62,12 @@ func TestModbus(t *testing.T) {
 		a, b := subscriber()
 		log("Get method:%s", a)
 		log("Get json:%s", b)
+
+		var s MbReadRes
+		if err := json.Unmarshal([]byte(b), &s); err != nil {
+			fmt.Println("json err:", err)
+		}
+		log("Get status %s", s.Status)
 		return true
 	})
 	s.Assert("`Function 2` should work", func(log sugar.Log) bool {
