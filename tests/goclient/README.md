@@ -17,6 +17,10 @@ docker run -p 502:502 -d --name slave takawang/modbus-cserver
 
 # mount file system
 docker run -v /tmp:/tmp -it takawang/modbus-goclient /bin/bash
+
+# run go test
+go test -v
+
 # Print app output
 docker logs <container id>
 # Enter the container
@@ -30,6 +34,3 @@ docker pull takawang/modbus-goclient
 # arm version
 #docker pull takawang/arm-modbus-goclient
 ```
-
-## Credit
-According to libmodbus unit test.
