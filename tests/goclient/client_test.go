@@ -3,6 +3,7 @@ package goclient
 import (
 	"encoding/json"
 	"fmt"
+	"math/rand"
 	"testing"
 	"time"
 
@@ -65,19 +66,22 @@ type MbWriteSingleReq struct {
 }
 
 func TestModbus(t *testing.T) {
+	hostName := "127.0.0.1"
+	portNum := "1502"
+
 	s := sugar.New(nil)
 
-	s.Title("FC6 Integer request test")
+	s.Title("4x table read/write test")
 
 	s.Assert("`4X Table: 60000` Read/Write uint16 valuetest", func(log sugar.Log) bool {
 		// =============== write part ==============
 		writeReq := MbWriteSingleReq{
-			"127.0.0.1",
-			"1502",
+			hostName,
+			portNum,
 			1,
-			12, //tid
+			rand.Int63n(10000000), // tid
 			"fc6",
-			10, //addr
+			10, // addr
 			1,  // should be optional
 			60000,
 		}
@@ -100,13 +104,13 @@ func TestModbus(t *testing.T) {
 
 		// =============== read part ==============
 		readReq := MbReadReq{
-			"127.0.0.1",
-			"1502",
+			hostName,
+			portNum,
 			1,
-			13,
+			rand.Int63n(10000000),
 			"fc3",
 			10,
-			1, //should be optional
+			1, // should be optional
 		}
 
 		readReqStr, _ := json.Marshal(readReq) // marshal to json string
@@ -133,12 +137,12 @@ func TestModbus(t *testing.T) {
 	s.Assert("`4X Table: 30000` Read/Write int16 valuetest", func(log sugar.Log) bool {
 		// =============== write part ==============
 		writeReq := MbWriteSingleReq{
-			"127.0.0.1",
-			"1502",
+			hostName,
+			portNum,
 			1,
-			12, //tid
+			rand.Int63n(10000000), //tid
 			"fc6",
-			10, //addr
+			10, // addr
 			1,  // should be optional
 			30000,
 		}
@@ -161,13 +165,13 @@ func TestModbus(t *testing.T) {
 
 		// =============== read part ==============
 		readReq := MbReadReq{
-			"127.0.0.1",
-			"1502",
+			hostName,
+			portNum,
 			1,
-			13,
+			rand.Int63n(10000000),
 			"fc3",
 			10,
-			1, //should be optional
+			1, // should be optional
 		}
 
 		readReqStr, _ := json.Marshal(readReq) // marshal to json string
@@ -194,12 +198,12 @@ func TestModbus(t *testing.T) {
 	s.Assert("`4X Table: -20000` Read/Write int16 valuetest", func(log sugar.Log) bool {
 		// =============== write part ==============
 		writeReq := MbWriteSingleReq{
-			"127.0.0.1",
-			"1502",
+			hostName,
+			portNum,
 			1,
-			12, //tid
+			rand.Int63n(10000000), // tid
 			"fc6",
-			10, //addr
+			10, // addr
 			1,  // should be optional
 			-20000,
 		}
@@ -222,13 +226,13 @@ func TestModbus(t *testing.T) {
 
 		// =============== read part ==============
 		readReq := MbReadReq{
-			"127.0.0.1",
-			"1502",
+			hostName,
+			portNum,
 			1,
-			13,
+			rand.Int63n(10000000),
 			"fc3",
 			10,
-			1, //should be optional
+			1, // should be optional
 		}
 
 		readReqStr, _ := json.Marshal(readReq) // marshal to json string
@@ -252,7 +256,13 @@ func TestModbus(t *testing.T) {
 		return true
 	})
 
-	s.Title("other test")
+	// TODO: multiple write
+
+	s.Title("0x table read/write test")
+
+	// TODO: single read/write
+
+	// TODO: multiple read/write
 
 	s.Assert("`Function 1` should work", func(log sugar.Log) bool {
 		log("Hello")
@@ -276,6 +286,7 @@ func TestModbus(t *testing.T) {
 		log("Get json:%s", b)
 		return true
 	})
+
 }
 
 func gen() string {
