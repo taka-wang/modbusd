@@ -321,7 +321,7 @@ func TestModbus(t *testing.T) {
 
 		var index uint16
 		for index = 0; index < readReq.Len; index++ {
-			if writeReq.Data[index] != r2.Data[index].(uint16) {
+			if writeReq.Data[index] != uint16(r2.Data[index]) {
 				return false
 			}
 		}
