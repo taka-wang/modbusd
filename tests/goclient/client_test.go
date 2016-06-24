@@ -36,7 +36,7 @@ type MbReadReq struct {
 // MbReadRes Modbus tcp read response
 type MbReadRes struct {
 	Tid    int64    `json:"tid"`
-	Data   []string `json:data`
+	Data   []uint16 `json:data`
 	Status string   `json:status`
 }
 
@@ -49,7 +49,7 @@ type MbWriteReq struct {
 	Cmd   string   `json:"cmd"`
 	Addr  int      `json:"addr"`
 	Len   int      `json:"len"`
-	Data  []string `json:data`
+	Data  []uint16 `json:data`
 }
 
 func TestModbus(t *testing.T) {
