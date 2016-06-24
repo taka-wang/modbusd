@@ -273,7 +273,7 @@ func TestModbus(t *testing.T) {
 			"fc6",
 			10, // addr
 			10,
-			{1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000},
+			[]uint16{1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000},
 		}
 
 		writeReqStr, _ := json.Marshal(writeReq) // marshal to json string
@@ -319,7 +319,8 @@ func TestModbus(t *testing.T) {
 			return false
 		}
 
-		for index := 0; index < readReq.Len; index++ {
+		var index uint16
+		for index = 0; index < readReq.Len; index++ {
 			if writeReq.Data[index] != r2.Data[index] {
 				return false
 			}
