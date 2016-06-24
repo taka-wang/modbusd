@@ -20,10 +20,10 @@ int main(int argc, char *argv[])
         case 1:
             ip = "127.0.0.1";
         case 2:
-            port = argv[0];
+            port = atoi(argv[0]);
             break;
         case 3:
-            port = argv[0];
+            port = atoi(argv[0]);
             ip = argv[1];
             break;
         default:
