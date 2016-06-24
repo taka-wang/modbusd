@@ -62,7 +62,6 @@ type MbSingleWriteReq struct {
 	Tid   int64  `json:"tid"`
 	Cmd   string `json:"cmd"`
 	Addr  uint16 `json:"addr"`
-	Len   uint16 `json:"len"`
 	Data  int32  `json:data`
 }
 
@@ -90,7 +89,6 @@ func TestModbus(t *testing.T) {
 			rand.Int63n(10000000), // tid
 			"fc6",
 			10, // addr
-			1,  // should be optional
 			60000,
 		}
 
@@ -151,7 +149,6 @@ func TestModbus(t *testing.T) {
 			rand.Int63n(10000000), //tid
 			"fc6",
 			10, // addr
-			1,  // should be optional
 			30000,
 		}
 
@@ -340,7 +337,6 @@ func TestModbus(t *testing.T) {
 			rand.Int63n(10000000), // tid
 			"fc5",
 			400, // addr
-			1,   // should be optional
 			1,
 		}
 
