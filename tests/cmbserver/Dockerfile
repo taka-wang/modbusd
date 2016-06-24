@@ -13,5 +13,5 @@ RUN gcc server.c -o server -Wall -std=c99 `pkg-config --libs --cflags libmodbus`
 EXPOSE 502
 
 ## Default command
-ENTRYPOINT ["server"]
+CMD ["server"]
 
