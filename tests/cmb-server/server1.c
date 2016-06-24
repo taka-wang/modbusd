@@ -12,6 +12,7 @@
 
 int main(int argc, char *argv[])
 {
+    printf("init server\n");
     char * ip = NULL;
     int port = 1502;
 
@@ -46,7 +47,7 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    printf("start listening at: %s, %d", ip, port);
+    printf("start listening at: %s, %d\n", ip, port);
 
     s = modbus_tcp_listen(ctx, 1); // only one connection allow
     modbus_tcp_accept(ctx, &s);
