@@ -1,3 +1,11 @@
+# v0.2.2
+
+## Done
+- [x] rewrite test server in c, test cases in golang
+- [x] update travis ci with new test env
+
+---
+
 # v0.2.1
 
 ## Done
@@ -22,9 +30,10 @@
 - [x] support armhf
 - [x] deploy doxygen document automatically
 
+---
+
 ## TODO List
-- [ ] enhance test cases
-- [ ] response error
+
 - [ ] enhance reconnect mechanism :clap:
 - [ ] refine field name for psmb
 
