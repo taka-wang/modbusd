@@ -13,12 +13,12 @@ import (
 
 // MbRes Modbus tcp generic response
 type MbRes struct {
-	Tid    uint64 `json:"tid"`
+	Tid    int64  `json:"tid"`
 	Status string `json:status`
 }
 
 type MbTimeoutReq struct {
-	Tid  uint64 `json:"tid"`
+	Tid  int64  `json:"tid"`
 	Cmd  string `json:"cmd"`
 	Data int64  `json:data`
 }
@@ -28,7 +28,7 @@ type MbReadReq struct {
 	IP    string `json:"ip"`
 	Port  string `json:"port"`
 	Slave uint8  `json:"slave"`
-	Tid   uint64 `json:"tid"`
+	Tid   int64  `json:"tid"`
 	Cmd   string `json:"cmd"`
 	Addr  uint16 `json:"addr"`
 	Len   uint16 `json:"len"`
@@ -36,7 +36,7 @@ type MbReadReq struct {
 
 // MbReadRes Modbus tcp read response
 type MbReadRes struct {
-	Tid    uint64  `json:"tid"`
+	Tid    int64   `json:"tid"`
 	Data   []int32 `json:data` // uint16 for register
 	Status string  `json:status`
 }
@@ -46,7 +46,7 @@ type MbWriteReq struct {
 	IP    string   `json:"ip"`
 	Port  string   `json:"port"`
 	Slave uint8    `json:"slave"`
-	Tid   uint64   `json:"tid"`
+	Tid   int64    `json:"tid"`
 	Cmd   string   `json:"cmd"`
 	Addr  uint16   `json:"addr"`
 	Len   uint16   `json:"len"`
