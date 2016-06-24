@@ -209,12 +209,16 @@ sudo ldconfig
 
 ## Setup testing environment
 
-### Install node.js 4.x & zmq binding on ubuntu
+### Install golang 1.6.x & zmq binding on ubuntu
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
-sudo apt-get install -y nodejs
-sudo npm install -g zmq
+sudo apt-get install pkg-config
+curl -O https://storage.googleapis.com/golang/go1.6.2.linux-amd64.tar.gz
+tar -xvf go1.6.2.linux-amd64.tar.gz
+sudo mv go /usr/local
+nano ~/.profile
+export PATH=$PATH:/usr/local/go/bin
+go get github.com/taka-wang/zmq3                   # zmq lib
 ```
 ---
 
