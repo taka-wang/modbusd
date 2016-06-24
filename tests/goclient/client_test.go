@@ -37,9 +37,9 @@ type MbReadReq struct {
 
 // MbReadRes Modbus tcp read response
 type MbReadRes struct {
-	Tid    int64   `json:"tid"`
-	Data   []int32 `json:data` // uint16 for register
-	Status string  `json:status`
+	Tid    int64    `json:"tid"`
+	Data   []uint16 `json:data` // uint16 for register
+	Status string   `json:status`
 }
 
 // MbWriteReq Modbus tcp write request
@@ -322,7 +322,7 @@ func TestModbus(t *testing.T) {
 
 		var index uint16
 		for index = 0; index < readReq.Len; index++ {
-			if writeReq.Data[index] != uint16(r2.Data[index]) {
+			if writeReq.Data[index] != r2.Data[index] {
 				return false
 			}
 		}
@@ -451,7 +451,7 @@ func TestModbus(t *testing.T) {
 
 		var index uint16
 		for index = 0; index < readReq.Len; index++ {
-			if writeReq.Data[index] != uint16(r2.Data[index]) {
+			if writeReq.Data[index] != r2.Data[index] {
 				return false
 			}
 		}
