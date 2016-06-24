@@ -1,10 +1,10 @@
 /**
- * @file modbusd.c
+ * @file mb.c
  * @author taka-wang
- * @brief modbus daemon
+ * @brief modbus common functions
 */
 
-#include "modbusd.h"
+#include "mb.h"
 
 extern int enable_syslog; // syslog flag
 

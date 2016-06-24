@@ -12,7 +12,7 @@
 #include <errno.h>
 #include <czmq.h>
 
-#include "../modbusd.h"
+#include "../mb.h"
 
 int enable_syslog = 1;
 

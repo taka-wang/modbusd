@@ -1,11 +1,11 @@
 /**
- * @file modbusd.h
+ * @file mb.h
  * @author taka-wang
  * @brief modbus daemon exported api
 */
 
-#ifndef MODBUSD_H
-#define MODBUSD_H
+#ifndef MB_H
+#define MB_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -241,4 +241,4 @@ char * mbtcp_fc15_req(mbtcp_handle_s *handle, cJSON *req);
  */
 char * mbtcp_fc16_req(mbtcp_handle_s *handle, cJSON *req);
 
-#endif  // MODBUSD_H
+#endif  // MB_H

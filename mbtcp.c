@@ -4,7 +4,7 @@
  * @brief modbus tcp
 */
 
-#include "modbusd.h"
+#include "mb.h"
 
 /* ==================================================
  *  global variable
