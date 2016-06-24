@@ -52,7 +52,7 @@ type MbTimeoutReq struct {
 	Data int64  `json:data`
 }
 
-func main(m *testing.M) {
+func TestModbus(t *testing.T) {
 	s := sugar.New(nil)
 	s.Title("modbus test")
 
