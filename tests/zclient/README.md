@@ -37,7 +37,7 @@ docker exec -it <container id> /bin/bash
 docker pull takawang/modbus-zclient
 
 # arm version
-#docker pull arm-modbus-zclient
+#docker pull takawang/arm-modbus-zclient
 ```
 
 ## Note
