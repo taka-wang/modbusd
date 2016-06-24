@@ -12,6 +12,9 @@ import (
 	zmq "github.com/taka-wang/zmq3"
 )
 
+var hostName string
+var portNum int
+
 // generic tcp publisher
 func publisher(cmd string) {
 
@@ -56,7 +59,7 @@ func ReadReqBuilder(cmd string, addr uint16, len uint16) MbReadReq {
 }
 
 // WriteReqBuilder Write single register/coil command builder
-func WriteReqBuilder(cmd string, addr uint16, data int32) {
+func WriteReqBuilder(cmd string, addr uint16, data int32) MbSingleWriteReq {
 	return MbSingleWriteReq{
 		hostName,
 		portNum,
@@ -69,7 +72,7 @@ func WriteReqBuilder(cmd string, addr uint16, data int32) {
 }
 
 // WriteMultiReqBuilder Write multiple register/coil command builder
-func WriteMultiReqBuilder(cmd string, addr uint16, len uint16, data []uint16) {
+func WriteMultiReqBuilder(cmd string, addr uint16, len uint16, data []uint16) MbMultipleWriteReq {
 	return MbMultipleWriteReq{
 		hostName,
 		portNum,
@@ -84,10 +87,9 @@ func WriteMultiReqBuilder(cmd string, addr uint16, len uint16, data []uint16) {
 
 func TestModbus(t *testing.T) {
 	s := sugar.New(nil)
+	portNum = "502"
 
-	portNum := "502"
 	// generalize host reslove for docker/local env
-	var hostName string
 	host, err := net.LookupHost("slave")
 	if err != nil {
 		fmt.Println("local run")
