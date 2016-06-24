@@ -55,10 +55,7 @@ int main(int argc, char *argv[])
     // initalize input contacts: 1x
     const uint8_t UT_INPUT_BITS_TAB[] = { 0xAC, 0xDB, 0x35 };
     const uint16_t UT_INPUT_BITS_NB = 0x16;
-    
-    // 0x
-    modbus_set_bits_from_bytes(mb_mapping->tab_bits, 0, UT_INPUT_BITS_NB,
-                               UT_INPUT_BITS_TAB);
+
     // 1x
     modbus_set_bits_from_bytes(mb_mapping->tab_input_bits, 0, UT_INPUT_BITS_NB,
                                UT_INPUT_BITS_TAB);

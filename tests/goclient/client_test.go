@@ -12,12 +12,12 @@ import (
 
 // MbRes Modbus tcp generic response
 type MbRes struct {
-	Tid    int64  `json:"tid"`
+	Tid    uint64 `json:"tid"`
 	Status string `json:status`
 }
 
 type MbTimeoutReq struct {
-	Tid  int64  `json:"tid"`
+	Tid  uint64 `json:"tid"`
 	Cmd  string `json:"cmd"`
 	Data int64  `json:data`
 }
@@ -26,16 +26,16 @@ type MbTimeoutReq struct {
 type MbReadReq struct {
 	IP    string `json:"ip"`
 	Port  string `json:"port"`
-	Slave int    `json:"slave"`
-	Tid   int64  `json:"tid"`
+	Slave uint8  `json:"slave"`
+	Tid   uint64 `json:"tid"`
 	Cmd   string `json:"cmd"`
-	Addr  int    `json:"addr"`
-	Len   int    `json:"len"`
+	Addr  uint16 `json:"addr"`
+	Len   uint16 `json:"len"`
 }
 
 // MbReadRes Modbus tcp read response
 type MbReadRes struct {
-	Tid    int64    `json:"tid"`
+	Tid    uint64   `json:"tid"`
 	Data   []uint16 `json:data`
 	Status string   `json:status`
 }
@@ -44,17 +44,86 @@ type MbReadRes struct {
 type MbWriteReq struct {
 	IP    string   `json:"ip"`
 	Port  string   `json:"port"`
-	Slave int      `json:"slave"`
-	Tid   int64    `json:"tid"`
+	Slave uint8    `json:"slave"`
+	Tid   uint64   `json:"tid"`
 	Cmd   string   `json:"cmd"`
-	Addr  int      `json:"addr"`
-	Len   int      `json:"len"`
+	Addr  uint16   `json:"addr"`
+	Len   uint16   `json:"len"`
 	Data  []uint16 `json:data`
+}
+
+// MbWriteReq Modbus tcp write request
+type MbWriteSingleReq struct {
+	IP    string `json:"ip"`
+	Port  string `json:"port"`
+	Slave uint8  `json:"slave"`
+	Tid   int64  `json:"tid"`
+	Cmd   string `json:"cmd"`
+	Addr  uint16 `json:"addr"`
+	Len   uint16 `json:"len"`
+	Data  uint16 `json:data`
+}
+
+func gen() string {
+	command := MbWriteSingleReq{
+		"127.0.0.1",
+		"1502",
+		1,
+		12, //tid
+		"fc6",
+		10, //addr
+		60000,
+	}
+	cmd, _ := json.Marshal(command) // marshal to json string
+
+	return string(cmd)
 }
 
 func TestModbus(t *testing.T) {
 	s := sugar.New(nil)
 	s.Title("modbus test")
+
+	s.Assert("`4X Table` Read/Write int16 test", func(log sugar.Log) bool {
+		// write part
+		writeReq := MbWriteSingleReq{
+			"127.0.0.1",
+			"1502",
+			1,
+			12, //tid
+			"fc6",
+			10, //addr
+			60000,
+		}
+		writeReqStr, _ := json.Marshal(writeReq) // marshal to json string
+		go publisher(string(writeReqStr))
+		a, b := subscriber()
+		log("Get method:%s", a)
+		log("Get json:%s", b)
+
+		// read part
+		readReq := MbReadReq{
+			"127.0.0.1",
+			"1502",
+			1,
+			13,
+			"fc3",
+			10,
+		}
+		readReqStr, _ := json.Marshal(readReq) // marshal to json string
+		go publisher(string(readReqStr))
+		c, d := subscriber()
+		log("Get method:%s", c)
+		log("Get json:%s", d)
+		return true
+	})
+
+	s.Assert("`4X Table` Read/Write int16 test", func(log sugar.Log) bool {
+		// write uint16: 60000
+
+		// write int16: 30000
+
+		// write int16: -20000
+	})
 
 	s.Assert("`Function 1` should work", func(log sugar.Log) bool {
 		log("Hello")
@@ -99,6 +168,7 @@ func gen() string {
 	return string(cmd)
 }
 
+// generic tcp publisher
 func publisher(cmd string) {
 
 	sender, _ := zmq.NewSocket(zmq.PUB)
