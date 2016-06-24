@@ -32,7 +32,7 @@ type MbReadReq struct {
 	Tid   int64  `json:"tid"`
 	Cmd   string `json:"cmd"`
 	Addr  uint16 `json:"addr"`
-	Len   uint16 `json:"len,omitempty"`
+	Len   uint16 `json:"len"`
 }
 
 // MbReadRes Modbus tcp read response
@@ -118,7 +118,7 @@ func TestModbus(t *testing.T) {
 			rand.Int63n(10000000),
 			"fc3",
 			10,
-			//1, // should be optional
+			1,
 		}
 
 		readReqStr, _ := json.Marshal(readReq) // marshal to json string
@@ -179,7 +179,7 @@ func TestModbus(t *testing.T) {
 			rand.Int63n(10000000),
 			"fc3",
 			10,
-			1, // should be optional
+			1,
 		}
 
 		readReqStr, _ := json.Marshal(readReq) // marshal to json string
@@ -240,7 +240,7 @@ func TestModbus(t *testing.T) {
 			rand.Int63n(10000000),
 			"fc3",
 			10,
-			1, // should be optional
+			1,
 		}
 
 		readReqStr, _ := json.Marshal(readReq) // marshal to json string
@@ -369,7 +369,7 @@ func TestModbus(t *testing.T) {
 			rand.Int63n(10000000),
 			"fc1",
 			400,
-			1, // should be optional
+			1,
 		}
 
 		readReqStr, _ := json.Marshal(readReq) // marshal to json string
@@ -431,6 +431,7 @@ func TestModbus(t *testing.T) {
 			"fc1",
 			100,
 			10,
+			1,
 		}
 
 		readReqStr, _ := json.Marshal(readReq) // marshal to json string
