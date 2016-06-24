@@ -195,7 +195,7 @@ int main(int argc, char *argv[])
                     {
                         LOG(enable_syslog, "unsupport request");
                         send_modbus_zmq_resp(zmq_pub, mode, 
-                            modbus_set_error_resp(tid, "unsupport request"));
+                            set_modbus_fail_resp_str(tid, "unsupport request"));
                     }
                 }
                 // @handle modbus rtu requests
@@ -210,14 +210,14 @@ int main(int argc, char *argv[])
                 {
                     ERR(enable_syslog, "unsupport mode");
                     send_modbus_zmq_resp(zmq_pub, mode, 
-                        modbus_set_error_resp(tid, "unsupport mode"));
+                        set_modbus_fail_resp_str(tid, "unsupport mode"));
                 }
             }
             else
             {
                 ERR(enable_syslog, "Fail to parse command string");
                 send_modbus_zmq_resp(zmq_pub, mode, 
-                    modbus_set_error_resp(tid, "Fail to parse command string"));
+                    set_modbus_fail_resp_str(tid, "Fail to parse command string"));
             }
             
             // @cleanup cJson object (auto mode)
