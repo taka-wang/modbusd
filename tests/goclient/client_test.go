@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"math/rand"
+	"net"
 	"testing"
 	"time"
 
@@ -66,8 +67,11 @@ type MbWriteSingleReq struct {
 }
 
 func TestModbus(t *testing.T) {
-	hostName := "127.0.0.1"
+	hostName := net.lookupStaticHost("slave") //docker
+	//hostName := "127.0.0.1"
 	portNum := "1502"
+
+	hostNa := net.lookupStaticHost("slave")
 
 	s := sugar.New(nil)
 
