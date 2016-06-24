@@ -77,7 +77,7 @@ func TestModbus(t *testing.T) {
 			12, //tid
 			"fc6",
 			10, //addr
-			1,
+			1,  // should be optional
 			60000,
 		}
 		writeReqStr, _ := json.Marshal(writeReq) // marshal to json string
@@ -94,6 +94,7 @@ func TestModbus(t *testing.T) {
 			13,
 			"fc3",
 			10,
+			1, //should be optional
 		}
 		readReqStr, _ := json.Marshal(readReq) // marshal to json string
 		go publisher(string(readReqStr))
@@ -109,6 +110,7 @@ func TestModbus(t *testing.T) {
 		// write int16: 30000
 
 		// write int16: -20000
+		return true
 	})
 
 	s.Assert("`Function 1` should work", func(log sugar.Log) bool {
