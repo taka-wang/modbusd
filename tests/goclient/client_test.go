@@ -68,8 +68,8 @@ func TestModbus(t *testing.T) {
 	s := sugar.New(nil)
 	s.Title("modbus test")
 
-	s.Assert("`4X Table` Read/Write int16 test", func(log sugar.Log) bool {
-		// write part
+	s.Assert("`4X Table` Read/Write uint16 value 60000 test", func(log sugar.Log) bool {
+		// =============== write part ==============
 		writeReq := MbWriteSingleReq{
 			"127.0.0.1",
 			"1502",
@@ -80,13 +80,24 @@ func TestModbus(t *testing.T) {
 			1,  // should be optional
 			60000,
 		}
+
 		writeReqStr, _ := json.Marshal(writeReq) // marshal to json string
 		go publisher(string(writeReqStr))
-		a, b := subscriber()
-		log("Get method:%s", a)
-		log("Get json:%s", b)
+		_, s1 := subscriber()
+		log("req: %s", string(writeReqStr))
+		log("res: %s", s1)
 
-		// read part
+		// parse resonse
+		var r1 MbRes
+		if err := json.Unmarshal([]byte(s1), &r1); err != nil {
+			fmt.Println("json err:", err)
+		}
+		// check reponse
+		if r1.Status != "ok" {
+			return false
+		}
+
+		// =============== read part ==============
 		readReq := MbReadReq{
 			"127.0.0.1",
 			"1502",
@@ -96,11 +107,25 @@ func TestModbus(t *testing.T) {
 			10,
 			1, //should be optional
 		}
+
 		readReqStr, _ := json.Marshal(readReq) // marshal to json string
 		go publisher(string(readReqStr))
-		c, d := subscriber()
-		log("Get method:%s", c)
-		log("Get json:%s", d)
+		_, s2 := subscriber()
+		log("req: %s", string(readReqStr))
+		log("res: %s", s2)
+
+		// parse resonse
+		var r2 MbReadRes
+		if err := json.Unmarshal([]byte(s2), &r2); err != nil {
+			fmt.Println("json err:", err)
+		}
+		// check reponse
+		if r2.Status != "ok" {
+			return false
+		}
+		if r2.Data[0] != 60000 {
+			return false
+		}
 		return true
 	})
 
