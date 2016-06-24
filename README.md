@@ -88,7 +88,7 @@ Modbus master daemon
 	"tid": 1,
 	"cmd": "fc6",
 	"addr": 80,
-	"data": [1,2,3,4]
+	"data": 1234
 }
 ```
 
