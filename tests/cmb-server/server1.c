@@ -6,6 +6,14 @@
  * Modified by Taka
  */
 
+/*
+uint8_t *tab_bits;              // 0x
+uint8_t *tab_input_bits;        // 1x
+uint16_t *tab_input_registers;  // 3x
+uint16_t *tab_registers;        // 4x
+*/
+
+
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -35,6 +43,7 @@ int main(int argc, char *argv[])
     ctx = modbus_new_tcp(ip, 1502);
     modbus_set_debug(ctx, TRUE);
 
+    // allocate memory map
     mb_mapping = modbus_mapping_new(10000, 10000, 10000, 10000); // max
     if (mb_mapping == NULL)
     {
@@ -46,7 +55,11 @@ int main(int argc, char *argv[])
     // initalize input contacts: 1x
     const uint8_t UT_INPUT_BITS_TAB[] = { 0xAC, 0xDB, 0x35 };
     const uint16_t UT_INPUT_BITS_NB = 0x16;
-    // 
+    
+    // 0x
+    modbus_set_bits_from_bytes(mb_mapping->tab_bits, 0, UT_INPUT_BITS_NB,
+                               UT_INPUT_BITS_TAB);
+    // 1x
     modbus_set_bits_from_bytes(mb_mapping->tab_input_bits, 0, UT_INPUT_BITS_NB,
                                UT_INPUT_BITS_TAB);
 
@@ -59,7 +72,7 @@ int main(int argc, char *argv[])
     }
 
 
-    printf("start listening at: %s\n, port:%d", ip, 1502);
+    printf("start listening at: %s, port:%d\n", ip, 1502);
 
     s = modbus_tcp_listen(ctx, 1); // only one connection allow
     modbus_tcp_accept(ctx, &s);
