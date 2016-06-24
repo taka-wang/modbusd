@@ -340,8 +340,8 @@ func TestModbus(t *testing.T) {
 			1,
 			rand.Int63n(10000000), // tid
 			"fc5",
-			1234, // addr
-			1,    // should be optional
+			400, // addr
+			1,   // should be optional
 			1,
 		}
 
@@ -368,7 +368,7 @@ func TestModbus(t *testing.T) {
 			1,
 			rand.Int63n(10000000),
 			"fc1",
-			1234,
+			400,
 			1, // should be optional
 		}
 
