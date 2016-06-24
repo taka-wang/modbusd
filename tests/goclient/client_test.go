@@ -79,7 +79,7 @@ func TestModbus(t *testing.T) {
 
 	s := sugar.New(nil)
 
-	s.Title("4X table read/write test: FC3, FC6, FC16")
+	s.Title("4X table test: FC3, FC6, FC16")
 
 	s.Assert("`4X Table: 60000` Read/Write uint16 value test: FC6, FC3", func(log sugar.Log) bool {
 		// =============== write part ==============
@@ -330,7 +330,7 @@ func TestModbus(t *testing.T) {
 		return true
 	})
 
-	s.Title("0X table read/write test: FC1, FC5, FC15")
+	s.Title("0X table test: FC1, FC5, FC15")
 
 	s.Assert("`0X Table` Single read/write test:FC5, FC1", func(log sugar.Log) bool {
 		// =============== write part ==============
@@ -460,14 +460,64 @@ func TestModbus(t *testing.T) {
 
 	})
 
-	s.Title("1X table read/write test: FC2")
+	s.Title("1X table test: FC2")
 
-	s.Assert("`1X Table` read test", func(log sugar.Log) bool {
+	s.Assert("`1X Table` read test: FC2", func(log sugar.Log) bool {
+		readReq := MbReadReq{
+			hostName,
+			portNum,
+			1,
+			rand.Int63n(10000000),
+			"fc2",
+			0,
+			12,
+		}
+
+		readReqStr, _ := json.Marshal(readReq) // marshal to json string
+		go publisher(string(readReqStr))
+		_, s2 := subscriber()
+		log("req: %s", string(readReqStr))
+		log("res: %s", s2)
+
+		// parse resonse
+		var r2 MbReadRes
+		if err := json.Unmarshal([]byte(s2), &r2); err != nil {
+			fmt.Println("json err:", err)
+		}
+		// check reponse
+		if r2.Status != "ok" {
+			return false
+		}
 		return true
 	})
 
-	s.Title("3X table read/write test: FC4")
-	s.Assert("`3X Table` read test", func(log sugar.Log) bool {
+	s.Title("3X table read test: FC4")
+	s.Assert("`3X Table` read test:FC4", func(log sugar.Log) bool {
+		readReq := MbReadReq{
+			hostName,
+			portNum,
+			1,
+			rand.Int63n(10000000),
+			"fc4",
+			0,
+			12,
+		}
+
+		readReqStr, _ := json.Marshal(readReq) // marshal to json string
+		go publisher(string(readReqStr))
+		_, s2 := subscriber()
+		log("req: %s", string(readReqStr))
+		log("res: %s", s2)
+
+		// parse resonse
+		var r2 MbReadRes
+		if err := json.Unmarshal([]byte(s2), &r2); err != nil {
+			fmt.Println("json err:", err)
+		}
+		// check reponse
+		if r2.Status != "ok" {
+			return false
+		}
 		return true
 	})
 }
