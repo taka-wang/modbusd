@@ -58,15 +58,16 @@ func TestModbus(t *testing.T) {
 
 	s.Assert("`Function 1` should work", func(log sugar.Log) bool {
 		log("Hello")
-		return true
-	})
-	/*
 		go subscriber()
 		publisher()
-		for {
-
-		}
-	*/
+		return true
+	})
+	s.Assert("`Function 2` should work", func(log sugar.Log) bool {
+		log("Hello")
+		go subscriber()
+		publisher()
+		return true
+	})
 }
 
 func publisher() {
@@ -93,6 +94,7 @@ func publisher() {
 		sender.Send("tcp", zmq.SNDMORE) // frame 1
 		sender.Send(string(cmd), 0)     // convert to string; frame 2
 		time.Sleep(time.Duration(100) * time.Millisecond)
+		break
 	}
 }
 
@@ -107,5 +109,6 @@ func subscriber() {
 		msg, _ := receiver.RecvMessage(0)
 		fmt.Println(msg[0]) // frame 1: method
 		fmt.Println(msg[1]) // frame 2: command
+		break
 	}
 }
