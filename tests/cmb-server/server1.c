@@ -45,6 +45,22 @@ int main(int argc, char *argv[])
         return -1;
     }
 
+    // initalize input contacts: 1x
+    const uint8_t UT_INPUT_BITS_TAB[] = { 0xAC, 0xDB, 0x35 };
+    const uint16_t UT_INPUT_BITS_NB = 0x16;
+    // 
+    modbus_set_bits_from_bytes(mb_mapping->tab_input_bits, 0, UT_INPUT_BITS_NB,
+                               UT_INPUT_BITS_TAB);
+
+    const uint16_t UT_INPUT_REGISTERS_NB = 0x1;
+    const uint16_t UT_INPUT_REGISTERS_TAB[] = { 0x000A };
+    
+    // Initialize INPUT REGISTERS: 3x
+    for (int i=0; i < UT_INPUT_REGISTERS_NB; i++) {
+        mb_mapping->tab_input_registers[i] = UT_INPUT_REGISTERS_TAB[i];;
+    }
+
+
     printf("start listening at: %s\n", ip, 1502);
 
     s = modbus_tcp_listen(ctx, 1); // only one connection allow
