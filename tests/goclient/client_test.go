@@ -35,9 +35,9 @@ type MbReadReq struct {
 
 // MbReadRes Modbus tcp read response
 type MbReadRes struct {
-	Tid    uint64   `json:"tid"`
-	Data   []uint16 `json:data`
-	Status string   `json:status`
+	Tid    uint64  `json:"tid"`
+	Data   []int32 `json:data` // uint16 for register
+	Status string  `json:status`
 }
 
 // MbWriteReq Modbus tcp write request
