@@ -212,7 +212,6 @@ func TestModbus(t *testing.T) {
 			rand.Int63n(10000000), // tid
 			"fc6",
 			10, // addr
-			1,  // should be optional
 			-20000,
 		}
 
@@ -431,7 +430,6 @@ func TestModbus(t *testing.T) {
 			"fc1",
 			100,
 			10,
-			1,
 		}
 
 		readReqStr, _ := json.Marshal(readReq) // marshal to json string
