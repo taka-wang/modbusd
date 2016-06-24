@@ -64,21 +64,6 @@ type MbWriteSingleReq struct {
 	Data  uint16 `json:data`
 }
 
-func gen() string {
-	command := MbWriteSingleReq{
-		"127.0.0.1",
-		"1502",
-		1,
-		12, //tid
-		"fc6",
-		10, //addr
-		60000,
-	}
-	cmd, _ := json.Marshal(command) // marshal to json string
-
-	return string(cmd)
-}
-
 func TestModbus(t *testing.T) {
 	s := sugar.New(nil)
 	s.Title("modbus test")
@@ -92,6 +77,7 @@ func TestModbus(t *testing.T) {
 			12, //tid
 			"fc6",
 			10, //addr
+			1,
 			60000,
 		}
 		writeReqStr, _ := json.Marshal(writeReq) // marshal to json string
