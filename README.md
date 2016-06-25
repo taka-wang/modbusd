@@ -1,4 +1,3 @@
-[![Stories in Ready](https://badge.waffle.io/taka-wang/modbusd.png?label=ready&title=Ready)](https://waffle.io/taka-wang/modbusd)
 # modbusd 
 
 [![Build Status](https://travis-ci.org/taka-wang/modbusd.svg?branch=dev)](https://travis-ci.org/taka-wang/modbusd) 
