@@ -57,7 +57,7 @@ Modbus master daemon
 ```
 
 ## Modbus TCP command format
-**-> mbtcp read request**
+**:arrow_right: mbtcp read request**
 ```javascript
 {
 	"ip": "192.168.3.2",
