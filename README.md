@@ -70,7 +70,7 @@ Modbus master daemon
 }
 ```
 
-**<- mbtcp read response**
+**:arrow_left: mbtcp read response**
 ```javascript
 {
 	"tid": 1,
@@ -79,7 +79,7 @@ Modbus master daemon
 }
 ```
 
-**-> mbtcp single write request**
+**:arrow_right: mbtcp single write request**
 ```javascript
 {
 	"ip": "192.168.3.2",
@@ -92,7 +92,7 @@ Modbus master daemon
 }
 ```
 
-**-> mbtcp multiple write request**
+**:arrow_right: mbtcp multiple write request**
 ```javascript
 {
 	"ip": "192.168.3.2",
@@ -106,7 +106,7 @@ Modbus master daemon
 }
 ```
 
-**<- mbtcp write response**
+**:arrow_left: mbtcp write response**
 ```javascript
 {
 	"tid": 1,
@@ -114,7 +114,7 @@ Modbus master daemon
 }
 ```
 
-**-> mbtcp set timeout**
+**:arrow_right: mbtcp set timeout**
 ```javascript
 {
 	"tid": 1,
@@ -123,7 +123,7 @@ Modbus master daemon
 }
 ```
 
-**<- mbtcp set timeout response**
+**:arrow_left: mbtcp set timeout response**
 ```javascript
 {
 	"tid": 1,
