@@ -24,28 +24,29 @@ Modbus master daemon
 
 ## Implemented libmodbus function codes
 
-| FC    | Description            | #Len    | API                                                                                                                                                 |
-|:-----:|------------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| 0x01  | read coils             |  2000   |[int modbus_read_bits(modbus_t *ctx, int addr, int nb, uint8_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_bits.html)                       |  
-| 0x02  | read discrete inputs   |  2000   |[int modbus_read_input_bits(modbus_t *ctx, int addr, int nb, uint8_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_input_bits.html)           |
-| 0x03  | read holding registers |  125    |[int modbus_read_registers(modbus_t *ctx, int addr, int nb, uint16_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_registers.html)            |
-| 0x04  | read input registers   |  125    |[int modbus_read_input_registers(modbus_t *ctx, int addr, int nb, uint16_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_input_registers.html)|
-| 0x05  | write single coil      |   -     |[int modbus_write_bit(modbus_t *ctx, int addr, int status)](http://libmodbus.org/docs/v3.1.4/modbus_write_bit.html)                                  |
-| 0x06  | write single register  |   -     |[int modbus_write_register(modbus_t *ctx, int addr, int value)](http://libmodbus.org/docs/v3.1.4/modbus_write_register.html)                         |
-| 0x0F  | write multi coils      |  1968   |[int modbus_write_bits(modbus_t *ctx, int addr, int nb, const uint8_t *src)](http://libmodbus.org/docs/v3.1.4/modbus_write_bits.html)                |
-| 0x10  | write multi registers  |  125    |[int modbus_write_registers(modbus_t *ctx, int addr, int nb, const uint16_t *src)](http://libmodbus.org/docs/v3.1.4/modbus_write_registers.html)     |
+>| FC    | Description            | #Len    | API                                                                                                                                                 |
+>|:-----:|------------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------|
+>| 0x01  | read coils             |  2000   |[int modbus_read_bits(modbus_t *ctx, int addr, int nb, uint8_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_bits.html)                       |  
+>| 0x02  | read discrete inputs   |  2000   |[int modbus_read_input_bits(modbus_t *ctx, int addr, int nb, uint8_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_input_bits.html)           |
+>| 0x03  | read holding registers |  125    |[int modbus_read_registers(modbus_t *ctx, int addr, int nb, uint16_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_registers.html)            |
+>| 0x04  | read input registers   |  125    |[int modbus_read_input_registers(modbus_t *ctx, int addr, int nb, uint16_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_input_registers.html)|
+>| 0x05  | write single coil      |   -     |[int modbus_write_bit(modbus_t *ctx, int addr, int status)](http://libmodbus.org/docs/v3.1.4/modbus_write_bit.html)                                  |
+>| 0x06  | write single register  |   -     |[int modbus_write_register(modbus_t *ctx, int addr, int value)](http://libmodbus.org/docs/v3.1.4/modbus_write_register.html)                         |
+>| 0x0F  | write multi coils      |  1968   |[int modbus_write_bits(modbus_t *ctx, int addr, int nb, const uint8_t *src)](http://libmodbus.org/docs/v3.1.4/modbus_write_bits.html)                |
+>| 0x10  | write multi registers  |  125    |[int modbus_write_registers(modbus_t *ctx, int addr, int nb, const uint16_t *src)](http://libmodbus.org/docs/v3.1.4/modbus_write_registers.html)     |
 
 ## coil/register number and address table
 
-|Coil/Register numbers|data address       |type          |table name                     |offset| function code|
-|:--------------------|:------------------|:-------------|:------------------------------|:-----|:-------------|
-|1-9999               |0000 to 270E (9998)|Read-Write    |Discrete Output Coils          |1     | 1, 5, 15     |
-|10001-19999          |0000 to 270E (9998)|Read-Only     |Discrete Input Contacts        |10001 | 2            |
-|30001-39999          |0000 to 270E (9998)|Read-Only     |Analog Input Registers         |30001 | 4            |
-|40001-49999          |0000 to 270E (9998)|Read-Write    |Analog Output Holding Registers|40001 | 3, 6, 16     |
+>|Coil/Register numbers|data address       |type          |table name                     |offset| function code|
+>|:--------------------|:------------------|:-------------|:------------------------------|:-----|:-------------|
+>|1-9999               |0000 to 270E (9998)|Read-Write    |Discrete Output Coils          |1     | 1, 5, 15     |
+>|10001-19999          |0000 to 270E (9998)|Read-Only     |Discrete Input Contacts        |10001 | 2            |
+>|30001-39999          |0000 to 270E (9998)|Read-Only     |Analog Input Registers         |30001 | 4            |
+>|40001-49999          |0000 to 270E (9998)|Read-Write    |Analog Output Holding Registers|40001 | 3, 6, 16     |
 ---
 
-## Configuration file format
+## Configuration format
+**Configuration file**
 ```javascript
 {
     "syslog": 1,
@@ -55,9 +56,8 @@ Modbus master daemon
 }
 ```
 
-## Modbus TCP Json command format
-
-### -> mbtcp read request
+## Modbus TCP command format
+**-> mbtcp read request**
 ```javascript
 {
 	"ip": "192.168.3.2",
@@ -70,7 +70,7 @@ Modbus master daemon
 }
 ```
 
-### <- mbtcp read response
+**<- mbtcp read response**
 ```javascript
 {
 	"tid": 1,
@@ -79,7 +79,7 @@ Modbus master daemon
 }
 ```
 
-### -> mbtcp single write request
+**-> mbtcp single write request**
 ```javascript
 {
 	"ip": "192.168.3.2",
@@ -92,7 +92,7 @@ Modbus master daemon
 }
 ```
 
-### -> mbtcp multiple write request
+**-> mbtcp multiple write request**
 ```javascript
 {
 	"ip": "192.168.3.2",
@@ -106,7 +106,7 @@ Modbus master daemon
 }
 ```
 
-### <- mbtcp write response
+**<- mbtcp write response**
 ```javascript
 {
 	"tid": 1,
@@ -114,7 +114,7 @@ Modbus master daemon
 }
 ```
 
-### -> mbtcp set timeout
+**-> mbtcp set timeout**
 ```javascript
 {
 	"tid": 1,
@@ -123,7 +123,7 @@ Modbus master daemon
 }
 ```
 
-### <- mbtcp set timeout response
+**<- mbtcp set timeout response**
 ```javascript
 {
 	"tid": 1,
@@ -322,4 +322,4 @@ docker run -v /tmp:/tmp -it --link slave takawang/arm-modbus-goclient
 <a name="doc"></a>
 # Documentations
 
-- [API Document](http://taka-wang.github.io/modbusd)
+- [API Documentation](http://taka-wang.github.io/modbusd)
