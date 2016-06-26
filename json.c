@@ -18,6 +18,11 @@ int json_get_int(cJSON *inJson, const char *key)
     return cJSON_GetObjectItem(inJson, key)->valueint;
 }
 
+void json_set_int(cJSON *inJson, const char *key, int value)
+{
+    cJSON_GetObjectItem(inJson, key)->valueint = value;
+}
+
 int file_to_json(const char *fname, cJSON **outJson)
 {
     FILE *fPtr = fopen(fname,"rb");
@@ -52,9 +57,4 @@ int json_to_file(const char *fname, cJSON *inJson)
     {
         return -1;
     }
-}
-
-void json_release(cJSON *inJson)
-{
-    cJSON_Delete(inJson);
 }

@@ -13,8 +13,8 @@
 int enable_syslog  = 1;                 // syslog flag
 static cJSON * config_json;             // config in cJSON object format
 static char *config_fname = NULL;       // config filename
-static char *ipc_sub      = "ipc:///tmp/to.modbus";
-static char *ipc_pub      = "ipc:///tmp/from.modbus";
+static char *ipc_sub = "ipc:///tmp/to.modbus";
+static char *ipc_pub = "ipc:///tmp/from.modbus";
 extern uint32_t tcp_conn_timeout_usec;  // from mb.c
 
 
@@ -40,9 +40,11 @@ static void load_config(const char *fname, cJSON ** ptr_config)
     else
     {
         enable_syslog = json_get_int(config_json, "syslog");
-        ipc_sub = json_get_char(config_json, "ipc_sub");
-        ipc_pub = json_get_char(config_json, "ipc_pub");
-        tcp_conn_timeout_usec = json_get_int(config_json, "mbtcp_connect_timeout");
+        cJSON * zmq = cJSON_GetObjectItem(config_json, "zmq");
+        ipc_sub = json_get_char(zmq, "sub");
+        ipc_pub = json_get_char(zmq, "pub");
+        cJSON * mbtcp = cJSON_GetObjectItem(config_json, "mbtcp");
+        tcp_conn_timeout_usec = json_get_int(mbtcp, "connect_timeout");
     }
     END(enable_syslog);
 }
@@ -57,6 +59,8 @@ static void load_config(const char *fname, cJSON ** ptr_config)
 static void save_config(const char *fname, cJSON * config)
 {
     BEGIN(enable_syslog);
+    cJSON * mbtcp = cJSON_GetObjectItem(config, "mbtcp");
+    json_set_int(mbtcp, "connect_timeout", (int) tcp_conn_timeout_usec);
     json_to_file(fname, config);
 }
 
@@ -75,9 +79,9 @@ static void send_modbus_zmq_resp(void * pub, char *mode, char *json_resp)
     if (pub != NULL)
     {
         zmsg_t * zmq_resp = zmsg_new();
-        zmsg_addstr(zmq_resp, mode);        // frame 1: mode
-        zmsg_addstr(zmq_resp, json_resp);   // frame 2: resp
-        zmsg_send(&zmq_resp, pub);          // send zmq msg
+        zmsg_addstr(zmq_resp, mode);      // frame 1: mode
+        zmsg_addstr(zmq_resp, json_resp); // frame 2: resp
+        zmsg_send(&zmq_resp, pub);        // send zmq msg
         // cleanup zmsg
         zmsg_destroy(&zmq_resp);
     }

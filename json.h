@@ -27,6 +27,17 @@ char * json_get_char(cJSON *inJson, const char *key);
  */
 int json_get_int(cJSON *inJson, const char *key);
 
+
+/**
+ * @brief Set int via key to cJSON object
+ *
+ * @param inJson cJSON object.
+ * @param key Json key.
+ * @param Integer.
+ * @return Void.
+ */
+void json_set_int(cJSON *inJson, const char *key, int value);
+
 /**
  * @brief Load json file to cJSON
  *
@@ -44,13 +55,5 @@ int file_to_json(const char *fname, cJSON **outJson);
  * @return Success or not. 
  */
 int json_to_file(const char *fname, cJSON *inJson);
-
-/**
- * @brief Release cJSON root (auto mode)
- *
- * @param inJson cJSON input object.
- * @return Void. 
- */
-void json_release(cJSON* inJson);
 
 #endif // JSON_H
