@@ -128,7 +128,7 @@ Modbus master daemon
 }
 ```
 
-**:arrow_right: mbtcp set timeout**
+**:arrow_right: mbtcp set timeout request**
 ```javascript
 {
 	"tid": 22222,
