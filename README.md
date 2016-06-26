@@ -34,7 +34,7 @@ Modbus master daemon
 >| 0x0F  | write multi coils      |  1968   |[int modbus_write_bits(modbus_t *ctx, int addr, int nb, const uint8_t *src)](http://libmodbus.org/docs/v3.1.4/modbus_write_bits.html)                |
 >| 0x10  | write multi registers  |  125    |[int modbus_write_registers(modbus_t *ctx, int addr, int nb, const uint16_t *src)](http://libmodbus.org/docs/v3.1.4/modbus_write_registers.html)     |
 
-## coil/register number and address table
+## Coil/register number and address table
 
 >|Coil/Register numbers|data address       |type          |table name                     |offset| function code|
 >|:--------------------|:------------------|:-------------|:------------------------------|:-----|:-------------|
@@ -112,7 +112,7 @@ Modbus master daemon
 	"ip": "192.168.3.2",
 	"port": "502",
 	"slave": 22,
-	"tid": 1,
+	"tid": 3333333,
 	"cmd": "fc16",
 	"addr": 80,
 	"len": 4,
@@ -123,7 +123,7 @@ Modbus master daemon
 **:arrow_left: mbtcp write response**
 ```javascript
 {
-	"tid": 1,
+	"tid": 3333333,
 	"status": "ok"
 }
 ```
@@ -131,7 +131,7 @@ Modbus master daemon
 **:arrow_right: mbtcp set timeout**
 ```javascript
 {
-	"tid": 1,
+	"tid": 22222,
 	"cmd": "timeout",
 	"data": 210000
 }
@@ -140,8 +140,16 @@ Modbus master daemon
 **:arrow_left: mbtcp set timeout response**
 ```javascript
 {
-	"tid": 1,
+	"tid": 22222,
 	"status": "ok"
+}
+```
+
+**:arrow_left: mbtcp fail response**
+```javascript
+{
+	"tid": 1,
+	"status": "fail reason"
 }
 ```
 
@@ -232,7 +240,7 @@ tar -xvf go1.6.2.linux-amd64.tar.gz
 sudo mv go /usr/local
 nano ~/.profile
 export PATH=$PATH:/usr/local/go/bin
-go get github.com/taka-wang/zmq3                   # zmq lib
+go get github.com/taka-wang/zmq3
 ```
 ---
 
