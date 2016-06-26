@@ -69,7 +69,16 @@ Modbus master daemon
 }
 ```
 
-**:arrow_left: mbtcp read response**
+**:arrow_left: mbtcp single read response**
+```javascript
+{
+	"tid": 1,
+	"data": [1],
+	"status": "ok"
+}
+```
+
+**:arrow_left: mbtcp multiple read response**
 ```javascript
 {
 	"tid": 1,
