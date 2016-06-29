@@ -49,7 +49,8 @@ char * set_modbus_fail_resp_str(unsigned long tid, const char *reason)
 {
     BEGIN(enable_syslog);
 
-    ERR(enable_syslog, reason);
+    ERR(enable_syslog, "fail: %s", reason);
+
     cJSON *resp_root;
     resp_root = cJSON_CreateObject();
     cJSON_AddNumberToObject(resp_root, "tid", tid);
@@ -65,7 +66,7 @@ char * set_modbus_fail_resp_str(unsigned long tid, const char *reason)
 char * set_modbus_fail_resp_str_with_errno(unsigned long tid, mbtcp_handle_s *handle, int errnum)
 {
     BEGIN(enable_syslog);
-    
+
     // [todo][enhance] reconnect proactively?
     // ... if the request interval is very large, 
     // we should try to reconnect automatically
