@@ -72,7 +72,7 @@ typedef char * (*mbtcp_fc)(mbtcp_handle_s *handle, cJSON *req);
  * @param tid Transaction ID.
  * @return Modbus ok response string in JSON format.
  */ 
-char * set_modbus_success_resp_str(double tid);
+char * set_modbus_success_resp_str(long tid);
 
 /**
  * @brief Set modbusd success response string with data (i.e., read func)
@@ -81,7 +81,7 @@ char * set_modbus_success_resp_str(double tid);
  * @param json_arr cJSON pointer to data array
  * @return Modbus ok response string in JSON format.
  */ 
-char * set_modbus_success_resp_str_with_data(double tid, cJSON * json_arr);
+char * set_modbus_success_resp_str_with_data(long tid, cJSON * json_arr);
 
 /**
  * @brief Set modbusd fail response string.
@@ -90,7 +90,7 @@ char * set_modbus_success_resp_str_with_data(double tid, cJSON * json_arr);
  * @param reason Fail reason string.
  * @return Modbus response string in JSON format.
  */
-char * set_modbus_fail_resp_str(double tid, const char *reason);
+char * set_modbus_fail_resp_str(long tid, const char *reason);
 
 /**
  * @brief Set modbusd fail response string with error number.
@@ -100,7 +100,7 @@ char * set_modbus_fail_resp_str(double tid, const char *reason);
  * @param errnum Error number from modbus tcp handle.
  * @return Modbus error response string in JSON format.
  */ 
-char * set_modbus_fail_resp_str_with_errno(double tid, mbtcp_handle_s *handle, int errnum);
+char * set_modbus_fail_resp_str_with_errno(long tid, mbtcp_handle_s *handle, int errnum);
 
 /* ==================================================
  *  modbus tcp (mbtcp)
@@ -167,7 +167,7 @@ char * mbtcp_cmd_hanlder(cJSON *req, mbtcp_fc fc);
  * @param timeout Timeout in usec.
  * @return Modbus response string in JSON format.
  */
-char * mbtcp_set_response_timeout(double tid, long timeout);
+char * mbtcp_set_response_timeout(long tid, long timeout);
 
 /**
  * @brief Get mbtcp response timeout
@@ -175,7 +175,7 @@ char * mbtcp_set_response_timeout(double tid, long timeout);
  * @param tid Transaction ID.
  * @return Modbus response string in JSON format.
  */
-char * mbtcp_get_response_timeout(double tid);
+char * mbtcp_get_response_timeout(long tid);
 
 /**
  * @brief Modbus TCP Read coils.

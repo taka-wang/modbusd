@@ -151,7 +151,7 @@ static char * mbtcp_read_reg_req(int fc, mbtcp_handle_s *handle, cJSON *req)
     BEGIN(enable_syslog);
     int addr = json_get_int(req, "addr");
     int len  = json_get_int(req, "len");
-    double tid  = json_get_int(req, "tid");
+    long tid  = json_get_long(req, "tid");
     if (len > MODBUS_MAX_READ_REGISTERS) // 125
     {
         return set_modbus_fail_resp_str(tid, "Too many registers requested");
@@ -206,9 +206,9 @@ static char * mbtcp_single_write_req(int fc, mbtcp_handle_s *handle, cJSON *req)
 {
     BEGIN(enable_syslog);
     int addr = json_get_int(req, "addr");
-    double tid  = json_get_int(req, "tid");
+    long tid = json_get_long(req, "tid");
     int data = json_get_int(req, "data");
-    int ret = 0;
+    int ret  = 0;
     switch (fc)
     {
         case 5:
