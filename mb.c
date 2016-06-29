@@ -24,6 +24,7 @@ char * set_modbus_success_resp_str(unsigned long tid)
     LOG(enable_syslog, "resp: %s", resp_json_str);
     // clean up
     cJSON_Delete(resp_root);
+    END(enable_syslog);
     return resp_json_str;     
 }
 
@@ -40,28 +41,31 @@ char * set_modbus_success_resp_str_with_data(unsigned long tid, cJSON * json_arr
     LOG(enable_syslog, "resp: %s", resp_json_str);
     // clean up
     cJSON_Delete(resp_root);
+    END(enable_syslog);
     return resp_json_str;
 }
 
 char * set_modbus_fail_resp_str(unsigned long tid, const char *reason)
 {
     BEGIN(enable_syslog);
-    
+
+    ERR(enable_syslog, reason);
     cJSON *resp_root;
     resp_root = cJSON_CreateObject();
     cJSON_AddNumberToObject(resp_root, "tid", tid);
     cJSON_AddStringToObject(resp_root, "status", reason);
     char * resp_json_string = cJSON_PrintUnformatted(resp_root);
     LOG(enable_syslog, "resp: %s", resp_json_string);
-    
     // clean up
     cJSON_Delete(resp_root);
+    END(enable_syslog);
     return resp_json_string;
 }
 
 char * set_modbus_fail_resp_str_with_errno(unsigned long tid, mbtcp_handle_s *handle, int errnum)
 {
     BEGIN(enable_syslog);
+    
     // [todo][enhance] reconnect proactively?
     // ... if the request interval is very large, 
     // we should try to reconnect automatically
@@ -71,5 +75,6 @@ char * set_modbus_fail_resp_str_with_errno(unsigned long tid, mbtcp_handle_s *ha
         handle->connected = false;
     }
     ERR(enable_syslog, "%s:%d", modbus_strerror(errnum), errnum);
+    END(enable_syslog);
     return set_modbus_fail_resp_str(tid, modbus_strerror(errnum));
 }

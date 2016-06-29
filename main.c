@@ -62,6 +62,7 @@ static void save_config(const char *fname, cJSON * config)
     cJSON * mbtcp = cJSON_GetObjectItem(config, "mbtcp");
     json_set_double(mbtcp, "connect_timeout", (double)tcp_conn_timeout_usec);
     json_to_file(fname, config);
+    END(enable_syslog);
 }
 
 /**
@@ -75,7 +76,6 @@ static void save_config(const char *fname, cJSON * config)
 static void send_modbus_zmq_resp(void * pub, char *mode, char *json_resp)
 {
     BEGIN(enable_syslog);
-    
     if (pub != NULL)
     {
         zmsg_t * zmq_resp = zmsg_new();
@@ -89,6 +89,7 @@ static void send_modbus_zmq_resp(void * pub, char *mode, char *json_resp)
     {
         ERR(enable_syslog, "NULL publisher");
     }
+    END(enable_syslog);
 }
 
 // entry
@@ -202,7 +203,6 @@ int main(int argc, char *argv[])
                     }
                     else
                     {
-                        LOG(enable_syslog, "unsupport request");
                         send_modbus_zmq_resp(zmq_pub, mode, 
                             set_modbus_fail_resp_str(tid, "unsupport request"));
                     }
@@ -217,14 +217,12 @@ int main(int argc, char *argv[])
                 // @unkonw mode
                 else
                 {
-                    ERR(enable_syslog, "unsupport mode");
                     send_modbus_zmq_resp(zmq_pub, mode, 
                         set_modbus_fail_resp_str(tid, "unsupport mode"));
                 }
             }
             else
             {
-                ERR(enable_syslog, "Fail to parse command string");
                 send_modbus_zmq_resp(zmq_pub, mode, 
                     set_modbus_fail_resp_str(tid, "Fail to parse command string"));
             }

@@ -375,6 +375,7 @@ void mbtcp_list_handles()
     {
         printf("ip:%s, port:%s\n", handle->key.ip, handle->key.port);
     }
+    END(enable_syslog);
 }
 
 bool mbtcp_do_connect(mbtcp_handle_s *handle, char ** reason)
@@ -462,6 +463,7 @@ char * mbtcp_set_response_timeout(unsigned long tid, long timeout)
     
     // clean up
     cJSON_Delete(resp_root);
+    END(enable_syslog);
     return resp_json_string;
 }
 
@@ -479,6 +481,7 @@ char * mbtcp_get_response_timeout(unsigned long tid)
     
     // clean up
     cJSON_Delete(resp_root);
+    END(enable_syslog);
     return resp_json_string;
 }
 
