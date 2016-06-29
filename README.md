@@ -282,16 +282,16 @@ You can download pre-built docker images according to the following commands.
 ```bash
 # build simulation server image
 docker build -t takawang/modbus-cserver tests/cmbserver/.
-# build zclient image
+# build goclient image
 docker build -t takawang/modbus-goclient tests/goclient/.
 # build modbusd image
 docker build -t takawang/modbusd .
 
 # run modbus server
-docker run -itd --name=slave takawang/cmodbus-server
+docker run -itd --name=slave takawang/modbus-cserver
 # run modbusd
 docker run -v /tmp:/tmp --link slave -it --name=modbusd takawang/modbusd
-# run zclient
+# run goclient
 docker run -v /tmp:/tmp -it --link slave takawang/modbus-goclient
 ```
 
@@ -322,7 +322,7 @@ You can download pre-built docker images according to the following commands.
 ```bash
 # build simulation server image
 docker build -t takawang/arm-modbus-cserver -f tests/cmbserver/Dockerfile.arm .
-# build zclient image
+# build goclient image
 docker build -t takawang/arm-modbus-goclient tests/zclient/Dockerfile.arm .
 # build modbusd image
 docker build -t takawang/arm-modbusd -f Dockerfile.arm .
@@ -331,7 +331,7 @@ docker build -t takawang/arm-modbusd -f Dockerfile.arm .
 docker run -itd --name=slave takawang/arm-modbus-cserver
 # run modbusd
 docker run -v /tmp:/tmp --link slave -it --name=modbusd takawang/arm-modbusd
-# run zclient
+# run goclient
 docker run -v /tmp:/tmp -it --link slave takawang/arm-modbus-goclient
 ```
 

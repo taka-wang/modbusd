@@ -48,7 +48,7 @@ func subscriber() (string, string) {
 // ReadReqBuilder Read register/coil command builder
 func ReadReqBuilder(cmd string, addr uint16, len uint16) psmb.DMbtcpReadReq {
 	return psmb.DMbtcpReadReq{
-		Tid:   rand.Int63n(10000000),
+		Tid:   uint64(rand.Int63n(10000000)),
 		Cmd:   cmd,
 		IP:    hostName,
 		Port:  portNum,
@@ -59,9 +59,9 @@ func ReadReqBuilder(cmd string, addr uint16, len uint16) psmb.DMbtcpReadReq {
 }
 
 // WriteReqBuilder Write single register/coil command builder
-func WriteReqBuilder(cmd string, addr uint16, data int32) psmb.DMbtcpSingleWriteReq {
+func WriteReqBuilder(cmd string, addr uint16, data uint16) psmb.DMbtcpSingleWriteReq {
 	return psmb.DMbtcpSingleWriteReq{
-		Tid:   rand.Int63n(10000000),
+		Tid:   uint64(rand.Int63n(10000000)),
 		Cmd:   cmd,
 		IP:    hostName,
 		Port:  portNum,
@@ -74,7 +74,7 @@ func WriteReqBuilder(cmd string, addr uint16, data int32) psmb.DMbtcpSingleWrite
 // WriteMultiReqBuilder Write multiple register/coil command builder
 func WriteMultiReqBuilder(cmd string, addr uint16, len uint16, data []uint16) psmb.DMbtcpMultipleWriteReq {
 	return psmb.DMbtcpMultipleWriteReq{
-		Tid:   rand.Int63n(10000000),
+		Tid:   uint64(rand.Int63n(10000000)),
 		Cmd:   cmd,
 		IP:    hostName,
 		Port:  portNum,
