@@ -23,6 +23,16 @@ void json_set_int(cJSON *inJson, const char *key, int value)
     cJSON_GetObjectItem(inJson, key)->valueint = value;
 }
 
+double json_get_double(cJSON *inJson, const char *key)
+{
+    return cJSON_GetObjectItem(inJson, key)->valuedouble;
+}
+
+void json_set_double(cJSON *inJson, const char *key, double value)
+{
+    cJSON_GetObjectItem(inJson, key)->valuedouble = value;
+}
+
 int file_to_json(const char *fname, cJSON **outJson)
 {
     FILE *fPtr = fopen(fname,"rb");

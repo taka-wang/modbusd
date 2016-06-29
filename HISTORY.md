@@ -4,6 +4,8 @@
 - [x] rewrite test server in c, test cases in golang
 - [x] update travis ci with new test env
 - [x] implement timeout.set, timeout.get functions
+- [x] implement json_get_double, json_set_double
+- [x] refactor tid data type
 
 ---
 

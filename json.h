@@ -39,6 +39,26 @@ int json_get_int(cJSON *inJson, const char *key);
 void json_set_int(cJSON *inJson, const char *key, int value);
 
 /**
+ * @brief Get int via key from cJSON object
+ *
+ * @param inJson cJSON object.
+ * @param key Json key.
+ * @return Double.
+ */
+double json_get_double(cJSON *inJson, const char *key);
+
+
+/**
+ * @brief Set double via key to cJSON object
+ *
+ * @param inJson cJSON object.
+ * @param key Json key.
+ * @param Double.
+ * @return Void.
+ */
+void json_set_double(cJSON *inJson, const char *key, double value);
+
+/**
  * @brief Load json file to cJSON
  *
  * @param fname File name string.

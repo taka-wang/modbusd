@@ -136,7 +136,7 @@ int main(int argc, char *argv[])
 
             // parse json string
             cJSON *req_json_obj = cJSON_Parse(req_json_string);
-            int tid = json_get_int(req_json_obj, "tid");
+            double tid = json_get_double(req_json_obj, "tid");
             
             if (req_json_obj != NULL)
             {
