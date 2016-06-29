@@ -47,7 +47,7 @@ func subscriber() (string, string) {
 // ReadReqBuilder Read register/coil command builder
 func ReadReqBuilder(cmd string, addr uint16, len uint16) psmb.DMbtcpReadReq {
 	return psmb.DMbtcpReadReq{
-		Tid:   time.Now().UnixNano(),
+		Tid:   time.Now().Unix(),
 		Cmd:   cmd,
 		IP:    hostName,
 		Port:  portNum,
@@ -60,7 +60,7 @@ func ReadReqBuilder(cmd string, addr uint16, len uint16) psmb.DMbtcpReadReq {
 // WriteReqBuilder Write single register/coil command builder
 func WriteReqBuilder(cmd string, addr uint16, data uint16) psmb.DMbtcpSingleWriteReq {
 	return psmb.DMbtcpSingleWriteReq{
-		Tid:   time.Now().UnixNano(),
+		Tid:   time.Now().Unix(),
 		Cmd:   cmd,
 		IP:    hostName,
 		Port:  portNum,
@@ -73,7 +73,7 @@ func WriteReqBuilder(cmd string, addr uint16, data uint16) psmb.DMbtcpSingleWrit
 // WriteMultiReqBuilder Write multiple register/coil command builder
 func WriteMultiReqBuilder(cmd string, addr uint16, len uint16, data []uint16) psmb.DMbtcpMultipleWriteReq {
 	return psmb.DMbtcpMultipleWriteReq{
-		Tid:   time.Now().UnixNano(),
+		Tid:   time.Now().Unix(),
 		Cmd:   cmd,
 		IP:    hostName,
 		Port:  portNum,
@@ -472,7 +472,7 @@ func TestTimeout(t *testing.T) {
 
 	s.Assert("`Set timeout` test", func(log sugar.Log) bool {
 		setReq := psmb.DMbtcpTimeoutReq{
-			Tid:     time.Now().UnixNano(),
+			Tid:     time.Now().Unix(),
 			Cmd:     "timeout.set",
 			Timeout: 5100000,
 		}
@@ -489,7 +489,7 @@ func TestTimeout(t *testing.T) {
 	s.Assert("`Get timeout` test", func(log sugar.Log) bool {
 
 		getReq := psmb.DMbtcpTimeoutReq{
-			Tid: time.Now().UnixNano(),
+			Tid: time.Now().Unix(),
 			Cmd: "timeout.get",
 		}
 		getReqStr, _ := json.Marshal(getReq) // marshal to json string
