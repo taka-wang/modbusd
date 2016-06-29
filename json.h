@@ -19,7 +19,7 @@
 char * json_get_char(cJSON *inJson, const char *key);
 
 /**
- * @brief Get int via key from cJSON object
+ * @brief Get integer value via key from cJSON object
  *
  * @param inJson cJSON object.
  * @param key Json key.
@@ -29,7 +29,7 @@ int json_get_int(cJSON *inJson, const char *key);
 
 
 /**
- * @brief Set int via key to cJSON object
+ * @brief Set integer value via key to existed cJSON object
  *
  * @param inJson cJSON object.
  * @param key Json key.
@@ -39,7 +39,7 @@ int json_get_int(cJSON *inJson, const char *key);
 void json_set_int(cJSON *inJson, const char *key, int value);
 
 /**
- * @brief Get double via key from cJSON object
+ * @brief Get double value via key from cJSON object
  *
  * @param inJson cJSON object.
  * @param key Json key.
@@ -48,7 +48,17 @@ void json_set_int(cJSON *inJson, const char *key, int value);
 double json_get_double(cJSON *inJson, const char *key);
 
 /**
- * @brief Get long via key from cJSON object
+ * @brief Set double value via key to existed cJSON object
+ *
+ * @param inJson cJSON object.
+ * @param key Json key.
+ * @param Double.
+ * @return Void.
+ */
+void json_set_double(cJSON *inJson, const char *key, double value);
+
+/**
+ * @brief Get long value via key from cJSON object
  *
  * @param inJson cJSON object.
  * @param key Json key.
@@ -57,23 +67,13 @@ double json_get_double(cJSON *inJson, const char *key);
 long json_get_long(cJSON *inJson, const char *key);
 
 /**
- * @brief Get unsigned long via key from cJSON object
+ * @brief Get unsigned long value via key from cJSON object
  *
  * @param inJson cJSON object.
  * @param key Json key.
  * @return unsigned long.
  */
 unsigned long json_get_ulong(cJSON *inJson, const char *key);
-
-/**
- * @brief Set double via key to cJSON object
- *
- * @param inJson cJSON object.
- * @param key Json key.
- * @param Double.
- * @return Void.
- */
-void json_set_double(cJSON *inJson, const char *key, double value);
 
 /**
  * @brief Load json file to cJSON
