@@ -478,9 +478,10 @@ func TestTimeout(t *testing.T) {
 			Timeout: 5100000,
 		}
 		setReqStr, _ := json.Marshal(setReq) // marshal to json string
+		log("req: %s", string(setReqStr))
+
 		go publisher(string(setReqStr))
 		_, s2 := subscriber()
-		log("req: %s", string(setReqStr))
 		log("res: %s", s2)
 
 		return true
@@ -493,9 +494,10 @@ func TestTimeout(t *testing.T) {
 			Cmd: "timeout.get",
 		}
 		getReqStr, _ := json.Marshal(getReq) // marshal to json string
+		log("req: %s", string(getReqStr))
+
 		go publisher(string(getReqStr))
 		_, s3 := subscriber()
-		log("req: %s", string(getReqStr))
 		log("res: %s", s3)
 
 		return true
