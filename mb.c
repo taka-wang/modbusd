@@ -12,13 +12,13 @@ extern int enable_syslog; // syslog flag
  *  public functions
 ================================================== */
 
-char * set_modbus_success_resp_str(double tid)
+char * set_modbus_success_resp_str(long tid)
 {
     BEGIN(enable_syslog);
 
     cJSON *resp_root;
     resp_root = cJSON_CreateObject();
-    json_set_double(resp_root, "tid", tid);
+    cJSON_AddNumberToObject(resp_root, "tid", tid);
     cJSON_AddStringToObject(resp_root, "status", "ok");
     char * resp_json_str = cJSON_PrintUnformatted(resp_root);
     LOG(enable_syslog, "resp: %s", resp_json_str);
@@ -27,13 +27,13 @@ char * set_modbus_success_resp_str(double tid)
     return resp_json_str;     
 }
 
-char * set_modbus_success_resp_str_with_data(double tid, cJSON * json_arr)
+char * set_modbus_success_resp_str_with_data(long tid, cJSON * json_arr)
 {
     BEGIN(enable_syslog);
 
     cJSON *resp_root;
     resp_root = cJSON_CreateObject();
-    json_set_double(resp_root, "tid", tid);
+    cJSON_AddNumberToObject(resp_root, "tid", tid);
     cJSON_AddItemToObject(resp_root, "data", json_arr);
     cJSON_AddStringToObject(resp_root, "status", "ok");
     char * resp_json_str = cJSON_PrintUnformatted(resp_root);
@@ -43,13 +43,13 @@ char * set_modbus_success_resp_str_with_data(double tid, cJSON * json_arr)
     return resp_json_str;
 }
 
-char * set_modbus_fail_resp_str(double tid, const char *reason)
+char * set_modbus_fail_resp_str(long tid, const char *reason)
 {
     BEGIN(enable_syslog);
     
     cJSON *resp_root;
     resp_root = cJSON_CreateObject();
-    json_set_double(resp_root, "tid", tid);
+    cJSON_AddNumberToObject(resp_root, "tid", tid);
     cJSON_AddStringToObject(resp_root, "status", reason);
     char * resp_json_string = cJSON_PrintUnformatted(resp_root);
     LOG(enable_syslog, "resp: %s", resp_json_string);
@@ -59,7 +59,7 @@ char * set_modbus_fail_resp_str(double tid, const char *reason)
     return resp_json_string;
 }
 
-char * set_modbus_fail_resp_str_with_errno(double tid, mbtcp_handle_s *handle, int errnum)
+char * set_modbus_fail_resp_str_with_errno(long tid, mbtcp_handle_s *handle, int errnum)
 {
     BEGIN(enable_syslog);
     // [todo][enhance] reconnect proactively?

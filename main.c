@@ -136,7 +136,7 @@ int main(int argc, char *argv[])
 
             // parse json string
             cJSON *req_json_obj = cJSON_Parse(req_json_string);
-            double tid = json_get_double(req_json_obj, "tid");
+            long tid = json_get_long(req_json_obj, "tid");
             
             if (req_json_obj != NULL)
             {
@@ -191,7 +191,7 @@ int main(int argc, char *argv[])
                     }
                     else if (strcmp(cmd, "timeout.set") == 0)
                     {
-                        long int timeout_val = json_get_double(req_json_obj, "timeout");
+                        long timeout_val = json_get_long(req_json_obj, "timeout");
                         send_modbus_zmq_resp(zmq_pub, mode, 
                             mbtcp_set_response_timeout(tid, timeout_val));
                     }

@@ -39,7 +39,7 @@ int json_get_int(cJSON *inJson, const char *key);
 void json_set_int(cJSON *inJson, const char *key, int value);
 
 /**
- * @brief Get int via key from cJSON object
+ * @brief Get double via key from cJSON object
  *
  * @param inJson cJSON object.
  * @param key Json key.
@@ -47,6 +47,14 @@ void json_set_int(cJSON *inJson, const char *key, int value);
  */
 double json_get_double(cJSON *inJson, const char *key);
 
+/**
+ * @brief Get long via key from cJSON object
+ *
+ * @param inJson cJSON object.
+ * @param key Json key.
+ * @return Long.
+ */
+long json_get_long(cJSON *inJson, const char *key);
 
 /**
  * @brief Set double via key to cJSON object

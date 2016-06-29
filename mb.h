@@ -167,7 +167,7 @@ char * mbtcp_cmd_hanlder(cJSON *req, mbtcp_fc fc);
  * @param timeout Timeout in usec.
  * @return Modbus response string in JSON format.
  */
-char * mbtcp_set_response_timeout(double tid, long int timeout);
+char * mbtcp_set_response_timeout(double tid, long timeout);
 
 /**
  * @brief Get mbtcp response timeout

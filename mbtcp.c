@@ -95,7 +95,7 @@ static char * mbtcp_read_bit_req(int fc, mbtcp_handle_s *handle, cJSON *req)
     BEGIN(enable_syslog);
     int addr = json_get_int(req, "addr");
     int len  = json_get_int(req, "len");
-    double tid = json_get_double(req, "tid");
+    long tid = json_get_long(req, "tid");
     if (len > MODBUS_MAX_READ_BITS) // 2000
     {
         return set_modbus_fail_resp_str(tid, "Too many bits requested");
@@ -244,7 +244,7 @@ static char * mbtcp_multi_write_req(int fc, mbtcp_handle_s *handle, cJSON *req)
     BEGIN(enable_syslog);
     int addr = json_get_int(req, "addr");
     int len  = json_get_int(req, "len");
-    double tid  = json_get_int(req, "tid");
+    long tid  = json_get_long(req, "tid");
     
     uint8_t *bits;      // FC15
     uint16_t *regs;     // FC16
@@ -422,7 +422,7 @@ char * mbtcp_cmd_hanlder(cJSON *req, mbtcp_fc fc)
 {
     BEGIN(enable_syslog);
     mbtcp_handle_s *handle = NULL;
-    double tid  = json_get_double(req, "tid");
+    long tid  = json_get_long(req, "tid");
     if (lazy_init_mbtcp_handle(&handle, req))
     {
         char * reason = NULL;
@@ -446,7 +446,7 @@ char * mbtcp_cmd_hanlder(cJSON *req, mbtcp_fc fc)
     }
 }
 
-char * mbtcp_set_response_timeout(double tid, long int timeout)
+char * mbtcp_set_response_timeout(long tid, long timeout)
 {
     BEGIN(enable_syslog);
 
@@ -455,7 +455,7 @@ char * mbtcp_set_response_timeout(double tid, long int timeout)
     
     cJSON *resp_root;
     resp_root = cJSON_CreateObject();
-    json_set_double(resp_root, "tid", tid);
+    cJSON_AddNumberToObject(resp_root, "tid", tid);
     cJSON_AddStringToObject(resp_root, "status", "ok");
     char * resp_json_string = cJSON_PrintUnformatted(resp_root);
     LOG(enable_syslog, "resp: %s", resp_json_string);
@@ -465,14 +465,14 @@ char * mbtcp_set_response_timeout(double tid, long int timeout)
     return resp_json_string;
 }
 
-char * mbtcp_get_response_timeout(double tid)
+char * mbtcp_get_response_timeout(long tid)
 {
     BEGIN(enable_syslog);
 
     cJSON *resp_root;
     resp_root = cJSON_CreateObject();
-    json_set_double(resp_root, "tid", tid);
-    json_set_double(resp_root, "timeout", tcp_conn_timeout_usec);
+    cJSON_AddNumberToObject(resp_root, "tid", tid);
+    cJSON_AddNumberToObject(resp_root, "timeout", tcp_conn_timeout_usec);
     cJSON_AddStringToObject(resp_root, "status", "ok");
     char * resp_json_string = cJSON_PrintUnformatted(resp_root);
     LOG(enable_syslog, "resp: %s", resp_json_string);
