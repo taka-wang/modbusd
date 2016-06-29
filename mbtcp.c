@@ -465,6 +465,26 @@ char * mbtcp_set_response_timeout(int tid, long int timeout)
     return resp_json_string;
 }
 
+char * mbtcp_get_response_timeout(int tid)
+{
+    BEGIN(enable_syslog);
+
+    // set timeout
+    tcp_conn_timeout_usec = timeout;
+    
+    cJSON *resp_root;
+    resp_root = cJSON_CreateObject();
+    cJSON_AddNumberToObject(resp_root, "tid", tid);
+    cJSON_AddNumberToObject(resp_root, "timeout", tcp_conn_timeout_usec);
+    cJSON_AddStringToObject(resp_root, "status", "ok");
+    char * resp_json_string = cJSON_PrintUnformatted(resp_root);
+    LOG(enable_syslog, "resp: %s", resp_json_string);
+    
+    // clean up
+    cJSON_Delete(resp_root);
+    return resp_json_string;
+}
+
 // Read coils.
 char * mbtcp_fc1_req(mbtcp_handle_s *handle, cJSON *req)
 {

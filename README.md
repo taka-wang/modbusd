@@ -132,7 +132,7 @@ Modbus master daemon
 ```javascript
 {
 	"tid": 22222,
-	"cmd": "timeout",
+	"cmd": "timeout.set",
 	"timeout": 210000
 }
 ```
@@ -142,6 +142,23 @@ Modbus master daemon
 {
 	"tid": 22222,
 	"status": "ok"
+}
+```
+
+**:arrow_right: mbtcp get timeout request**
+```javascript
+{
+	"tid": 22222,
+	"cmd": "timeout.get"
+}
+```
+
+**:arrow_left: mbtcp get timeout response**
+```javascript
+{
+	"tid": 22222,
+	"status": "ok",
+	"timeout": 210000
 }
 ```
 

@@ -170,6 +170,14 @@ char * mbtcp_cmd_hanlder(cJSON *req, mbtcp_fc fc);
 char * mbtcp_set_response_timeout(int tid, long int timeout);
 
 /**
+ * @brief Get mbtcp response timeout
+ *
+ * @param tid Transaction ID.
+ * @return Modbus response string in JSON format.
+ */
+char * mbtcp_get_response_timeout(int tid);
+
+/**
  * @brief Modbus TCP Read coils.
  *
  * @param handle Mbtcp handle.

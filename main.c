@@ -189,11 +189,17 @@ int main(int argc, char *argv[])
                         send_modbus_zmq_resp(zmq_pub, mode, 
                             mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc16_req));
                     }
-                    else if (strcmp(cmd, "timeout") == 0)
+                    else if (strcmp(cmd, "timeout.set") == 0)
                     {
                         long int timeout_val = json_get_int(req_json_obj, "timeout");
                         send_modbus_zmq_resp(zmq_pub, mode, 
                             mbtcp_set_response_timeout(tid, timeout_val));
+                    }
+                    else if (strcmp(cmd, "timeout.get") == 0)
+                    {
+                        long int timeout_val = json_get_int(req_json_obj, "timeout");
+                        send_modbus_zmq_resp(zmq_pub, mode, 
+                            mbtcp_get_response_timeout(tid));
                     }
                     else
                     {
