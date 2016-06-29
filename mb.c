@@ -18,7 +18,7 @@ char * set_modbus_success_resp_str(double tid)
 
     cJSON *resp_root;
     resp_root = cJSON_CreateObject();
-    cJSON_AddNumberToObject(resp_root, "tid", tid);
+    json_set_double(resp_root, "tid", tid);
     cJSON_AddStringToObject(resp_root, "status", "ok");
     char * resp_json_str = cJSON_PrintUnformatted(resp_root);
     LOG(enable_syslog, "resp: %s", resp_json_str);
@@ -33,7 +33,7 @@ char * set_modbus_success_resp_str_with_data(double tid, cJSON * json_arr)
 
     cJSON *resp_root;
     resp_root = cJSON_CreateObject();
-    cJSON_AddNumberToObject(resp_root, "tid", tid);
+    json_set_double(resp_root, "tid", tid);
     cJSON_AddItemToObject(resp_root, "data", json_arr);
     cJSON_AddStringToObject(resp_root, "status", "ok");
     char * resp_json_str = cJSON_PrintUnformatted(resp_root);
@@ -49,7 +49,7 @@ char * set_modbus_fail_resp_str(double tid, const char *reason)
     
     cJSON *resp_root;
     resp_root = cJSON_CreateObject();
-    cJSON_AddNumberToObject(resp_root, "tid", tid);
+    json_set_double(resp_root, "tid", tid);
     cJSON_AddStringToObject(resp_root, "status", reason);
     char * resp_json_string = cJSON_PrintUnformatted(resp_root);
     LOG(enable_syslog, "resp: %s", resp_json_string);

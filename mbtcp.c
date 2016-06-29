@@ -422,7 +422,7 @@ char * mbtcp_cmd_hanlder(cJSON *req, mbtcp_fc fc)
 {
     BEGIN(enable_syslog);
     mbtcp_handle_s *handle = NULL;
-    double tid  = json_get_int(req, "tid");
+    double tid  = json_get_double(req, "tid");
     if (lazy_init_mbtcp_handle(&handle, req))
     {
         char * reason = NULL;
@@ -455,7 +455,7 @@ char * mbtcp_set_response_timeout(double tid, long int timeout)
     
     cJSON *resp_root;
     resp_root = cJSON_CreateObject();
-    cJSON_AddNumberToObject(resp_root, "tid", tid);
+    json_set_double(resp_root, "tid", tid);
     cJSON_AddStringToObject(resp_root, "status", "ok");
     char * resp_json_string = cJSON_PrintUnformatted(resp_root);
     LOG(enable_syslog, "resp: %s", resp_json_string);
@@ -471,8 +471,8 @@ char * mbtcp_get_response_timeout(double tid)
 
     cJSON *resp_root;
     resp_root = cJSON_CreateObject();
-    cJSON_AddNumberToObject(resp_root, "tid", tid);
-    cJSON_AddNumberToObject(resp_root, "timeout", tcp_conn_timeout_usec);
+    json_set_double(resp_root, "tid", tid);
+    json_set_double(resp_root, "timeout", tcp_conn_timeout_usec);
     cJSON_AddStringToObject(resp_root, "status", "ok");
     char * resp_json_string = cJSON_PrintUnformatted(resp_root);
     LOG(enable_syslog, "resp: %s", resp_json_string);
