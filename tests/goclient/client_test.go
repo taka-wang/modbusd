@@ -131,7 +131,7 @@ func TestHoldingRegisters(t *testing.T) {
 		log("res: %s", s2)
 
 		// parse resonse
-		var r2 psmb.DMbtcpReadRes
+		var r2 psmb.DMbtcpRes
 		if err := json.Unmarshal([]byte(s2), &r2); err != nil {
 			fmt.Println("json err:", err)
 		}
@@ -173,7 +173,7 @@ func TestHoldingRegisters(t *testing.T) {
 		log("res: %s", s2)
 
 		// parse resonse
-		var r2 psmb.DMbtcpReadRes
+		var r2 psmb.DMbtcpRes
 		if err := json.Unmarshal([]byte(s2), &r2); err != nil {
 			fmt.Println("json err:", err)
 		}
@@ -216,7 +216,7 @@ func TestHoldingRegisters(t *testing.T) {
 			log("res: %s", s2)
 
 			// parse resonse
-			var r2 psmb.DMbtcpReadRes
+			var r2 psmb.DMbtcpRes
 			if err := json.Unmarshal([]byte(s2), &r2); err != nil {
 				fmt.Println("json err:", err)
 			}
@@ -261,7 +261,7 @@ func TestHoldingRegisters(t *testing.T) {
 		log("res: %s", s2)
 
 		// parse resonse
-		var r2 psmb.DMbtcpReadRes
+		var r2 psmb.DMbtcpRes
 		if err := json.Unmarshal([]byte(s2), &r2); err != nil {
 			fmt.Println("json err:", err)
 		}
@@ -327,7 +327,7 @@ func TestCoils(t *testing.T) {
 		log("res: %s", s2)
 
 		// parse resonse
-		var r2 psmb.DMbtcpReadRes
+		var r2 psmb.DMbtcpRes
 		if err := json.Unmarshal([]byte(s2), &r2); err != nil {
 			fmt.Println("json err:", err)
 		}
@@ -370,7 +370,7 @@ func TestCoils(t *testing.T) {
 		log("res: %s", s2)
 
 		// parse resonse
-		var r2 psmb.DMbtcpReadRes
+		var r2 psmb.DMbtcpRes
 		if err := json.Unmarshal([]byte(s2), &r2); err != nil {
 			fmt.Println("json err:", err)
 		}
@@ -417,7 +417,7 @@ func TestDiscretesInput(t *testing.T) {
 		log("res: %s", s2)
 
 		// parse resonse
-		var r2 psmb.DMbtcpReadRes
+		var r2 psmb.DMbtcpRes
 		if err := json.Unmarshal([]byte(s2), &r2); err != nil {
 			fmt.Println("json err:", err)
 		}
@@ -454,7 +454,7 @@ func TestInputRegisters(t *testing.T) {
 		log("res: %s", s2)
 
 		// parse resonse
-		var r2 psmb.DMbtcpReadRes
+		var r2 psmb.DMbtcpRes
 		if err := json.Unmarshal([]byte(s2), &r2); err != nil {
 			fmt.Println("json err:", err)
 		}
@@ -471,7 +471,7 @@ func TestTimeout(t *testing.T) {
 	s := sugar.New(nil)
 
 	s.Assert("`Set timeout` test", func(log sugar.Log) bool {
-		setReq := psmb.DMbtcpTimeoutReq{
+		setReq := psmb.DMbtcpTimeout{
 			Tid:     time.Now().Unix(),
 			Cmd:     "timeout.set",
 			Timeout: 5100000,
@@ -488,7 +488,7 @@ func TestTimeout(t *testing.T) {
 
 	s.Assert("`Get timeout` test", func(log sugar.Log) bool {
 
-		getReq := psmb.DMbtcpTimeoutReq{
+		getReq := psmb.DMbtcpTimeout{
 			Tid: time.Now().Unix(),
 			Cmd: "timeout.get",
 		}
