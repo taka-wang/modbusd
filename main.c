@@ -44,7 +44,7 @@ static void load_config(const char *fname, cJSON ** ptr_config)
         ipc_sub = json_get_char(zmq, "sub");
         ipc_pub = json_get_char(zmq, "pub");
         cJSON * mbtcp = cJSON_GetObjectItem(config_json, "mbtcp");
-        tcp_conn_timeout_usec = json_get_long(mbtcp, "connect_timeout");
+        tcp_conn_timeout_usec = (uint32_t)json_get_long(mbtcp, "connect_timeout");
     }
     END(enable_syslog);
 }

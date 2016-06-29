@@ -57,6 +57,15 @@ double json_get_double(cJSON *inJson, const char *key);
 long json_get_long(cJSON *inJson, const char *key);
 
 /**
+ * @brief Get unsigned long via key from cJSON object
+ *
+ * @param inJson cJSON object.
+ * @param key Json key.
+ * @return unsigned long.
+ */
+unsigned long json_get_ulong(cJSON *inJson, const char *key);
+
+/**
  * @brief Set double via key to cJSON object
  *
  * @param inJson cJSON object.

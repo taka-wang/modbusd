@@ -33,6 +33,11 @@ long json_get_long(cJSON *inJson, const char *key)
     return (long)cJSON_GetObjectItem(inJson, key)->valuedouble;
 }
 
+unsigned long json_get_ulong(cJSON *inJson, const char *key)
+{
+    return (unsigned long)cJSON_GetObjectItem(inJson, key)->valuedouble;
+}
+
 void json_set_double(cJSON *inJson, const char *key, double value)
 {
     cJSON_GetObjectItem(inJson, key)->valuedouble = value;
