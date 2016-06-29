@@ -483,6 +483,11 @@ func TestTimeout(t *testing.T) {
 		log("req: %s", string(setReqStr))
 		log("res: %s", s2)
 
+		return true
+	})
+
+	s.Assert("`Get timeout` test", func(log sugar.Log) bool {
+
 		getReq := psmb.DMbtcpTimeoutReq{
 			Tid: uint64(rand.Int63n(10000000)),
 			Cmd: "timeout.get",
@@ -490,7 +495,7 @@ func TestTimeout(t *testing.T) {
 		getReqStr, _ := json.Marshal(getReq) // marshal to json string
 		go publisher(string(getReqStr))
 		_, s3 := subscriber()
-		log("req: %s", string(setReqStr))
+		log("req: %s", string(getReqStr))
 		log("res: %s", s3)
 
 		return true
