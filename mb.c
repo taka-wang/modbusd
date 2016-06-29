@@ -12,7 +12,7 @@ extern int enable_syslog; // syslog flag
  *  public functions
 ================================================== */
 
-char * set_modbus_success_resp_str(long tid)
+char * set_modbus_success_resp_str(unsigned long tid)
 {
     BEGIN(enable_syslog);
 
@@ -27,7 +27,7 @@ char * set_modbus_success_resp_str(long tid)
     return resp_json_str;     
 }
 
-char * set_modbus_success_resp_str_with_data(long tid, cJSON * json_arr)
+char * set_modbus_success_resp_str_with_data(unsigned long tid, cJSON * json_arr)
 {
     BEGIN(enable_syslog);
 
@@ -43,7 +43,7 @@ char * set_modbus_success_resp_str_with_data(long tid, cJSON * json_arr)
     return resp_json_str;
 }
 
-char * set_modbus_fail_resp_str(long tid, const char *reason)
+char * set_modbus_fail_resp_str(unsigned long tid, const char *reason)
 {
     BEGIN(enable_syslog);
     
@@ -59,7 +59,7 @@ char * set_modbus_fail_resp_str(long tid, const char *reason)
     return resp_json_string;
 }
 
-char * set_modbus_fail_resp_str_with_errno(long tid, mbtcp_handle_s *handle, int errnum)
+char * set_modbus_fail_resp_str_with_errno(unsigned long tid, mbtcp_handle_s *handle, int errnum)
 {
     BEGIN(enable_syslog);
     // [todo][enhance] reconnect proactively?

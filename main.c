@@ -44,7 +44,7 @@ static void load_config(const char *fname, cJSON ** ptr_config)
         ipc_sub = json_get_char(zmq, "sub");
         ipc_pub = json_get_char(zmq, "pub");
         cJSON * mbtcp = cJSON_GetObjectItem(config_json, "mbtcp");
-        tcp_conn_timeout_usec = (uint32_t)json_get_long(mbtcp, "connect_timeout");
+        tcp_conn_timeout_usec = (uint32_t)json_get_ulong(mbtcp, "connect_timeout");
     }
     END(enable_syslog);
 }
@@ -136,7 +136,7 @@ int main(int argc, char *argv[])
 
             // parse json string
             cJSON *req_json_obj = cJSON_Parse(req_json_string);
-            long tid = json_get_long(req_json_obj, "tid");
+            unsigned long tid = json_get_ulong(req_json_obj, "tid");
             
             if (req_json_obj != NULL)
             {
@@ -191,7 +191,7 @@ int main(int argc, char *argv[])
                     }
                     else if (strcmp(cmd, "timeout.set") == 0)
                     {
-                        long timeout_val = json_get_long(req_json_obj, "timeout");
+                        unsigned long timeout_val = json_get_ulong(req_json_obj, "timeout");
                         send_modbus_zmq_resp(zmq_pub, mode, 
                             mbtcp_set_response_timeout(tid, timeout_val));
                     }
