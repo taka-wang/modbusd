@@ -107,9 +107,9 @@ func TestHoldingRegisters(t *testing.T) {
 		// =============== write part ==============
 		writeReq := WriteReqBuilder("fc6", 10, 60000)
 		writeReqStr, _ := json.Marshal(writeReq) // marshal to json string
+		log("req: %s", string(writeReqStr))
 		go publisher(string(writeReqStr))
 		_, s1 := subscriber()
-		log("req: %s", string(writeReqStr))
 		log("res: %s", s1)
 
 		// parse resonse
@@ -125,9 +125,9 @@ func TestHoldingRegisters(t *testing.T) {
 		// =============== read part ==============
 		readReq := ReadReqBuilder("fc3", 10, 1)
 		readReqStr, _ := json.Marshal(readReq) // marshal to json string
+		log("req: %s", string(readReqStr))
 		go publisher(string(readReqStr))
 		_, s2 := subscriber()
-		log("req: %s", string(readReqStr))
 		log("res: %s", s2)
 
 		// parse resonse
