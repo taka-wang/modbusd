@@ -466,3 +466,22 @@ func TestInputRegisters(t *testing.T) {
 		return true
 	})
 }
+
+// timeout
+func TestTimeout(t *testing.T) {
+	s := sugar.New(nil)
+
+	s.Assert("`Set timeout` test", func(log sugar.Log) bool {
+		setReq := psmb.DMbtcpTimeoutReq{
+			Tid:     uint64(rand.Int63n(10000000)),
+			Cmd:     "timeout",
+			Timeout: 5100000,
+		}
+		setReqStr, _ := json.Marshal(setReq) // marshal to json string
+		go publisher(string(setReqStr))
+		_, s2 := subscriber()
+		log("req: %s", string(setReqStr))
+		log("res: %s", s2)
+		return true
+	})
+}
