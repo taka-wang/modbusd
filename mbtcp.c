@@ -469,9 +469,6 @@ char * mbtcp_get_response_timeout(int tid)
 {
     BEGIN(enable_syslog);
 
-    // set timeout
-    tcp_conn_timeout_usec = timeout;
-    
     cJSON *resp_root;
     resp_root = cJSON_CreateObject();
     cJSON_AddNumberToObject(resp_root, "tid", tid);
