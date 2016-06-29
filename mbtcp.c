@@ -95,7 +95,7 @@ static char * mbtcp_read_bit_req(int fc, mbtcp_handle_s *handle, cJSON *req)
     BEGIN(enable_syslog);
     int addr = json_get_int(req, "addr");
     int len  = json_get_int(req, "len");
-    double tid = json_get_double(req_json_obj, "tid");
+    double tid = json_get_double(req, "tid");
     if (len > MODBUS_MAX_READ_BITS) // 2000
     {
         return set_modbus_fail_resp_str(tid, "Too many bits requested");
