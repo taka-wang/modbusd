@@ -317,7 +317,7 @@ bool mbtcp_init_handle(mbtcp_handle_s **ptr_handle, char *ip, char *port)
         
     // set tcp connection timeout
     modbus_set_response_timeout(ctx, 0, tcp_conn_timeout_usec);
-    LOG(enable_syslog, "set response timeout:%l", tcp_conn_timeout_usec);
+    LOG(enable_syslog, "set response timeout:%ld", tcp_conn_timeout_usec);
     
     // @add context to mbtcp hashtable
     mbtcp_handle_s *handle;
