@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/marksalpeter/sugar"
+	"github.com/taka-wang/psmb"
 	zmq "github.com/taka-wang/zmq3"
 )
 
@@ -45,42 +46,42 @@ func subscriber() (string, string) {
 }
 
 // ReadReqBuilder Read register/coil command builder
-func ReadReqBuilder(cmd string, addr uint16, len uint16) MbReadReq {
-	return MbReadReq{
-		hostName,
-		portNum,
-		1,
-		rand.Int63n(10000000),
-		cmd,
-		addr,
-		len,
+func ReadReqBuilder(cmd string, addr uint16, len uint16) psmb.DMbtcpReadReq {
+	return psmb.DMbtcpReadReq{
+		Tid:   rand.Int63n(10000000),
+		Cmd:   cmd,
+		IP:    hostName,
+		Port:  portNum,
+		Slave: 1,
+		Addr:  addr,
+		Len:   len,
 	}
 }
 
 // WriteReqBuilder Write single register/coil command builder
-func WriteReqBuilder(cmd string, addr uint16, data int32) MbSingleWriteReq {
-	return MbSingleWriteReq{
-		hostName,
-		portNum,
-		1,
-		rand.Int63n(10000000), // tid
-		cmd,
-		addr, // addr
-		data,
+func WriteReqBuilder(cmd string, addr uint16, data int32) psmb.DMbtcpSingleWriteReq {
+	return psmb.DMbtcpSingleWriteReq{
+		Tid:   rand.Int63n(10000000),
+		Cmd:   cmd,
+		IP:    hostName,
+		Port:  portNum,
+		Slave: 1,
+		Addr:  addr,
+		Data:  data,
 	}
 }
 
 // WriteMultiReqBuilder Write multiple register/coil command builder
-func WriteMultiReqBuilder(cmd string, addr uint16, len uint16, data []uint16) MbMultipleWriteReq {
-	return MbMultipleWriteReq{
-		hostName,
-		portNum,
-		1,
-		rand.Int63n(10000000), // tid
-		cmd,
-		addr,
-		len,
-		data,
+func WriteMultiReqBuilder(cmd string, addr uint16, len uint16, data []uint16) psmb.DMbtcpMultipleWriteReq {
+	return psmb.DMbtcpMultipleWriteReq{
+		Tid:   rand.Int63n(10000000),
+		Cmd:   cmd,
+		IP:    hostName,
+		Port:  portNum,
+		Slave: 1,
+		Addr:  addr,
+		Len:   len,
+		Data:  data,
 	}
 }
 
@@ -113,7 +114,7 @@ func TestHoldingRegisters(t *testing.T) {
 		log("res: %s", s1)
 
 		// parse resonse
-		var r1 MbRes
+		var r1 psmb.DMbtcpRes
 		if err := json.Unmarshal([]byte(s1), &r1); err != nil {
 			fmt.Println("json err:", err)
 		}
@@ -131,7 +132,7 @@ func TestHoldingRegisters(t *testing.T) {
 		log("res: %s", s2)
 
 		// parse resonse
-		var r2 MbReadRes
+		var r2 psmb.DMbtcpReadRes
 		if err := json.Unmarshal([]byte(s2), &r2); err != nil {
 			fmt.Println("json err:", err)
 		}
@@ -155,7 +156,7 @@ func TestHoldingRegisters(t *testing.T) {
 		log("res: %s", s1)
 
 		// parse resonse
-		var r1 MbRes
+		var r1 psmb.DMbtcpRes
 		if err := json.Unmarshal([]byte(s1), &r1); err != nil {
 			fmt.Println("json err:", err)
 		}
@@ -173,7 +174,7 @@ func TestHoldingRegisters(t *testing.T) {
 		log("res: %s", s2)
 
 		// parse resonse
-		var r2 MbReadRes
+		var r2 psmb.DMbtcpReadRes
 		if err := json.Unmarshal([]byte(s2), &r2); err != nil {
 			fmt.Println("json err:", err)
 		}
@@ -197,7 +198,7 @@ func TestHoldingRegisters(t *testing.T) {
 		log("res: %s", s1)
 
 		// parse resonse
-		var r1 MbRes
+		var r1 psmb.DMbtcpRes
 		if err := json.Unmarshal([]byte(s1), &r1); err != nil {
 			fmt.Println("json err:", err)
 		}
@@ -215,7 +216,7 @@ func TestHoldingRegisters(t *testing.T) {
 		log("res: %s", s2)
 
 		// parse resonse
-		var r2 MbReadRes
+		var r2 psmb.DMbtcpReadRes
 		if err := json.Unmarshal([]byte(s2), &r2); err != nil {
 			fmt.Println("json err:", err)
 		}
@@ -241,7 +242,7 @@ func TestHoldingRegisters(t *testing.T) {
 		log("res: %s", s1)
 
 		// parse resonse
-		var r1 MbRes
+		var r1 psmb.DMbtcpRes
 		if err := json.Unmarshal([]byte(s1), &r1); err != nil {
 			fmt.Println("json err:", err)
 		}
@@ -259,7 +260,7 @@ func TestHoldingRegisters(t *testing.T) {
 		log("res: %s", s2)
 
 		// parse resonse
-		var r2 MbReadRes
+		var r2 psmb.DMbtcpReadRes
 		if err := json.Unmarshal([]byte(s2), &r2); err != nil {
 			fmt.Println("json err:", err)
 		}
@@ -307,7 +308,7 @@ func TestCoils(t *testing.T) {
 		log("res: %s", s1)
 
 		// parse resonse
-		var r1 MbRes
+		var r1 psmb.DMbtcpRes
 		if err := json.Unmarshal([]byte(s1), &r1); err != nil {
 			fmt.Println("json err:", err)
 		}
@@ -325,7 +326,7 @@ func TestCoils(t *testing.T) {
 		log("res: %s", s2)
 
 		// parse resonse
-		var r2 MbReadRes
+		var r2 psmb.DMbtcpReadRes
 		if err := json.Unmarshal([]byte(s2), &r2); err != nil {
 			fmt.Println("json err:", err)
 		}
@@ -350,7 +351,7 @@ func TestCoils(t *testing.T) {
 		log("res: %s", s1)
 
 		// parse resonse
-		var r1 MbRes
+		var r1 psmb.DMbtcpRes
 		if err := json.Unmarshal([]byte(s1), &r1); err != nil {
 			fmt.Println("json err:", err)
 		}
@@ -368,7 +369,7 @@ func TestCoils(t *testing.T) {
 		log("res: %s", s2)
 
 		// parse resonse
-		var r2 MbReadRes
+		var r2 psmb.DMbtcpReadRes
 		if err := json.Unmarshal([]byte(s2), &r2); err != nil {
 			fmt.Println("json err:", err)
 		}
@@ -415,7 +416,7 @@ func TestDiscretesInput(t *testing.T) {
 		log("res: %s", s2)
 
 		// parse resonse
-		var r2 MbReadRes
+		var r2 psmb.DMbtcpReadRes
 		if err := json.Unmarshal([]byte(s2), &r2); err != nil {
 			fmt.Println("json err:", err)
 		}
@@ -452,7 +453,7 @@ func TestInputRegisters(t *testing.T) {
 		log("res: %s", s2)
 
 		// parse resonse
-		var r2 MbReadRes
+		var r2 psmb.DMbtcpReadRes
 		if err := json.Unmarshal([]byte(s2), &r2); err != nil {
 			fmt.Println("json err:", err)
 		}
