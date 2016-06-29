@@ -7,3 +7,4 @@ Integration test
 - `goclient` modbusd test cases in golang
 - `zclient` [Deprecated :x:]  modbusd test cases in node.js
 - `cunit` modbusd unit test
+- `json_test` json unit test
