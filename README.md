@@ -133,7 +133,7 @@ Modbus master daemon
 {
 	"tid": 22222,
 	"cmd": "timeout",
-	"data": 210000
+	"timeout": 210000
 }
 ```
 

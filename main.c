@@ -191,7 +191,7 @@ int main(int argc, char *argv[])
                     }
                     else if (strcmp(cmd, "timeout") == 0)
                     {
-                        long int timeout_val = json_get_int(req_json_obj, "data");
+                        long int timeout_val = json_get_int(req_json_obj, "timeout");
                         send_modbus_zmq_resp(zmq_pub, mode, 
                             mbtcp_set_response_timeout(tid, timeout_val));
                     }
