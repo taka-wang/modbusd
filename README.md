@@ -79,6 +79,9 @@ Modbus master daemon
 ```
 
 ## Modbus TCP command format
+
+**For more details please refer to [psmb](https://github.com/taka-wang/psmb/blob/dev/devdoc/downstream.md).**
+
 **:arrow_right: mbtcp read request**
 ```javascript
 {
