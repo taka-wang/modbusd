@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/marksalpeter/sugar"
-	"github.com/taka-wang/psmb"
+	psmb "github.com/taka-wang/psmb"
 	zmq "github.com/taka-wang/zmq3"
 )
 
