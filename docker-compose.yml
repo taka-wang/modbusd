@@ -10,7 +10,7 @@ modbusd:
     #command: valgrind --leak-check=full --verbose /usr/bin/modbusd /etc/modbusd/modbusd.json
 
 zclient:
-    build: tests/zclient/.
+    build: tests/goclient/.
     volumes_from:
         - modbusd
     links:

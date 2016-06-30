@@ -12,7 +12,7 @@
 #include <errno.h>
 #include <czmq.h>
 
-#include "../mb.h"
+#include "../../mb.h"
 
 int enable_syslog = 1;
 
@@ -62,7 +62,7 @@ void test_json_encode()
     int mdata[4]={116,943,234,38793};
     cJSON *root;
     root = cJSON_CreateObject();
-    cJSON_AddNumberToObject(root, "tid", 22);
+    cJSON_AddNumberToObject(root, "tid", 14672035611234);
     cJSON_AddItemToObject(root,"data", cJSON_CreateIntArray(mdata,4));
     cJSON_AddStringToObject(root, "status", "ok");
     printf("%s\n", cJSON_Print(root));

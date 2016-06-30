@@ -42,6 +42,23 @@ Modbus master daemon
 >|10001-19999          |0000 to 270E (9998)|Read-Only     |Discrete Input Contacts        |10001 | 2            |
 >|30001-39999          |0000 to 270E (9998)|Read-Only     |Analog Input Registers         |30001 | 4            |
 >|40001-49999          |0000 to 270E (9998)|Read-Write    |Analog Output Holding Registers|40001 | 3, 6, 16     |
+
+
+## Command Mapping table
+>| Command      | Number | Description  |
+>|:------------:|--------|--------------|
+>| fc1          |   1    | modbus fc 1  |
+>| fc2          |   2    | modbus fc 2  |
+>| fc3          |   3    | modbus fc 3  |
+>| fc4          |   4    | modbus fc 4  |
+>| fc5          |   5    | modbus fc 5  |
+>| fc6          |   6    | modbus fc 6  |
+>| fc15         |  15    | modbus fc 15 |
+>| fc16         |  16    | modbus fc 16 |
+>| timeout.set  |  50    | set timeout  |
+>| timeout.get  |  51    | get timeout  |
+
+
 ---
 
 ## Configuration format
