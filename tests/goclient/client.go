@@ -1,3 +1,3 @@
-package goclient
+package main
 
 func main() {}
