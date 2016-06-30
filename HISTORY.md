@@ -1,4 +1,4 @@
-# v0.2.2
+# v0.3.0
 
 ## Done
 - [x] rewrite test server in c, test cases in golang
@@ -6,7 +6,7 @@
 - [x] implement timeout.set, timeout.get functions
 - [x] implement json_get_double, json_set_double, json_get_long, json_get_ulong
 - [x] refactor tid data type
-
+- [x] refactor command definition
 
 ---
 
@@ -39,5 +39,4 @@
 ## TODO List
 
 - [ ] enhance reconnect mechanism :clap:
-- [ ] refine field name for psmb
 
