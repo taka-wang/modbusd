@@ -177,9 +177,8 @@ int main(int argc, char *argv[])
                                 mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc16_req));
                             break;
                         case set_timeout:
-                            long timeout_val = json_get_long(req_json_obj, "timeout");
                             send_modbus_zmq_resp(zmq_pub, mode, 
-                                mbtcp_set_response_timeout(tid, timeout_val));
+                                mbtcp_set_response_timeout(tid, json_get_long(req_json_obj, "timeout")));
                             break;
                         case get_timeout:
                             send_modbus_zmq_resp(zmq_pub, mode, 
