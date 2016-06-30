@@ -88,7 +88,7 @@ Modbus master daemon
 	"ip": "192.168.3.2",
 	"port": "502",
 	"slave": 22,
-	"tid": 1,
+	"tid": "12345",
 	"cmd": 1,
 	"addr": 250,
 	"len": 10
@@ -98,7 +98,7 @@ Modbus master daemon
 **:arrow_left: mbtcp single read response**
 ```javascript
 {
-	"tid": 1,
+	"tid": "12345",
 	"data": [1],
 	"status": "ok"
 }
@@ -107,7 +107,7 @@ Modbus master daemon
 **:arrow_left: mbtcp multiple read response**
 ```javascript
 {
-	"tid": 1,
+	"tid": "12345",
 	"data": [1,2,3,4],
 	"status": "ok"
 }
@@ -119,7 +119,7 @@ Modbus master daemon
 	"ip": "192.168.3.2",
 	"port": "502",
 	"slave": 22,
-	"tid": 1,
+	"tid": "12345",
 	"cmd": 6,
 	"addr": 80,
 	"data": 1234
@@ -132,7 +132,7 @@ Modbus master daemon
 	"ip": "192.168.3.2",
 	"port": "502",
 	"slave": 22,
-	"tid": 3333333,
+	"tid": "12345",
 	"cmd": 16,
 	"addr": 80,
 	"len": 4,
@@ -143,7 +143,7 @@ Modbus master daemon
 **:arrow_left: mbtcp write response**
 ```javascript
 {
-	"tid": 3333333,
+	"tid": "12345",
 	"status": "ok"
 }
 ```
@@ -151,7 +151,7 @@ Modbus master daemon
 **:arrow_right: mbtcp set timeout request**
 ```javascript
 {
-	"tid": 22222,
+	"tid": "12345",
 	"cmd": 50,
 	"timeout": 210000
 }
@@ -160,7 +160,7 @@ Modbus master daemon
 **:arrow_left: mbtcp set timeout response**
 ```javascript
 {
-	"tid": 22222,
+	"tid": "12345",
 	"status": "ok"
 }
 ```
@@ -168,7 +168,7 @@ Modbus master daemon
 **:arrow_right: mbtcp get timeout request**
 ```javascript
 {
-	"tid": 22222,
+	"tid": "12345",
 	"cmd": 51
 }
 ```
@@ -176,7 +176,7 @@ Modbus master daemon
 **:arrow_left: mbtcp get timeout response**
 ```javascript
 {
-	"tid": 22222,
+	"tid": "12345",
 	"status": "ok",
 	"timeout": 210000
 }
@@ -185,7 +185,7 @@ Modbus master daemon
 **:arrow_left: mbtcp fail response**
 ```javascript
 {
-	"tid": 1,
+	"tid": "12345",
 	"status": "fail reason"
 }
 ```

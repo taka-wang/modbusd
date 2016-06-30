@@ -35,3 +35,5 @@ doc/html/
 
 # Debug files
 *.dSYM/
+
+tests/json_test/build

@@ -33,7 +33,7 @@ void test_json_decode()
     "    \"cmd\": \"fc5\",\n"
     "    \"addr\": 250,\n"
     "    \"len\": 10,\n"
-    "    \"data\": [1,2,3,4]\n"
+    "    \"data\": [1257894123456789434,2,3,4]\n"
     "}";
     cJSON *json = cJSON_Parse(jstr);
     if (json)
@@ -62,7 +62,9 @@ void test_json_encode()
     int mdata[4]={116,943,234,38793};
     cJSON *root;
     root = cJSON_CreateObject();
-    cJSON_AddNumberToObject(root, "tid", 14672035611234);
+    cJSON_AddNumberToObject(root, "ulong", 1257894000000000234);
+    cJSON_AddNumberToObject(root, "int64", 9223372036854775807);
+    cJSON_AddNumberToObject(root, "tid2",  94672035611234);
     cJSON_AddItemToObject(root,"data", cJSON_CreateIntArray(mdata,4));
     cJSON_AddStringToObject(root, "status", "ok");
     printf("%s\n", cJSON_Print(root));

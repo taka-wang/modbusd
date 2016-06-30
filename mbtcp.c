@@ -95,7 +95,7 @@ static char * mbtcp_read_bit_req(int fc, mbtcp_handle_s *handle, cJSON *req)
     BEGIN(enable_syslog);
     int addr = json_get_int(req, "addr");
     int len  = json_get_int(req, "len");
-    unsigned long tid = json_get_ulong(req, "tid");
+    char * tid = json_get_char(req, "tid");
     if (len > MODBUS_MAX_READ_BITS) // 2000
     {
         return set_modbus_fail_resp_str(tid, "Too many bits requested");
@@ -151,7 +151,7 @@ static char * mbtcp_read_reg_req(int fc, mbtcp_handle_s *handle, cJSON *req)
     BEGIN(enable_syslog);
     int addr = json_get_int(req, "addr");
     int len  = json_get_int(req, "len");
-    unsigned long tid  = json_get_ulong(req, "tid");
+    char * tid = json_get_char(req, "tid");
     if (len > MODBUS_MAX_READ_REGISTERS) // 125
     {
         return set_modbus_fail_resp_str(tid, "Too many registers requested");
@@ -206,7 +206,7 @@ static char * mbtcp_single_write_req(int fc, mbtcp_handle_s *handle, cJSON *req)
 {
     BEGIN(enable_syslog);
     int addr = json_get_int(req, "addr");
-    unsigned long tid = json_get_ulong(req, "tid");
+    char * tid = json_get_char(req, "tid");
     int data = json_get_int(req, "data");
     int ret  = 0;
     switch (fc)
@@ -244,7 +244,7 @@ static char * mbtcp_multi_write_req(int fc, mbtcp_handle_s *handle, cJSON *req)
     BEGIN(enable_syslog);
     int addr = json_get_int(req, "addr");
     int len  = json_get_int(req, "len");
-    unsigned long tid  = json_get_ulong(req, "tid");
+    char * tid = json_get_char(req, "tid");
     
     uint8_t *bits;      // FC15
     uint16_t *regs;     // FC16
@@ -423,7 +423,7 @@ char * mbtcp_cmd_hanlder(cJSON *req, mbtcp_fc fc)
 {
     BEGIN(enable_syslog);
     mbtcp_handle_s *handle = NULL;
-    unsigned long tid  = json_get_ulong(req, "tid");
+    char * tid = json_get_char(req, "tid");
     if (lazy_init_mbtcp_handle(&handle, req))
     {
         char * reason = NULL;
@@ -447,7 +447,7 @@ char * mbtcp_cmd_hanlder(cJSON *req, mbtcp_fc fc)
     }
 }
 
-char * mbtcp_set_response_timeout(unsigned long tid, long timeout)
+char * mbtcp_set_response_timeout(char * tid, long timeout)
 {
     BEGIN(enable_syslog);
 
@@ -456,7 +456,7 @@ char * mbtcp_set_response_timeout(unsigned long tid, long timeout)
     
     cJSON *resp_root;
     resp_root = cJSON_CreateObject();
-    cJSON_AddNumberToObject(resp_root, "tid", tid);
+    cJSON_AddStringToObject(resp_root, "tid", tid);
     cJSON_AddStringToObject(resp_root, "status", "ok");
     char * resp_json_string = cJSON_PrintUnformatted(resp_root);
     LOG(enable_syslog, "resp: %s", resp_json_string);
@@ -467,13 +467,13 @@ char * mbtcp_set_response_timeout(unsigned long tid, long timeout)
     return resp_json_string;
 }
 
-char * mbtcp_get_response_timeout(unsigned long tid)
+char * mbtcp_get_response_timeout(char * tid)
 {
     BEGIN(enable_syslog);
 
     cJSON *resp_root;
     resp_root = cJSON_CreateObject();
-    cJSON_AddNumberToObject(resp_root, "tid", tid);
+    cJSON_AddStringToObject(resp_root, "tid", tid);
     cJSON_AddNumberToObject(resp_root, "timeout", tcp_conn_timeout_usec);
     cJSON_AddStringToObject(resp_root, "status", "ok");
     char * resp_json_string = cJSON_PrintUnformatted(resp_root);

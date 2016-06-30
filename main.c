@@ -131,7 +131,7 @@ int main(int argc, char *argv[])
 
             // parse json string
             cJSON *req_json_obj = cJSON_Parse(req_json_string);
-            unsigned long tid = json_get_ulong(req_json_obj, "tid");
+            char * tid = json_get_char(req_json_obj, "tid");
             
             if (req_json_obj != NULL)
             {

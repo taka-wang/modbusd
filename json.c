@@ -38,11 +38,6 @@ long json_get_long(cJSON *inJson, const char *key)
     return (long)cJSON_GetObjectItem(inJson, key)->valuedouble;
 }
 
-unsigned long json_get_ulong(cJSON *inJson, const char *key)
-{
-    return (unsigned long)cJSON_GetObjectItem(inJson, key)->valuedouble;
-}
-
 int file_to_json(const char *fname, cJSON **outJson)
 {
     FILE *fPtr = fopen(fname,"rb");

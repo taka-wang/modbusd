@@ -67,15 +67,6 @@ void json_set_double(cJSON *inJson, const char *key, double value);
 long json_get_long(cJSON *inJson, const char *key);
 
 /**
- * @brief Get unsigned long value via key from cJSON object
- *
- * @param inJson cJSON object.
- * @param key Json key.
- * @return unsigned long.
- */
-unsigned long json_get_ulong(cJSON *inJson, const char *key);
-
-/**
  * @brief Load json file to cJSON
  *
  * @param fname File name string.
