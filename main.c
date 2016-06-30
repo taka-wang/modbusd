@@ -82,8 +82,7 @@ static void send_modbus_zmq_resp(void * pub, char *mode, char *json_resp)
         zmsg_addstr(zmq_resp, mode);      // frame 1: mode
         zmsg_addstr(zmq_resp, json_resp); // frame 2: resp
         zmsg_send(&zmq_resp, pub);        // send zmq msg
-        // cleanup zmsg
-        zmsg_destroy(&zmq_resp);
+        zmsg_destroy(&zmq_resp);          // cleanup zmsg
     }
     else
     {
@@ -102,17 +101,12 @@ int main(int argc, char *argv[])
     load_config(config_fname, &config_json);
 
     // @setup zmq
-    zctx_t *zmq_context = zctx_new ();
-    // init zmq subscriber: zmq_sub
-    void *zmq_sub = zsocket_new (zmq_context, ZMQ_SUB);
-    // bind zmq subscriber
-    zsocket_bind (zmq_sub, ipc_sub);
-    // set zmq subscriber filter
-    zsocket_set_subscribe (zmq_sub, ""); 
-    // init zmq publisher: zmq_pub
-    void *zmq_pub = zsocket_new (zmq_context, ZMQ_PUB);
-    // bind zmq publisher
-    zsocket_bind (zmq_pub, ipc_pub);
+    zctx_t *zmq_context = zctx_new ();                  // init zmq context
+    void *zmq_sub = zsocket_new (zmq_context, ZMQ_SUB); // init zmq subscriber: zmq_sub
+    zsocket_bind (zmq_sub, ipc_sub);                    // bind zmq subscriber
+    zsocket_set_subscribe (zmq_sub, "");                // set zmq subscriber filter
+    void *zmq_pub = zsocket_new (zmq_context, ZMQ_PUB); // init zmq publisher: zmq_pub
+    zsocket_bind (zmq_pub, ipc_pub);                    // bind zmq publisher
     
     LOG(enable_syslog, "start request listener");
     while (!zctx_interrupted) // handle ctrl+c
@@ -141,76 +135,66 @@ int main(int argc, char *argv[])
             
             if (req_json_obj != NULL)
             {
-                char *cmd = json_get_char(req_json_obj, "cmd");
+                cmd_t cmd = json_get_int(req_json_obj, "cmd");
                 
                 // @handle modbus tcp requests
                 if (strcmp(mode, "tcp") == 0)
                 {
-                    LOG(enable_syslog, "@@@req: %s", cmd);
-                    
-                    // c doesn't support string switch case,
-                    // but if-else style should be okay for small set.
-                    if (strcmp(cmd, "fc1") == 0)
+                    LOG(enable_syslog, "@@@req: %d", cmd);
+
+                    switch (cmd)
                     {
-                        send_modbus_zmq_resp(zmq_pub, mode, 
-                            mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc1_req));
-                    }
-                    else if (strcmp(cmd, "fc2") == 0)
-                    {
-                        send_modbus_zmq_resp(zmq_pub, mode, 
-                            mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc2_req));
-                    }
-                    else if (strcmp(cmd, "fc3") == 0)
-                    {
-                        send_modbus_zmq_resp(zmq_pub, mode, 
-                            mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc3_req));
-                    }
-                    else if (strcmp(cmd, "fc4") == 0)
-                    {
-                        send_modbus_zmq_resp(zmq_pub, mode, 
-                            mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc4_req));
-                    }
-                    else if (strcmp(cmd, "fc5") == 0)
-                    {
-                        send_modbus_zmq_resp(zmq_pub, mode, 
-                            mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc5_req));
-                    }
-                    else if (strcmp(cmd, "fc6") == 0)
-                    {
-                        send_modbus_zmq_resp(zmq_pub, mode, 
-                            mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc6_req));
-                    }
-                    else if (strcmp(cmd, "fc15") == 0)
-                    {
-                        send_modbus_zmq_resp(zmq_pub, mode, 
-                            mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc15_req));
-                    }
-                    else if (strcmp(cmd, "fc16") == 0)
-                    {
-                        send_modbus_zmq_resp(zmq_pub, mode, 
-                            mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc16_req));
-                    }
-                    else if (strcmp(cmd, "timeout.set") == 0)
-                    {
-                        long timeout_val = json_get_long(req_json_obj, "timeout");
-                        send_modbus_zmq_resp(zmq_pub, mode, 
-                            mbtcp_set_response_timeout(tid, timeout_val));
-                    }
-                    else if (strcmp(cmd, "timeout.get") == 0)
-                    {
-                        send_modbus_zmq_resp(zmq_pub, mode, 
-                            mbtcp_get_response_timeout(tid));
-                    }
-                    else
-                    {
-                        send_modbus_zmq_resp(zmq_pub, mode, 
-                            set_modbus_fail_resp_str(tid, "unsupport request"));
+                        case fc1:
+                            send_modbus_zmq_resp(zmq_pub, mode, 
+                                mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc1_req));
+                            break;
+                        case fc2:
+                            send_modbus_zmq_resp(zmq_pub, mode, 
+                                mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc2_req));
+                            break;
+                        case fc3:
+                            send_modbus_zmq_resp(zmq_pub, mode, 
+                                mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc3_req));
+                            break;
+                        case fc4:
+                            send_modbus_zmq_resp(zmq_pub, mode, 
+                                mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc4_req));
+                            break;
+                        case fc5:
+                            send_modbus_zmq_resp(zmq_pub, mode, 
+                                mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc5_req));
+                            break;
+                        case fc6:
+                            send_modbus_zmq_resp(zmq_pub, mode, 
+                                mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc6_req));
+                            break;
+                        case fc15:
+                            send_modbus_zmq_resp(zmq_pub, mode, 
+                                mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc15_req));
+                            break;
+                        case fc16:
+                            send_modbus_zmq_resp(zmq_pub, mode, 
+                                mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc16_req));
+                            break;
+                        case set_timeout:
+                            long timeout_val = json_get_long(req_json_obj, "timeout");
+                            send_modbus_zmq_resp(zmq_pub, mode, 
+                                mbtcp_set_response_timeout(tid, timeout_val));
+                            break;
+                        case get_timeout:
+                            send_modbus_zmq_resp(zmq_pub, mode, 
+                                mbtcp_get_response_timeout(tid));
+                            break;
+                        default: 
+                            send_modbus_zmq_resp(zmq_pub, mode, 
+                                set_modbus_fail_resp_str(tid, "unsupport request"));
+                            break;
                     }
                 }
                 // @handle modbus rtu requests
                 else if (strcmp(mode, "rtu") == 0)
                 {
-                    LOG(enable_syslog, "rtu:%s", cmd);
+                    LOG(enable_syslog, "rtu:%d", cmd);
                     // [TODO]
                     // send error response
                 }
@@ -240,6 +224,5 @@ int main(int argc, char *argv[])
     // @resource clean up
     LOG(enable_syslog, "clean up");
     zctx_destroy(&zmq_context);
-    // save config
     save_config(config_fname, config_json); 
 }

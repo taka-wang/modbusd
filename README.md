@@ -44,7 +44,7 @@ Modbus master daemon
 >|40001-49999          |0000 to 270E (9998)|Read-Write    |Analog Output Holding Registers|40001 | 3, 6, 16     |
 
 
-## Command Mapping table
+## Command mapping table
 >| Command      | Number | Description  |
 >|:------------:|--------|--------------|
 >| fc1          |   1    | modbus fc 1  |
@@ -86,7 +86,7 @@ Modbus master daemon
 	"port": "502",
 	"slave": 22,
 	"tid": 1,
-	"cmd": "fc1",
+	"cmd": 1,
 	"addr": 250,
 	"len": 10
 }
@@ -117,7 +117,7 @@ Modbus master daemon
 	"port": "502",
 	"slave": 22,
 	"tid": 1,
-	"cmd": "fc6",
+	"cmd": 6,
 	"addr": 80,
 	"data": 1234
 }
@@ -130,7 +130,7 @@ Modbus master daemon
 	"port": "502",
 	"slave": 22,
 	"tid": 3333333,
-	"cmd": "fc16",
+	"cmd": 16,
 	"addr": 80,
 	"len": 4,
 	"data": [1,2,3,4]
@@ -149,7 +149,7 @@ Modbus master daemon
 ```javascript
 {
 	"tid": 22222,
-	"cmd": "timeout.set",
+	"cmd": 50,
 	"timeout": 210000
 }
 ```
@@ -166,7 +166,7 @@ Modbus master daemon
 ```javascript
 {
 	"tid": 22222,
-	"cmd": "timeout.get"
+	"cmd": 51
 }
 ```
 
