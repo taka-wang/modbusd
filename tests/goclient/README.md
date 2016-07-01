@@ -2,6 +2,10 @@
 
 Modbusd test cases in golang
 
+## Types
+psmb [types](https://github.com/taka-wang/psmb/blob/dev/types.go) definition.
+
+
 ## Docker
 
 ### From the scratch
