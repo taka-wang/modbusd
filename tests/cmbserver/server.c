@@ -28,6 +28,7 @@ int main(int argc, char *argv[])
     if (argc > 1) {
         port = atoi(argv[1]);
     }
+    
     int s = -1;
     modbus_t *ctx;
     modbus_mapping_t *mb_mapping;
