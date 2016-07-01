@@ -271,8 +271,9 @@ func TestHoldingRegisters(t *testing.T) {
 		}
 
 		var index uint16
+		data := writeReq.Data.([]uint16)
 		for index = 0; index < readReq.Len; index++ {
-			if writeReq.Data[index] != r2.Data[index] {
+			if data[index] != r2.Data[index] {
 				return false
 			}
 		}
@@ -380,8 +381,9 @@ func TestCoils(t *testing.T) {
 		}
 
 		var index uint16
+		data := writeReq.Data.([]uint16)
 		for index = 0; index < readReq.Len; index++ {
-			if writeReq.Data[index] != r2.Data[index] {
+			if data[index] != r2.Data[index] {
 				return false
 			}
 		}
