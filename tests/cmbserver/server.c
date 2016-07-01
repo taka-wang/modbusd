@@ -15,15 +15,16 @@ uint16_t *tab_registers;        // 4x
 
 
 #include <stdio.h>
-#include <unistd.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <errno.h>
 #include <modbus.h>
 
 int main(int argc, char *argv[])
 {
     printf("init server\n");
-     char * ip = NULL;
+    char * ip = NULL;
+    int port = 502;
     switch (argc)
     {
         case 1:
@@ -31,8 +32,12 @@ int main(int argc, char *argv[])
         case 2:
             ip = argv[1];
             break;
+        case 3:
+            ip = argv[1];
+            port = atoi(argv[2]);
+            break;        
         default:
-            fprintf(stderr, "Usage: %s port ip_addr", argv[0]);
+            fprintf(stderr, "Usage: %s [ip address] [port]", argv[0]);
             return -1;
     }
 
@@ -40,7 +45,7 @@ int main(int argc, char *argv[])
     modbus_t *ctx;
     modbus_mapping_t *mb_mapping;
 
-    ctx = modbus_new_tcp(ip, 502);
+    ctx = modbus_new_tcp(ip, port);
     modbus_set_debug(ctx, TRUE);
 
     // allocate memory map
