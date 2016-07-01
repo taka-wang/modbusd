@@ -48,7 +48,7 @@ Modbus master daemon
 ### Command mapping table
 
 >| Command      | Number | Description  |
->|:------------:|--------|--------------|
+>|:------------:|-------:|:-------------|
 >| fc1          |   1    | modbus fc 1  |
 >| fc2          |   2    | modbus fc 2  |
 >| fc3          |   3    | modbus fc 3  |
