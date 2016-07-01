@@ -72,7 +72,7 @@ func WriteReqBuilder(cmd int, addr uint16, data uint16) DMbtcpSingleWriteReq {
 
 // WriteMultiReqBuilder Write multiple register/coil command builder
 func WriteMultiReqBuilder(cmd int, addr uint16, len uint16, data []uint16) DMbtcpMultipleWriteReq {
-	return DMbtcpMultipleWriteReq{
+	return DMbtcpWriteReq{
 		Tid:   strconv.FormatInt(time.Now().UTC().UnixNano(), 10),
 		Cmd:   cmd,
 		IP:    hostName,
