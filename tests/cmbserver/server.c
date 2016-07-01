@@ -25,16 +25,9 @@ int main(int argc, char *argv[])
     printf("init server\n");
     char * ip = "127.0.0.1";
     int port = 502;
-    switch (argc)
-    {
-        case 1:
-            ip = "127.0.0.1";
-        case 2:
-            ip = "127.0.0.1";
-            port = atoi(argv[1]);
-            break;
+    if (argc > 1) {
+        port = atoi(argv[1]);
     }
-
     int s = -1;
     modbus_t *ctx;
     modbus_mapping_t *mb_mapping;
