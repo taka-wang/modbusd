@@ -35,10 +35,7 @@ int main(int argc, char *argv[])
         case 3:
             ip = argv[1];
             port = atoi(argv[2]);
-            break;        
-        default:
-            fprintf(stderr, "Usage: %s [ip address] [port]", argv[0]);
-            return -1;
+            break;
     }
 
     int s = -1;
@@ -63,7 +60,9 @@ int main(int argc, char *argv[])
     const uint16_t UT_INPUT_BITS_NB = 0x16;
 
     // 1x; little endian set
-    modbus_set_bits_from_bytes(mb_mapping->tab_input_bits, 0, UT_INPUT_BITS_NB,
+    modbus_set_bits_from_bytes(mb_mapping->tab_input_bits, 
+                               0, 
+                               UT_INPUT_BITS_NB,
                                UT_INPUT_BITS_TAB);
 
     const uint16_t UT_INPUT_REGISTERS_NB = 0x3;
