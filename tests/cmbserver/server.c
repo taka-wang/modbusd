@@ -30,11 +30,8 @@ int main(int argc, char *argv[])
         case 1:
             ip = "127.0.0.1";
         case 2:
-            ip = argv[1];
-            break;
-        case 3:
-            ip = argv[1];
-            port = atoi(argv[2]);
+            ip = "127.0.0.1";
+            port = atoi(argv[1]);
             break;
     }
 
