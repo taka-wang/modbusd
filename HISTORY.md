@@ -1,3 +1,9 @@
+# v0.4.0
+
+## Done
+- [x] rewrite goclient according to psmb's types
+- [x] refactor response zframe definition: [cmd, json]
+
 # v0.3.0
 
 ## Done

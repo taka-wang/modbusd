@@ -73,13 +73,13 @@ static void save_config(const char *fname, cJSON * config)
  * @param json_resp Response string in JSON format.
  * @return Void.
  */
-static void send_modbus_zmq_resp(void * pub, char *mode, char *json_resp)
+static void send_modbus_zmq_resp(void * pub, cmd_t cmd, char *json_resp)
 {
     BEGIN(enable_syslog);
     if (pub != NULL)
     {
         zmsg_t * zmq_resp = zmsg_new();
-        zmsg_addstr(zmq_resp, mode);      // frame 1: mode
+        zmsg_addstrf(zmq_resp, "%d", cmd);      // frame 1: mode
         zmsg_addstr(zmq_resp, json_resp); // frame 2: resp
         zmsg_send(&zmq_resp, pub);        // send zmq msg
         zmsg_destroy(&zmq_resp);          // cleanup zmsg
@@ -145,47 +145,47 @@ int main(int argc, char *argv[])
                     switch (cmd)
                     {
                         case fc1:
-                            send_modbus_zmq_resp(zmq_pub, mode, 
+                            send_modbus_zmq_resp(zmq_pub, cmd, 
                                 mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc1_req));
                             break;
                         case fc2:
-                            send_modbus_zmq_resp(zmq_pub, mode, 
+                            send_modbus_zmq_resp(zmq_pub, cmd, 
                                 mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc2_req));
                             break;
                         case fc3:
-                            send_modbus_zmq_resp(zmq_pub, mode, 
+                            send_modbus_zmq_resp(zmq_pub, cmd, 
                                 mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc3_req));
                             break;
                         case fc4:
-                            send_modbus_zmq_resp(zmq_pub, mode, 
+                            send_modbus_zmq_resp(zmq_pub, cmd, 
                                 mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc4_req));
                             break;
                         case fc5:
-                            send_modbus_zmq_resp(zmq_pub, mode, 
+                            send_modbus_zmq_resp(zmq_pub, cmd, 
                                 mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc5_req));
                             break;
                         case fc6:
-                            send_modbus_zmq_resp(zmq_pub, mode, 
+                            send_modbus_zmq_resp(zmq_pub, cmd, 
                                 mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc6_req));
                             break;
                         case fc15:
-                            send_modbus_zmq_resp(zmq_pub, mode, 
+                            send_modbus_zmq_resp(zmq_pub, cmd, 
                                 mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc15_req));
                             break;
                         case fc16:
-                            send_modbus_zmq_resp(zmq_pub, mode, 
+                            send_modbus_zmq_resp(zmq_pub, cmd, 
                                 mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc16_req));
                             break;
                         case set_timeout:
-                            send_modbus_zmq_resp(zmq_pub, mode, 
+                            send_modbus_zmq_resp(zmq_pub, cmd, 
                                 mbtcp_set_response_timeout(tid, json_get_long(req_json_obj, "timeout")));
                             break;
                         case get_timeout:
-                            send_modbus_zmq_resp(zmq_pub, mode, 
+                            send_modbus_zmq_resp(zmq_pub, cmd, 
                                 mbtcp_get_response_timeout(tid));
                             break;
                         default: 
-                            send_modbus_zmq_resp(zmq_pub, mode, 
+                            send_modbus_zmq_resp(zmq_pub, cmd, 
                                 set_modbus_fail_resp_str(tid, "unsupport request"));
                             break;
                     }
@@ -200,13 +200,13 @@ int main(int argc, char *argv[])
                 // @unkonw mode
                 else
                 {
-                    send_modbus_zmq_resp(zmq_pub, mode, 
+                    send_modbus_zmq_resp(zmq_pub, -1, 
                         set_modbus_fail_resp_str(tid, "unsupport mode"));
                 }
             }
             else
             {
-                send_modbus_zmq_resp(zmq_pub, mode, 
+                send_modbus_zmq_resp(zmq_pub, -2, 
                     set_modbus_fail_resp_str(tid, "Fail to parse command string"));
             }
             
