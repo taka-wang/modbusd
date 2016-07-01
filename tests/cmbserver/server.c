@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
     }
 
 
-    printf("start listening at: %s, port:%d\n", ip, 502);
+    printf("start listening at: %s, port:%d\n", ip, port);
 
     s = modbus_tcp_listen(ctx, 1); // only one connection allow
     modbus_tcp_accept(ctx, &s);
