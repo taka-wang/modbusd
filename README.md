@@ -1,4 +1,4 @@
-# modbusd 
+# modbusd
 
 [![Build Status](https://travis-ci.org/taka-wang/modbusd.svg?branch=dev)](https://travis-ci.org/taka-wang/modbusd) 
 [![GitHub tag](https://img.shields.io/github/tag/taka-wang/modbusd.svg)](https://github.com/taka-wang/modbusd/tags) 
@@ -9,7 +9,7 @@ Modbus master daemon
 - Support doxygen style comments.
 - ZMQ is a high-level message library, you can plug in your own socket implemetations without losing the core functionalities.
 
-# TOC
+## TOC
 
 - [Design](#design)
 - [Setup](#setup)
@@ -19,9 +19,10 @@ Modbus master daemon
 ---
 
 <a name="design"></a>
-# Design
 
-## Implemented libmodbus function codes
+## Design
+
+### Implemented libmodbus function codes
 
 >| FC    | Description            | #Len    | API                                                                                                                                                 |
 >|:-----:|------------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------|
@@ -34,7 +35,7 @@ Modbus master daemon
 >| 0x0F  | write multi coils      |  1968   |[int modbus_write_bits(modbus_t *ctx, int addr, int nb, const uint8_t *src)](http://libmodbus.org/docs/v3.1.4/modbus_write_bits.html)                |
 >| 0x10  | write multi registers  |  125    |[int modbus_write_registers(modbus_t *ctx, int addr, int nb, const uint16_t *src)](http://libmodbus.org/docs/v3.1.4/modbus_write_registers.html)     |
 
-## Coil/register number and address table
+### Coil/register number and address table
 
 >|Coil/Register numbers|data address       |type          |table name                     |offset| function code|
 >|:--------------------|:------------------|:-------------|:------------------------------|:-----|:-------------|
@@ -44,7 +45,8 @@ Modbus master daemon
 >|40001-49999          |0000 to 270E (9998)|Read-Write    |Analog Output Holding Registers|40001 | 3, 6, 16     |
 
 
-## Command mapping table
+### Command mapping table
+
 >| Command      | Number | Description  |
 >|:------------:|--------|--------------|
 >| fc1          |   1    | modbus fc 1  |
@@ -61,8 +63,10 @@ Modbus master daemon
 
 ---
 
-## Configuration format
-**Configuration file**
+### Configuration format
+
+#### Configuration file
+
 ```javascript
 {
     "syslog": 1,
@@ -78,119 +82,11 @@ Modbus master daemon
 }
 ```
 
-## Modbus TCP command format
+### Modbus TCP command format
 
-**For more details please refer to [psmb](https://github.com/taka-wang/psmb/blob/dev/devdoc/downstream.md).**
+**:bangbang:Please refer to [psmb](https://github.com/taka-wang/psmb/blob/dev/devdoc/downstream.md).**
 
-**:arrow_right: mbtcp read request**
-```javascript
-{
-	"ip": "192.168.3.2",
-	"port": "502",
-	"slave": 22,
-	"tid": "12345",
-	"cmd": 1,
-	"addr": 250,
-	"len": 10
-}
-```
-
-**:arrow_left: mbtcp single read response**
-```javascript
-{
-	"tid": "12345",
-	"data": [1],
-	"status": "ok"
-}
-```
-
-**:arrow_left: mbtcp multiple read response**
-```javascript
-{
-	"tid": "12345",
-	"data": [1,2,3,4],
-	"status": "ok"
-}
-```
-
-**:arrow_right: mbtcp single write request**
-```javascript
-{
-	"ip": "192.168.3.2",
-	"port": "502",
-	"slave": 22,
-	"tid": "12345",
-	"cmd": 6,
-	"addr": 80,
-	"data": 1234
-}
-```
-
-**:arrow_right: mbtcp multiple write request**
-```javascript
-{
-	"ip": "192.168.3.2",
-	"port": "502",
-	"slave": 22,
-	"tid": "12345",
-	"cmd": 16,
-	"addr": 80,
-	"len": 4,
-	"data": [1,2,3,4]
-}
-```
-
-**:arrow_left: mbtcp write response**
-```javascript
-{
-	"tid": "12345",
-	"status": "ok"
-}
-```
-
-**:arrow_right: mbtcp set timeout request**
-```javascript
-{
-	"tid": "12345",
-	"cmd": 50,
-	"timeout": 210000
-}
-```
-
-**:arrow_left: mbtcp set timeout response**
-```javascript
-{
-	"tid": "12345",
-	"status": "ok"
-}
-```
-
-**:arrow_right: mbtcp get timeout request**
-```javascript
-{
-	"tid": "12345",
-	"cmd": 51
-}
-```
-
-**:arrow_left: mbtcp get timeout response**
-```javascript
-{
-	"tid": "12345",
-	"status": "ok",
-	"timeout": 210000
-}
-```
-
-**:arrow_left: mbtcp fail response**
-```javascript
-{
-	"tid": "12345",
-	"status": "fail reason"
-}
-```
-
-## External libraries
+### External libraries
 
 - [libmodbus](http://libmodbus.org)
 - [libzmq](https://github.com/zeromq/libzmq)
@@ -200,7 +96,7 @@ Modbus master daemon
 
 ---
 
-## Library documentations
+### Library documentations
 
 - [uthash user guide](http://troydhanson.github.io/uthash/userguide.html)
 - [libmodbus api document](http://libmodbus.org/docs/v3.1.4/)
@@ -208,18 +104,19 @@ Modbus master daemon
 - [cJSON examples](https://github.com/DaveGamble/cJSON)
 
 
-## Flow Chart
+### Flow Chart
 
 ![flow](image/flow.png)
 
 ---
 
 <a name="setup"></a>
-# Setup
+
+## Setup
 
 Step by step from scratch or ([Travis CI](https://travis-ci.org) + [Docker](#ci))
 
-## Setup development dependencies
+### Setup development dependencies
 
 ```bash
 sudo apt-get update
@@ -228,9 +125,9 @@ sudo apt-get install -y git build-essential autoconf libtool pkg-config cmake
 
 ---
 
-## Setup OSS libs dependencies
+### Setup OSS libs dependencies
 
-### Install libmodbus library (3.1.4)
+#### Install libmodbus library (3.1.4)
 
 ```bash
 git clone https://github.com/stephane/libmodbus/
@@ -242,7 +139,7 @@ sudo make install
 sudo ldconfig
 ```
 
-### Install libzmq (3.2.5)
+#### Install libzmq (3.2.5)
 
 ```bash
 wget https://github.com/zeromq/zeromq3-x/releases/download/v3.2.5/zeromq-3.2.5.tar.gz
@@ -254,7 +151,7 @@ sudo make install
 sudo ldconfig
 ```
 
-### Install czmq (high-level C binding for zeromq)
+#### Install czmq (high-level C binding for zeromq)
 
 ```bash
 git clone git://github.com/zeromq/czmq.git
@@ -266,9 +163,9 @@ sudo make install
 sudo ldconfig
 ```
 
-## Setup testing environment
+### Setup testing environment
 
-### Install golang 1.6.x & zmq binding on ubuntu
+#### Install golang 1.6.x & zmq binding on ubuntu
 
 ```bash
 sudo apt-get install pkg-config
@@ -279,9 +176,11 @@ nano ~/.profile
 export PATH=$PATH:/usr/local/go/bin
 go get github.com/taka-wang/zmq3
 ```
+
 ---
 
-## Build
+### Build
+
 ```bash
 git clone modbusd
 cd modbusd
@@ -291,22 +190,25 @@ cmake ..
 make
 ./modbusd ../modbusd.json # load external configuration file
 ```
+
 ---
 
 <a name="ci"></a>
-# Continuous Integration
+
+## Continuous Integration
 
 We do continuous integration and update docker images after git push by [Travis CI](https://travis-ci.org/taka-wang/modbusd).
 
 ![ci](image/ci.png)
 
-## // x86_64 platform
+### // x86_64 platform
 
-### Docker base images
+#### Base images
+
 - [x86_64 git repo](https://github.com/taka-wang/docker-ubuntu)
 - [docker hub](https://hub.docker.com/u/takawang/)
 
-### Docker images registry
+#### Images registry
 
 You can download pre-built docker images according to the following commands.
 
@@ -315,7 +217,8 @@ You can download pre-built docker images according to the following commands.
 - docker pull [takawang/modbusd](https://hub.docker.com/r/takawang/modbusd/)
 
 
-### Docker images and testing from the scratch
+#### Images and testing from the scratch
+
 ```bash
 # build simulation server image
 docker build -t takawang/modbus-cserver tests/cmbserver/.
@@ -332,7 +235,8 @@ docker run -v /tmp:/tmp --link slave -it --name=modbusd takawang/modbusd
 docker run -v /tmp:/tmp -it --link slave takawang/modbus-goclient
 ```
 
-### Docker composer
+#### Docker composer
+
 ```bash
 # build & run
 docker-compose up 
@@ -340,13 +244,14 @@ docker-compose up
 ctrl+c
 ```
 
-## // armhf
+### // armhf
 
-### Docker base images
+#### Base images
+
 - [armhf git repo](https://github.com/taka-wang/docker-armv7)
 - [docker hub](https://hub.docker.com/u/takawang/)
 
-### Docker images registry
+#### Images registry
 
 You can download pre-built docker images according to the following commands.
 
@@ -355,7 +260,8 @@ You can download pre-built docker images according to the following commands.
 - docker pull [takawang/arm-modbusd](https://hub.docker.com/r/takawang/arm-modbusd/)
 
 
-### Docker images and testing from the scratch
+#### Images and testing from the scratch
+
 ```bash
 # build simulation server image
 docker build -t takawang/arm-modbus-cserver -f tests/cmbserver/Dockerfile.arm .
@@ -372,13 +278,14 @@ docker run -v /tmp:/tmp --link slave -it --name=modbusd takawang/arm-modbusd
 docker run -v /tmp:/tmp -it --link slave takawang/arm-modbus-goclient
 ```
 
-## Deployment Diagram
+### Deployment Diagram
 
 ![deployment](image/deployment.png)
 
 ---
 
 <a name="doc"></a>
-# Documentations
+
+## Documentations
 
 - [API Documentation](http://taka-wang.github.io/modbusd)
