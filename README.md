@@ -7,7 +7,7 @@
 Modbus master daemon 
 
 - Support doxygen style comments.
-- ZMQ is a high-level message library, you can plug in your own socket implemetations without losing the core functionalities.
+- ZeroMQ is a high-level message library, you can replace it with your own data bus implementations without losing the core functionalities.
 
 ## TOC
 
