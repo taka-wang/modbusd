@@ -280,7 +280,7 @@ docker run -v /tmp:/tmp -it --link slave takawang/arm-modbus-goclient
 
 ### Deployment Diagram
 
-![deployment](image/deployment.png)
+![deployment](image/ndeployment.png)
 
 ---
 
