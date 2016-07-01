@@ -23,7 +23,7 @@ uint16_t *tab_registers;        // 4x
 int main(int argc, char *argv[])
 {
     printf("init server\n");
-    char * ip = "127.0.0.1";
+    char * ip = NULL;
     int port = 502;
     if (argc > 1) {
         port = atoi(argv[1]);
@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
     }
 
 
-    printf("start listening at: %s, port:%d\n", ip, port);
+    printf("start listening at: port:%d\n", port);
 
     s = modbus_tcp_listen(ctx, 1); // only one connection allow
     modbus_tcp_accept(ctx, &s);
