@@ -84,7 +84,7 @@ Modbus master daemon
 
 ### Modbus TCP command format
 
-**:bangbang:Please refer to [psmb](https://github.com/taka-wang/psmb/blob/dev/devdoc/downstream.md).**
+Please refer to [command definition](command.md).
 
 ### External libraries
 
