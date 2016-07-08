@@ -35,8 +35,9 @@ func (u JSONableByteSlice) MarshalJSON() ([]byte, error) {
 }
 
 const (
+	_ Endian = iota // ignore first value by assigning to blank identifier
 	// ABCD 32-bit words may be represented in big-endian format
-	ABCD Endian = iota
+	ABCD
 	// DCBA 32-bit words may be represented in little-endian format
 	DCBA
 	// BADC 32-bit words may be represented in mid-big-endian format
@@ -44,15 +45,19 @@ const (
 	// CDAB 32-bit words may be represented in mid-little-endian format
 	CDAB
 )
+
 const (
+	_ Endian = iota // ignore first value by assigning to blank identifier
 	// AB 16-bit words may be represented in big-endian format
-	AB Endian = iota
+	AB
 	// BA 16-bit words may be represented in little-endian format
 	BA
 )
+
 const (
+	_ Endian = iota // ignore first value by assigning to blank identifier
 	// BigEndian 32-bit words may be represented in ABCD format
-	BigEndian Endian = iota
+	BigEndian
 	// LittleEndian 32-bit words may be represented in DCBA format
 	LittleEndian
 	// MidBigEndian 32-bit words may be represented in BADC format
@@ -62,8 +67,9 @@ const (
 )
 
 const (
+	_ RegValueType = iota // ignore first value by assigning to blank identifier
 	// RegisterArray register array, ex: [12345, 23456, 5678]
-	RegisterArray RegValueType = iota
+	RegisterArray
 	// HexString hexadecimal string, ex: "112C004F12345678"
 	HexString
 	// Scale linearly scale
@@ -85,7 +91,8 @@ const (
 // DMbtcpRes downstream modbus tcp read/write response
 type DMbtcpRes struct {
 	// Tid unique transaction id in string format
-	Tid    string `json:"tid"`
+	Tid string `json:"tid"`
+	// Status response status string
 	Status string `json:"status"`
 	// Data for read function code only.
 	Data []uint16 `json:"data,omitempty"`
@@ -93,28 +100,36 @@ type DMbtcpRes struct {
 
 // DMbtcpReadReq downstream modbus tcp read request
 type DMbtcpReadReq struct {
-	// Tid unique transaction id in string format
+	// Tid unique transaction id in `string` format
 	Tid string `json:"tid"`
 	// Cmd modbusd command type: https://github.com/taka-wang/modbusd#command-mapping-table
-	Cmd   int    `json:"cmd"`
-	IP    string `json:"ip"`
-	Port  string `json:"port"`
-	Slave uint8  `json:"slave"`
-	Addr  uint16 `json:"addr"`
-	// Len the length of register or bit
+	Cmd int `json:"cmd"`
+	// IP modbus tcp slave ip address or hostname
+	IP string `json:"ip"`
+	// Port port number
+	Port string `json:"port"`
+	// Slave modbus device id
+	Slave uint8 `json:"slave"`
+	// Addr start address for read
+	Addr uint16 `json:"addr"`
+	// Len the length of registers or bits
 	Len uint16 `json:"len"`
 }
 
 // DMbtcpWriteReq downstream modbus tcp write single bit/register request
 type DMbtcpWriteReq struct {
-	// Tid unique transaction id in string format
+	// Tid unique transaction id in `string` format
 	Tid string `json:"tid"`
 	// Cmd modbusd command type: https://github.com/taka-wang/modbusd#command-mapping-table
-	Cmd   int    `json:"cmd"`
-	IP    string `json:"ip"`
-	Port  string `json:"port"`
-	Slave uint8  `json:"slave"`
-	Addr  uint16 `json:"addr"`
+	Cmd int `json:"cmd"`
+	// IP modbus tcp slave ip address or hostname
+	IP string `json:"ip"`
+	// Port port number
+	Port string `json:"port"`
+	// Slave modbus device id
+	Slave uint8 `json:"slave"`
+	// Addr start address for write
+	Addr uint16 `json:"addr"`
 	// Len omit for fc5, fc6
 	Len uint16 `json:"len,omitempty"`
 	// Data should be []uint16, uint16 (FC5, FC6)
@@ -123,7 +138,7 @@ type DMbtcpWriteReq struct {
 
 // DMbtcpTimeout downstream modbus tcp set/get timeout request/response
 type DMbtcpTimeout struct {
-	// Tid unique transaction id in string format
+	// Tid unique transaction id in `string` format
 	Tid string `json:"tid"`
 	// Cmd modbusd command type: https://github.com/taka-wang/modbusd#command-mapping-table
 	Cmd int `json:"cmd"`
