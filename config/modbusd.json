@@ -2,8 +2,8 @@
     "syslog": 1,
     "zmq": 
     {
-        "sub": "ipc:///tmp/to.modbus",
-        "pub": "ipc:///tmp/from.modbus"
+        "sub": ">ipc:///tmp/to.modbus",
+        "pub": ">ipc:///tmp/from.modbus"
     },
     "mbtcp":
     {
