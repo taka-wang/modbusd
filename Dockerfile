@@ -58,7 +58,7 @@ RUN apk update \
     && rm /usr/lib/*.a && rm /usr/lib/*.la \
     && apk del \
            git autoconf cmake build-base tar libtool zlib musl-dev openssl-dev zlib-dev curl \
-    && rm -rf /var/cache/apk/* \
+    && rm -rf /var/cache/apk/* 
 
 RUN apk update \
     && apk add libgcc libstdc++
