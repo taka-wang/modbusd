@@ -4,8 +4,6 @@ ENV ZMQ_VERSION 3.2.5
 ENV CZMQ_VERSION 3.0.2
 ENV MB_VERSION 3.1.4
 
-#COPY . /tmp/
-
 RUN apk update \
     && apk add \
            git autoconf cmake build-base tar libtool zlib musl-dev openssl-dev zlib-dev curl \
@@ -48,8 +46,9 @@ RUN apk update \
     
     && echo " ... build modbusd" \
         && cd /tmp/ \
-        && git clone https://github.com/taka-wang/modbusd.git && \
-        && mkdir -p /tmp/modbusd/build && cd /tmp/modbusd/build && cmake .. && make && make install \
+        && git clone https://github.com/taka-wang/modbusd.git \
+        && mkdir -p /tmp/modbusd/build && cd /tmp/modbusd/build \
+        && cmake .. && make && make install \
     
     && echo " ... clean up" \
     
