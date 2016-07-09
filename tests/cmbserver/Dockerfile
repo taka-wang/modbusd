@@ -24,14 +24,7 @@ RUN apk update \
                         --infodir=/usr/share/info \
          && make && make install \
     
-    && echo " ... build mbserver" \
-        && cd /tmp/ \
-        && git clone https://github.com/taka-wang/modbusd.git \
-        && cd /tmp/modbusd/tests/cmbserver/ \
-        && gcc server.c -o server -Wall -std=c99 `pkg-config --libs --cflags libmodbus \
-        #&& chmod +x server \
-        && cp server /usr/bin/ \
-    
+
     && echo " ... clean up" \
     
     && rm -rf /tmp/* \
