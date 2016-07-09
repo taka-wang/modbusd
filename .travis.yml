@@ -42,12 +42,20 @@ script:
 - docker build -t $MODBUSD_IMG .
 - if [ ! -z "$TRAVIS_TAG" ]; then docker tag $MODBUSD_IMG:latest $MODBUSD_IMG:$TRAVIS_TAG; fi && docker push $MODBUSD_IMG
 
+### build modbusd min image
+- docker build -t $MODBUSD_MIN_IMG -f Dockerfile.min .
+- if [ ! -z "$TRAVIS_TAG" ]; then docker tag $MODBUSD_MIN_IMG:latest $MODBUSD_MIN_IMG:$TRAVIS_TAG; fi && docker push $MODBUSD_MIN_IMG
+
+
 ### run modbus slave server
 - docker run -itd --name=$MODBUS_SERVER_NAME $MODBUS_SERVER_IMG
 
 ### run modbusd
 #- docker run -v /tmp:/tmp --link $MODBUS_SERVER_NAME -itd --name=$MODBUSD_NAME $MODBUSD_IMG /bin/sh -c "valgrind --log-file="/tmp/valgrind.log" --tool=memcheck --leak-check=full --show-leak-kinds=all --verbose /usr/bin/modbusd /etc/modbusd/modbusd.json"
-- docker run -v /tmp:/tmp --link $MODBUS_SERVER_NAME -itd --name=$MODBUSD_NAME $MODBUSD_IMG
+# ubuntu
+#- docker run -v /tmp:/tmp --link $MODBUS_SERVER_NAME -itd --name=$MODBUSD_NAME $MODBUSD_IMG
+# min
+- docker run -v /tmp:/tmp --link $MODBUS_SERVER_NAME -itd --name=$MODBUSD_NAME $MODBUSD_MIN_IMG
 
 ### run goclient
 - docker run -v /tmp:/tmp --link $MODBUS_SERVER_NAME -it --name=$MODBUS_GOCLIENT_NAME $MODBUS_GOCLIENT_IMG
@@ -73,9 +81,10 @@ env:
   - MODBUS_SERVER_IMG=takawang/modbus-cserver
   - MODBUS_GOCLIENT_IMG=takawang/modbus-goclient
   - MODBUSD_IMG=takawang/modbusd
+  - MODBUSD_MIN_IMG=takawang/alpine-modbusd
 
   - MODBUS_SERVER_NAME=slave
-  - MODBUS_GOCLIENT_NAME=goclient  
+  - MODBUS_GOCLIENT_NAME=goclient
   - MODBUSD_NAME=modbusd
   - VALGRIND_NAME=valgrind
 

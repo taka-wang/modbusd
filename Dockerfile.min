@@ -54,3 +54,7 @@ RUN apk update \
 RUN apk update \
     && apk add libgcc libstdc++
 
+EXPOSE 502
+
+## Default command
+CMD /usr/bin/modbusd /etc/modbusd/modbusd.json
