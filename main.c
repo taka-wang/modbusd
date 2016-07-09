@@ -112,6 +112,7 @@ int main(int argc, char *argv[])
     zsocket_bind (zmq_pub, ipc_pub);                    // bind zmq publisher
     */
     zsock_t *zmq_sub = zsock_new_sub (ipc_sub, "");
+    zsock_bind (zmq_sub, "ipc:///tmp/to.modbus");
     zsock_t *zmq_pub = zsock_new_pub (ipc_pub);
     
     LOG(enable_syslog, "start request listener");
