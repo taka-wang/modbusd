@@ -6,6 +6,7 @@
 
 #include "main.h"
 #include "mb.h"
+#include <czmq.h>
 
 /* ==================================================
  *  global variable

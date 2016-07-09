@@ -15,7 +15,6 @@
 #include <errno.h>
 #include <stdbool.h>
 
-#include <czmq.h>
 #include <modbus.h>
 #include "uthash.h"
 #include "log.h"
