@@ -4,11 +4,12 @@ ENV ZMQ_VERSION 3.2.5
 ENV CZMQ_VERSION 3.0.2
 ENV MB_VERSION 3.1.4
 
-COPY . /tmp/
+#COPY . /tmp/
 
 RUN apk update \
     && apk add \
-           autoconf cmake build-base tar libtool zlib musl-dev openssl-dev zlib-dev curl \
+           git autoconf cmake build-base tar libtool zlib musl-dev openssl-dev zlib-dev curl \
+    
     && echo " ... adding libmodbus" \
 
          && curl -L http://libmodbus.org/releases/libmodbus-${MB_VERSION}.tar.gz -o /tmp/libmodbus.tar.gz \
@@ -22,6 +23,7 @@ RUN apk update \
          && make && make install \
 
     && echo " ... adding ZMQ and CZMQ" \
+         
          && curl -L http://download.zeromq.org/zeromq-${ZMQ_VERSION}.tar.gz -o /tmp/zeromq.tar.gz \
          && cd /tmp/ \
          && tar -xf /tmp/zeromq.tar.gz \
@@ -42,14 +44,21 @@ RUN apk update \
                         --infodir=/usr/share/info \
          && make && make install \
 
-         && rm -rf /tmp/zeromq* && rm -rf /tmp/czmq* && rm -rf /tmp/modbus* \
-         && rm -rf /var/cache/apk/* \
-    && mkdir -p /tmp/build && cd /tmp/build && cmake .. && make && make install \
+
+    
+    && echo " ... build modbusd" \
+        && cd /tmp/ \
+        && git clone https://github.com/taka-wang/modbusd.git && \
+        && mkdir -p /tmp/modbusd/build && cd /tmp/modbusd/build && cmake .. && make && make install \
+    
+    && echo " ... clean up" \
+    
     && rm -rf /tmp/* \
-    && apk del \
-            autoconf cmake build-base tar libtool zlib musl-dev openssl-dev zlib-dev curl \
-    && rm -rf /var/cache/apk/* \
+    #&& rm -rf /tmp/zeromq* && rm -rf /tmp/czmq* && rm -rf /tmp/modbus* \
     && rm /usr/lib/*.a && rm /usr/lib/*.la
+    && apk del \
+           git autoconf cmake build-base tar libtool zlib musl-dev openssl-dev zlib-dev curl \
+    && rm -rf /var/cache/apk/* \
 
 RUN apk update \
     && apk add libgcc libstdc++
