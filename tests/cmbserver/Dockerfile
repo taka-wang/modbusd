@@ -3,7 +3,6 @@
 #
 
 FROM alpine:latest
-MAINTAINER Taka Wang <taka@cmwang.net>
 
 ENV ZMQ_VERSION 3.2.5
 ENV CZMQ_VERSION 3.0.2
@@ -30,7 +29,7 @@ RUN apk update \
         && git clone https://github.com/taka-wang/modbusd.git \
         && cd /tmp/modbusd/tests/cmbserver/ \
         && gcc server.c -o server -Wall -std=c99 `pkg-config --libs --cflags libmodbus \
-        && chmod +x server \
+        #&& chmod +x server \
         && cp server /usr/bin/ \
     
     && echo " ... clean up" \
