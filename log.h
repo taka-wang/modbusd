@@ -1,7 +1,7 @@
 /**
  * @file log.h
- * @author taka-wang
- * @brief Logging system (syslog wrapper)
+ * @author Taka Wang
+ * @brief Logging system (Syslog Marcos)
 */
 
 #ifndef _LOG_H_
@@ -68,5 +68,6 @@ static char cstr[MSG_LEN];
             default: { syslog(LOG_DEBUG, "%s", cstr); break; } \
         } \
     } while (0)
+
 
 #endif // END OF _LOG_H_

@@ -1,6 +1,7 @@
 /**
  * @file main.c
- * @author taka-wang
+ * @author Taka Wang
+* @brief main flow with zmq related functions
 */
 
 #include "main.h"

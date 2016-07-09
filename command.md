@@ -64,13 +64,13 @@ Please refer to [command code](https://github.com/taka-wang/modbusd#command-mapp
 **mbtcp read request**
 ```javascript
 {
-	"tid": "123456",
-	"cmd": 1,
-	"ip": "192.168.3.2",
-	"port": "502",
-	"slave": 22,
-	"addr": 250,
-	"len": 10
+    "tid": "123456",
+    "cmd": 1,
+    "ip": "192.168.3.2",
+    "port": "502",
+    "slave": 22,
+    "addr": 250,
+    "len": 10
 }
 ```
 
@@ -78,18 +78,18 @@ Please refer to [command code](https://github.com/taka-wang/modbusd#command-mapp
 **mbtcp single read response**
 ```javascript
 {
-	"tid": "123456",
-	"data": [1],
-	"status": "ok"
+    "tid": "123456",
+    "data": [1],
+    "status": "ok"
 }
 ```
 
 **mbtcp multiple read response**
 ```javascript
 {
-	"tid": "123456",
-	"data": [1,2,3,4],
-	"status": "ok"
+    "tid": "123456",
+    "data": [1,2,3,4],
+    "status": "ok"
 }
 ```
 
@@ -99,27 +99,27 @@ Please refer to [command code](https://github.com/taka-wang/modbusd#command-mapp
 **mbtcp single write request**
 ```javascript
 {
-	"tid": "123456",
-	"cmd": 6,
-	"ip": "192.168.3.2",
-	"port": "502",
-	"slave": 22,
-	"addr": 80,
-	"data": 1234
+    "tid": "123456",
+    "cmd": 6,
+    "ip": "192.168.3.2",
+    "port": "502",
+    "slave": 22,
+    "addr": 80,
+    "data": 1234
 }
 ```
 
 **mbtcp multiple write request**
 ```javascript
 {
-	"ip": "192.168.3.2",
-	"port": "502",
-	"slave": 22,
-	"tid": "123456",
-	"cmd": 16,
-	"addr": 80,
-	"len": 4,
-	"data": [1, 2, 3, 4]
+    "ip": "192.168.3.2",
+    "port": "502",
+    "slave": 22,
+    "tid": "123456",
+    "cmd": 16,
+    "addr": 80,
+    "len": 4,
+    "data": [1, 2, 3, 4]
 }
 ```
 #### 1.2.2 modbusd to psmb
@@ -127,8 +127,8 @@ Please refer to [command code](https://github.com/taka-wang/modbusd#command-mapp
 **mbtcp write response**
 ```javascript
 {
-	"tid": "123456",
-	"status": "ok"
+    "tid": "123456",
+    "status": "ok"
 }
 ```
 
@@ -139,17 +139,17 @@ Please refer to [command code](https://github.com/taka-wang/modbusd#command-mapp
 **mbtcp set timeout request**
 ```javascript
 {
-	"tid": "123456",
-	"cmd": 50,
-	"timeout": 210000
+    "tid": "123456",
+    "cmd": 50,
+    "timeout": 210000
 }
 ```
 
 **mbtcp get timeout request**
 ```javascript
 {
-	"tid": "123456",
-	"cmd": 51
+    "tid": "123456",
+    "cmd": 51
 }
 ```
 
@@ -158,17 +158,17 @@ Please refer to [command code](https://github.com/taka-wang/modbusd#command-mapp
 **mbtcp set timeout response**
 ```javascript
 {
-	"tid": "123456",
-	"status": "ok"
+    "tid": "123456",
+    "status": "ok"
 }
 ```
 
 **mbtcp get timeout response**
 ```javascript
 {
-	"tid": "123456",
-	"status": "ok",
-	"timeout": 210000
+    "tid": "123456",
+    "status": "ok",
+    "timeout": 210000
 }
 ```
 ### 1.4 Generic fail response
@@ -176,7 +176,7 @@ Please refer to [command code](https://github.com/taka-wang/modbusd#command-mapp
 **mbtcp fail response**
 ```javascript
 {
-	"tid": "123456",
-	"status": "fail reason"
+    "tid": "123456",
+    "status": "fail reason"
 }
 ```

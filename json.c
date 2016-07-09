@@ -1,7 +1,7 @@
 /**
  * @file json.c
- * @author taka-wang
- * @brief cJSON utility wrapper header
+ * @author Taka Wang
+ * @brief cJSON helper functions
 */
 
 #include <stdio.h>

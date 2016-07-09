@@ -1,7 +1,7 @@
 /**
  * @file mb.h
- * @author taka-wang
- * @brief modbus daemon exported api
+ * @author Taka Wang
+ * @brief modbus daemon API(Interface)
 */
 
 #ifndef MB_H

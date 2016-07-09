@@ -1,6 +1,7 @@
 /**
  * @file main.h
- * @author taka-wang
+ * @author Taka Wang
+* @brief main header with version string and command mapping table
 */
 
 #ifndef MAIN_H

@@ -1,6 +1,6 @@
 /**
  * @file mb.c
- * @author taka-wang
+ * @author Taka Wang
  * @brief modbus common functions
 */
 

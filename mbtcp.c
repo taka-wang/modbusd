@@ -1,7 +1,7 @@
 /**
  * @file mbtcp.c
- * @author taka-wang
- * @brief modbus tcp
+ * @author Taka Wang
+ * @brief modbus tcp functions
 */
 
 #include "mb.h"
@@ -12,7 +12,7 @@
 
 extern int enable_syslog;                   // syslog flag
 static mbtcp_handle_s *mbtcp_htable = NULL; // hashtable header
-long tcp_conn_timeout_usec = 200000;    /* tcp connection
+long tcp_conn_timeout_usec = 200000;        /* tcp connection
                                                timeout in usec */
 
 /* ==================================================

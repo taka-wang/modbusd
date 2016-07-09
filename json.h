@@ -1,6 +1,6 @@
 /**
  * @file json.h
- * @author taka-wang
+ * @author Taka Wang
  * @brief cJSON helper functions header
 */
 
