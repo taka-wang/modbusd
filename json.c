@@ -35,6 +35,7 @@ void json_set_double(cJSON *inJson, const char *key, double value)
 
 long json_get_long(cJSON *inJson, const char *key)
 {
+    // convert double float to long integer
     return (long)cJSON_GetObjectItem(inJson, key)->valuedouble;
 }
 

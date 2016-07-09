@@ -45,7 +45,7 @@ static bool lazy_init_mbtcp_handle(mbtcp_handle_s **ptr_handle, cJSON *req)
         }
         else
         {
-            // Unable to allocate mbtcp context,
+            // Fatal! Unable to allocate mbtcp context,
             // maybe system resourse issue!
             return false;
         }
@@ -90,7 +90,7 @@ static bool lazy_mbtcp_connect(mbtcp_handle_s *handle, char **reason)
  * @param req cJSON request object.
  * @return Modbus response string in JSON format.
  */
-static char * mbtcp_read_bit_req(int fc, mbtcp_handle_s *handle, cJSON *req)
+static char * mbtcp_read_bit_req(uint8_t fc, mbtcp_handle_s *handle, cJSON *req)
 {
     BEGIN(enable_syslog);
     int addr = json_get_int(req, "addr");
@@ -146,7 +146,7 @@ static char * mbtcp_read_bit_req(int fc, mbtcp_handle_s *handle, cJSON *req)
  * @param req cJSON request object.
  * @return Modbus response string in JSON format.
  */
-static char * mbtcp_read_reg_req(int fc, mbtcp_handle_s *handle, cJSON *req)
+static char * mbtcp_read_reg_req(uint8_t fc, mbtcp_handle_s *handle, cJSON *req)
 {
     BEGIN(enable_syslog);
     int addr = json_get_int(req, "addr");
@@ -202,7 +202,7 @@ static char * mbtcp_read_reg_req(int fc, mbtcp_handle_s *handle, cJSON *req)
  * @param req cJSON request object.
  * @return Modbus response string in JSON format.
  */
-static char * mbtcp_single_write_req(int fc, mbtcp_handle_s *handle, cJSON *req)
+static char * mbtcp_single_write_req(uint8_t fc, mbtcp_handle_s *handle, cJSON *req)
 {
     BEGIN(enable_syslog);
     int addr = json_get_int(req, "addr");
@@ -239,7 +239,7 @@ static char * mbtcp_single_write_req(int fc, mbtcp_handle_s *handle, cJSON *req)
  * @param req cJSON request object.
  * @return Modbus response string in JSON format.
  */
-static char * mbtcp_multi_write_req(int fc, mbtcp_handle_s *handle, cJSON *req)
+static char * mbtcp_multi_write_req(uint8_t fc, mbtcp_handle_s *handle, cJSON *req)
 {
     BEGIN(enable_syslog);
     int addr = json_get_int(req, "addr");

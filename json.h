@@ -1,7 +1,7 @@
 /**
  * @file json.h
  * @author taka-wang
- * @brief cJSON utility wrapper header
+ * @brief cJSON helper functions header
 */
 
 #ifndef JSON_H
@@ -14,7 +14,7 @@
  *
  * @param inJson cJSON object.
  * @param key Json key.
- * @return Char string.
+ * @return C char string.
  */
 char * json_get_char(cJSON *inJson, const char *key);
 
@@ -33,32 +33,32 @@ int json_get_int(cJSON *inJson, const char *key);
  *
  * @param inJson cJSON object.
  * @param key Json key.
- * @param Integer.
+ * @param value Integer value.
  * @return Void.
  */
 void json_set_int(cJSON *inJson, const char *key, int value);
 
 /**
- * @brief Get double value via key from cJSON object
+ * @brief Get double integer value via key from cJSON object
  *
  * @param inJson cJSON object.
  * @param key Json key.
- * @return Double.
+ * @return Double integer value.
  */
 double json_get_double(cJSON *inJson, const char *key);
 
 /**
- * @brief Set double value via key to existed cJSON object
+ * @brief Set double integer value via key to existed cJSON object
  *
  * @param inJson cJSON object.
  * @param key Json key.
- * @param Double.
+ * @param double Double integer value.
  * @return Void.
  */
 void json_set_double(cJSON *inJson, const char *key, double value);
 
 /**
- * @brief Get long value via key from cJSON object
+ * @brief Get long integer value via key from cJSON object
  *
  * @param inJson cJSON object.
  * @param key Json key.
@@ -67,7 +67,7 @@ void json_set_double(cJSON *inJson, const char *key, double value);
 long json_get_long(cJSON *inJson, const char *key);
 
 /**
- * @brief Load json file to cJSON
+ * @brief Load JSON file to cJSON object
  *
  * @param fname File name string.
  * @param outJson Pointer to cJSON output object.
@@ -76,7 +76,7 @@ long json_get_long(cJSON *inJson, const char *key);
 int file_to_json(const char *fname, cJSON **outJson);
 
 /**
- * @brief Save cJSON to json file
+ * @brief Save cJSON object to JSON file
  *
  * @param fname File name string.
  * @param inJson cJSON input object.
