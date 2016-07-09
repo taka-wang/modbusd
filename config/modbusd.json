@@ -3,7 +3,7 @@
     "zmq": 
     {
         "sub": ">ipc:///tmp/to.modbus",
-        "pub": ">ipc:///tmp/from.modbus"
+        "pub": "ipc:///tmp/from.modbus"
     },
     "mbtcp":
     {
