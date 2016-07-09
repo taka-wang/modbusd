@@ -174,7 +174,7 @@ tar -xvf go1.6.2.linux-amd64.tar.gz
 sudo mv go /usr/local
 nano ~/.profile
 export PATH=$PATH:/usr/local/go/bin
-go get github.com/taka-wang/zmq3
+go get github.com/takawang/zmq3
 ```
 
 ---

@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/marksalpeter/sugar"
-	zmq "github.com/taka-wang/zmq3"
+	zmq "github.com/takawang/zmq3"
 )
 
 var hostName, portNum string
