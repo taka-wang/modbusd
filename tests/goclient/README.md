@@ -1,5 +1,7 @@
 #goclient
 
+[![](https://imagelayers.io/badge/takawang/modbus-goclient:latest.svg)](https://imagelayers.io/?images=takawang/modbus-goclient:latest 'Get your own badge on imagelayers.io')
+
 Modbusd test cases in golang
 
 ## Types

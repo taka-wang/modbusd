@@ -1,5 +1,7 @@
 # modbus slave simulator in C
 
+[![](https://imagelayers.io/badge/takawang/modbus-cserver:latest.svg)](https://imagelayers.io/?images=takawang/modbus-cserver:latest 'Get your own badge on imagelayers.io')
+
 Dummy modbus slave server in C
 
 

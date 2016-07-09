@@ -1,4 +1,8 @@
+#
+# modbus daemon
+#
 FROM alpine:latest
+MAINTAINER Taka Wang <taka@cmwang.net>
 
 ENV ZMQ_VERSION 3.2.5
 ENV CZMQ_VERSION 3.0.2
