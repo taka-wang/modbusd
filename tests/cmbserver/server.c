@@ -46,15 +46,21 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    // initalize input contacts: 1x
-    const uint8_t UT_INPUT_BITS_TAB[] = { 0xAC, 0xDB, 0x35 };
-    const uint16_t UT_INPUT_BITS_NB = 0x16;
+    // initalize bits
+    const uint8_t UT_BITS_TAB[] = { 0xAC, 0xDB, 0x35 };
+    const uint16_t UT_BITS_NB = 0x16;
+
+    // 0x; little endian set
+    modbus_set_bits_from_bytes(mb_mapping->tab_bits, 
+                               3, 
+                               UT_BITS_NB,
+                               UT_BITS_TAB);
 
     // 1x; little endian set
     modbus_set_bits_from_bytes(mb_mapping->tab_input_bits, 
                                0, 
-                               UT_INPUT_BITS_NB,
-                               UT_INPUT_BITS_TAB);
+                               UT_BITS_NB,
+                               UT_BITS_TAB);
 
     const uint16_t UT_INPUT_REGISTERS_NB = 0x3;
     const uint16_t UT_INPUT_REGISTERS_TAB[] = { 0x000A, 0x000B, 0x000C };
