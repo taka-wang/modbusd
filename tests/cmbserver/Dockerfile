@@ -13,7 +13,6 @@ RUN apk update \
            git autoconf cmake build-base tar libtool zlib musl-dev openssl-dev zlib-dev curl \
     
     && echo " ... adding libmodbus" \
-
          && curl -L http://libmodbus.org/releases/libmodbus-${MB_VERSION}.tar.gz -o /tmp/libmodbus.tar.gz \
          && cd /tmp/ \
          && tar -xf /tmp/libmodbus.tar.gz \
@@ -33,12 +32,11 @@ RUN apk update \
         && cp server /usr/bin/ \
     
     && echo " ... clean up" \
-    
-    && rm -rf /tmp/* \
-    && rm /usr/lib/*.a && rm /usr/lib/*.la \
-    && apk del \
-           git autoconf cmake build-base tar libtool zlib musl-dev openssl-dev zlib-dev curl \
-    && rm -rf /var/cache/apk/* 
+        && rm -rf /tmp/* \
+        && rm /usr/lib/*.a && rm /usr/lib/*.la \
+        && apk del \
+            git autoconf cmake build-base tar libtool zlib musl-dev openssl-dev zlib-dev curl \
+        && rm -rf /var/cache/apk/* 
 
 RUN apk update \
     && apk add libgcc libstdc++

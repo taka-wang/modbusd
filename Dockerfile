@@ -9,7 +9,6 @@ RUN apk update \
            git autoconf cmake build-base tar libtool zlib musl-dev openssl-dev zlib-dev curl \
     
     && echo " ... adding libmodbus" \
-
          && curl -L http://libmodbus.org/releases/libmodbus-${MB_VERSION}.tar.gz -o /tmp/libmodbus.tar.gz \
          && cd /tmp/ \
          && tar -xf /tmp/libmodbus.tar.gz \
@@ -21,7 +20,6 @@ RUN apk update \
          && make && make install \
 
     && echo " ... adding ZMQ and CZMQ" \
-         
          && curl -L http://download.zeromq.org/zeromq-${ZMQ_VERSION}.tar.gz -o /tmp/zeromq.tar.gz \
          && cd /tmp/ \
          && tar -xf /tmp/zeromq.tar.gz \
@@ -42,8 +40,6 @@ RUN apk update \
                         --infodir=/usr/share/info \
          && make && make install \
 
-
-    
     && echo " ... build modbusd" \
         && cd /tmp/ \
         && git clone https://github.com/taka-wang/modbusd.git \
@@ -51,13 +47,12 @@ RUN apk update \
         && cmake .. && make && make install \
     
     && echo " ... clean up" \
-    
-    && rm -rf /tmp/* \
-    #&& rm -rf /tmp/zeromq* && rm -rf /tmp/czmq* && rm -rf /tmp/modbus* \
-    && rm /usr/lib/*.a && rm /usr/lib/*.la \
-    && apk del \
-           git autoconf cmake build-base tar libtool zlib musl-dev openssl-dev zlib-dev curl \
-    && rm -rf /var/cache/apk/* 
+        && rm -rf /tmp/* \
+        #&& rm -rf /tmp/zeromq* && rm -rf /tmp/czmq* && rm -rf /tmp/modbus* \
+        && rm /usr/lib/*.a && rm /usr/lib/*.la \
+        && apk del \
+            git autoconf cmake build-base tar libtool zlib musl-dev openssl-dev zlib-dev curl \
+        && rm -rf /var/cache/apk/* 
 
 RUN apk update \
     && apk add libgcc libstdc++
