@@ -109,12 +109,7 @@ int main(int argc, char *argv[])
     zsocket_set_subscribe (zmq_sub, "");                // set zmq subscriber filter
     void *zmq_pub = zsocket_new (zmq_context, ZMQ_PUB); // init zmq publisher: zmq_pub
     zsocket_bind (zmq_pub, ipc_pub);                    // bind zmq publisher
-    /*
-    zsock_t *zmq_sub = zsock_new_sub (ipc_sub, "");
-    zsock_bind (zmq_sub, "ipc:///tmp/to.modbus");
-    zsock_t *zmq_pub = zsock_new_pub (ipc_pub);
-    */
-    
+
     LOG(enable_syslog, "start request listener");
     while (!zctx_interrupted) // handle ctrl+c
     {
@@ -230,7 +225,5 @@ int main(int argc, char *argv[])
     // @resource clean up
     LOG(enable_syslog, "clean up");
     zctx_destroy(&zmq_context);
-    //zsock_destroy (&zmq_sub);
-    //zsock_destroy (&zmq_pub);
     save_config(config_fname, config_json); 
 }
