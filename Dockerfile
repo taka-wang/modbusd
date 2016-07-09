@@ -55,7 +55,7 @@ RUN apk update \
     
     && rm -rf /tmp/* \
     #&& rm -rf /tmp/zeromq* && rm -rf /tmp/czmq* && rm -rf /tmp/modbus* \
-    && rm /usr/lib/*.a && rm /usr/lib/*.la
+    && rm /usr/lib/*.a && rm /usr/lib/*.la \
     && apk del \
            git autoconf cmake build-base tar libtool zlib musl-dev openssl-dev zlib-dev curl \
     && rm -rf /var/cache/apk/* \
