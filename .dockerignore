@@ -2,8 +2,8 @@
 image
 license
 tests
-.git
 .gitignore
+.git
 *.md
 gendoc.sh
 docker-compose.yml

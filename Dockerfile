@@ -1,4 +1,4 @@
-FROM takawang/ubuntu-modbus
+FROM takawang/modbus-env:x86
 MAINTAINER Taka Wang <taka@cmwang.net>
 
 ## Build modbusd
@@ -19,5 +19,4 @@ RUN cp "config/service.sh" "/etc/init.d/modbusd" && \
 EXPOSE 502
 
 ## Default command
-# note: log file does not exist, just keep container running
-CMD service modbusd start && tail -F /var/log/modbusd.log
+CMD /usr/bin/modbusd /etc/modbusd/modbusd.json

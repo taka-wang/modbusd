@@ -1,4 +1,4 @@
-# Zero MQ Command Definition
+# ZeroMQ Command Definition
 
 # Table of contents
 

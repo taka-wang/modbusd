@@ -71,7 +71,7 @@ static void save_config(const char *fname, cJSON * config)
  * @brief Generic zmq response sender for modbus
  *
  * @param pub Zmq publisher.
- * @param mode Request mode. ex. tcp, rtu.
+ * @param cmd Request command number.
  * @param json_resp Response string in JSON format.
  * @return Void.
  */
@@ -81,7 +81,7 @@ static void send_modbus_zmq_resp(void * pub, cmd_t cmd, char *json_resp)
     if (pub != NULL)
     {
         zmsg_t * zmq_resp = zmsg_new();
-        zmsg_addstrf(zmq_resp, "%d", cmd);      // frame 1: mode
+        zmsg_addstrf(zmq_resp, "%d", cmd);// frame 1: cmd
         zmsg_addstr(zmq_resp, json_resp); // frame 2: resp
         zmsg_send(&zmq_resp, pub);        // send zmq msg
         zmsg_destroy(&zmq_resp);          // cleanup zmsg
@@ -109,7 +109,7 @@ int main(int argc, char *argv[])
     zsocket_set_subscribe (zmq_sub, "");                // set zmq subscriber filter
     void *zmq_pub = zsocket_new (zmq_context, ZMQ_PUB); // init zmq publisher: zmq_pub
     zsocket_bind (zmq_pub, ipc_pub);                    // bind zmq publisher
-    
+
     LOG(enable_syslog, "start request listener");
     while (!zctx_interrupted) // handle ctrl+c
     {
@@ -178,11 +178,11 @@ int main(int argc, char *argv[])
                             send_modbus_zmq_resp(zmq_pub, cmd, 
                                 mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc16_req));
                             break;
-                        case set_timeout:
+                        case set_tcp_timeout:
                             send_modbus_zmq_resp(zmq_pub, cmd, 
                                 mbtcp_set_response_timeout(tid, json_get_long(req_json_obj, "timeout")));
                             break;
-                        case get_timeout:
+                        case get_tcp_timeout:
                             send_modbus_zmq_resp(zmq_pub, cmd, 
                                 mbtcp_get_response_timeout(tid));
                             break;

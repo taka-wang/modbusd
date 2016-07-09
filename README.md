@@ -1,15 +1,14 @@
+
 # modbusd
 
-[![Build Status](https://travis-ci.org/taka-wang/modbusd.svg?branch=dev)](https://travis-ci.org/taka-wang/modbusd) 
-[![GitHub tag](https://img.shields.io/github/tag/taka-wang/modbusd.svg)](https://github.com/taka-wang/modbusd/tags) 
-[![Release](https://img.shields.io/github/release/taka-wang/modbusd.svg)](https://github.com/taka-wang/modbusd/releases/latest)
+[![Build Status](http://dev.cmwang.net/api/badges/taka-wang/modbusd/status.svg)](http://dev.cmwang.net/taka-wang/modbusd)
 
 Modbus master daemon 
 
 - Support doxygen style comments.
 - ZeroMQ is a high-level message library, you can replace it with your own data bus implementations without losing the core functionalities.
 
-## TOC
+## Table of content
 
 - [Design](#design)
 - [Setup](#setup)
@@ -47,25 +46,23 @@ Modbus master daemon
 
 ### Command mapping table
 
->| Command      | Number | Description  |
->|:------------:|-------:|:-------------|
->| fc1          |   1    | modbus fc 1  |
->| fc2          |   2    | modbus fc 2  |
->| fc3          |   3    | modbus fc 3  |
->| fc4          |   4    | modbus fc 4  |
->| fc5          |   5    | modbus fc 5  |
->| fc6          |   6    | modbus fc 6  |
->| fc15         |  15    | modbus fc 15 |
->| fc16         |  16    | modbus fc 16 |
->| timeout.set  |  50    | set timeout  |
->| timeout.get  |  51    | get timeout  |
+>| Command         | Number | Description      |
+>|:---------------:|-------:|:-----------------|
+>| fc1             |   1    | modbus fc 1      |
+>| fc2             |   2    | modbus fc 2      |
+>| fc3             |   3    | modbus fc 3      |
+>| fc4             |   4    | modbus fc 4      |
+>| fc5             |   5    | modbus fc 5      |
+>| fc6             |   6    | modbus fc 6      |
+>| fc15            |  15    | modbus fc 15     |
+>| fc16            |  16    | modbus fc 16     |
+>| set_tcp_timeout |  50    | set tcp timeout  |
+>| get_tcp_timeout |  51    | get tcp timeout  |
 
 
 ---
 
-### Configuration format
-
-#### Configuration file
+### Configuration File
 
 ```javascript
 {
@@ -114,8 +111,6 @@ Please refer to [command definition](command.md).
 
 ## Setup
 
-Step by step from scratch or ([Travis CI](https://travis-ci.org) + [Docker](#ci))
-
 ### Setup development dependencies
 
 ```bash
@@ -163,23 +158,7 @@ sudo make install
 sudo ldconfig
 ```
 
-### Setup testing environment
-
-#### Install golang 1.6.x & zmq binding on ubuntu
-
-```bash
-sudo apt-get install pkg-config
-curl -O https://storage.googleapis.com/golang/go1.6.2.linux-amd64.tar.gz
-tar -xvf go1.6.2.linux-amd64.tar.gz
-sudo mv go /usr/local
-nano ~/.profile
-export PATH=$PATH:/usr/local/go/bin
-go get github.com/takawang/zmq3
-```
-
----
-
-### Build
+### Build from source code
 
 ```bash
 git clone modbusd
@@ -197,90 +176,50 @@ make
 
 ## Continuous Integration
 
-We do continuous integration and update docker images after git push by [Travis CI](https://travis-ci.org/taka-wang/modbusd).
+I do [continuous integration](test) and update docker images after git push by self-hosted drone.io server and dockerhub service [~~Travis CI~~](https://travis-ci.org/taka-wang/modbusd).
 
-![ci](image/ci.png)
+## Test Cases
 
-### // x86_64 platform
+- [x] Test holding registers (4x)
+    - [x] `4X Table: 60000` Read/Write uint16 value test: FC6, FC3
+    - [x] `4X Table: 30000` Read/Write int16 value test: FC6, FC3
+    - [x] `4X Table` Multiple read/write test: FC16, FC3
+    - [x] `4X Table` Multiple read/write test: FC16, FC3
+- [x] Test coils (0x)
+    - [x] `0X Table` Single read/write test:FC5, FC1
+    - [x] `0X Table` Multiple read/write test: FC15, FC1
+- [x] Test Discrete Input (1x)
+    - [x] `1X Table` read test: FC2
+- [x] Test Input Registers (3x)
+    - [x] `3X Table` read test:FC4
+- [x] Test TCP Timeout
+    - [x] `Set timeout` test
+    - [x] `Get timeout` test
 
-#### Base images
+![ci](image/ci-drone.png)
 
-- [x86_64 git repo](https://github.com/taka-wang/docker-ubuntu)
-- [docker hub](https://hub.docker.com/u/takawang/)
-
-#### Images registry
-
-You can download pre-built docker images according to the following commands.
-
-- docker pull [takawang/modbus-cserver](https://hub.docker.com/r/takawang/modbus-cserver/)
-- docker pull [takawang/modbus-goclient](https://hub.docker.com/r/takawang/modbus-goclient/)
-- docker pull [takawang/modbusd](https://hub.docker.com/r/takawang/modbusd/)
-
-
-#### Images and testing from the scratch
+### Images and testing from the scratch
 
 ```bash
-# build simulation server image
-docker build -t takawang/modbus-cserver tests/cmbserver/.
-# build goclient image
-docker build -t takawang/modbus-goclient tests/goclient/.
-# build modbusd image
+
+docker pull takawang/c-modbus-slave:x86
 docker build -t takawang/modbusd .
+docker build -t takawang/dummy-psmbtcp test/dummy-psmbtcp/. 
 
-# run modbus server
-docker run -itd --name=slave takawang/modbus-cserver
-# run modbusd
+docker run -itd --name=slave takawang/c-modbus-slave:x86
 docker run -v /tmp:/tmp --link slave -it --name=modbusd takawang/modbusd
-# run goclient
-docker run -v /tmp:/tmp -it --link slave takawang/modbus-goclient
+docker run -v /tmp:/tmp -it --link slave takawang/dummy-psmbtcp
 ```
 
-#### Docker composer
+### Docker compose
 
 ```bash
-# build & run
-docker-compose up 
-# exit test
-ctrl+c
-```
-
-### // armhf
-
-#### Base images
-
-- [armhf git repo](https://github.com/taka-wang/docker-armv7)
-- [docker hub](https://hub.docker.com/u/takawang/)
-
-#### Images registry
-
-You can download pre-built docker images according to the following commands.
-
-- docker pull [takawang/arm-modbus-cserver](https://hub.docker.com/r/takawang/arm-modbus-cserver/)
-- docker pull [takawang/arm-modbus-goclient](https://hub.docker.com/r/takawang/arm-modbus-goclient/)
-- docker pull [takawang/arm-modbusd](https://hub.docker.com/r/takawang/arm-modbusd/)
-
-
-#### Images and testing from the scratch
-
-```bash
-# build simulation server image
-docker build -t takawang/arm-modbus-cserver -f tests/cmbserver/Dockerfile.arm .
-# build goclient image
-docker build -t takawang/arm-modbus-goclient tests/zclient/Dockerfile.arm .
-# build modbusd image
-docker build -t takawang/arm-modbusd -f Dockerfile.arm .
-
-# run modbus server
-docker run -itd --name=slave takawang/arm-modbus-cserver
-# run modbusd
-docker run -v /tmp:/tmp --link slave -it --name=modbusd takawang/arm-modbusd
-# run goclient
-docker run -v /tmp:/tmp -it --link slave takawang/arm-modbus-goclient
+docker-compose up --abort-on-container-exit
 ```
 
 ### Deployment Diagram
 
-![deployment](image/ndeployment.png)
+![deployment](image/mdeployment.png)
 
 ---
 
@@ -289,3 +228,5 @@ docker run -v /tmp:/tmp -it --link slave takawang/arm-modbus-goclient
 ## Documentations
 
 - [API Documentation](http://taka-wang.github.io/modbusd)
+
+

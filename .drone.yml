@@ -1,0 +1,23 @@
+# taka's private drone server
+# for v0.5
+
+workspace:
+    path: /drone # overwrite default path
+
+pipeline:
+    publish:
+        image: takawang/dind:edge
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock # docker in docker trick
+        commands:
+            - docker build --no-cache=true --build-arg MB=`(cat /etc/mb)` -t edgepro/modbusd:x86 -f Dockerfile.alpine .
+            - docker push edgepro/modbusd:x86
+    ci:
+        image: takawang/dind:push # docker in docker with compose
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock # docker in docker trick
+        commands:
+            - docker-compose -f docker-compose.drone rm -f -a
+            - docker-compose -f docker-compose.drone build
+            - docker-compose -f docker-compose.drone up --abort-on-container-exit
+            - docker-compose rm -f -a

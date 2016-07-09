@@ -27,8 +27,8 @@ typedef enum
     fc6         = 6,
     fc15        = 15,
     fc16        = 16,
-    set_timeout = 50,
-    get_timeout = 51
+    set_tcp_timeout = 50,
+    get_tcp_timeout = 51
 } cmd_t;
 
 #endif  // MAIN_H
