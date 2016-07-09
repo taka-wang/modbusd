@@ -71,7 +71,7 @@ static void save_config(const char *fname, cJSON * config)
  * @brief Generic zmq response sender for modbus
  *
  * @param pub Zmq publisher.
- * @param mode Request mode. ex. tcp, rtu.
+ * @param cmd Request command number.
  * @param json_resp Response string in JSON format.
  * @return Void.
  */
@@ -81,7 +81,7 @@ static void send_modbus_zmq_resp(void * pub, cmd_t cmd, char *json_resp)
     if (pub != NULL)
     {
         zmsg_t * zmq_resp = zmsg_new();
-        zmsg_addstrf(zmq_resp, "%d", cmd);      // frame 1: mode
+        zmsg_addstrf(zmq_resp, "%d", cmd);// frame 1: cmd
         zmsg_addstr(zmq_resp, json_resp); // frame 2: resp
         zmsg_send(&zmq_resp, pub);        // send zmq msg
         zmsg_destroy(&zmq_resp);          // cleanup zmsg
