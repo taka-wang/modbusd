@@ -1,3 +1,9 @@
+# v0.4.3
+
+## Done
+- [x] Replace modbusd base image with alpine (for production)
+- [x] Replace modbus slave test server base image with alpine
+
 # v0.4.0
 
 ## Done
