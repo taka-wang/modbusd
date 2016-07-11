@@ -62,12 +62,17 @@ int main(int argc, char *argv[])
                                UT_BITS_NB,
                                UT_BITS_TAB);
 
-    const uint16_t UT_INPUT_REGISTERS_NB = 0x3;
-    const uint16_t UT_INPUT_REGISTERS_TAB[] = { 0x000A, 0x000B, 0x000C };
+    const uint16_t UT_INPUT_REGISTERS_NB = 0x9;
+    const uint16_t UT_INPUT_REGISTERS_TAB[] = { 0x000A, 0x000B, 0x000C, 0x000D, 0x000E, 0x000F, 0x0001, 0x0002, 0x0003 };
     
     // Initialize INPUT REGISTERS: 3x
     for (int i=0; i < UT_INPUT_REGISTERS_NB; i++) {
         mb_mapping->tab_input_registers[i] = UT_INPUT_REGISTERS_TAB[i];;
+    }
+
+    // Initialize  REGISTERS: 4x
+    for (int i=0; i < UT_INPUT_REGISTERS_NB; i++) {
+        mb_mapping->tab_registers[i] = UT_INPUT_REGISTERS_TAB[i];;
     }
 
 
