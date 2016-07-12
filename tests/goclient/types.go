@@ -13,10 +13,10 @@ type RegValueType int
 
 // ScaleRange defines scale range
 type ScaleRange struct {
-	DomainLow  int `json:"a"`
-	DomainHigh int `json:"b"`
-	RangeLow   int `json:"c"`
-	RangeHigh  int `json:"d"`
+	DomainLow  float64 `json:"a"`
+	DomainHigh float64 `json:"b"`
+	RangeLow   float64 `json:"c"`
+	RangeHigh  float64 `json:"d"`
 }
 
 // JSONableByteSlice jsonable uint8 array
@@ -179,6 +179,22 @@ type MbtcpReadRes struct {
 	Data  interface{}       `json:"data,omitempty"` // universal data container
 }
 
+// MbtcpWriteReq write coil/register request
+type MbtcpWriteReq struct {
+	Tid   int64       `json:"tid"`
+	From  string      `json:"from,omitempty"`
+	FC    int         `json:"fc"`
+	IP    string      `json:"ip"`
+	Port  string      `json:"port,omitempty"`
+	Slave uint8       `json:"slave"`
+	Addr  uint16      `json:"addr"`
+	Len   uint16      `json:"len,omitempty"`
+	Hex   bool        `json:"hex,omitempty"`
+	Data  interface{} `json:"data"`
+}
+
+// MbtcpWriteRes == MbtcpSimpleRes
+
 // MbtcpTimeoutReq set/get TCP connection timeout request (1.3, 1.4)
 type MbtcpTimeoutReq struct {
 	Tid  int64  `json:"tid"`
@@ -203,4 +219,37 @@ type MbtcpSimpleReq struct {
 type MbtcpSimpleRes struct {
 	Tid    int64  `json:"tid"`
 	Status string `json:"status"`
+}
+
+// MbtcpPollReq polling coil/register request
+type MbtcpPollReq struct {
+	Tid      int64        `json:"tid"`
+	From     string       `json:"from,omitempty"`
+	Name     string       `json:"name"`
+	Interval int          `json:"interval"`
+	Enabled  bool         `json:"enabled"`
+	FC       int          `json:"fc"`
+	IP       string       `json:"ip"`
+	Port     string       `json:"port,omitempty"`
+	Slave    uint8        `json:"slave"`
+	Addr     uint16       `json:"addr"`
+	Len      uint16       `json:"len,omitempty"`
+	Type     RegValueType `json:"type,omitempty"`
+	Order    Endian       `json:"order,omitempty"`
+	Range    *ScaleRange  `json:"range,omitempty"` // point to struct can be omitted in json encode
+}
+
+// MbtcpPollRes == MbtcpSimpleRes
+
+// MbtcpPollData read coil/register response (1.1).
+// `Data interface` supports:
+// []uint16, []int16, []uint32, []int32, []float32, string
+type MbtcpPollData struct {
+	TimeStamp int64        `json:"ts"`
+	Name      string       `json:"name"`
+	Status    string       `json:"status"`
+	Type      RegValueType `json:"type,omitempty"`
+	// Bytes FC3, FC4 and Type 2~8 only
+	Bytes JSONableByteSlice `json:"bytes,omitempty"`
+	Data  interface{}       `json:"data,omitempty"` // universal data container
 }
