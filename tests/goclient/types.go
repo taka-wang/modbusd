@@ -11,6 +11,29 @@ type Endian int
 // RegValueType defines how to inteprete registers
 type RegValueType int
 
+// MbtcpCmdType defines modbus tcp command type
+type MbtcpCmdType string
+
+const (
+	fc1        MbtcpCmdType = "1"
+	fc2        MbtcpCmdType = "2"
+	fc3        MbtcpCmdType = "3"
+	fc4        MbtcpCmdType = "4"
+	fc5        MbtcpCmdType = "5"
+	fc6        MbtcpCmdType = "6"
+	fc15       MbtcpCmdType = "15"
+	fc16       MbtcpCmdType = "16"
+	setTimeout MbtcpCmdType = "50"
+	getTimeout MbtcpCmdType = "51"
+)
+
+// mbtcpReadTask read/poll task request
+type mbtcpReadTask struct {
+	Name string
+	Cmd  string
+	Req  interface{}
+}
+
 // ScaleRange defines scale range
 type ScaleRange struct {
 	DomainLow  float64 `json:"a"`
@@ -221,18 +244,19 @@ type MbtcpSimpleRes struct {
 	Status string `json:"status"`
 }
 
-// MbtcpPollReq polling coil/register request
-type MbtcpPollReq struct {
+// MbtcpPollStatus polling coil/register request;
+type MbtcpPollStatus struct {
 	Tid      int64        `json:"tid"`
 	From     string       `json:"from,omitempty"`
 	Name     string       `json:"name"`
-	Interval int          `json:"interval"`
+	Interval uint64       `json:"interval"`
 	Enabled  bool         `json:"enabled"`
 	FC       int          `json:"fc"`
 	IP       string       `json:"ip"`
 	Port     string       `json:"port,omitempty"`
 	Slave    uint8        `json:"slave"`
 	Addr     uint16       `json:"addr"`
+	Status   string       `json:"status,omitempty"` // 2.3.2 response only
 	Len      uint16       `json:"len,omitempty"`
 	Type     RegValueType `json:"type,omitempty"`
 	Order    Endian       `json:"order,omitempty"`
@@ -252,4 +276,20 @@ type MbtcpPollData struct {
 	// Bytes FC3, FC4 and Type 2~8 only
 	Bytes JSONableByteSlice `json:"bytes,omitempty"`
 	Data  interface{}       `json:"data,omitempty"` // universal data container
+}
+
+// MbtcpPollOpReq generic modbus tcp poll operation request
+type MbtcpPollOpReq struct {
+	Tid      int64  `json:"tid"`
+	From     string `json:"from,omitempty"`
+	Name     string `json:"name,omitempty"`
+	Interval uint64 `json:"interval,omitempty"`
+	Enabled  bool   `json:"enabled,omitempty"`
+}
+
+// MbtcpPollsStatus requests status
+type MbtcpPollsStatus struct {
+	Tid    int64             `json:"tid"`
+	Status string            `json:"status"`
+	Polls  []MbtcpPollStatus `json:"polls"`
 }
