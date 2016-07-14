@@ -474,7 +474,7 @@ func TestTimeout(t *testing.T) {
 	s := sugar.New(nil)
 
 	s.Assert("`Set timeout` test", func(log sugar.Log) bool {
-		setReq := DMbtcpTimeout{
+		setReq := psmb.DMbtcpTimeout{
 			Tid:     strconv.FormatInt(time.Now().UTC().UnixNano(), 10),
 			Cmd:     50,
 			Timeout: 5100000,
