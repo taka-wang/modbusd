@@ -45,7 +45,7 @@ func subscriber() (string, string) {
 	}
 }
 
-// ReadReqBuilder Read register/coil command builder
+// ReadReqBuilder help to build read register/coil command
 func ReadReqBuilder(cmd int, addr uint16, len uint16) psmb.DMbtcpReadReq {
 	return psmb.DMbtcpReadReq{
 		Tid:   strconv.FormatInt(time.Now().UTC().UnixNano(), 10),
@@ -58,7 +58,7 @@ func ReadReqBuilder(cmd int, addr uint16, len uint16) psmb.DMbtcpReadReq {
 	}
 }
 
-// WriteReqBuilder Write single register/coil command builder
+// WriteReqBuilder help to build write single register/coil command
 func WriteReqBuilder(cmd int, addr uint16, data uint16) psmb.DMbtcpWriteReq {
 	return psmb.DMbtcpWriteReq{
 		Tid:   strconv.FormatInt(time.Now().UTC().UnixNano(), 10),
@@ -71,7 +71,7 @@ func WriteReqBuilder(cmd int, addr uint16, data uint16) psmb.DMbtcpWriteReq {
 	}
 }
 
-// WriteMultiReqBuilder Write multiple register/coil command builder
+// WriteMultiReqBuilder help to build Write multiple register/coil command
 func WriteMultiReqBuilder(cmd int, addr uint16, len uint16, data []uint16) psmb.DMbtcpWriteReq {
 	return psmb.DMbtcpWriteReq{
 		Tid:   strconv.FormatInt(time.Now().UTC().UnixNano(), 10),
@@ -85,15 +85,11 @@ func WriteMultiReqBuilder(cmd int, addr uint16, len uint16, data []uint16) psmb.
 	}
 }
 
-//========= Test cases ==============================
-
-// 4X
-func TestHoldingRegisters(t *testing.T) {
-	s := sugar.New(nil)
+// init functions
+func init() {
 	portNum = "502"
-
 	// generalize host reslove for docker/local env
-	host, err := net.LookupHost("slave")
+	host, err := net.LookupHost("mbd")
 	if err != nil {
 		fmt.Println("local run")
 		hostName = "127.0.0.1"
@@ -101,6 +97,13 @@ func TestHoldingRegisters(t *testing.T) {
 		fmt.Println("docker run")
 		hostName = host[0] //docker
 	}
+}
+
+//========= Test cases ==============================
+
+// 4X
+func TestHoldingRegisters(t *testing.T) {
+	s := sugar.New(t)
 
 	s.Title("4X table test: FC3, FC6, FC16")
 
@@ -286,18 +289,7 @@ func TestHoldingRegisters(t *testing.T) {
 
 // 0x
 func TestCoils(t *testing.T) {
-	s := sugar.New(nil)
-	portNum = "502"
-
-	// generalize host reslove for docker/local env
-	host, err := net.LookupHost("slave")
-	if err != nil {
-		fmt.Println("local run")
-		hostName = "127.0.0.1"
-	} else {
-		fmt.Println("docker run")
-		hostName = host[0] //docker
-	}
+	s := sugar.New(t)
 
 	s.Title("0X table test: FC1, FC5, FC15")
 
@@ -396,18 +388,7 @@ func TestCoils(t *testing.T) {
 
 // 1x
 func TestDiscretesInput(t *testing.T) {
-	s := sugar.New(nil)
-	portNum = "502"
-
-	// generalize host reslove for docker/local env
-	host, err := net.LookupHost("slave")
-	if err != nil {
-		fmt.Println("local run")
-		hostName = "127.0.0.1"
-	} else {
-		fmt.Println("docker run")
-		hostName = host[0] //docker
-	}
+	s := sugar.New(t)
 
 	s.Title("1X table test: FC2")
 
@@ -434,18 +415,7 @@ func TestDiscretesInput(t *testing.T) {
 
 // 3X
 func TestInputRegisters(t *testing.T) {
-	s := sugar.New(nil)
-	portNum = "502"
-
-	// generalize host reslove for docker/local env
-	host, err := net.LookupHost("slave")
-	if err != nil {
-		fmt.Println("local run")
-		hostName = "127.0.0.1"
-	} else {
-		fmt.Println("docker run")
-		hostName = host[0] //docker
-	}
+	s := sugar.New(t)
 
 	s.Title("3X table read test: FC4")
 	s.Assert("`3X Table` read test:FC4", func(log sugar.Log) bool {
@@ -471,7 +441,7 @@ func TestInputRegisters(t *testing.T) {
 
 // timeout
 func TestTimeout(t *testing.T) {
-	s := sugar.New(nil)
+	s := sugar.New(t)
 
 	s.Assert("`Set timeout` test", func(log sugar.Log) bool {
 		setReq := psmb.DMbtcpTimeout{
