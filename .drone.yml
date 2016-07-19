@@ -7,7 +7,7 @@ pipeline:
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
         commands:
-            - apt-get -y install python-pip
+            - apk add --no-cache python-pip
             - pip install docker-compose
             - docker ps -a
             - docker-compose up --build
