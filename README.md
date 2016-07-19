@@ -213,27 +213,23 @@ We do continuous integration and update docker images after git push by [Travis 
 
 You can download pre-built docker images according to the following commands.
 
-- docker pull [takawang/modbus-cserver](https://hub.docker.com/r/takawang/modbus-cserver/)
-- docker pull [takawang/modbus-goclient](https://hub.docker.com/r/takawang/modbus-goclient/)
+- docker pull [takawang/c-modbus-slave](https://hub.docker.com/r/takawang/c-modbus-slave/)
+- docker pull [takawang/dummy-psmb](https://hub.docker.com/r/takawang/dummy-psmb/)
 - docker pull [takawang/modbusd](https://hub.docker.com/r/takawang/modbusd/)
 
 
 #### Images and testing from the scratch
 
 ```bash
-# build simulation server image
-docker build -t takawang/modbus-cserver tests/cmbserver/.
-# build goclient image
-docker build -t takawang/modbus-goclient tests/goclient/.
 # build modbusd image
 docker build -t takawang/modbusd .
 
 # run modbus server
-docker run -itd --name=slave takawang/modbus-cserver
+docker run -itd --name=slave takawang/c-modbus-slave
 # run modbusd
 docker run -v /tmp:/tmp --link slave -it --name=modbusd takawang/modbusd
 # run goclient
-docker run -v /tmp:/tmp -it --link slave takawang/modbus-goclient
+docker run -v /tmp:/tmp -it --link slave takawang/dummy-psmb
 ```
 
 #### Docker composer
@@ -264,10 +260,6 @@ You can download pre-built docker images according to the following commands.
 #### Images and testing from the scratch
 
 ```bash
-# build simulation server image
-docker build -t takawang/arm-modbus-cserver -f tests/cmbserver/Dockerfile.arm .
-# build goclient image
-docker build -t takawang/arm-modbus-goclient tests/zclient/Dockerfile.arm .
 # build modbusd image
 docker build -t takawang/arm-modbusd -f Dockerfile.arm .
 

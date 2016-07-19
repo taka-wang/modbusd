@@ -50,7 +50,7 @@ script:
 
 ### stop all containers
 #- docker stop $MODBUS_SLAVE_NAME $MODBUSD_NAME $VALGRIND_NAME
-- docker stop $MODBUS_SLAVE_NAME $MODBUSD_NAME
+- docker stop $MODBUS_SLAVE_NAME $MODBUSD_NAME $MODBUS_GOCLIENT_NAME
 
 after_success:
   - cd $TRAVIS_BUILD_DIR
@@ -68,7 +68,7 @@ env:
   - MODBUSD_IMG=takawang/modbusd
 
   - MODBUS_SLAVE_NAME=slave
-  - MODBUS_GOCLIENT_NAME=goclient
+  - MODBUS_GOCLIENT_NAME=dummy-psmb
   - MODBUSD_NAME=modbusd
   #- VALGRIND_NAME=valgrind
 
