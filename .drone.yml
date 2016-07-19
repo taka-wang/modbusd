@@ -9,5 +9,6 @@ pipeline:
         commands:
             - apk add --no-cache py-pip
             - pip install docker-compose
-            - docker ps -a
-            - docker-compose up --build
+            #- docker ps -a
+            - docker-compose up --build -d
+            - sleep 30
