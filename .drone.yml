@@ -8,7 +8,7 @@ pipeline:
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
         commands:
-            - apk add git
+            - apk add --no-cache git
             - git clone https://github.com/taka-wang/dummy-psmb.git
             - git clone https://github.com/taka-wang/c-modbus-slave.git
             - docker-compose -f docker-compose.build rm -f -a
