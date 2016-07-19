@@ -19,11 +19,11 @@ build:
             - ./server &
             - cd ..
 
-            # psmb
+            # dummy psmb
             - go get github.com/takawang/zmq3
-            - go get github.com/taka-wang/gocron
             - go get github.com/takawang/sugar
             - go get github.com/takawang/logrus
+            - go get github.com/taka-wang/gocron
             - go get github.com/taka-wang/psmb
             - git clone https://github.com/taka-wang/dummy-psmb.git
             - cd dummy-psmb
