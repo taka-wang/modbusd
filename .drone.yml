@@ -10,5 +10,7 @@ pipeline:
             - apk add --no-cache py-pip
             - pip install docker-compose
             #- docker ps -a
-            - docker-compose up --build --timeout 30
+            - docker-compose rm -f
+            - docker-compose build
+            - docker-compose up --build --abort-on-container-exit
             #- sleep 30
