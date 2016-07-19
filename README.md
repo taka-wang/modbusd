@@ -164,22 +164,6 @@ sudo make install
 sudo ldconfig
 ```
 
-### Setup testing environment
-
-#### Install golang 1.6.x & zmq binding on ubuntu
-
-```bash
-sudo apt-get install pkg-config
-curl -O https://storage.googleapis.com/golang/go1.6.2.linux-amd64.tar.gz
-tar -xvf go1.6.2.linux-amd64.tar.gz
-sudo mv go /usr/local
-nano ~/.profile
-export PATH=$PATH:/usr/local/go/bin
-go get github.com/takawang/zmq3
-```
-
----
-
 ### Build
 
 ```bash
