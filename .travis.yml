@@ -30,14 +30,6 @@ addons:
 
 script:
 
-### build modbus slave server image
-- docker build -t $MODBUS_SLAVE_IMG tests/cmbserver/.
-- if [ ! -z "$TRAVIS_TAG" ]; then docker tag $MODBUS_SLAVE_IMG:latest $MODBUS_SLAVE_IMG:$TRAVIS_TAG; fi && docker push $MODBUS_SLAVE_IMG
-
-### build goclient image
-- docker build -t $MODBUS_GOCLIENT_IMG tests/goclient/.
-- if [ ! -z "$TRAVIS_TAG" ]; then docker tag $MODBUS_GOCLIENT_IMG:latest $MODBUS_GOCLIENT_IMG:$TRAVIS_TAG; fi && docker push $MODBUS_GOCLIENT_IMG
-
 ### build modbusd image
 - docker build -t $MODBUSD_IMG .
 - if [ ! -z "$TRAVIS_TAG" ]; then docker tag $MODBUSD_IMG:latest $MODBUSD_IMG:$TRAVIS_TAG; fi && docker push $MODBUSD_IMG
@@ -71,8 +63,8 @@ env:
   - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile
   - GH_REPO_REF: github.com/taka-wang/modbusd.git
   
-  - MODBUS_SLAVE_IMG=takawang/modbus-cserver
-  - MODBUS_GOCLIENT_IMG=takawang/modbus-goclient
+  - MODBUS_SLAVE_IMG=takawang/c-modbus-slave
+  - MODBUS_GOCLIENT_IMG=takawang/dummy-psmb
   - MODBUSD_IMG=takawang/modbusd
 
   - MODBUS_SLAVE_NAME=slave
