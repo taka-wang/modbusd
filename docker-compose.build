@@ -11,8 +11,8 @@ modbusd:
         - slave
     #command: valgrind --leak-check=full --verbose /usr/bin/modbusd /etc/modbusd/modbusd.json
 
-tester:
-    image: dummy-psmb/.
+dummy-psmb:
+    build: dummy-psmb/.
     dockerfile: dummy-psmb/Dockerfile
     volumes_from:
         - modbusd
