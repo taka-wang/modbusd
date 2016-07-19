@@ -84,3 +84,4 @@ notifications:
     template:
       - "%{repository} (%{commit}) : %{message} %{foo} "
       - "Build details: %{build_url}"
+      
