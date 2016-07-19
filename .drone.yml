@@ -1,6 +1,9 @@
 # taka's private drone server
 # for v0.5
 
+workspace:
+    path: /drone
+
 pipeline:
     build:
         #privileged: true
