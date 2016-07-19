@@ -6,7 +6,7 @@ workspace:
 
 pipeline:
     build:
-        image: docker
+        image: takawang/dind:compose
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
         commands:
