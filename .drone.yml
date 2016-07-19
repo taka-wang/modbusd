@@ -8,6 +8,6 @@ pipeline:
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
         commands:
-            - docker-compose rm --all
+            - docker-compose rm -f -a
             - docker-compose build
             - docker-compose up --abort-on-container-exit
