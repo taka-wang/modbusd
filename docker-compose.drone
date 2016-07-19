@@ -9,7 +9,6 @@ modbusd:
         - /tmp:/tmp
     links:
         - slave
-    #command: valgrind --leak-check=full --verbose /usr/bin/modbusd /etc/modbusd/modbusd.json
 
 dummy-psmb:
     build: /drone/dummy-psmb/.
