@@ -1,6 +1,6 @@
 slave:
-    build: /drone/modbusd/c-modbus-slave/.
-    dockerfile: /drone/modbusd/c-modbus-slave/Dockerfile
+    build: /drone/c-modbus-slave/.
+    dockerfile: /drone/c-modbus-slave/Dockerfile
 
 modbusd:
     build: .
@@ -12,8 +12,8 @@ modbusd:
     #command: valgrind --leak-check=full --verbose /usr/bin/modbusd /etc/modbusd/modbusd.json
 
 dummy-psmb:
-    build: /drone/modbusd/dummy-psmb/.
-    dockerfile: /drone/modbusd/dummy-psmb/Dockerfile
+    build: /drone/dummy-psmb/.
+    dockerfile: /drone/dummy-psmb/Dockerfile
     volumes_from:
         - modbusd
     links:

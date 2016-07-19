@@ -16,6 +16,6 @@ pipeline:
             - git clone https://github.com/taka-wang/dummy-psmb.git
             - git clone https://github.com/taka-wang/c-modbus-slave.git
             - ls
-            - docker-compose -f docker-compose.build rm -f -a
-            - docker-compose -f docker-compose.build build
-            - docker-compose -f docker-compose.build up --abort-on-container-exit
+            - docker-compose -f docker-compose.drone rm -f -a
+            - docker-compose -f docker-compose.drone build
+            - docker-compose -f docker-compose.drone up --abort-on-container-exit
