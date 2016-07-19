@@ -6,9 +6,9 @@ workspace:
 
 pipeline:
     build:
-        image: takawang/dind:compose
+        image: takawang/dind:compose # docker in docker wiht compose
         volumes:
-            - /var/run/docker.sock:/var/run/docker.sock
+            - /var/run/docker.sock:/var/run/docker.sock # docker in docker trick
         commands:
             - git clone https://github.com/taka-wang/dummy-psmb.git
             - git clone https://github.com/taka-wang/c-modbus-slave.git
