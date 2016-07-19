@@ -1,7 +1,7 @@
 # taka's private drone server
 
 build:
-    psmb_goclient:
+    modbus:
         image: takawang/ubuntu-drone-psmb
         commands:
             # modbusd
