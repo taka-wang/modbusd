@@ -1,0 +1,21 @@
+slave:
+    build: c-modbus-slave/.
+    dockerfile: c-modbus-slave/Dockerfile
+
+modbusd:
+    build: .
+    #dockerfile: Dockerfile.alpine
+    volumes:
+        - /tmp:/tmp
+    links:
+        - slave
+    #command: valgrind --leak-check=full --verbose /usr/bin/modbusd /etc/modbusd/modbusd.json
+
+dummy-psmb:
+    image: dummy-psmb/.
+    dockerfile: dummy-psmb/Dockerfile
+    volumes_from:
+        - modbusd
+    links:
+        - slave
+    

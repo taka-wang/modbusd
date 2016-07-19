@@ -8,6 +8,8 @@ pipeline:
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
         commands:
-            - docker-compose rm -f -a
-            - docker-compose build
-            - docker-compose up --abort-on-container-exit
+            - git clone https://github.com/taka-wang/dummy-psmb.git
+            - git clone https://github.com/taka-wang/c-modbus-slave.git
+            - docker-compose -f docker-compose.build rm -f -a
+            - docker-compose -f docker-compose.build build
+            - docker-compose -f docker-compose.build up --abort-on-container-exit
