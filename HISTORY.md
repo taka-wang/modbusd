@@ -1,3 +1,6 @@
+# v0.5.0
+- [x] Refine test cases
+
 # v0.4.3
 
 ## Done
