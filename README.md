@@ -1,6 +1,6 @@
 # modbusd
 
-[![Build Status](https://travis-ci.org/taka-wang/modbusd.svg?branch=dev)](https://travis-ci.org/taka-wang/modbusd) 
+[![Build Status](http://dds.cmwang.net/api/badges/taka-wang/modbusd/status.svg)](http://dds.cmwang.net/taka-wang/modbusd)
 [![GitHub tag](https://img.shields.io/github/tag/taka-wang/modbusd.svg)](https://github.com/taka-wang/modbusd/tags) 
 [![Release](https://img.shields.io/github/release/taka-wang/modbusd.svg)](https://github.com/taka-wang/modbusd/releases/latest)
 [![Layer](https://imagelayers.io/badge/takawang/modbusd:latest.svg)](https://imagelayers.io/?images=takawang/modbusd:latest)
