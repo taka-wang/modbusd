@@ -1,5 +1,5 @@
 slave:
-    build: tests/cmbserver/.
+    image: takawang/c-modbus-slave
 
 modbusd:
     build: .
@@ -10,7 +10,7 @@ modbusd:
     #command: valgrind --leak-check=full --verbose /usr/bin/modbusd /etc/modbusd/modbusd.json
 
 goclient:
-    build: tests/goclient/.
+    image: takawang/dummy-psmb
     volumes_from:
         - modbusd
     links:
