@@ -1,16 +1,13 @@
 # taka's private drone server
+# for v0.5
 
 pipeline:
     build:
-        privileged: true
-        image: docker:dind
+        #privileged: true
+        image: takawang/dind:compose
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
         commands:
-            - apk add --no-cache py-pip
-            - pip install docker-compose
-            #- docker ps -a
             - docker-compose rm -f
             - docker-compose build
             - docker-compose up --build --abort-on-container-exit
-            #- sleep 30
