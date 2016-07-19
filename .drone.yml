@@ -1,3 +1,5 @@
+# taka's private drone server
+
 build:
     psmb_goclient:
         image: takawang/ubuntu-drone-psmb
