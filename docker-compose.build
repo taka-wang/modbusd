@@ -1,6 +1,6 @@
 slave:
     build: c-modbus-slave/.
-    dockerfile: c-modbus-slave/Dockerfile
+    dockerfile: ./c-modbus-slave/Dockerfile
 
 modbusd:
     build: .
@@ -13,7 +13,7 @@ modbusd:
 
 dummy-psmb:
     build: dummy-psmb/.
-    dockerfile: dummy-psmb/Dockerfile
+    dockerfile: ./dummy-psmb/Dockerfile
     volumes_from:
         - modbusd
     links:
