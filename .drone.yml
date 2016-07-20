@@ -5,7 +5,7 @@ workspace:
     path: /drone # overwrite default path
 
 pipeline:
-    CI:
+    ci:
         image: takawang/dind:compose # docker in docker wiht compose
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock # docker in docker trick
@@ -18,7 +18,7 @@ pipeline:
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock # docker in docker trick
         commands:
-            - docker login --email=$$DOCKER_HUB_EMAIL --username=$$DOCKER_HUB_USERNAME --password=$$DOCKER_HUB_PASSWORD
+            - docker login -u $$DOCKER_HUB_USERNAME -p $$DOCKER_HUB_PASSWORD -e $$DOCKER_HUB_EMAIL
             - docker build -t takawang/modbusd:alpine -f Dockerfile.alpine .
             - docker push takawang/modbusd:alpine
 
