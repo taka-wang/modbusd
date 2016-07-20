@@ -183,7 +183,7 @@ make
 
 ## Continuous Integration
 
-We do continuous integration and update docker images after git push by [Travis CI](https://travis-ci.org/taka-wang/modbusd).
+We do continuous integration and update docker images after git push by self-hosted drone.io server [~~Travis CI~~](https://travis-ci.org/taka-wang/modbusd).
 
 ![ci](image/ci.png)
 
@@ -221,9 +221,7 @@ docker run -v /tmp:/tmp -it --link slave takawang/dummy-psmb
 
 ```bash
 # build & run
-docker-compose up 
-# exit test
-ctrl+c
+docker-compose up --abort-on-container-exit
 ```
 
 ### // armhf
