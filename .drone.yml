@@ -14,14 +14,9 @@ pipeline:
             - docker-compose -f docker-compose.drone build
             - docker-compose -f docker-compose.drone up --abort-on-container-exit
     build:
-        image: takawang/dind:compose
+        image: takawang/dind:push
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock # docker in docker trick
         commands:
-            - echo $$DOCKER_HUB_USERNAME
-            - echo DOCKER_HUB_USERNAME
-            - docker login -u $$DOCKER_HUB_USERNAME -p $$DOCKER_HUB_PASSWORD -e $$DOCKER_HUB_EMAIL
             - docker build -t takawang/modbusd:alpine -f Dockerfile.alpine .
             - docker push takawang/modbusd:alpine
-
-
