@@ -178,11 +178,11 @@ int main(int argc, char *argv[])
                             send_modbus_zmq_resp(zmq_pub, cmd, 
                                 mbtcp_cmd_hanlder(req_json_obj, mbtcp_fc16_req));
                             break;
-                        case set_timeout:
+                        case set_tcp_timeout:
                             send_modbus_zmq_resp(zmq_pub, cmd, 
                                 mbtcp_set_response_timeout(tid, json_get_long(req_json_obj, "timeout")));
                             break;
-                        case get_timeout:
+                        case get_tcp_timeout:
                             send_modbus_zmq_resp(zmq_pub, cmd, 
                                 mbtcp_get_response_timeout(tid));
                             break;

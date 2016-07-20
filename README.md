@@ -48,18 +48,18 @@ Modbus master daemon
 
 ### Command mapping table
 
->| Command      | Number | Description  |
->|:------------:|-------:|:-------------|
->| fc1          |   1    | modbus fc 1  |
->| fc2          |   2    | modbus fc 2  |
->| fc3          |   3    | modbus fc 3  |
->| fc4          |   4    | modbus fc 4  |
->| fc5          |   5    | modbus fc 5  |
->| fc6          |   6    | modbus fc 6  |
->| fc15         |  15    | modbus fc 15 |
->| fc16         |  16    | modbus fc 16 |
->| timeout.set  |  50    | set timeout  |
->| timeout.get  |  51    | get timeout  |
+>| Command         | Number | Description      |
+>|:---------------:|-------:|:-----------------|
+>| fc1             |   1    | modbus fc 1      |
+>| fc2             |   2    | modbus fc 2      |
+>| fc3             |   3    | modbus fc 3      |
+>| fc4             |   4    | modbus fc 4      |
+>| fc5             |   5    | modbus fc 5      |
+>| fc6             |   6    | modbus fc 6      |
+>| fc15            |  15    | modbus fc 15     |
+>| fc16            |  16    | modbus fc 16     |
+>| set_tcp_timeout |  50    | set tcp timeout  |
+>| get_tcp_timeout |  51    | get tcp timeout  |
 
 
 ---
