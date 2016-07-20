@@ -1,6 +1,6 @@
 slave:
-    build: /drone/c-modbus-slave/.
-    dockerfile: /drone/c-modbus-slave/Dockerfile
+    build: /drone/test/c-modbus-slave/.
+    dockerfile: /drone/test/c-modbus-slave/Dockerfile
 
 modbusd:
     build: .
@@ -11,8 +11,8 @@ modbusd:
         - slave
 
 dummy-psmb:
-    build: /drone/dummy-psmb/.
-    dockerfile: /drone/dummy-psmb/Dockerfile
+    build: /drone/test/dummy-psmb/.
+    dockerfile: /drone/test/dummy-psmb/Dockerfile
     volumes_from:
         - modbusd
     links:
