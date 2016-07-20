@@ -5,6 +5,14 @@ workspace:
     path: /drone # overwrite default path
 
 pipeline:
+    build:
+        image: takawang/dind:push
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock # docker in docker trick
+        commands:
+            - docker build --build-arg MB=`(cat /etc/mb)` -t takawang/modbusd:alpine -f Dockerfile.alpine .
+            - docker push takawang/modbusd:alpine
+
     ci:
         image: takawang/dind:push # docker in docker wiht compose
         volumes:
@@ -13,13 +21,3 @@ pipeline:
             - docker-compose -f docker-compose.drone rm -f -a
             - docker-compose -f docker-compose.drone build
             - docker-compose -f docker-compose.drone up --abort-on-container-exit
-    build:
-        image: takawang/dind:push
-        volumes:
-            - /var/run/docker.sock:/var/run/docker.sock # docker in docker trick
-        commands:
-            #- docker build -t takawang/modbusd -f Dockerfile .
-            #- docker push takawang/modbusd
-            #- mb=`(cat /etc/mb)`
-            - docker build --build-arg MB=`(cat /etc/mb)` -t takawang/modbusd:alpine -f Dockerfile.alpine .
-            - docker push takawang/modbusd:alpine
