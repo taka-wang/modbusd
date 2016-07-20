@@ -4,7 +4,6 @@
 [![Build Status](http://dds.cmwang.net/api/badges/taka-wang/modbusd/status.svg)](http://dds.cmwang.net/taka-wang/modbusd)
 [![GitHub tag](https://img.shields.io/github/tag/taka-wang/modbusd.svg)](https://github.com/taka-wang/modbusd/tags) 
 [![Release](https://img.shields.io/github/release/taka-wang/modbusd.svg)](https://github.com/taka-wang/modbusd/releases/latest)
-[![Layer](https://imagelayers.io/badge/takawang/modbusd:latest.svg)](https://imagelayers.io/?images=takawang/modbusd:latest)
 
 Modbus master daemon 
 
@@ -217,7 +216,7 @@ docker run -v /tmp:/tmp --link slave -it --name=modbusd takawang/modbusd
 docker run -v /tmp:/tmp -it --link slave takawang/dummy-psmb
 ```
 
-#### Docker composer
+#### Docker compose
 
 ```bash
 # build & run
