@@ -182,7 +182,7 @@ make
 
 ## Continuous Integration
 
-We do continuous integration and update docker images after git push by self-hosted drone.io server [~~Travis CI~~](https://travis-ci.org/taka-wang/modbusd).
+I do continuous integration and update docker images after git push by self-hosted drone.io server [~~Travis CI~~](https://travis-ci.org/taka-wang/modbusd).
 
 ![ci](image/ci.png)
 
