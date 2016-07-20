@@ -18,9 +18,8 @@ pipeline:
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock # docker in docker trick
         commands:
-            - docker build -t takawang/modbusd -f Dockerfile .
-            - docker push takawang/modbusd
-
-            #- docker build -t takawang/modbusd:alpine -f Dockerfile.alpine .
-            #- docker push takawang/modbusd:alpine
+            #- docker build -t takawang/modbusd -f Dockerfile .
+            #- docker push takawang/modbusd
+            - docker build -t takawang/modbusd:alpine -f Dockerfile.alpine .
+            - docker push takawang/modbusd:alpine
 

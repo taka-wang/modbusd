@@ -46,7 +46,7 @@ RUN apk update \
 
     && echo " ... build modbusd" \
         && cd /tmp/ \
-        && git clone https://github.com/taka-wang/modbusd.git \
+        && git clone https://18fea5f5d6d935f46a60fdac2e6901eb39fb0871@github.com/taka-wang/modbusd.git \
         && mkdir -p /tmp/modbusd/build && cd /tmp/modbusd/build \
         && cmake .. && make && make install \
     
