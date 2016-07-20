@@ -18,6 +18,8 @@ pipeline:
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock # docker in docker trick
         commands:
+            - echo $$DOCKER_HUB_USERNAME
+            - echo DOCKER_HUB_USERNAME
             - docker login -u $$DOCKER_HUB_USERNAME -p $$DOCKER_HUB_PASSWORD -e $$DOCKER_HUB_EMAIL
             - docker build -t takawang/modbusd:alpine -f Dockerfile.alpine .
             - docker push takawang/modbusd:alpine
