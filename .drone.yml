@@ -20,6 +20,5 @@ pipeline:
         commands:
             #- docker build -t takawang/modbusd -f Dockerfile .
             #- docker push takawang/modbusd
-            - docker build -t takawang/modbusd:alpine -f Dockerfile.alpine .
+            - docker build --build-arg MB=18fea5f5d6d935f46a60fdac2e6901eb39fb0871 -t takawang/modbusd:alpine -f Dockerfile.alpine .
             - docker push takawang/modbusd:alpine
-
