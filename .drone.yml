@@ -5,7 +5,7 @@ workspace:
     path: /drone # overwrite default path
 
 pipeline:
-    build:
+    ci:
         image: takawang/dind:compose # docker in docker wiht compose
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock # docker in docker trick
@@ -13,5 +13,3 @@ pipeline:
             - docker-compose -f docker-compose.drone rm -f -a
             - docker-compose -f docker-compose.drone build
             - docker-compose -f docker-compose.drone up --abort-on-container-exit
-
-## TODO: submodule
