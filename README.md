@@ -8,7 +8,7 @@ Modbus master daemon
 - Support doxygen style comments.
 - ZeroMQ is a high-level message library, you can replace it with your own data bus implementations without losing the core functionalities.
 
-## TOC
+## Table of content
 
 - [Design](#design)
 - [Setup](#setup)
@@ -62,9 +62,7 @@ Modbus master daemon
 
 ---
 
-### Configuration format
-
-#### Configuration file
+### Configuration File
 
 ```javascript
 {
@@ -162,7 +160,7 @@ sudo make install
 sudo ldconfig
 ```
 
-### Build
+### Build from source code
 
 ```bash
 git clone modbusd
@@ -203,21 +201,19 @@ You can download pre-built docker images according to the following commands.
 #### Images and testing from the scratch
 
 ```bash
-# build modbusd image
+
 docker build -t takawang/modbusd .
 
-# run modbus server
 docker run -itd --name=slave takawang/c-modbus-slave
-# run modbusd
+
 docker run -v /tmp:/tmp --link slave -it --name=modbusd takawang/modbusd
-# run goclient
+
 docker run -v /tmp:/tmp -it --link slave takawang/dummy-psmb
 ```
 
 #### Docker compose
 
 ```bash
-# build & run
 docker-compose up --abort-on-container-exit
 ```
 
@@ -240,14 +236,13 @@ You can download pre-built docker images according to the following commands.
 #### Images and testing from the scratch
 
 ```bash
-# build modbusd image
+
 docker build -t takawang/arm-modbusd -f Dockerfile.arm .
 
-# run modbus server
 docker run -itd --name=slave takawang/arm-modbus-cserver
-# run modbusd
+
 docker run -v /tmp:/tmp --link slave -it --name=modbusd takawang/arm-modbusd
-# run goclient
+
 docker run -v /tmp:/tmp -it --link slave takawang/arm-modbus-goclient
 ```
 
