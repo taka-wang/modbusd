@@ -111,8 +111,6 @@ Please refer to [command definition](command.md).
 
 ## Setup
 
-Step by step from scratch or ([Travis CI](https://travis-ci.org) + [Docker](#ci))
-
 ### Setup development dependencies
 
 ```bash
