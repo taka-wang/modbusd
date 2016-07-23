@@ -3,7 +3,7 @@ slave:
     dockerfile: /drone/test/c-modbus-slave/Dockerfile
 
 modbusd:
-    image: takawang/modbusd:alpine
+    image: edgepro/modbusd:x86
     volumes:
         - /tmp:/tmp
     links:

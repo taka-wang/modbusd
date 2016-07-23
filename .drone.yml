@@ -5,14 +5,7 @@ workspace:
     path: /drone # overwrite default path
 
 pipeline:
-    publish1:
-        image: takawang/dind:push
-        volumes:
-            - /var/run/docker.sock:/var/run/docker.sock # docker in docker trick
-        commands:
-            - docker build --no-cache=true --build-arg MB=`(cat /etc/mb)` -t takawang/modbusd:alpine -f Dockerfile.alpine .
-            - docker push takawang/modbusd:alpine
-    publish2:
+    publish:
         image: takawang/dind:edge
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock # docker in docker trick

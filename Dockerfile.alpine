@@ -1,6 +1,3 @@
-#
-# modbus daemon
-#
 FROM alpine:latest
 MAINTAINER Taka Wang <taka@cmwang.net>
 
