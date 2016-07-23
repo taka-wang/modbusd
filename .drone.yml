@@ -10,14 +10,14 @@ pipeline:
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock # docker in docker trick
         commands:
-            - docker build --build-arg MB=`(cat /etc/mb)` -t takawang/modbusd:alpine -f Dockerfile.alpine .
+            - docker build --no-cache=true --build-arg MB=`(cat /etc/mb)` -t takawang/modbusd:alpine -f Dockerfile.alpine .
             - docker push takawang/modbusd:alpine
     publish2:
         image: takawang/dind:edge
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock # docker in docker trick
         commands:
-            - docker build --build-arg MB=`(cat /etc/mb)` -t edgepro/modbusd:x86 -f Dockerfile.alpine .
+            - docker build --no-cache=true --build-arg MB=`(cat /etc/mb)` -t edgepro/modbusd:x86 -f Dockerfile.alpine .
             - docker push edgepro/modbusd:x86
     ci:
         image: takawang/dind:push # docker in docker wiht compose
