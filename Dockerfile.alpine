@@ -59,8 +59,8 @@ RUN apk update \
             git autoconf cmake build-base tar libtool zlib musl-dev openssl-dev zlib-dev curl \
         && rm -rf /var/cache/apk/* 
 
-RUN apk update \
-    && apk add libgcc libstdc++
+#RUN apk update \
+#    && apk add libgcc libstdc++
 
 EXPOSE 502
 
