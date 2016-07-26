@@ -1,4 +1,4 @@
-FROM takawang/arm-modbus
+FROM takawang/modbus-env:armhf
 MAINTAINER Taka Wang <taka@cmwang.net>
 
 ## Build modbusd

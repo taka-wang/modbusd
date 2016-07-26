@@ -1,4 +1,4 @@
-FROM takawang/ubuntu-modbus
+FROM takawang/modbus-env:x86
 MAINTAINER Taka Wang <taka@cmwang.net>
 
 ## Build modbusd
