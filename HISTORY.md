@@ -55,4 +55,5 @@
 
 - [ ] implement [circuit breaker pattern](http://martinfowler.com/bliki/CircuitBreaker.html)
 - [ ] implement retry count mechanism for each modbus slave
+- [ ] implement external debug flag
 
