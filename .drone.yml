@@ -13,7 +13,7 @@ pipeline:
             - docker build --no-cache=true --build-arg MB=`(cat /etc/mb)` -t edgepro/modbusd:x86 -f Dockerfile.alpine .
             - docker push edgepro/modbusd:x86
     ci:
-        image: takawang/dind:push # docker in docker wiht compose
+        image: takawang/dind:push # docker in docker with compose
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock # docker in docker trick
         commands:

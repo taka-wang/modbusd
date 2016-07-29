@@ -1,10 +1,11 @@
 #
 # golang client to modbusd
 #
-FROM takawang/psmb:armhf
+FROM takawang/psmb:armhf # TODO
 MAINTAINER Taka Wang <taka@cmwang.net>
 
 WORKDIR /go
+RUN go get -u github.com/taka-wang/psmb
 
 ## Load app files
 ADD . /go
