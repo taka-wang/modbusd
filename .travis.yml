@@ -29,9 +29,7 @@ addons:
       - graphviz
 
 script:
-
-### build modbusd image
-- ls
+  - ls
 
 after_success:
   - cd $TRAVIS_BUILD_DIR
