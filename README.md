@@ -178,6 +178,24 @@ make
 
 I do continuous integration and update docker images after git push by self-hosted drone.io server [~~Travis CI~~](https://travis-ci.org/taka-wang/modbusd).
 
+## Test Cases
+
+- [x] Test holding registers (4x)
+    - [x] `4X Table: 60000` Read/Write uint16 value test: FC6, FC3
+    - [x] `4X Table: 30000` Read/Write int16 value test: FC6, FC3
+    - [x] `4X Table` Multiple read/write test: FC16, FC3
+    - [x] `4X Table` Multiple read/write test: FC16, FC3
+- [x] Test coils (0x)
+    - [x] `0X Table` Single read/write test:FC5, FC1
+    - [x] `0X Table` Multiple read/write test: FC15, FC1
+- [x] Test Discrete Input (1x)
+    - [x] `1X Table` read test: FC2
+- [x] Test Input Registers (3x)
+    - [x] `3X Table` read test:FC4
+- [x] Test TCP Timeout
+    - [x] `Set timeout` test
+    - [x] `Get timeout` test
+
 ![ci](image/ci.png)
 
 ### Images and testing from the scratch

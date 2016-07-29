@@ -1,6 +1,3 @@
-[submodule "test/dummy-psmb"]
-	path = test/dummy-psmb
-	url = https://github.com/taka-wang/dummy-psmb.git
 [submodule "test/c-modbus-slave"]
 	path = test/c-modbus-slave
 	url = https://github.com/taka-wang/c-modbus-slave.git

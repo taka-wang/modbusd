@@ -9,9 +9,9 @@ modbusd:
     links:
         - slave
 
-dummy-psmb:
-    build: /drone/test/dummy-psmb/.
-    dockerfile: /drone/test/dummy-psmb/Dockerfile
+dummypsmbtcp:
+    build: /drone/test/dummy-psmbtcp/.
+    dockerfile: /drone/test/dummy-psmbtcp/Dockerfile
     volumes_from:
         - modbusd
     links:
