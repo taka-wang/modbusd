@@ -196,7 +196,7 @@ I do continuous integration and update docker images after git push by self-host
     - [x] `Set timeout` test
     - [x] `Get timeout` test
 
-![ci](image/ci.png)
+![ci](image/ci-drone.png)
 
 ### Images and testing from the scratch
 
@@ -220,7 +220,7 @@ docker-compose up --abort-on-container-exit
 
 ### Deployment Diagram
 
-![deployment](image/ndeployment.png)
+![deployment](image/mdeployment.png)
 
 ---
 
