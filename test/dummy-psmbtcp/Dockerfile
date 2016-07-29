@@ -9,6 +9,7 @@ RUN go get -u github.com/taka-wang/psmb
 
 ## Load app files
 ADD . /go
+RUN echo $GOPATH
 RUN export GOPATH=/go && go get && go test -v
 
 ## Default command
