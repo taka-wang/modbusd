@@ -1,5 +1,5 @@
 {
-    "syslog": 1,
+    "syslog": 0,
     "zmq": 
     {
         "sub": "ipc:///tmp/to.modbus",

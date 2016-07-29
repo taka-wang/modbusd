@@ -17,8 +17,9 @@ static cJSON * config_json;             // config in cJSON object format
 static char *config_fname = NULL;       // config filename
 static char *ipc_sub = "ipc:///tmp/to.modbus";
 static char *ipc_pub = "ipc:///tmp/from.modbus";
-extern long tcp_conn_timeout_usec;  // from mb.c
+extern long tcp_conn_timeout_usec;  // from mbtcp.c
 
+static const char *env_conf_path = "CONF_MODBUSD"; // environment variable name
 
 /* ==================================================
  *  static functions
@@ -36,8 +37,8 @@ static void load_config(const char *fname, cJSON ** ptr_config)
     BEGIN(enable_syslog);
     if (file_to_json(fname, ptr_config) < 0)
     {
-        ERR(enable_syslog, "Failed to parse setting json: %s! Bye!", config_fname);
-        exit(EXIT_FAILURE);
+        ERR(enable_syslog, "Failed to parse setting json: %s!", config_fname);
+        //exit(EXIT_FAILURE);
     }
     else
     {
@@ -93,13 +94,26 @@ static void send_modbus_zmq_resp(void * pub, cmd_t cmd, char *json_resp)
     END(enable_syslog);
 }
 
+
 // entry
 int main(int argc, char *argv[])
 {
     LOG(enable_syslog, "modbusd version: %s", VERSION);
 
+    // @get environemnt variable; 12-Factor
+    char* env = getenv(env_conf_path);
+    if (env != NULL)
+    {
+        config_fname = env;
+        LOG(enable_syslog, "get config path from environment variable: %s", env);
+    }
+    else
+    {
+        config_fname = argc > 1 ? argv[1] : "./modbusd.json";
+        LOG(enable_syslog, "get config path from flag: %s", config_fname);
+    }
+
     // @load config
-    config_fname = argc > 1 ? argv[1] : "./modbusd.json";
     load_config(config_fname, &config_json);
 
     // @setup zmq

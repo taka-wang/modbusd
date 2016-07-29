@@ -1,3 +1,4 @@
+# x86 for drone
 slave:
     build: /drone/test/c-modbus-slave/.
     dockerfile: /drone/test/c-modbus-slave/Dockerfile

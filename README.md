@@ -1,31 +1,45 @@
-
 # modbusd
 
-[![Build Status](http://dev.cmwang.net/api/badges/taka-wang/modbusd/status.svg)](http://dev.cmwang.net/taka-wang/modbusd)
+[![Docker](https://img.shields.io/badge/docker-ready-brightgreen.svg)](https://hub.docker.com/r/edgepro/modbusd)
+[![API](https://img.shields.io/badge/code-documented-brightgreen.svg)](http://taka-wang.github.io/modbusd/api)
 
-Modbus master daemon 
+Modbus master daemon
 
 - Support doxygen style comments.
 - ZeroMQ is a high-level message library, you can replace it with your own data bus implementations without losing the core functionalities.
 
 ## Table of content
 
+- [Continuous Integration](#ci)
 - [Design](#design)
 - [Setup](#setup)
-- [Continuous Integration](#ci)
 - [Documentation](#doc)
 
 ---
 
+<a name="ci"></a>
+
+## Continuous Integration
+
+I do continuous integration and build docker images after git push by self-hosted [drone.io](http://arm.cmwang.net) server for armhf platform , [circleci](http://circleci.com) server for x86 platform and [dockerhub](https://hub.docker.com/r/takawang/modbusd) service.
+
+| CI Server| Target    | Status                                                                                                                                                                     |
+|----------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Travis   | API       | [![Build Status](https://travis-ci.org/taka-wang/modbusd.svg?branch=dev)](https://travis-ci.org/taka-wang/modbusd)                                                         |
+| CircleCI | x86       | [![CircleCI](https://circleci.com/gh/taka-wang/modbusd.svg?style=shield&circle-token=b72c7cf9e37bdba1fc236c73f400ed5783e99539)](https://circleci.com/gh/taka-wang/modbusd) |
+| Drone    | armhf     | [![Build Status](http://arm.cmwang.net/api/badges/taka-wang/modbusd/status.svg)](http://arm.cmwang.net/taka-wang/modbusd)                                                  |
+
+
 <a name="design"></a>
+
 
 ## Design
 
 ### Implemented libmodbus function codes
 
 >| FC    | Description            | #Len    | API                                                                                                                                                 |
->|:-----:|------------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------|
->| 0x01  | read coils             |  2000   |[int modbus_read_bits(modbus_t *ctx, int addr, int nb, uint8_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_bits.html)                       |  
+>|:-----:|------------------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+>| 0x01  | read coils             |  2000   |[int modbus_read_bits(modbus_t *ctx, int addr, int nb, uint8_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_bits.html)                       |
 >| 0x02  | read discrete inputs   |  2000   |[int modbus_read_input_bits(modbus_t *ctx, int addr, int nb, uint8_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_input_bits.html)           |
 >| 0x03  | read holding registers |  125    |[int modbus_read_registers(modbus_t *ctx, int addr, int nb, uint16_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_registers.html)            |
 >| 0x04  | read input registers   |  125    |[int modbus_read_input_registers(modbus_t *ctx, int addr, int nb, uint16_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_input_registers.html)|
@@ -42,7 +56,6 @@ Modbus master daemon
 >|10001-19999          |0000 to 270E (9998)|Read-Only     |Discrete Input Contacts        |10001 | 2            |
 >|30001-39999          |0000 to 270E (9998)|Read-Only     |Analog Input Registers         |30001 | 4            |
 >|40001-49999          |0000 to 270E (9998)|Read-Write    |Analog Output Holding Registers|40001 | 3, 6, 16     |
-
 
 ### Command mapping table
 
@@ -67,7 +80,7 @@ Modbus master daemon
 ```javascript
 {
     "syslog": 1,
-    "zmq": 
+    "zmq":
     {
         "sub": "ipc:///tmp/to.modbus",
         "pub": "ipc:///tmp/from.modbus"
@@ -81,7 +94,7 @@ Modbus master daemon
 
 ### Modbus TCP command format
 
-Please refer to [command definition](command.md).
+Please refer to [command definition](docs/command.md).
 
 ### External libraries
 
@@ -172,12 +185,6 @@ make
 
 ---
 
-<a name="ci"></a>
-
-## Continuous Integration
-
-I do [continuous integration](test) and update docker images after git push by self-hosted drone.io server and dockerhub service [~~Travis CI~~](https://travis-ci.org/taka-wang/modbusd).
-
 ## Test Cases
 
 - [x] Test holding registers (4x)
@@ -204,7 +211,7 @@ I do [continuous integration](test) and update docker images after git push by s
 
 docker pull takawang/c-modbus-slave:x86
 docker build -t takawang/modbusd .
-docker build -t takawang/dummy-psmbtcp test/dummy-psmbtcp/. 
+docker build -t takawang/dummy-psmbtcp test/dummy-psmbtcp/.
 
 docker run -itd --name=slave takawang/c-modbus-slave:x86
 docker run -v /tmp:/tmp --link slave -it --name=modbusd takawang/modbusd
@@ -219,7 +226,7 @@ docker-compose up --abort-on-container-exit
 
 ### Deployment Diagram
 
-![deployment](image/mdeployment.png)
+![uml](http://uml.cmwang.net:8000/plantuml/svg/5Sl13O0W343HLNG0wTrjAcs0I2c1DiRjnVD_VoyjLYVsKRTirkS9CF09gLZsooUFgCsuMOWgO7ZZyM1Bq5qg24xZ0SIzwYiBWIYjYSAVFm00)
 
 ---
 
@@ -227,6 +234,10 @@ docker-compose up --abort-on-container-exit
 
 ## Documentations
 
-- [API Documentation](http://taka-wang.github.io/modbusd)
+- [API Documentation](http://taka-wang.github.io/modbusd/api)
 
+---
 
+## License
+
+MIT

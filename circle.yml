@@ -1,0 +1,24 @@
+machine:
+    timezone:
+        Asia/Taipei
+    services:
+        - docker
+
+dependencies:
+    pre:
+        #- sudo apt-get update
+        - sudo pip install docker-compose
+        #- sudo apt-get install doxygen doxygen-doc doxygen-latex doxygen-gui graphviz
+
+test:
+    pre:
+        - docker-compose rm
+        - docker-compose pull
+        - docker-compose build --no-cache
+    override:
+        - docker-compose up --abort-on-container-exit
+    post:
+        - docker-compose stop
+        - docker-compose rm -f -a
+        #- ./gendoxygen.sh
+       

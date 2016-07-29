@@ -1,7 +1,7 @@
 #
 # golang client to modbusd
 #
-FROM takawang/psmb:armhf # TODO
+FROM takawang/gozmq:armhf
 MAINTAINER Taka Wang <taka@cmwang.net>
 
 WORKDIR /go
