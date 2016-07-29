@@ -176,7 +176,7 @@ make
 
 ## Continuous Integration
 
-I do continuous integration and update docker images after git push by self-hosted drone.io server [~~Travis CI~~](https://travis-ci.org/taka-wang/modbusd).
+I do [continuous integration](test) and update docker images after git push by self-hosted drone.io server and dockerhub service [~~Travis CI~~](https://travis-ci.org/taka-wang/modbusd).
 
 ## Test Cases
 
@@ -202,13 +202,12 @@ I do continuous integration and update docker images after git push by self-host
 
 ```bash
 
+docker pull takawang/c-modbus-slave:x86
 docker build -t takawang/modbusd .
 docker build -t takawang/dummy-psmbtcp test/dummy-psmbtcp/. 
 
-docker run -itd --name=slave takawang/c-modbus-slave
-
+docker run -itd --name=slave takawang/c-modbus-slave:x86
 docker run -v /tmp:/tmp --link slave -it --name=modbusd takawang/modbusd
-
 docker run -v /tmp:/tmp -it --link slave takawang/dummy-psmbtcp
 ```
 
