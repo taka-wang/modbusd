@@ -1,23 +1,26 @@
-# taka's private drone server
-# for v0.5
+# drone.io v0.4
+# armhf
 
-workspace:
-    path: /drone # overwrite default path
 
-pipeline:
-    publish:
-        image: takawang/dind:edge
-        volumes:
-            - /var/run/docker.sock:/var/run/docker.sock # docker in docker trick
-        commands:
-            - docker build --no-cache=true --build-arg MB=`(cat /etc/mb)` -t edgepro/modbusd:x86 -f Dockerfile.alpine .
-            - docker push edgepro/modbusd:x86
-    ci:
-        image: takawang/dind:push # docker in docker with compose
-        volumes:
-            - /var/run/docker.sock:/var/run/docker.sock # docker in docker trick
-        commands:
-            - docker-compose -f docker-compose.drone rm -f -a
-            - docker-compose -f docker-compose.drone build
-            - docker-compose -f docker-compose.drone up --abort-on-container-exit
-            - docker-compose rm -f -a
+build:
+    image: takawang/dind:$$arch
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    privileged: true
+    commands:
+        # build dummy-psmbtcp
+        - docker build --no-cache=true -t takawang/dummy-psmbtcp:armhf -f test/dummy-psmbtcp/Dockerfile.armhf test/dummy-psmbtcp/.
+        # build modbusd
+        - docker build --no-cache=true -t takawang/modbusd:armhf -f Dockerfile.armhf .
+        # CI
+        - docker-compose -f docker-compose.drone-armhf rm -f -a
+        - docker-compose -f docker-compose.drone-armhf build
+        - docker-compose -f docker-compose.drone-armhf up --abort-on-container-exit
+        - docker-compose -f docker-compose.drone-armhf rm -f -a
+        # deployment
+        - docker push takawang/modbusd:armhf
+        - docker push takawang/dummy-psmbtcp:armhf
+
+matrix:
+    arch:
+        - armhf

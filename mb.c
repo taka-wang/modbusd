@@ -12,6 +12,7 @@ extern int enable_syslog; // syslog flag
  *  public functions
 ================================================== */
 
+
 char * set_modbus_success_resp_str(char * tid)
 {
     BEGIN(enable_syslog);
@@ -67,7 +68,7 @@ char * set_modbus_fail_resp_str_with_errno(char * tid, mbtcp_handle_s *handle, i
 {
     BEGIN(enable_syslog);
 
-    // [todo][enhance] reconnect proactively?
+    // [TODO][enhance] reconnect proactively?
     // ... if the request interval is very large, 
     // we should try to reconnect automatically
     

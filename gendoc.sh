@@ -18,7 +18,7 @@ mkdir code_docs
 cd code_docs
 
 # Get the current gh-pages branch
-git clone -b gh-pages https://git@$GH_REPO_REF
+git clone -b gh-pages https://${GH_REPO_TOKEN}@$GH_REPO_REF
 cd $GH_REPO_NAME
 
 ##### Configure git.
@@ -33,6 +33,8 @@ git config user.email "wang.chia.ming@gmail.com"
 # stayed the same and will only update the changed files. So the gh-pages branch
 # can be safely cleaned, and it is sure that everything pushed later is the new
 # documentation.
+mkdir -p api
+cd api
 rm -rf *
 
 # Need to create a .nojekyll file to allow filenames starting with an underscore

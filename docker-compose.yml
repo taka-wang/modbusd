@@ -1,11 +1,11 @@
+# x86 for circleci
 slave:
-    image: takawang/c-modbus-slave
+    image: takawang/c-modbus-slave:x86
 
 modbusd:
     build: .
-    #dockerfile: Dockerfile.alpine
     volumes:
-        - /tmp:/tmp
+        - .:/tmp
     links:
         - slave
     #command: valgrind --leak-check=full --verbose /usr/bin/modbusd /etc/modbusd/modbusd.json

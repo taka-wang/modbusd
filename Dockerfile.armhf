@@ -1,10 +1,11 @@
+# armhf
 FROM takawang/alpine:armhf
 MAINTAINER Taka Wang <taka@cmwang.net>
 
+ENV CONF_MODBUSD "/etc/modbusd/modbusd.json"
 ENV ZMQ_VERSION 3.2.5
 ENV CZMQ_VERSION 3.0.2
 ENV MB_VERSION 3.1.4
-ARG MB 
 
 RUN apk update \
     && apk add \
@@ -44,7 +45,7 @@ RUN apk update \
 
     && echo " ... build modbusd" \
         && cd /tmp/ \
-        && git clone https://${MB}@github.com/taka-wang/modbusd.git \
+        && git clone https://github.com/taka-wang/modbusd.git \
         && mkdir -p /tmp/modbusd/build && cd /tmp/modbusd/build \
         && cmake .. && make && make install \
     
