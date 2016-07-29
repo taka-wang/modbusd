@@ -9,7 +9,7 @@ RUN go get -u github.com/taka-wang/psmb
 
 ## Load app files
 ADD . /go
-RUN go test -v
+RUN go get ./... && go test -v
 
 ## Default command
 #CMD ["go", "test", "-v"]
