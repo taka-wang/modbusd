@@ -10,8 +10,8 @@ modbusd:
         - slave
     #command: valgrind --leak-check=full --verbose /usr/bin/modbusd /etc/modbusd/modbusd.json
 
-dummy-psmb:
-    image: takawang/dummy-psmb
+dummypsmbtcp:
+    build: test/dummy-psmbtcp/.
     volumes_from:
         - modbusd
     links:

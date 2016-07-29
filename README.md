@@ -203,12 +203,13 @@ I do continuous integration and update docker images after git push by self-host
 ```bash
 
 docker build -t takawang/modbusd .
+docker build -t takawang/dummy-psmbtcp test/dummy-psmbtcp/. 
 
 docker run -itd --name=slave takawang/c-modbus-slave
 
 docker run -v /tmp:/tmp --link slave -it --name=modbusd takawang/modbusd
 
-docker run -v /tmp:/tmp -it --link slave takawang/dummy-psmb
+docker run -v /tmp:/tmp -it --link slave takawang/dummy-psmbtcp
 ```
 
 ### Docker compose

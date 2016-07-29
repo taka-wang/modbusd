@@ -16,4 +16,3 @@ dummypsmbtcp:
         - modbusd
     links:
         - slave
-    
