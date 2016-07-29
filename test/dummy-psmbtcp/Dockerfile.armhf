@@ -9,7 +9,8 @@ RUN go get -u github.com/taka-wang/psmb
 
 ## Load app files
 ADD . /go/src/github.com/taka-wang/dummy-psmbtcp
-RUN cd /go/src/github.com/taka-wang/dummy-psmbtcp && go get -t ./...
+WORKDIR /go/src/github.com/taka-wang/dummy-psmbtcp
+RUN go get -t ./...
 
 ## Default command
 CMD ["go", "test", "-v"]
