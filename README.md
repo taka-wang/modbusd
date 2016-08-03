@@ -219,7 +219,7 @@ docker-compose up --abort-on-container-exit
 
 ### Deployment Diagram
 
-![deployment](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/taka-wang/puml/master/deployment/modbusd.puml)
+![Deployment](http://plantuml.com/plantuml/svg/5Sl13O0W343HLNG0wTrjAcs0I2c1DiRjnVD_VoyjLYVsKRTirkS9CF09gLZsooUFgCsuMOWgO7ZZyM1Bq5qg24xZ0SIzwYiBWIYjYSAVFm00.svg)
 
 ---
 
@@ -228,5 +228,3 @@ docker-compose up --abort-on-container-exit
 ## Documentations
 
 - [API Documentation](http://taka-wang.github.io/modbusd)
-
-
