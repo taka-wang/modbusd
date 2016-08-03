@@ -20,4 +20,4 @@ pipeline:
             - docker-compose -f docker-compose.drone rm -f -a
             - docker-compose -f docker-compose.drone build
             - docker-compose -f docker-compose.drone up --abort-on-container-exit
-            - docker-compose rm -f -a
+            - docker-compose -f docker-compose.drone rm -f -a
