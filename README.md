@@ -217,7 +217,7 @@ docker-compose up --abort-on-container-exit
 
 ### Deployment Diagram
 
-![Deployment](http://plantuml.com/plantuml/svg/5Sl13O0W343HLNG0wTrjAcs0I2c1DiRjnVD_VoyjLYVsKRTirkS9CF09gLZsooUFgCsuMOWgO7ZZyM1Bq5qg24xZ0SIzwYiBWIYjYSAVFm00.svg)
+![Deployment](http://plantuml.com/plantuml/svg/5Sl13O0W343HLNG0wTrjAcs0I2c1DiRjnVD_VoyjLYVsKRTirkS9CF09gLZsooUFgCsuMOWgO7ZZyM1Bq5qg24xZ0SIzwYiBWIYjYSAVFm00)
 
 ---
 
