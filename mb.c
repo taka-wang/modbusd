@@ -67,7 +67,7 @@ char * set_modbus_fail_resp_str_with_errno(char * tid, mbtcp_handle_s *handle, i
 {
     BEGIN(enable_syslog);
 
-    // [todo][enhance] reconnect proactively?
+    // [TODO][enhance] reconnect proactively?
     // ... if the request interval is very large, 
     // we should try to reconnect automatically
     

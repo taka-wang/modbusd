@@ -1,9 +1,8 @@
-
 # modbusd
 
 [![Build Status](http://dev.cmwang.net/api/badges/taka-wang/modbusd/status.svg)](http://dev.cmwang.net/taka-wang/modbusd)
 
-Modbus master daemon 
+Modbus master daemon
 
 - Support doxygen style comments.
 - ZeroMQ is a high-level message library, you can replace it with your own data bus implementations without losing the core functionalities.
@@ -24,8 +23,8 @@ Modbus master daemon
 ### Implemented libmodbus function codes
 
 >| FC    | Description            | #Len    | API                                                                                                                                                 |
->|:-----:|------------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------|
->| 0x01  | read coils             |  2000   |[int modbus_read_bits(modbus_t *ctx, int addr, int nb, uint8_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_bits.html)                       |  
+>|:-----:|------------------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+>| 0x01  | read coils             |  2000   |[int modbus_read_bits(modbus_t *ctx, int addr, int nb, uint8_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_bits.html)                       |
 >| 0x02  | read discrete inputs   |  2000   |[int modbus_read_input_bits(modbus_t *ctx, int addr, int nb, uint8_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_input_bits.html)           |
 >| 0x03  | read holding registers |  125    |[int modbus_read_registers(modbus_t *ctx, int addr, int nb, uint16_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_registers.html)            |
 >| 0x04  | read input registers   |  125    |[int modbus_read_input_registers(modbus_t *ctx, int addr, int nb, uint16_t *dest)](http://libmodbus.org/docs/v3.1.4/modbus_read_input_registers.html)|
@@ -42,7 +41,6 @@ Modbus master daemon
 >|10001-19999          |0000 to 270E (9998)|Read-Only     |Discrete Input Contacts        |10001 | 2            |
 >|30001-39999          |0000 to 270E (9998)|Read-Only     |Analog Input Registers         |30001 | 4            |
 >|40001-49999          |0000 to 270E (9998)|Read-Write    |Analog Output Holding Registers|40001 | 3, 6, 16     |
-
 
 ### Command mapping table
 
@@ -67,7 +65,7 @@ Modbus master daemon
 ```javascript
 {
     "syslog": 1,
-    "zmq": 
+    "zmq":
     {
         "sub": "ipc:///tmp/to.modbus",
         "pub": "ipc:///tmp/from.modbus"
@@ -204,7 +202,7 @@ I do [continuous integration](test) and update docker images after git push by s
 
 docker pull takawang/c-modbus-slave:x86
 docker build -t takawang/modbusd .
-docker build -t takawang/dummy-psmbtcp test/dummy-psmbtcp/. 
+docker build -t takawang/dummy-psmbtcp test/dummy-psmbtcp/.
 
 docker run -itd --name=slave takawang/c-modbus-slave:x86
 docker run -v /tmp:/tmp --link slave -it --name=modbusd takawang/modbusd

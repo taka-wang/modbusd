@@ -126,7 +126,7 @@ static char * mbtcp_read_bit_req(uint8_t fc, mbtcp_handle_s *handle, cJSON *req)
         {
             LOG(enable_syslog, "fc:%d, desired length: %d, read length:%d", fc, len, ret);
             
-            // [todo]:remove; debug only
+            // [TODO]:remove; debug only
             for (int ii = 0; ii < ret; ii++) 
             {
                 LOG(enable_syslog, "[%d]=%d", ii, bits[ii]);
@@ -182,7 +182,7 @@ static char * mbtcp_read_reg_req(uint8_t fc, mbtcp_handle_s *handle, cJSON *req)
         {
             LOG(enable_syslog, "fc:%d, desired length: %d, read length:%d", fc, len, ret);
             
-            // [todo]:remove; debug only
+            // [TODO]:remove; debug only
             for (int ii = 0; ii < ret; ii++) 
             {
                 LOG(enable_syslog, "[%d]=%d", ii, regs[ii]);
@@ -269,7 +269,6 @@ static char * mbtcp_multi_write_req(uint8_t fc, mbtcp_handle_s *handle, cJSON *r
             free(bits);
             break;
         case 16:
-            
             // memory reset for variable length array
             regs = (uint16_t *) malloc(len * sizeof(uint16_t));
             memset(regs, 0, len * sizeof(uint16_t));
