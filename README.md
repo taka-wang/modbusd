@@ -1,6 +1,6 @@
 # modbusd
 
-[![Build Status](http://dev.cmwang.net/api/badges/taka-wang/modbusd/status.svg)](http://dev.cmwang.net/taka-wang/modbusd)
+[![Build Status](http://drone.cmwang.net/api/badges/taka-wang/modbusd/status.svg)](http://drone.cmwang.net/taka-wang/modbusd)
 
 Modbus master daemon
 
