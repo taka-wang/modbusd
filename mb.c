@@ -12,6 +12,7 @@ extern int enable_syslog; // syslog flag
  *  public functions
 ================================================== */
 
+
 char * set_modbus_success_resp_str(char * tid)
 {
     BEGIN(enable_syslog);
