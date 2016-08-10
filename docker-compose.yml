@@ -3,7 +3,7 @@ slave:
 
 modbusd:
     build: .
-    #dockerfile: Dockerfile.alpine
+    dockerfile: Dockerfile.alpine
     volumes:
         - .:/tmp
     links:
