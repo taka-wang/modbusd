@@ -4,6 +4,7 @@ machine:
 
 dependencies:
   override:
+    - sudo apt-get install python-dev libxml2-dev libxslt-dev -y
     - sudo pip install --upgrade docker-compose==1.4.2
 
 test:
