@@ -2,7 +2,7 @@ slave:
     image: takawang/c-modbus-slave
 
 modbusd:
-    image: edgepro/modbusd:x86
+    build: .
     volumes:
         - .:/tmp
     links:
