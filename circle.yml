@@ -9,6 +9,7 @@ dependencies:
 
 test:
   pre:
+    - docker build --no-cache=true --build-arg MB=`(cat /etc/mb)` -t edgepro/modbusd:x86 -f Dockerfile.alpine .
     - docker-compose pull
     - docker-compose build
   override:

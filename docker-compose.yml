@@ -2,8 +2,7 @@ slave:
     image: takawang/c-modbus-slave
 
 modbusd:
-    build: .
-    dockerfile: Dockerfile.alpine
+    image: edgepro/modbusd:x86
     volumes:
         - .:/tmp
     links:
