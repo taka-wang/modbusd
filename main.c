@@ -101,7 +101,7 @@ int main(int argc, char *argv[])
     LOG(enable_syslog, "modbusd version: %s", VERSION);
 
     // @get environemnt variable; 12-Factor
-    const char* env = getenv(env_conf_path);
+    char* env = getenv(env_conf_path);
     if (env != NULL)
     {
         config_fname = env;

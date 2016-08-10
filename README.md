@@ -1,6 +1,7 @@
 # modbusd
 
 [![Build Status](http://drone.cmwang.net/api/badges/taka-wang/modbusd/status.svg)](http://drone.cmwang.net/taka-wang/modbusd)
+[![CircleCI](https://circleci.com/gh/taka-wang/modbusd.svg?style=svg&circle-token=b72c7cf9e37bdba1fc236c73f400ed5783e99539)](https://circleci.com/gh/taka-wang/modbusd)
 
 Modbus master daemon
 
