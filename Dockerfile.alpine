@@ -1,6 +1,7 @@
 FROM alpine:latest
 MAINTAINER Taka Wang <taka@cmwang.net>
 
+ENV CONF_MODBUSD "/etc/modbusd/modbusd.json"
 ENV ZMQ_VERSION 3.2.5
 ENV CZMQ_VERSION 3.0.2
 ENV MB_VERSION 3.1.4

@@ -91,10 +91,10 @@ func init() {
 	// generalize host reslove for docker/local env
 	host, err := net.LookupHost("slave")
 	if err != nil {
-		fmt.Println("local run")
+		fmt.Println("Local run")
 		hostName = "127.0.0.1"
 	} else {
-		fmt.Println("docker run")
+		fmt.Println("Docker run")
 		hostName = host[0] //docker
 	}
 }

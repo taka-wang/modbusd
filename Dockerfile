@@ -1,6 +1,8 @@
 FROM takawang/modbus-env:x86
 MAINTAINER Taka Wang <taka@cmwang.net>
 
+ENV CONF_MODBUSD "/etc/modbusd/modbusd.json"
+
 ## Build modbusd
 COPY . /modbusd/
 RUN mkdir -p /modbusd/build
