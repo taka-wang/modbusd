@@ -1,0 +1,16 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - sudo pip install --upgrade docker-compose==1.4.2
+
+test:
+  pre:
+    - docker-compose pull
+    - docker-compose build
+  override:
+    - docker-compose up
+  post:
+    - docker stop $(docker ps -a -q)

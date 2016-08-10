@@ -105,12 +105,12 @@ int main(int argc, char *argv[])
     if (env != NULL)
     {
         config_fname = env;
-        LOG(enable_syslog, "get config path from environment variable: %s\n", env);
+        LOG(enable_syslog, "get config path from environment variable: %s", env);
     }
     else
     {
         config_fname = argc > 1 ? argv[1] : "./modbusd.json";
-        LOG(enable_syslog, "get config path from flag: %s\n", config_fname);
+        LOG(enable_syslog, "get config path from flag: %s", config_fname);
     }
 
     // @load config

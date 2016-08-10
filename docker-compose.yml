@@ -5,7 +5,7 @@ modbusd:
     build: .
     #dockerfile: Dockerfile.alpine
     volumes:
-        - /tmp:/tmp
+        - .:/tmp
     links:
         - slave
     #command: valgrind --leak-check=full --verbose /usr/bin/modbusd /etc/modbusd/modbusd.json
