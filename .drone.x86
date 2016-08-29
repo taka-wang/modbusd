@@ -1,0 +1,31 @@
+# taka's private drone server
+# for v0.5
+# x86
+
+workspace:
+    path: /drone # overwrite default path
+
+pipeline:
+    publish:
+        image: takawang/dind:${arch}
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+        commands:
+            # build dummy-psmbtcp
+            - docker build --no-cache=true -t edgepro/dummy-psmbtcp:${arch} -f test/dummy-psmbtcp/Dockerfile.${arch} test/dummy-psmbtcp/.
+
+            # build modbusd
+            - docker build --no-cache=true -t edgepro/modbusd:${arch} -f dockerfile/Dockerfile.${arch} .
+
+    ci:
+        image: takawang/dind:${arch}
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+        commands:
+            - docker-compose -f dockerfile/docker-compose.${arch} rm -f -a
+            - docker-compose -f dockerfile/docker-compose.${arch} build --no-cache
+            - docker-compose -f dockerfile/docker-compose.${arch} up --abort-on-container-exit
+
+matrix:
+    arch:
+        - x86

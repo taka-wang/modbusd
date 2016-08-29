@@ -6,19 +6,27 @@ machine:
 
 dependencies:
     pre:
-        #- sudo apt-get update
         - sudo pip install docker-compose
-        #- sudo apt-get install doxygen doxygen-doc doxygen-latex doxygen-gui graphviz
 
 test:
     pre:
-        - docker-compose rm
-        - docker-compose pull
-        - docker-compose build --no-cache
+        - docker build --no-cache=true -t edgepro/dummy-psmbtcp:x86 -f test/dummy-psmbtcp/Dockerfile.x86 test/dummy-psmbtcp/.
+        - docker build --no-cache=true -t edgepro/modbusd:x86 -f dockerfile/Dockerfile.x86 .
     override:
-        - docker-compose up --abort-on-container-exit
+        - docker-compose -f dockerfile/docker-compose.circle rm
+        #- docker-compose -f dockerfile/docker-compose.circle pull
+        - docker-compose -f dockerfile/docker-compose.circle build --no-cache
+        - docker-compose -f dockerfile/docker-compose.circle up --abort-on-container-exit
     post:
-        - docker-compose stop
-        - docker-compose rm -f -a
-        #- ./gendoxygen.sh
-       
+        - docker-compose -f dockerfile/docker-compose.circle stop
+        - docker-compose -f dockerfile/docker-compose.circle rm -f -a
+
+# publish to dockerhub
+deployment:
+    hub:
+        branch: master
+        commands:
+            - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+            - docker tag edgepro/modbusd:x86 edgepro/modbusd:latest
+            - docker push edgepro/modbusd:latest
+            - docker push edgepro/modbusd:x86

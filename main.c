@@ -210,8 +210,8 @@ int main(int argc, char *argv[])
                 else if (strcmp(mode, "rtu") == 0)
                 {
                     LOG(enable_syslog, "rtu:%d", cmd);
-                    // [TODO]
-                    // send error response
+                    send_modbus_zmq_resp(zmq_pub, -1, 
+                        set_modbus_fail_resp_str(tid, "TODO"));
                 }
                 // @unkonw mode
                 else

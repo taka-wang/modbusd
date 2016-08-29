@@ -1,9 +1,9 @@
 # x86 for circleci
 slave:
-    image: takawang/c-modbus-slave:x86
+    image: edgepro/c-modbus-slave:x86
 
 modbusd:
-    build: .
+    image: edgepro/modbusd:x86
     volumes:
         - .:/tmp
     links:
@@ -11,7 +11,7 @@ modbusd:
     #command: valgrind --leak-check=full --verbose /usr/bin/modbusd /etc/modbusd/modbusd.json
 
 dummypsmbtcp:
-    build: test/dummy-psmbtcp/.
+    image: edgepro/dummy-psmbtcp:x86
     volumes_from:
         - modbusd
     links:

@@ -21,13 +21,13 @@ Modbus master daemon
 
 ## Continuous Integration
 
-I do continuous integration and build docker images after git push by self-hosted [drone.io](http://arm.cmwang.net) server for armhf platform , [circleci](http://circleci.com) server for x86 platform and [dockerhub](https://hub.docker.com/r/takawang/modbusd) service.
+I do continuous integration and build docker images after git push by self-hosted [drone.io](http://armdrone.cmwang.net) server for armhf platform , [circleci](http://circleci.com) server for x86 platform and [dockerhub](https://hub.docker.com/r/edgepro/modbusd) service.
 
 | CI Server| Target    | Status                                                                                                                                                                     |
 |----------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Travis   | API       | [![Build Status](https://travis-ci.org/taka-wang/modbusd.svg?branch=dev)](https://travis-ci.org/taka-wang/modbusd)                                                         |
 | CircleCI | x86       | [![CircleCI](https://circleci.com/gh/taka-wang/modbusd.svg?style=shield&circle-token=b72c7cf9e37bdba1fc236c73f400ed5783e99539)](https://circleci.com/gh/taka-wang/modbusd) |
-| Drone    | armhf     | [![Build Status](http://arm.cmwang.net/api/badges/taka-wang/modbusd/status.svg)](http://arm.cmwang.net/taka-wang/modbusd)                                                  |
+| Drone    | armhf     | [![Build Status](http://armdrone.cmwang.net/api/badges/taka-wang/modbusd/status.svg)](http://armdrone.cmwang.net/taka-wang/modbusd)                                                  |
 
 
 <a name="design"></a>
@@ -209,13 +209,13 @@ make
 
 ```bash
 
-docker pull takawang/c-modbus-slave:x86
-docker build -t takawang/modbusd .
-docker build -t takawang/dummy-psmbtcp test/dummy-psmbtcp/.
+docker pull edgepro/c-modbus-slave:x86
+docker build -t edgepro/modbusd .
+docker build -t edgepro/dummy-psmbtcp test/dummy-psmbtcp/.
 
-docker run -itd --name=slave takawang/c-modbus-slave:x86
-docker run -v /tmp:/tmp --link slave -it --name=modbusd takawang/modbusd
-docker run -v /tmp:/tmp -it --link slave takawang/dummy-psmbtcp
+docker run -itd --name=slave edgepro/c-modbus-slave:x86
+docker run -v /tmp:/tmp --link slave -it --name=modbusd edgepro/modbusd
+docker run -v /tmp:/tmp -it --link slave edgepro/dummy-psmbtcp
 ```
 
 ### Docker compose
