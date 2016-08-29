@@ -1,7 +1,9 @@
 # x86 for drone
 slave:
-    build: /drone/test/c-modbus-slave/.
-    dockerfile: /drone/test/c-modbus-slave/Dockerfile
+    image: edgepro/c-modbus-slave:x86
+    entrypoint:
+        - /bin/sh -c
+    command: /usr/bin/server & /usr/bin/server 503
 
 modbusd:
     image: edgepro/modbusd:x86
@@ -11,8 +13,7 @@ modbusd:
         - slave
 
 dummypsmbtcp:
-    build: /drone/test/dummy-psmbtcp/.
-    dockerfile: /drone/test/dummy-psmbtcp/Dockerfile
+    image: edgepro/dummy-psmbtcp:x86
     volumes_from:
         - modbusd
     links:

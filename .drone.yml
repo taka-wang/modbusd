@@ -9,18 +9,17 @@ build:
     privileged: true
     commands:
         # build dummy-psmbtcp
-        - docker build --no-cache=true -t takawang/dummy-psmbtcp:armhf -f test/dummy-psmbtcp/Dockerfile.armhf test/dummy-psmbtcp/.
+        - docker build --no-cache=true -t edgepro/dummy-psmbtcp:$$arch -f test/dummy-psmbtcp/Dockerfile.$$arch test/dummy-psmbtcp/.
         # build modbusd
-        - docker build --no-cache=true -t takawang/modbusd:armhf -f Dockerfile.armhf .
+        - docker build --no-cache=true -t edgepro/modbusd:$$arch -f dockerfile/Dockerfile.$$arch .
+        - docker push edgepro/modbusd:$$arch
         # CI
-        - docker-compose -f docker-compose.drone-armhf rm -f -a
-        - docker-compose -f docker-compose.drone-armhf build
-        - docker-compose -f docker-compose.drone-armhf up --abort-on-container-exit
-        - docker-compose -f docker-compose.drone-armhf rm -f -a
-        # deployment
-        - docker push takawang/modbusd:armhf
-        - docker push takawang/dummy-psmbtcp:armhf
+        - docker-compose -f dockerfile/docker-compose.$$arch rm -f -a
+        - docker-compose -f dockerfile/docker-compose.$$arch build --no-cache
+        - docker-compose -f dockerfile/docker-compose.$$arch up --abort-on-container-exit
+
 
 matrix:
     arch:
         - armhf
+

@@ -1,0 +1,19 @@
+# armhf for drone
+slave:
+    image: edgepro/c-modbus-slave:
+    entrypoint: /bin/sh -c
+    command: /usr/bin/server & /usr/bin/server 503
+
+modbusd:
+    image: edgepro/modbusd:armhf
+    volumes:
+        - /tmp:/tmp
+    links:
+        - slave
+
+dummypsmbtcp:
+    image: edgepro/dummy-psmbtcp:armhf
+    volumes_from:
+        - modbusd
+    links:
+        - slave
