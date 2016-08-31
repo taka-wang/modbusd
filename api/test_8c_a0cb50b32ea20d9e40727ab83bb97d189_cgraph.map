@@ -1,0 +1,7 @@
+<map id="test_init_tcp_handle_and_connect" name="test_init_tcp_handle_and_connect">
+<area shape="rect" id="node3" href="$mb_8h.html#a819f6eb596caa2acb6344aecd5daf51a" title="Connect to mbtcp slave via mbtcp hashed handle. " alt="" coords="204,5,335,35"/>
+<area shape="rect" id="node5" href="$mb_8h.html#a10fdba0f8df3a84f6a1edd2ce82fb746" title="Get mbtcp handle&#39;s connection status. " alt="" coords="193,58,345,105"/>
+<area shape="rect" id="node7" href="$mb_8h.html#a457458d6f5fef93f9bac1bf9365b8a61" title="Get mbtcp handle from hashtable. " alt="" coords="205,128,333,157"/>
+<area shape="rect" id="node9" href="$mb_8h.html#a7349aa568dc3288417d52543988729f8" title="Init mbtcp handle (to hashtable) and try to connect. " alt="" coords="207,181,332,211"/>
+<area shape="rect" id="node11" href="$mbtcp_8c.html#a819f6eb596caa2acb6344aecd5daf51a" title="Connect to mbtcp slave via mbtcp hashed handle. " alt="" coords="396,181,527,211"/>
+</map>
