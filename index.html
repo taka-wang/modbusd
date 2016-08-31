@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Modbusd by taka-wang</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Modbusd</h1>
+      <h2 class="project-tagline">Modbus master daemon based on libmodbus</h2>
+      <a href="https://github.com/taka-wang/modbusd" class="btn">View on GitHub</a>
+      <a href="https://github.com/taka-wang/modbusd/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/taka-wang/modbusd/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="modbusd" class="anchor" href="#modbusd" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>modbusd</h1>
+
+<p><a href="https://hub.docker.com/r/edgepro/modbusd"><img src="https://img.shields.io/badge/docker-ready-brightgreen.svg" alt="Docker"></a>
+<a href="http://taka-wang.github.io/modbusd/api"><img src="https://img.shields.io/badge/code-documented-brightgreen.svg" alt="API"></a></p>
+
+<p>Modbus master daemon</p>
+
+<ul>
+<li>Support doxygen style comments.</li>
+<li>ZeroMQ is a high-level message library, you can replace it with your own data bus implementations without losing the core functionalities.</li>
+</ul>
+
+<h2>
+<a id="table-of-content" class="anchor" href="#table-of-content" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Table of content</h2>
+
+<ul>
+<li><a href="#ci">Continuous Integration</a></li>
+<li><a href="#design">Design</a></li>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#doc">Documentation</a></li>
+</ul>
+
+<hr>
+
+<p><a name="ci"></a></p>
+
+<h2>
+<a id="continuous-integration" class="anchor" href="#continuous-integration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Continuous Integration</h2>
+
+<p>I do continuous integration and build docker images after git push by self-hosted <a href="http://armdrone.cmwang.net">drone.io</a> server for armhf platform , <a href="http://circleci.com">circleci</a> server for x86 platform and <a href="https://hub.docker.com/r/edgepro/modbusd">dockerhub</a> service.</p>
+
+<table>
+<thead>
+<tr>
+<th>CI Server</th>
+<th>Target</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Travis</td>
+<td>API</td>
+<td><a href="https://travis-ci.org/taka-wang/modbusd"><img src="https://travis-ci.org/taka-wang/modbusd.svg?branch=dev" alt="Build Status"></a></td>
+</tr>
+<tr>
+<td>CircleCI</td>
+<td>x86</td>
+<td><a href="https://circleci.com/gh/taka-wang/modbusd"><img src="https://circleci.com/gh/taka-wang/modbusd.svg?style=shield&amp;circle-token=b72c7cf9e37bdba1fc236c73f400ed5783e99539" alt="CircleCI"></a></td>
+</tr>
+<tr>
+<td>Drone</td>
+<td>armhf</td>
+<td><a href="http://armdrone.cmwang.net/taka-wang/modbusd"><img src="http://armdrone.cmwang.net/api/badges/taka-wang/modbusd/status.svg" alt="Build Status"></a></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="design"></a></p>
+
+<h2>
+<a id="design" class="anchor" href="#design" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Design</h2>
+
+<h3>
+<a id="implemented-libmodbus-function-codes" class="anchor" href="#implemented-libmodbus-function-codes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implemented libmodbus function codes</h3>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">FC</th>
+<th>Description</th>
+<th>#Len</th>
+<th>API</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0x01</td>
+<td>read coils</td>
+<td>2000</td>
+<td><a href="http://libmodbus.org/docs/v3.1.4/modbus_read_bits.html">int modbus_read_bits(modbus_t *ctx, int addr, int nb, uint8_t *dest)</a></td>
+</tr>
+<tr>
+<td align="center">0x02</td>
+<td>read discrete inputs</td>
+<td>2000</td>
+<td><a href="http://libmodbus.org/docs/v3.1.4/modbus_read_input_bits.html">int modbus_read_input_bits(modbus_t *ctx, int addr, int nb, uint8_t *dest)</a></td>
+</tr>
+<tr>
+<td align="center">0x03</td>
+<td>read holding registers</td>
+<td>125</td>
+<td><a href="http://libmodbus.org/docs/v3.1.4/modbus_read_registers.html">int modbus_read_registers(modbus_t *ctx, int addr, int nb, uint16_t *dest)</a></td>
+</tr>
+<tr>
+<td align="center">0x04</td>
+<td>read input registers</td>
+<td>125</td>
+<td><a href="http://libmodbus.org/docs/v3.1.4/modbus_read_input_registers.html">int modbus_read_input_registers(modbus_t *ctx, int addr, int nb, uint16_t *dest)</a></td>
+</tr>
+<tr>
+<td align="center">0x05</td>
+<td>write single coil</td>
+<td>-</td>
+<td><a href="http://libmodbus.org/docs/v3.1.4/modbus_write_bit.html">int modbus_write_bit(modbus_t *ctx, int addr, int status)</a></td>
+</tr>
+<tr>
+<td align="center">0x06</td>
+<td>write single register</td>
+<td>-</td>
+<td><a href="http://libmodbus.org/docs/v3.1.4/modbus_write_register.html">int modbus_write_register(modbus_t *ctx, int addr, int value)</a></td>
+</tr>
+<tr>
+<td align="center">0x0F</td>
+<td>write multi coils</td>
+<td>1968</td>
+<td><a href="http://libmodbus.org/docs/v3.1.4/modbus_write_bits.html">int modbus_write_bits(modbus_t *ctx, int addr, int nb, const uint8_t *src)</a></td>
+</tr>
+<tr>
+<td align="center">0x10</td>
+<td>write multi registers</td>
+<td>125</td>
+<td><a href="http://libmodbus.org/docs/v3.1.4/modbus_write_registers.html">int modbus_write_registers(modbus_t *ctx, int addr, int nb, const uint16_t *src)</a></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<h3>
+<a id="coilregister-number-and-address-table" class="anchor" href="#coilregister-number-and-address-table" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Coil/register number and address table</h3>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">Coil/Register numbers</th>
+<th align="left">data address</th>
+<th align="left">type</th>
+<th align="left">table name</th>
+<th align="left">offset</th>
+<th align="left">function code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1-9999</td>
+<td align="left">0000 to 270E (9998)</td>
+<td align="left">Read-Write</td>
+<td align="left">Discrete Output Coils</td>
+<td align="left">1</td>
+<td align="left">1, 5, 15</td>
+</tr>
+<tr>
+<td align="left">10001-19999</td>
+<td align="left">0000 to 270E (9998)</td>
+<td align="left">Read-Only</td>
+<td align="left">Discrete Input Contacts</td>
+<td align="left">10001</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left">30001-39999</td>
+<td align="left">0000 to 270E (9998)</td>
+<td align="left">Read-Only</td>
+<td align="left">Analog Input Registers</td>
+<td align="left">30001</td>
+<td align="left">4</td>
+</tr>
+<tr>
+<td align="left">40001-49999</td>
+<td align="left">0000 to 270E (9998)</td>
+<td align="left">Read-Write</td>
+<td align="left">Analog Output Holding Registers</td>
+<td align="left">40001</td>
+<td align="left">3, 6, 16</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<h3>
+<a id="command-mapping-table" class="anchor" href="#command-mapping-table" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Command mapping table</h3>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">Command</th>
+<th align="right">Number</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">fc1</td>
+<td align="right">1</td>
+<td align="left">modbus fc 1</td>
+</tr>
+<tr>
+<td align="center">fc2</td>
+<td align="right">2</td>
+<td align="left">modbus fc 2</td>
+</tr>
+<tr>
+<td align="center">fc3</td>
+<td align="right">3</td>
+<td align="left">modbus fc 3</td>
+</tr>
+<tr>
+<td align="center">fc4</td>
+<td align="right">4</td>
+<td align="left">modbus fc 4</td>
+</tr>
+<tr>
+<td align="center">fc5</td>
+<td align="right">5</td>
+<td align="left">modbus fc 5</td>
+</tr>
+<tr>
+<td align="center">fc6</td>
+<td align="right">6</td>
+<td align="left">modbus fc 6</td>
+</tr>
+<tr>
+<td align="center">fc15</td>
+<td align="right">15</td>
+<td align="left">modbus fc 15</td>
+</tr>
+<tr>
+<td align="center">fc16</td>
+<td align="right">16</td>
+<td align="left">modbus fc 16</td>
+</tr>
+<tr>
+<td align="center">set_tcp_timeout</td>
+<td align="right">50</td>
+<td align="left">set tcp timeout</td>
+</tr>
+<tr>
+<td align="center">get_tcp_timeout</td>
+<td align="right">51</td>
+<td align="left">get tcp timeout</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+
+<hr>
+
+<h3>
+<a id="configuration-file" class="anchor" href="#configuration-file" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration File</h3>
+
+<div class="highlight highlight-source-js"><pre>{
+    <span class="pl-s"><span class="pl-pds">"</span>syslog<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">1</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>zmq<span class="pl-pds">"</span></span><span class="pl-k">:</span>
+    {
+        <span class="pl-s"><span class="pl-pds">"</span>sub<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>ipc:///tmp/to.modbus<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>pub<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>ipc:///tmp/from.modbus<span class="pl-pds">"</span></span>
+    },
+    <span class="pl-s"><span class="pl-pds">"</span>mbtcp<span class="pl-pds">"</span></span><span class="pl-k">:</span>
+    {
+        <span class="pl-s"><span class="pl-pds">"</span>connect_timeout<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">200000</span>
+    }
+}</pre></div>
+
+<h3>
+<a id="modbus-tcp-command-format" class="anchor" href="#modbus-tcp-command-format" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Modbus TCP command format</h3>
+
+<p>Please refer to <a href="docs/command.md">command definition</a>.</p>
+
+<h3>
+<a id="external-libraries" class="anchor" href="#external-libraries" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>External libraries</h3>
+
+<ul>
+<li><a href="http://libmodbus.org">libmodbus</a></li>
+<li><a href="https://github.com/zeromq/libzmq">libzmq</a></li>
+<li><a href="https://github.com/zeromq/czmq">czmq</a></li>
+<li><a href="https://troydhanson.github.io/uthash">uthash</a></li>
+<li><a href="https://github.com/DaveGamble/cJSON">cJSON</a></li>
+</ul>
+
+<hr>
+
+<h3>
+<a id="library-documentations" class="anchor" href="#library-documentations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Library documentations</h3>
+
+<ul>
+<li><a href="http://troydhanson.github.io/uthash/userguide.html">uthash user guide</a></li>
+<li><a href="http://libmodbus.org/docs/v3.1.4/">libmodbus api document</a></li>
+<li><a href="https://github.com/stephane/libmodbus/blob/master/src/modbus.h">libmodbus header</a></li>
+<li><a href="https://github.com/DaveGamble/cJSON">cJSON examples</a></li>
+</ul>
+
+<h3>
+<a id="flow-chart" class="anchor" href="#flow-chart" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Flow Chart</h3>
+
+<p><img src="image/flow.png" alt="flow"></p>
+
+<hr>
+
+<p><a name="setup"></a></p>
+
+<h2>
+<a id="setup" class="anchor" href="#setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup</h2>
+
+<h3>
+<a id="setup-development-dependencies" class="anchor" href="#setup-development-dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup development dependencies</h3>
+
+<div class="highlight highlight-source-shell"><pre>sudo apt-get update
+sudo apt-get install -y git build-essential autoconf libtool pkg-config cmake</pre></div>
+
+<hr>
+
+<h3>
+<a id="setup-oss-libs-dependencies" class="anchor" href="#setup-oss-libs-dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup OSS libs dependencies</h3>
+
+<h4>
+<a id="install-libmodbus-library-314" class="anchor" href="#install-libmodbus-library-314" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install libmodbus library (3.1.4)</h4>
+
+<div class="highlight highlight-source-shell"><pre>git clone https://github.com/stephane/libmodbus/
+<span class="pl-c1">cd</span> libmodbus
+./autogen.sh
+./configure
+make
+sudo make install
+sudo ldconfig</pre></div>
+
+<h4>
+<a id="install-libzmq-325" class="anchor" href="#install-libzmq-325" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install libzmq (3.2.5)</h4>
+
+<div class="highlight highlight-source-shell"><pre>wget https://github.com/zeromq/zeromq3-x/releases/download/v3.2.5/zeromq-3.2.5.tar.gz
+tar xvzf zeromq-3.2.5.tar.gz
+<span class="pl-c1">cd</span> zeromq-3.2.5
+./configure
+make
+sudo make install
+sudo ldconfig</pre></div>
+
+<h4>
+<a id="install-czmq-high-level-c-binding-for-zeromq" class="anchor" href="#install-czmq-high-level-c-binding-for-zeromq" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install czmq (high-level C binding for zeromq)</h4>
+
+<div class="highlight highlight-source-shell"><pre>git clone git://github.com/zeromq/czmq.git
+<span class="pl-c1">cd</span> czmq
+./autogen.sh
+./configure
+make
+sudo make install
+sudo ldconfig</pre></div>
+
+<h3>
+<a id="build-from-source-code" class="anchor" href="#build-from-source-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Build from source code</h3>
+
+<div class="highlight highlight-source-shell"><pre>git clone modbusd
+<span class="pl-c1">cd</span> modbusd
+mkdir build
+<span class="pl-c1">cd</span> build
+cmake ..
+make
+./modbusd ../modbusd.json <span class="pl-c"># load external configuration file</span></pre></div>
+
+<hr>
+
+<h2>
+<a id="test-cases" class="anchor" href="#test-cases" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Test Cases</h2>
+
+<ul>
+<li>[x] Test holding registers (4x)
+
+<ul>
+<li>[x] <code>4X Table: 60000</code> Read/Write uint16 value test: FC6, FC3</li>
+<li>[x] <code>4X Table: 30000</code> Read/Write int16 value test: FC6, FC3</li>
+<li>[x] <code>4X Table</code> Multiple read/write test: FC16, FC3</li>
+<li>[x] <code>4X Table</code> Multiple read/write test: FC16, FC3</li>
+</ul>
+</li>
+<li>[x] Test coils (0x)
+
+<ul>
+<li>[x] <code>0X Table</code> Single read/write test:FC5, FC1</li>
+<li>[x] <code>0X Table</code> Multiple read/write test: FC15, FC1</li>
+</ul>
+</li>
+<li>[x] Test Discrete Input (1x)
+
+<ul>
+<li>[x] <code>1X Table</code> read test: FC2</li>
+</ul>
+</li>
+<li>[x] Test Input Registers (3x)
+
+<ul>
+<li>[x] <code>3X Table</code> read test:FC4</li>
+</ul>
+</li>
+<li>[x] Test TCP Timeout
+
+<ul>
+<li>[x] <code>Set timeout</code> test</li>
+<li>[x] <code>Get timeout</code> test</li>
+</ul>
+</li>
+</ul>
+
+<p><img src="image/ci-drone.png" alt="ci"></p>
+
+<h3>
+<a id="images-and-testing-from-the-scratch" class="anchor" href="#images-and-testing-from-the-scratch" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Images and testing from the scratch</h3>
+
+<div class="highlight highlight-source-shell"><pre>
+docker pull edgepro/c-modbus-slave:x86
+docker build -t edgepro/modbusd <span class="pl-c1">.</span>
+docker build -t edgepro/dummy-psmbtcp test/dummy-psmbtcp/.
+
+docker run -itd --name=slave edgepro/c-modbus-slave:x86
+docker run -v /tmp:/tmp --link slave -it --name=modbusd edgepro/modbusd
+docker run -v /tmp:/tmp -it --link slave edgepro/dummy-psmbtcp</pre></div>
+
+<h3>
+<a id="docker-compose" class="anchor" href="#docker-compose" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Docker compose</h3>
+
+<div class="highlight highlight-source-shell"><pre>docker-compose up --abort-on-container-exit</pre></div>
+
+<h3>
+<a id="deployment-diagram" class="anchor" href="#deployment-diagram" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deployment Diagram</h3>
+
+<p><img src="http://uml.cmwang.net:8000/plantuml/svg/5Sl13O0W343HLNG0wTrjAcs0I2c1DiRjnVD_VoyjLYVsKRTirkS9CF09gLZsooUFgCsuMOWgO7ZZyM1Bq5qg24xZ0SIzwYiBWIYjYSAVFm00" alt="uml"></p>
+
+<hr>
+
+<p><a name="doc"></a></p>
+
+<h2>
+<a id="documentations" class="anchor" href="#documentations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentations</h2>
+
+<ul>
+<li><a href="http://taka-wang.github.io/modbusd/api">API Documentation</a></li>
+</ul>
+
+<hr>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>MIT</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/taka-wang/modbusd">Modbusd</a> is maintained by <a href="https://github.com/taka-wang">taka-wang</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
