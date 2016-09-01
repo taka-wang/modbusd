@@ -7,7 +7,6 @@ project(modbusd C)
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
 set(bin_name modbusd)
-#set(modbus_include /usr/local/include/modbus)
 set(modbus_include /usr/include/modbus)
 set(czmq_include /usr/include/)
 set(bin_source json/cJSON.c json.c mb.c mbtcp.c main.c)
@@ -18,7 +17,8 @@ include(GetGitRevisionDescription)
 # set latest git tag as modbusd version string
 git_describe(MODBUSD_VERSION --abbrev=0 --tags)
 # define version string to main.h
-add_definitions(-DVERSION="${MODBUSD_VERSION}" )
+#add_definitions(-DVERSION="${MODBUSD_VERSION}" )
+add_definitions(-DVERSION="0.7.1" )
 
 # cflag
 set(EXT_C_FLAGS "-W -Wall -Wno-format-security -O3 -std=c99")

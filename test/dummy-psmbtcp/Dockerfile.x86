@@ -1,7 +1,7 @@
 #
 # golang client to modbusd
 #
-FROM takawang/gozmq:pull
+FROM takawang/gozmq:x86
 MAINTAINER Taka Wang <taka@cmwang.net>
 
 WORKDIR /go

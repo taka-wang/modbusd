@@ -107,14 +107,14 @@ func TestHoldingRegisters(t *testing.T) {
 
 	s.Title("4X table test: FC3, FC6, FC16")
 
-	s.Assert("`4X Table: 60000` Read/Write uint16 value test: FC6, FC3", func(log sugar.Log) bool {
+	s.Assert("`4X Table: 60000` Read/Write uint16 value test: FC6, FC3", func(logf sugar.Log) bool {
 		// =============== write part ==============
 		writeReq := WriteReqBuilder(6, 10, 60000)
 		writeReqStr, _ := json.Marshal(writeReq) // marshal to json string
-		log("req: %s", string(writeReqStr))
+		logf("req: %s", string(writeReqStr))
 		go publisher(string(writeReqStr))
 		_, s1 := subscriber()
-		log("res: %s", s1)
+		logf("res: %s", s1)
 
 		// parse resonse
 		var r1 psmb.DMbtcpRes
@@ -129,10 +129,10 @@ func TestHoldingRegisters(t *testing.T) {
 		// =============== read part ==============
 		readReq := ReadReqBuilder(3, 10, 1)
 		readReqStr, _ := json.Marshal(readReq) // marshal to json string
-		log("req: %s", string(readReqStr))
+		logf("req: %s", string(readReqStr))
 		go publisher(string(readReqStr))
 		_, s2 := subscriber()
-		log("res: %s", s2)
+		logf("res: %s", s2)
 
 		// parse resonse
 		var r2 psmb.DMbtcpRes
@@ -149,14 +149,14 @@ func TestHoldingRegisters(t *testing.T) {
 		return true
 	})
 
-	s.Assert("`4X Table: 30000` Read/Write int16 value test: FC6, FC3", func(log sugar.Log) bool {
+	s.Assert("`4X Table: 30000` Read/Write int16 value test: FC6, FC3", func(logf sugar.Log) bool {
 		// =============== write part ==============
 		writeReq := WriteReqBuilder(6, 10, 30000)
 		writeReqStr, _ := json.Marshal(writeReq) // marshal to json string
 		go publisher(string(writeReqStr))
 		_, s1 := subscriber()
-		log("req: %s", string(writeReqStr))
-		log("res: %s", s1)
+		logf("req: %s", string(writeReqStr))
+		logf("res: %s", s1)
 
 		// parse resonse
 		var r1 psmb.DMbtcpRes
@@ -173,8 +173,8 @@ func TestHoldingRegisters(t *testing.T) {
 		readReqStr, _ := json.Marshal(readReq) // marshal to json string
 		go publisher(string(readReqStr))
 		_, s2 := subscriber()
-		log("req: %s", string(readReqStr))
-		log("res: %s", s2)
+		logf("req: %s", string(readReqStr))
+		logf("res: %s", s2)
 
 		// parse resonse
 		var r2 psmb.DMbtcpRes
@@ -192,14 +192,14 @@ func TestHoldingRegisters(t *testing.T) {
 	})
 
 	/*
-		s.Assert("`4X Table: -20000` Read/Write int16 value test: FC6, FC3", func(log sugar.Log) bool {
+		s.Assert("`4X Table: -20000` Read/Write int16 value test: FC6, FC3", func(logf sugar.Log) bool {
 			// =============== write part ==============
 			writeReq := WriteReqBuilder(6, 10, uint16(-20000))
 			writeReqStr, _ := json.Marshal(writeReq) // marshal to json string
 			go publisher(string(writeReqStr))
 			_, s1 := subscriber()
-			log("req: %s", string(writeReqStr))
-			log("res: %s", s1)
+			logf("req: %s", string(writeReqStr))
+			logf("res: %s", s1)
 
 			// parse resonse
 			var r1 DMbtcpRes
@@ -216,8 +216,8 @@ func TestHoldingRegisters(t *testing.T) {
 			readReqStr, _ := json.Marshal(readReq) // marshal to json string
 			go publisher(string(readReqStr))
 			_, s2 := subscriber()
-			log("req: %s", string(readReqStr))
-			log("res: %s", s2)
+			logf("req: %s", string(readReqStr))
+			logf("res: %s", s2)
 
 			// parse resonse
 			var r2 DMbtcpRes
@@ -235,7 +235,7 @@ func TestHoldingRegisters(t *testing.T) {
 		})
 	*/
 
-	s.Assert("`4X Table` Multiple read/write test: FC16, FC3", func(log sugar.Log) bool {
+	s.Assert("`4X Table` Multiple read/write test: FC16, FC3", func(logf sugar.Log) bool {
 		// =============== write part ==============
 		writeReq := WriteMultiReqBuilder(16, 10, 10,
 			[]uint16{1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000})
@@ -243,8 +243,8 @@ func TestHoldingRegisters(t *testing.T) {
 		writeReqStr, _ := json.Marshal(writeReq) // marshal to json string
 		go publisher(string(writeReqStr))
 		_, s1 := subscriber()
-		log("req: %s", string(writeReqStr))
-		log("res: %s", s1)
+		logf("req: %s", string(writeReqStr))
+		logf("res: %s", s1)
 
 		// parse resonse
 		var r1 psmb.DMbtcpRes
@@ -261,8 +261,8 @@ func TestHoldingRegisters(t *testing.T) {
 		readReqStr, _ := json.Marshal(readReq) // marshal to json string
 		go publisher(string(readReqStr))
 		_, s2 := subscriber()
-		log("req: %s", string(readReqStr))
-		log("res: %s", s2)
+		logf("req: %s", string(readReqStr))
+		logf("res: %s", s2)
 
 		// parse resonse
 		var r2 psmb.DMbtcpRes
@@ -293,14 +293,14 @@ func TestCoils(t *testing.T) {
 
 	s.Title("0X table test: FC1, FC5, FC15")
 
-	s.Assert("`0X Table` Single read/write test:FC5, FC1", func(log sugar.Log) bool {
+	s.Assert("`0X Table` Single read/write test:FC5, FC1", func(logf sugar.Log) bool {
 		// =============== write part ==============
 		writeReq := WriteReqBuilder(5, 400, 1)
 		writeReqStr, _ := json.Marshal(writeReq) // marshal to json string
 		go publisher(string(writeReqStr))
 		_, s1 := subscriber()
-		log("req: %s", string(writeReqStr))
-		log("res: %s", s1)
+		logf("req: %s", string(writeReqStr))
+		logf("res: %s", s1)
 
 		// parse resonse
 		var r1 psmb.DMbtcpRes
@@ -317,8 +317,8 @@ func TestCoils(t *testing.T) {
 		readReqStr, _ := json.Marshal(readReq) // marshal to json string
 		go publisher(string(readReqStr))
 		_, s2 := subscriber()
-		log("req: %s", string(readReqStr))
-		log("res: %s", s2)
+		logf("req: %s", string(readReqStr))
+		logf("res: %s", s2)
 
 		// parse resonse
 		var r2 psmb.DMbtcpRes
@@ -335,15 +335,15 @@ func TestCoils(t *testing.T) {
 		return true
 	})
 
-	s.Assert("`0X Table` Multiple read/write test: FC15, FC1", func(log sugar.Log) bool {
+	s.Assert("`0X Table` Multiple read/write test: FC15, FC1", func(logf sugar.Log) bool {
 		// =============== write part ==============
 		writeReq := WriteMultiReqBuilder(15, 100, 10,
 			[]uint16{0, 1, 1, 1, 0, 0, 0, 1, 0, 1})
 		writeReqStr, _ := json.Marshal(writeReq) // marshal to json string
 		go publisher(string(writeReqStr))
 		_, s1 := subscriber()
-		log("req: %s", string(writeReqStr))
-		log("res: %s", s1)
+		logf("req: %s", string(writeReqStr))
+		logf("res: %s", s1)
 
 		// parse resonse
 		var r1 psmb.DMbtcpRes
@@ -360,8 +360,8 @@ func TestCoils(t *testing.T) {
 		readReqStr, _ := json.Marshal(readReq) // marshal to json string
 		go publisher(string(readReqStr))
 		_, s2 := subscriber()
-		log("req: %s", string(readReqStr))
-		log("res: %s", s2)
+		logf("req: %s", string(readReqStr))
+		logf("res: %s", s2)
 
 		// parse resonse
 		var r2 psmb.DMbtcpRes
@@ -392,13 +392,13 @@ func TestDiscretesInput(t *testing.T) {
 
 	s.Title("1X table test: FC2")
 
-	s.Assert("`1X Table` read test: FC2", func(log sugar.Log) bool {
+	s.Assert("`1X Table` read test: FC2", func(logf sugar.Log) bool {
 		readReq := ReadReqBuilder(2, 0, 12)
 		readReqStr, _ := json.Marshal(readReq) // marshal to json string
 		go publisher(string(readReqStr))
 		_, s2 := subscriber()
-		log("req: %s", string(readReqStr))
-		log("res: %s", s2)
+		logf("req: %s", string(readReqStr))
+		logf("res: %s", s2)
 
 		// parse resonse
 		var r2 psmb.DMbtcpRes
@@ -418,13 +418,13 @@ func TestInputRegisters(t *testing.T) {
 	s := sugar.New(t)
 
 	s.Title("3X table read test: FC4")
-	s.Assert("`3X Table` read test:FC4", func(log sugar.Log) bool {
+	s.Assert("`3X Table` read test:FC4", func(logf sugar.Log) bool {
 		readReq := ReadReqBuilder(4, 0, 12)
 		readReqStr, _ := json.Marshal(readReq) // marshal to json string
 		go publisher(string(readReqStr))
 		_, s2 := subscriber()
-		log("req: %s", string(readReqStr))
-		log("res: %s", s2)
+		logf("req: %s", string(readReqStr))
+		logf("res: %s", s2)
 
 		// parse resonse
 		var r2 psmb.DMbtcpRes
@@ -443,34 +443,34 @@ func TestInputRegisters(t *testing.T) {
 func TestTimeout(t *testing.T) {
 	s := sugar.New(t)
 
-	s.Assert("`Set timeout` test", func(log sugar.Log) bool {
+	s.Assert("`Set timeout` test", func(logf sugar.Log) bool {
 		setReq := psmb.DMbtcpTimeout{
 			Tid:     strconv.FormatInt(time.Now().UTC().UnixNano(), 10),
 			Cmd:     50,
 			Timeout: 5100000,
 		}
 		setReqStr, _ := json.Marshal(setReq) // marshal to json string
-		log("req: %s", string(setReqStr))
+		logf("req: %s", string(setReqStr))
 
 		go publisher(string(setReqStr))
 		_, s2 := subscriber()
-		log("res: %s", s2)
+		logf("res: %s", s2)
 
 		return true
 	})
 
-	s.Assert("`Get timeout` test", func(log sugar.Log) bool {
+	s.Assert("`Get timeout` test", func(logf sugar.Log) bool {
 
 		getReq := psmb.DMbtcpTimeout{
 			Tid: strconv.FormatInt(time.Now().UTC().UnixNano(), 10),
 			Cmd: 51,
 		}
 		getReqStr, _ := json.Marshal(getReq) // marshal to json string
-		log("req: %s", string(getReqStr))
+		logf("req: %s", string(getReqStr))
 
 		go publisher(string(getReqStr))
 		_, s3 := subscriber()
-		log("res: %s", s3)
+		logf("res: %s", s3)
 
 		return true
 	})
