@@ -1,8 +1,6 @@
 # armhf for drone
 slave:
-    image: edgepro/c-modbus-slave:
-    entrypoint: /bin/sh -c
-    command: /usr/bin/server & /usr/bin/server 503
+    image: edgepro/c-modbus-slave:armhf
 
 modbusd:
     image: edgepro/modbusd:armhf

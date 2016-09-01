@@ -21,5 +21,7 @@ RUN cp "config/service.sh" "/etc/init.d/modbusd" && \
 ## Default exported port
 EXPOSE 502
 
-## Default command
-CMD /usr/bin/modbusd /etc/modbusd/modbusd.json
+#CMD /usr/bin/modbusd /etc/modbusd/modbusd.json
+
+ENTRYPOINT ["/usr/bin/modbusd"]
+CMD ["/etc/modbusd/modbusd.json"]

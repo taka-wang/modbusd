@@ -1,9 +1,6 @@
 # x86 for drone
 slave:
     image: edgepro/c-modbus-slave:x86
-    entrypoint:
-        - /bin/sh -c
-    command: /usr/bin/server & /usr/bin/server 503
 
 modbusd:
     image: edgepro/modbusd:x86
