@@ -31,7 +31,6 @@ I do continuous integration and build docker images after git push by self-hoste
 
 <a name="design"></a>
 
-
 ## Design
 
 ### Implemented libmodbus function codes
@@ -49,30 +48,33 @@ I do continuous integration and build docker images after git push by self-hoste
 
 ### Coil/register number and address table
 
->|Coil/Register numbers|data address       |type          |table name                     |offset| function code|
->|:--------------------|:------------------|:-------------|:------------------------------|:-----|:-------------|
->|1-9999               |0000 to 270E (9998)|Read-Write    |Discrete Output Coils          |1     | 1, 5, 15     |
->|10001-19999          |0000 to 270E (9998)|Read-Only     |Discrete Input Contacts        |10001 | 2            |
->|30001-39999          |0000 to 270E (9998)|Read-Only     |Analog Input Registers         |30001 | 4            |
->|40001-49999          |0000 to 270E (9998)|Read-Write    |Analog Output Holding Registers|40001 | 3, 6, 16     |
+>| Coil/Register numbers| data address       | type          | table name                     | offset | function code |
+>|:---------------------|:-------------------|:--------------|:-------------------------------|:-------|:--------------|
+>| 1-9999               | 0000 to 270E (9998)| Read-Write    | Discrete Output Coils          | 1      | 1, 5, 15      |
+>| 10001-19999          | 0000 to 270E (9998)| Read-Only     | Discrete Input Contacts        | 10001  | 2             |
+>| 30001-39999          | 0000 to 270E (9998)| Read-Only     | Analog Input Registers         | 30001  | 4             |
+>| 40001-49999          | 0000 to 270E (9998)| Read-Write    | Analog Output Holding Registers| 40001  | 3, 6, 16      |
 
 ### Command mapping table
 
 >| Command         | Number | Description      |
 >|:---------------:|-------:|:-----------------|
->| fc1             |   1    | modbus fc 1      |
->| fc2             |   2    | modbus fc 2      |
->| fc3             |   3    | modbus fc 3      |
->| fc4             |   4    | modbus fc 4      |
->| fc5             |   5    | modbus fc 5      |
->| fc6             |   6    | modbus fc 6      |
->| fc15            |  15    | modbus fc 15     |
->| fc16            |  16    | modbus fc 16     |
->| set_tcp_timeout |  50    | set tcp timeout  |
->| get_tcp_timeout |  51    | get tcp timeout  |
-
+>| FC1             |   1    | modbus fc 1      |
+>| FC2             |   2    | modbus fc 2      |
+>| FC3             |   3    | modbus fc 3      |
+>| FC4             |   4    | modbus fc 4      |
+>| FC5             |   5    | modbus fc 5      |
+>| FC6             |   6    | modbus fc 6      |
+>| FC15            |  15    | modbus fc 15     |
+>| FC16            |  16    | modbus fc 16     |
+>| SET_TCP_TIMEOUT |  50    | set tcp timeout  |
+>| GET_TCP_TIMEOUT |  51    | get tcp timeout  |
 
 ---
+
+### Environment variable
+
+- **CONF_MODBUSD**: config file path
 
 ### Configuration File
 
@@ -111,7 +113,6 @@ Please refer to [command definition](docs/command.md).
 - [libmodbus api document](http://libmodbus.org/docs/v3.1.4/)
 - [libmodbus header](https://github.com/stephane/libmodbus/blob/master/src/modbus.h)
 - [cJSON examples](https://github.com/DaveGamble/cJSON)
-
 
 ### Flow Chart
 

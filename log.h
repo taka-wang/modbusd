@@ -69,5 +69,4 @@ static char cstr[MSG_LEN];
         } \
     } while (0)
 
-
 #endif // END OF _LOG_H_

@@ -205,6 +205,7 @@ void test_single_add_find()
         HASH_DEL(servers, p); // remove from hash
         modbus_free(p->ctx);  // release modbus context
         free(p);
+        p = NULL;
     }
 }
 

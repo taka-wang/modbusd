@@ -62,7 +62,5 @@ RUN apk update \
 
 EXPOSE 502
 
-#CMD /usr/bin/modbusd /etc/modbusd/modbusd.json
-
 ENTRYPOINT ["/usr/bin/modbusd"]
 CMD ["/etc/modbusd/modbusd.json"]

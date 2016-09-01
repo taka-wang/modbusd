@@ -1,7 +1,6 @@
 # drone.io v0.4
 # armhf
 
-
 build:
     image: takawang/dind:$$arch
     volumes:
@@ -17,7 +16,6 @@ build:
         - docker-compose -f dockerfile/docker-compose.$$arch rm -f -a
         - docker-compose -f dockerfile/docker-compose.$$arch build --no-cache
         - docker-compose -f dockerfile/docker-compose.$$arch up --abort-on-container-exit
-
 
 matrix:
     arch:
