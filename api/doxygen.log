@@ -151,8 +151,10 @@ Generating caller graph for function cJSON_CreateString
 Generating call graph for function cJSON_CreateStringArray
 Generating caller graph for function cJSON_CreateUInt16
 Generating call graph for function cJSON_CreateUInt16Array
+Generating caller graph for function cJSON_CreateUInt16Array
 Generating caller graph for function cJSON_CreateUInt8
 Generating call graph for function cJSON_CreateUInt8Array
+Generating caller graph for function cJSON_CreateUInt8Array
 Generating call graph for function cJSON_Delete
 Generating caller graph for function cJSON_Delete
 Generating call graph for function cJSON_DeleteItemFromArray
@@ -196,7 +198,9 @@ Generating call graph for function cJSON_CreateString
 Generating caller graph for function cJSON_CreateString
 Generating call graph for function cJSON_CreateStringArray
 Generating call graph for function cJSON_CreateUInt16Array
+Generating caller graph for function cJSON_CreateUInt16Array
 Generating call graph for function cJSON_CreateUInt8Array
+Generating caller graph for function cJSON_CreateUInt8Array
 Generating call graph for function cJSON_Delete
 Generating caller graph for function cJSON_Delete
 Generating call graph for function cJSON_DeleteItemFromArray
@@ -244,18 +248,36 @@ Generating caller graph for function cJSONUtils_SortObject
 Generating docs for file json.c...
 Generating call graph for function file_to_json
 Generating call graph for function json_get_char
-Generating caller graph for function json_get_char
-Generating call graph for function json_get_double
-Generating call graph for function json_get_int
-Generating caller graph for function json_get_int
-Generating call graph for function json_get_long
-Generati/home/travis/build/taka-wang/modbusd/json.h:50: warning: argument 'double' of command @param is not found in the argument list of json_set_double(cJSON *inJson, const char *key, double value)
+Generating call/home/travis/build/taka-wang/modbusd/json.h:50: warning: argument 'double' of command @param is not found in the argument list of json_set_double(cJSON *inJson, const char *key, double value)
 /home/travis/build/taka-wang/modbusd/json.h:50: warning: The following parameters of json_set_double(cJSON *inJson, const char *key, double value) are not documented:
   parameter 'value'
 /home/travis/build/taka-wang/modbusd/json.h:50: warning: argument 'double' of command @param is not found in the argument list of json_set_double(cJSON *inJson, const char *key, double value)
 /home/travis/build/taka-wang/modbusd/json.h:50: warning: The following parameters of json_set_double(cJSON *inJson, const char *key, double value) are not documented:
   parameter 'value'
-ng caller graph for function json_get_long
+/home/travis/build/taka-wang/modbusd/mb.h:213: warning: Found unknown command `\fc'
+/home/travis/build/taka-wang/modbusd/mb.h:211: warning: The following parameters of mbtcp_multi_write_req(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
+  parameter 'fc'
+/home/travis/build/taka-wang/modbusd/mb.h:183: warning: Found unknown command `\fc'
+/home/travis/build/taka-wang/modbusd/mb.h:181: warning: The following parameters of mbtcp_read_bit_req(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
+  parameter 'fc'
+/home/travis/build/taka-wang/modbusd/mb.h:193: warning: Found unknown command `\fc'
+/home/travis/build/taka-wang/modbusd/mb.h:191: warning: The following parameters of mbtcp_read_reg_req(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
+  parameter 'fc'
+/home/travis/build/taka-wang/modbusd/mb.h:203: warning: Found unknown command `\fc'
+/home/travis/build/taka-wang/modbusd/mb.h:201: warning: The following parameters of mbtcp_single_write_req(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
+  parameter 'fc'
+/home/travis/build/taka-wang/modbusd/mb.h:213: warning: Found unknown command `\fc'
+/home/travis/build/taka-wang/modbusd/mb.h:211: warning: The following parameters of mbtcp_multi_write_req(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
+  parameter 'fc'
+/home/travis/build/taka-wang/modbusd/mb.h:183: warning: Found unknown command `\fc'
+/home/travis/build/taka-wang/modbusd/mb.h:181: warning: The following parameters of mbtcp_read_bit_req(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
+  parameter 'fc'
+er graph for function json_get_char
+Generating call graph for function json_get_double
+Generating call graph for function json_get_int
+Generating caller graph for function json_get_int
+Generating call graph for function json_get_long
+Generating caller graph for function json_get_long
 Generating call graph for function json_set_double
 Generating call graph for function json_set_int
 Generating call graph for function json_to_file
@@ -279,7 +301,9 @@ Generating docs for file mb.c...
 Generating call graph for function set_modbus_fail_resp_str
 Generating caller graph for function set_modbus_fail_resp_str
 Generating call graph for function set_modbus_fail_resp_str_with_errno
+Generating caller graph for function set_modbus_fail_resp_str_with_errno
 Generating call graph for function set_modbus_success_resp_str
+Generating caller graph for function set_modbus_success_resp_str
 Generating call graph for function set_modbus_success_resp_str_with_data
 Generating caller graph for function set_modbus_success_resp_str_with_data
 Generating docs for file mb.h...
@@ -292,12 +316,22 @@ Generating call graph for function mbtcp_get_response_timeout
 Generating caller graph for function mbtcp_get_response_timeout
 Generating call graph for function mbtcp_init_handle
 Generating caller graph for function mbtcp_init_handle
+Generating call graph for function mbtcp_multi_write_req
+Generating caller graph for function mbtcp_multi_write_req
+Generating call graph for function mbtcp_read_bit_req
+Generating caller graph for function mbtcp_read_bit_req
+Generating call graph for function mbtcp_read_reg_req
+Generating caller graph for function mbtcp_read_reg_req
 Generating call graph for function mbtcp_set_response_timeout
 Generating caller graph for function mbtcp_set_response_timeout
+Generating call graph for function mbtcp_single_write_req
+Generating caller graph for function mbtcp_single_write_req
 Generating call graph for function set_modbus_fail_resp_str
 Generating caller graph for function set_modbus_fail_resp_str
 Generating call graph for function set_modbus_fail_resp_str_with_errno
+Generating caller graph for function set_modbus_fail_resp_str_with_errno
 Generating call graph for function set_modbus_success_resp_str
+Generating caller graph for function set_modbus_success_resp_str
 Generating call graph for function set_modbus_success_resp_str_with_data
 Generating caller graph for function set_modbus_success_resp_str_with_data
 Generating docs for file mbtcp.c...
@@ -310,8 +344,22 @@ Generating call graph for function mbtcp_get_response_timeout
 Generating caller graph for function mbtcp_get_response_timeout
 Generating call graph for function mbtcp_init_handle
 Generating caller graph for function mbtcp_init_handle
+Generating call graph for function mbtcp_multi_write_req
+Generating caller graph for function mbtcp_multi_write_req
+Generating call graph for fun/home/travis/build/taka-wang/modbusd/mb.h:193: warning: Found unknown command `\fc'
+/home/travis/build/taka-wang/modbusd/mb.h:191: warning: The following parameters of mbtcp_read_reg_req(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
+  parameter 'fc'
+/home/travis/build/taka-wang/modbusd/mb.h:203: warning: Found unknown command `\fc'
+/home/travis/build/taka-wang/modbusd/mb.h:201: warning: The following parameters of mbtcp_single_write_req(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
+  parameter 'fc'
+ction mbtcp_read_bit_req
+Generating caller graph for function mbtcp_read_bit_req
+Generating call graph for function mbtcp_read_reg_req
+Generating caller graph for function mbtcp_read_reg_req
 Generating call graph for function mbtcp_set_response_timeout
 Generating caller graph for function mbtcp_set_response_timeout
+Generating call graph for function mbtcp_single_write_req
+Generating caller graph for function mbtcp_single_write_req
 Generating docs for file test.c...
 Generating call graph for function main
 Generating call graph for function test_init_tcp_handle_and_connect
@@ -356,210 +404,234 @@ Generating example index...
 finalizing index lists...
 Running dot...
 Generating dot graphs using 3 parallel threads...
-Running dot for graph 1/204
-Running dot for graph 2/204
-Running dot for graph 3/204
-Running dot for graph 4/204
-Running dot for graph 5/204
-Running dot for graph 6/204
-Running dot for graph 7/204
-Running dot for graph 8/204
-Running dot for graph 9/204
-Running dot for graph 10/204
-Running dot for graph 11/204
-Running dot for graph 12/204
-Running dot for graph 13/204
-Running dot for graph 14/204
-Running dot for graph 15/204
-Running dot for graph 16/204
-Running dot for graph 17/204
-Running dot for graph 18/204
-Running dot for graph 19/204
-Running dot for graph 20/204
-Running dot for graph 21/204
-Running dot for graph 22/204
-Running dot for graph 23/204
-Running dot for graph 24/204
-Running dot for graph 25/204
-Running dot for graph 26/204
-Running dot for graph 27/204
-Running dot for graph 28/204
-Running dot for graph 29/204
-Running dot for graph 30/204
-Running dot for graph 31/204
-Running dot for graph 32/204
-Running dot for graph 33/204
-Running dot for graph 34/204
-Running dot for graph 35/204
-Running dot for graph 36/204
-Running dot for graph 37/204
-Running dot for graph 38/204
-Running dot for graph 39/204
-Running dot for graph 40/204
-Running dot for graph 41/204
-Running dot for graph 42/204
-Running dot for graph 43/204
-Running dot for graph 44/204
-Running dot for graph 45/204
-Running dot for graph 46/204
-Running dot for graph 47/204
-Running dot for graph 48/204
-Running dot for graph 49/204
-Running dot for graph 50/204
-Running dot for graph 51/204
-Running dot for graph 52/204
-Running dot for graph 53/204
-Running dot for graph 54/204
-Running dot for graph 55/204
-Running dot for graph 56/204
-Running dot for graph 57/204
-Running dot for graph 58/204
-Running dot for graph 59/204
-Running dot for graph 60/204
-Running dot for graph 61/204
-Running dot for graph 62/204
-Running dot for graph 63/204
-Running dot for graph 64/204
-Running dot for graph 65/204
-Running dot for graph 66/204
-Running dot for graph 67/204
-Running dot for graph 68/204
-Running dot for graph 69/204
-Running dot for graph 70/204
-Running dot for graph 71/204
-Running dot for graph 72/204
-Running dot for graph 73/204
-Running dot for graph 74/204
-Running dot for graph 75/204
-Running dot for graph 76/204
-Running dot for graph 77/204
-Running dot for graph 78/204
-Running dot for graph 79/204
-Running dot for graph 80/204
-Running dot for graph 81/204
-Running dot for graph 82/204
-Running dot for graph 83/204
-Running dot for graph 84/204
-Running dot for graph 85/204
-Running dot for graph 86/204
-Running dot for graph 87/204
-Running dot for graph 88/204
-Running dot for graph 89/204
-Running dot for graph 90/204
-Running dot for graph 91/204
-Running dot for graph 92/204
-Running dot for graph 93/204
-Running dot for graph 94/204
-Running dot for graph 95/204
-Running dot for graph 96/204
-Running dot for graph 97/204
-Running dot for graph 98/204
-Running dot for graph 99/204
-Running dot for graph 100/204
-Running dot for graph 101/204
-Running dot for graph 102/204
-Running dot for graph 103/204
-Running dot for graph 104/204
-Running dot for graph 105/204
-Running dot for graph 106/204
-Running dot for graph 107/204
-Running dot for graph 108/204
-Running dot for graph 109/204
-Running dot for graph 110/204
-Running dot for graph 111/204
-Running dot for graph 112/204
-Running dot for graph 113/204
-Running dot for graph 114/204
-Running dot for graph 115/204
-Running dot for graph 116/204
-Running dot for graph 117/204
-Running dot for graph 118/204
-Running dot for graph 119/204
-Running dot for graph 120/204
-Running dot for graph 121/204
-Running dot for graph 122/204
-Running dot for graph 123/204
-Running dot for graph 124/204
-Running dot for graph 125/204
-Running dot for graph 126/204
-Running dot for graph 127/204
-Running dot for graph 128/204
-Running dot for graph 129/204
-Running dot for graph 130/204
-Running dot for graph 131/204
-Running dot for graph 132/204
-Running dot for graph 133/204
-Running dot for graph 134/204
-Running dot for graph 135/204
-Running dot for graph 136/204
-Running dot for graph 137/204
-Running dot for graph 138/204
-Running dot for graph 139/204
-Running dot for graph 140/204
-Running dot for graph 141/204
-Running dot for graph 142/204
-Running dot for graph 143/204
-Running dot for graph 144/204
-Running dot for graph 145/204
-Running dot for graph 146/204
-Running dot for graph 147/204
-Running dot for graph 148/204
-Running dot for graph 149/204
-Running dot for graph 150/204
-Running dot for graph 151/204
-Running dot for graph 152/204
-Running dot for graph 153/204
-Running dot for graph 154/204
-Running dot for graph 155/204
-Running dot for graph 156/204
-Running dot for graph 157/204
-Running dot for graph 158/204
-Running dot for graph 159/204
-Running dot for graph 160/204
-Running dot for graph 161/204
-Running dot for graph 162/204
-Running dot for graph 163/204
-Running dot for graph 164/204
-Running dot for graph 165/204
-Running dot for graph 166/204
-Running dot for graph 167/204
-Running dot for graph 168/204
-Running dot for graph 169/204
-Running dot for graph 170/204
-Running dot for graph 171/204
-Running dot for graph 172/204
-Running dot for graph 173/204
-Running dot for graph 174/204
-Running dot for graph 175/204
-Running dot for graph 176/204
-Running dot for graph 177/204
-Running dot for graph 178/204
-Running dot for graph 179/204
-Running dot for graph 180/204
-Running dot for graph 181/204
-Running dot for graph 182/204
-Running dot for graph 183/204
-Running dot for graph 184/204
-Running dot for graph 185/204
-Running dot for graph 186/204
-Running dot for graph 187/204
-Running dot for graph 188/204
-Running dot for graph 189/204
-Running dot for graph 190/204
-Running dot for graph 191/204
-Running dot for graph 192/204
-Running dot for graph 193/204
-Running dot for graph 194/204
-Running dot for graph 195/204
-Running dot for graph 196/204
-Running dot for graph 197/204
-Running dot for graph 198/204
-Running dot for graph 199/204
-Running dot for graph 200/204
-Running dot for graph 201/204
-Running dot for graph 202/204
-Running dot for graph 203/204
-Running dot for graph 204/204
+Running dot for graph 1/228
+Running dot for graph 2/228
+Running dot for graph 3/228
+Running dot for graph 4/228
+Running dot for graph 5/228
+Running dot for graph 6/228
+Running dot for graph 7/228
+Running dot for graph 8/228
+Running dot for graph 9/228
+Running dot for graph 10/228
+Running dot for graph 11/228
+Running dot for graph 12/228
+Running dot for graph 13/228
+Running dot for graph 14/228
+Running dot for graph 15/228
+Running dot for graph 16/228
+Running dot for graph 17/228
+Running dot for graph 18/228
+Running dot for graph 19/228
+Running dot for graph 20/228
+Running dot for graph 21/228
+Running dot for graph 22/228
+Running dot for graph 23/228
+Running dot for graph 24/228
+Running dot for graph 25/228
+Running dot for graph 26/228
+Running dot for graph 27/228
+Running dot for graph 28/228
+Running dot for graph 29/228
+Running dot for graph 30/228
+Running dot for graph 31/228
+Running dot for graph 32/228
+Running dot for graph 33/228
+Running dot for graph 34/228
+Running dot for graph 35/228
+Running dot for graph 36/228
+Running dot for graph 37/228
+Running dot for graph 38/228
+Running dot for graph 39/228
+Running dot for graph 40/228
+Running dot for graph 41/228
+Running dot for graph 42/228
+Running dot for graph 43/228
+Running dot for graph 44/228
+Running dot for graph 45/228
+Running dot for graph 46/228
+Running dot for graph 47/228
+Running dot for graph 48/228
+Running dot for graph 49/228
+Running dot for graph 50/228
+Running dot for graph 51/228
+Running dot for graph 52/228
+Running dot for graph 53/228
+Running dot for graph 54/228
+Running dot for graph 55/228
+Running dot for graph 56/228
+Running dot for graph 57/228
+Running dot for graph 58/228
+Running dot for graph 59/228
+Running dot for graph 60/228
+Running dot for graph 61/228
+Running dot for graph 62/228
+Running dot for graph 63/228
+Running dot for graph 64/228
+Running dot for graph 65/228
+Running dot for graph 66/228
+Running dot for graph 67/228
+Running dot for graph 68/228
+Running dot for graph 69/228
+Running dot for graph 70/228
+Running dot for graph 71/228
+Running dot for graph 72/228
+Running dot for graph 73/228
+Running dot for graph 74/228
+Running dot for graph 75/228
+Running dot for graph 76/228
+Running dot for graph 77/228
+Running dot for graph 78/228
+Running dot for graph 79/228
+Running dot for graph 80/228
+Running dot for graph 81/228
+Running dot for graph 82/228
+Running dot for graph 83/228
+Running dot for graph 84/228
+Running dot for graph 85/228
+Running dot for graph 86/228
+Running dot for graph 87/228
+Running dot for graph 88/228
+Running dot for graph 89/228
+Running dot for graph 90/228
+Running dot for graph 91/228
+Running dot for graph 92/228
+Running dot for graph 93/228
+Running dot for graph 94/228
+Running dot for graph 95/228
+Running dot for graph 96/228
+Running dot for graph 97/228
+Running dot for graph 98/228
+Running dot for graph 99/228
+Running dot for graph 100/228
+Running dot for graph 101/228
+Running dot for graph 102/228
+Running dot for graph 103/228
+Running dot for graph 104/228
+Running dot for graph 105/228
+Running dot for graph 106/228
+Running dot for graph 107/228
+Running dot for graph 108/228
+Running dot for graph 109/228
+Running dot for graph 110/228
+Running dot for graph 111/228
+Running dot for graph 112/228
+Running dot for graph 113/228
+Running dot for graph 114/228
+Running dot for graph 115/228
+Running dot for graph 116/228
+Running dot for graph 117/228
+Running dot for graph 118/228
+Running dot for graph 119/228
+Running dot for graph 120/228
+Running dot for graph 121/228
+Running dot for graph 122/228
+Running dot for graph 123/228
+Running dot for graph 124/228
+Running dot for graph 125/228
+Running dot for graph 126/228
+Running dot for graph 127/228
+Running dot for graph 128/228
+Running dot for graph 129/228
+Running dot for graph 130/228
+Running dot for graph 131/228
+Running dot for graph 132/228
+Running dot for graph 133/228
+Running dot for graph 134/228
+Running dot for graph 135/228
+Running dot for graph 136/228
+Running dot for graph 137/228
+Running dot for graph 138/228
+Running dot for graph 139/228
+Running dot for graph 140/228
+Running dot for graph 141/228
+Running dot for graph 142/228
+Running dot for graph 143/228
+Running dot for graph 144/228
+Running dot for graph 145/228
+Running dot for graph 146/228
+Running dot for graph 147/228
+Running dot for graph 148/228
+Running dot for graph 149/228
+Running dot for graph 150/228
+Running dot for graph 151/228
+Running dot for graph 152/228
+Running dot for graph 153/228
+Running dot for graph 154/228
+Running dot for graph 155/228
+Running dot for graph 156/228
+Running dot for graph 157/228
+Running dot for graph 158/228
+Running dot for graph 159/228
+Running dot for graph 160/228
+Running dot for graph 161/228
+Running dot for graph 162/228
+Running dot for graph 163/228
+Running dot for graph 164/228
+Running dot for graph 165/228
+Running dot for graph 166/228
+Running dot for graph 167/228
+Running dot for graph 168/228
+Running dot for graph 169/228
+Running dot for graph 170/228
+Running dot for graph 171/228
+Running dot for graph 172/228
+Running dot for graph 173/228
+Running dot for graph 174/228
+Running dot for graph 175/228
+Running dot for graph 176/228
+Running dot for graph 177/228
+Running dot for graph 178/228
+Running dot for graph 179/228
+Running dot for graph 180/228
+Running dot for graph 181/228
+Running dot for graph 182/228
+Running dot for graph 183/228
+Running dot for graph 184/228
+Running dot for graph 185/228
+Running dot for graph 186/228
+Running dot for graph 187/228
+Running dot for graph 188/228
+Running dot for graph 189/228
+Running dot for graph 190/228
+Running dot for graph 191/228
+Running dot for graph 192/228
+Running dot for graph 193/228
+Running dot for graph 194/228
+Running dot for graph 195/228
+Running dot for graph 196/228
+Running dot for graph 197/228
+Running dot for graph 198/228
+Running dot for graph 199/228
+Running dot for graph 200/228
+Running dot for graph 201/228
+Running dot for graph 202/228
+Running dot for graph 203/228
+Running dot for graph 204/228
+Running dot for graph 205/228
+Running dot for graph 206/228
+Running dot for graph 207/228
+Running dot for graph 208/228
+Running dot for graph 209/228
+Running dot for graph 210/228
+Running dot for graph 211/228
+Running dot for graph 212/228
+Running dot for graph 213/228
+Running dot for graph 214/228
+Running dot for graph 215/228
+Running dot for graph 216/228
+Running dot for graph 217/228
+Running dot for graph 218/228
+Running dot for graph 219/228
+Running dot for graph 220/228
+Running dot for graph 221/228
+Running dot for graph 222/228
+Running dot for graph 223/228
+Running dot for graph 224/228
+Running dot for graph 225/228
+Running dot for graph 226/228
+Running dot for graph 227/228
+Running dot for graph 228/228
 Patching output file 1/25
 Patching output file 2/25
 Patching output file 3/25
@@ -585,5 +657,5 @@ Patching output file 22/25
 Patching output file 23/25
 Patching output file 24/25
 Patching output file 25/25
-lookup cache used 326/65536 hits=4266 misses=334
+lookup cache used 326/65536 hits=4470 misses=333
 finished...

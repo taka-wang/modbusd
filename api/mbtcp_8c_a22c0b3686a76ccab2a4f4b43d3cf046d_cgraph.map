@@ -1,0 +1,16 @@
+<map id="mbtcp_read_reg_req" name="mbtcp_read_reg_req">
+<area shape="rect" id="node3" href="$c_j_s_o_n_8c.html#a96e1a63af4621f3fdfb1a0225c560f33" title="cJSON_CreateUInt16Array" alt="" coords="195,57,376,87"/>
+<area shape="rect" id="node12" href="$json_8c.html#a91211e998de80fee0e090ccd57271773" title="Get char string via key from cJSON object. " alt="" coords="235,281,336,311"/>
+<area shape="rect" id="node16" href="$json_8c.html#ac981dc081af7677ea42735759628fb25" title="Get integer value via key from cJSON object. " alt="" coords="240,335,331,364"/>
+<area shape="rect" id="node19" href="$mb_8c.html#a35b9986ec08788904914d9c01167d9f5" title="Set modbusd fail response string. " alt="" coords="424,167,595,196"/>
+<area shape="rect" id="node26" href="$mb_8c.html#a718bd9627e24689dccfe3e9a32477132" title="Set modbusd fail response string with error number. " alt="" coords="211,161,360,207"/>
+<area shape="rect" id="node29" href="$mb_8c.html#a90ebde92cd45b8892175bd4eba849d93" title="Set modbusd success response string with data (i.e., read func) " alt="" coords="435,219,584,266"/>
+<area shape="rect" id="node5" href="$c_j_s_o_n_8c.html#a29e5808c66c1cf1f3edbf117babe07b3" title="cJSON_CreateArray" alt="" coords="439,5,580,35"/>
+<area shape="rect" id="node7" href="$c_j_s_o_n_8c.html#abd0f669b297b0ee2916a5a3f22af21d6" title="cJSON_CreateUInt16" alt="" coords="435,59,584,88"/>
+<area shape="rect" id="node9" href="$c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a" title="cJSON_Delete" alt="" coords="676,117,785,147"/>
+<area shape="rect" id="node14" href="$c_j_s_o_n_8c.html#aba766c9d2c20996e323522cbf2ba46c6" title="cJSON_GetObjectItem" alt="" coords="431,311,588,340"/>
+<area shape="rect" id="node21" href="$c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085" title="cJSON_CreateObject" alt="" coords="656,171,805,200"/>
+<area shape="rect" id="node24" href="$c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4" title="cJSON_PrintUnformatted" alt="" coords="645,224,816,253"/>
+<area shape="rect" id="node31" href="$c_j_s_o_n_8c.html#a096004811663311569e95aa77518959c" title="cJSON_AddItemToObject" alt="" coords="644,277,817,307"/>
+<area shape="rect" id="node33" href="$c_j_s_o_n_8c.html#a164dcefd36af8654942116c444bd0b6a" title="cJSON_AddItemToArray" alt="" coords="868,277,1033,307"/>
+</map>

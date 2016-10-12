@@ -1,5 +1,9 @@
 <map id="set_modbus_fail_resp_str" name="set_modbus_fail_resp_str">
-<area shape="rect" id="node3" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="421,5,472,35"/>
-<area shape="rect" id="node5" href="$mbtcp_8c.html#a9ebfe4b9c143c562a97772ef570552a9" title="Generic mbtcp command handler. " alt="" coords="229,31,368,60"/>
-<area shape="rect" id="node8" href="$mb_8h.html#a718bd9627e24689dccfe3e9a32477132" title="Set modbusd fail response string with error number. " alt="" coords="224,83,373,130"/>
+<area shape="rect" id="node3" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="629,139,680,168"/>
+<area shape="rect" id="node5" href="$mbtcp_8c.html#a9ebfe4b9c143c562a97772ef570552a9" title="Generic mbtcp command handler. " alt="" coords="229,58,368,87"/>
+<area shape="rect" id="node8" href="$mbtcp_8c.html#acecd6c2e7e6f05dbcc444f1bcd9eaf8c" title="Help function. " alt="" coords="425,112,577,142"/>
+<area shape="rect" id="node11" href="$mbtcp_8c.html#a8b4d495a60a2c8b91e46539b37695651" title="Help function. " alt="" coords="433,166,569,195"/>
+<area shape="rect" id="node14" href="$mbtcp_8c.html#a22c0b3686a76ccab2a4f4b43d3cf046d" title="Help function. " alt="" coords="432,220,571,250"/>
+<area shape="rect" id="node17" href="$mbtcp_8c.html#ac950de4d0fcf9c697570bd0e30a71c48" title="Help function. " alt="" coords="423,274,580,303"/>
+<area shape="rect" id="node20" href="$mb_8h.html#a718bd9627e24689dccfe3e9a32477132" title="Set modbusd fail response string with error number. " alt="" coords="224,212,373,258"/>
 </map>
