@@ -7,11 +7,11 @@
 
 var indexSectionsWithContent =
 {
-  0: "bcdefghijklmnopstuv",
+  0: "bcdefghijklmnopstuvz",
   1: "cmpu",
   2: "cjlmtu",
   3: "cfjmst",
-  4: "bcefhiklmnopstv",
+  4: "bcefhiklmnopstvz",
   5: "cmu",
   6: "c",
   7: "fgs",
