@@ -122,12 +122,12 @@ Include dependency graph for mb.c:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a96c8720b01478f38a1ec04ba5757dc3a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mb_8c.html#a96c8720b01478f38a1ec04ba5757dc3a">set_modbus_success_resp_str</a> (char *tid)</td></tr>
-<tr class="memdesc:a96c8720b01478f38a1ec04ba5757dc3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set modbusd success response string without data (i.e., write func)  <a href="#a96c8720b01478f38a1ec04ba5757dc3a">More...</a><br/></td></tr>
-<tr class="separator:a96c8720b01478f38a1ec04ba5757dc3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90ebde92cd45b8892175bd4eba849d93"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mb_8c.html#a90ebde92cd45b8892175bd4eba849d93">set_modbus_success_resp_str_with_data</a> (char *tid, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *json_arr)</td></tr>
 <tr class="memdesc:a90ebde92cd45b8892175bd4eba849d93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set modbusd success response string with data (i.e., read func)  <a href="#a90ebde92cd45b8892175bd4eba849d93">More...</a><br/></td></tr>
 <tr class="separator:a90ebde92cd45b8892175bd4eba849d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96c8720b01478f38a1ec04ba5757dc3a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mb_8c.html#a96c8720b01478f38a1ec04ba5757dc3a">set_modbus_success_resp_str</a> (char *tid)</td></tr>
+<tr class="memdesc:a96c8720b01478f38a1ec04ba5757dc3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set modbusd success response string without data (i.e., write func)  <a href="#a96c8720b01478f38a1ec04ba5757dc3a">More...</a><br/></td></tr>
+<tr class="separator:a96c8720b01478f38a1ec04ba5757dc3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35b9986ec08788904914d9c01167d9f5"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mb_8c.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str</a> (char *tid, const char *reason)</td></tr>
 <tr class="memdesc:a35b9986ec08788904914d9c01167d9f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set modbusd fail response string.  <a href="#a35b9986ec08788904914d9c01167d9f5">More...</a><br/></td></tr>
 <tr class="separator:a35b9986ec08788904914d9c01167d9f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -180,23 +180,23 @@ Variables</h2></td></tr>
 
 <p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, <a class="el" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a>, <a class="el" href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085">cJSON_CreateObject()</a>, <a class="el" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a">cJSON_Delete()</a>, <a class="el" href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4">cJSON_PrintUnformatted()</a>, <a class="el" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <a class="el" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a>, <a class="el" href="log_8h.html#a39d0373831a9619a7160297f6349bf0a">ERR</a>, and <a class="el" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, <a class="el" href="mbtcp_8c.html#a02e79cd2e10e04ca269f511ba9085b24">mbtcp_cmd_hanlder()</a>, and <a class="el" href="mb_8h.html#a718bd9627e24689dccfe3e9a32477132">set_modbus_fail_resp_str_with_errno()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="log_8h.html#a39d0373831a9619a7160297f6349bf0a">ERR</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;fail: %s&quot;</span>, reason);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="structc_j_s_o_n.html">cJSON</a> *resp_root;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    resp_root = <a class="code" href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085">cJSON_CreateObject</a>();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a> (resp_root, <span class="stringliteral">&quot;tid&quot;</span>, tid);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a> (resp_root, <span class="stringliteral">&quot;status&quot;</span>, reason);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">char</span> * resp_json_string = <a class="code" href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4">cJSON_PrintUnformatted</a> (resp_root);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a>(<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;resp: %s&quot;</span>, resp_json_string);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// clean up</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a">cJSON_Delete</a> (resp_root);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> resp_json_string;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<p>Referenced by <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, <a class="el" href="mbtcp_8c.html#a9ebfe4b9c143c562a97772ef570552a9">mbtcp_cmd_hanlder()</a>, and <a class="el" href="mb_8h.html#a718bd9627e24689dccfe3e9a32477132">set_modbus_fail_resp_str_with_errno()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="log_8h.html#a39d0373831a9619a7160297f6349bf0a">ERR</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;fail: %s&quot;</span>, reason);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="structc_j_s_o_n.html">cJSON</a> *resp_root;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    resp_root = <a class="code" href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085">cJSON_CreateObject</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a> (resp_root, <span class="stringliteral">&quot;tid&quot;</span>, tid);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a> (resp_root, <span class="stringliteral">&quot;status&quot;</span>, reason);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">char</span> * resp_json_string = <a class="code" href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4">cJSON_PrintUnformatted</a> (resp_root);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a>(<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;resp: %s&quot;</span>, resp_json_string);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// clean up</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a">cJSON_Delete</a> (resp_root);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> resp_json_string;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
 <div class="ttc" id="c_j_s_o_n_8h_html_a3e2f334ba489b1c267ca40b3e046d5ee"><div class="ttname"><a href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a></div><div class="ttdeci">#define cJSON_AddStringToObject(object, name, s)</div><div class="ttdef"><b>Definition:</b> cJSON.h:149</div></div>
 <div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
 <div class="ttc" id="c_j_s_o_n_8c_html_a9c5f44afdd781b16dead90042fe74085"><div class="ttname"><a href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085">cJSON_CreateObject</a></div><div class="ttdeci">cJSON * cJSON_CreateObject(void)</div><div class="ttdef"><b>Definition:</b> cJSON.c:708</div></div>
@@ -222,7 +222,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="mb_8c_a35b9986ec08788904914d9c01167d9f5_icgraph.png" border="0" usemap="#mb_8c_a35b9986ec08788904914d9c01167d9f5_icgraph" alt=""/></div>
 <map name="mb_8c_a35b9986ec08788904914d9c01167d9f5_icgraph" id="mb_8c_a35b9986ec08788904914d9c01167d9f5_icgraph">
-<area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="421,5,472,35"/><area shape="rect" id="node5" href="mbtcp_8c.html#a02e79cd2e10e04ca269f511ba9085b24" title="Generic mbtcp command handler. " alt="" coords="229,31,368,60"/><area shape="rect" id="node8" href="mb_8h.html#a718bd9627e24689dccfe3e9a32477132" title="Set modbusd fail response string with error number. " alt="" coords="224,83,373,130"/></map>
+<area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="421,5,472,35"/><area shape="rect" id="node5" href="mbtcp_8c.html#a9ebfe4b9c143c562a97772ef570552a9" title="Generic mbtcp command handler. " alt="" coords="229,31,368,60"/><area shape="rect" id="node8" href="mb_8h.html#a718bd9627e24689dccfe3e9a32477132" title="Set modbusd fail response string with error number. " alt="" coords="224,83,373,130"/></map>
 </div>
 </p>
 
@@ -270,22 +270,22 @@ Here is the caller graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>Modbus error response string in JSON format. </dd></dl>
 
 <p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, <a class="el" href="structmbtcp__handle__s.html#ab36823025f12a809217f7771125658c2">mbtcp_handle_s::connected</a>, <a class="el" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <a class="el" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a>, <a class="el" href="log_8h.html#a39d0373831a9619a7160297f6349bf0a">ERR</a>, and <a class="el" href="mb_8c.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// [TODO][enhance] reconnect proactively?</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// ... if the request interval is very large, </span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// we should try to reconnect automatically</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span> (errnum == 104) <span class="comment">// Connection reset by peer (i.e, tcp connection timeout)</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        handle-&gt;<a class="code" href="structmbtcp__handle__s.html#ab36823025f12a809217f7771125658c2">connected</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="log_8h.html#a39d0373831a9619a7160297f6349bf0a">ERR</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;%s:%d&quot;</span>, modbus_strerror (errnum), errnum);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="mb_8c.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str</a> (tid, modbus_strerror (errnum));</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
-<div class="ttc" id="mb_8c_html_a35b9986ec08788904914d9c01167d9f5"><div class="ttname"><a href="mb_8c.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str</a></div><div class="ttdeci">char * set_modbus_fail_resp_str(char *tid, const char *reason)</div><div class="ttdoc">Set modbusd fail response string. </div><div class="ttdef"><b>Definition:</b> mb.c:49</div></div>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// [TODO][enhance] reconnect proactively?</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// ... if the request interval is very large, </span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// we should try to reconnect automatically</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span> (errnum == 104) <span class="comment">// Connection reset by peer (i.e, tcp connection timeout)</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        handle-&gt;<a class="code" href="structmbtcp__handle__s.html#ab36823025f12a809217f7771125658c2">connected</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="log_8h.html#a39d0373831a9619a7160297f6349bf0a">ERR</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;%s:%d&quot;</span>, modbus_strerror (errnum), errnum);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="mb_8c.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str</a> (tid, modbus_strerror (errnum));</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="ttc" id="mb_8c_html_a35b9986ec08788904914d9c01167d9f5"><div class="ttname"><a href="mb_8c.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str</a></div><div class="ttdeci">char * set_modbus_fail_resp_str(char *tid, const char *reason)</div><div class="ttdoc">Set modbusd fail response string. </div><div class="ttdef"><b>Definition:</b> mb.c:40</div></div>
 <div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
 <div class="ttc" id="mb_8c_html_a56925e79e16dff74446ab63f976df8b2"><div class="ttname"><a href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a></div><div class="ttdeci">int enable_syslog</div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
 <div class="ttc" id="log_8h_html_a8512450819d3d97d888db1e73bd2aab9"><div class="ttname"><a href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a></div><div class="ttdeci">#define END(flag)</div><div class="ttdef"><b>Definition:</b> log.h:61</div></div>
@@ -326,37 +326,18 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Modbus ok response string in JSON format. </dd></dl>
 
-<p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, <a class="el" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a>, <a class="el" href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085">cJSON_CreateObject()</a>, <a class="el" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a">cJSON_Delete()</a>, <a class="el" href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4">cJSON_PrintUnformatted()</a>, <a class="el" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <a class="el" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a>, and <a class="el" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a>.</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="structc_j_s_o_n.html">cJSON</a> *resp_root;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    resp_root = <a class="code" href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085">cJSON_CreateObject</a> ();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a> (resp_root, <span class="stringliteral">&quot;tid&quot;</span>, tid);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a> (resp_root, <span class="stringliteral">&quot;status&quot;</span>, <span class="stringliteral">&quot;ok&quot;</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">char</span> * resp_json_str = <a class="code" href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4">cJSON_PrintUnformatted</a> (resp_root);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;resp: %s&quot;</span>, resp_json_str);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// clean up</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a">cJSON_Delete</a> (resp_root);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> resp_json_str;     </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="ttc" id="c_j_s_o_n_8h_html_a3e2f334ba489b1c267ca40b3e046d5ee"><div class="ttname"><a href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a></div><div class="ttdeci">#define cJSON_AddStringToObject(object, name, s)</div><div class="ttdef"><b>Definition:</b> cJSON.h:149</div></div>
-<div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
-<div class="ttc" id="c_j_s_o_n_8c_html_a9c5f44afdd781b16dead90042fe74085"><div class="ttname"><a href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085">cJSON_CreateObject</a></div><div class="ttdeci">cJSON * cJSON_CreateObject(void)</div><div class="ttdef"><b>Definition:</b> cJSON.c:708</div></div>
-<div class="ttc" id="c_j_s_o_n_8c_html_a5539c9504a8e65390a94852707f105d4"><div class="ttname"><a href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4">cJSON_PrintUnformatted</a></div><div class="ttdeci">char * cJSON_PrintUnformatted(cJSON *item)</div><div class="ttdef"><b>Definition:</b> cJSON.c:347</div></div>
-<div class="ttc" id="mb_8c_html_a56925e79e16dff74446ab63f976df8b2"><div class="ttname"><a href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a></div><div class="ttdeci">int enable_syslog</div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
-<div class="ttc" id="log_8h_html_a8512450819d3d97d888db1e73bd2aab9"><div class="ttname"><a href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a></div><div class="ttdeci">#define END(flag)</div><div class="ttdef"><b>Definition:</b> log.h:61</div></div>
-<div class="ttc" id="c_j_s_o_n_8c_html_ab18060251de70a2b55a18dec694f8f8a"><div class="ttname"><a href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a">cJSON_Delete</a></div><div class="ttdeci">void cJSON_Delete(cJSON *c)</div><div class="ttdef"><b>Definition:</b> cJSON.c:81</div></div>
-<div class="ttc" id="structc_j_s_o_n_html"><div class="ttname"><a href="structc_j_s_o_n.html">cJSON</a></div><div class="ttdef"><b>Definition:</b> cJSON.h:47</div></div>
-<div class="ttc" id="log_8h_html_a19057be3f2da2871a0eb191602d01555"><div class="ttname"><a href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a></div><div class="ttdeci">#define LOG(flag, fmt,...)</div><div class="ttdef"><b>Definition:</b> log.h:37</div></div>
+<p>References <a class="el" href="mb_8c.html#a90ebde92cd45b8892175bd4eba849d93">set_modbus_success_resp_str_with_data()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="mb_8c.html#a90ebde92cd45b8892175bd4eba849d93">set_modbus_success_resp_str_with_data</a>(tid, NULL);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<div class="ttc" id="mb_8c_html_a90ebde92cd45b8892175bd4eba849d93"><div class="ttname"><a href="mb_8c.html#a90ebde92cd45b8892175bd4eba849d93">set_modbus_success_resp_str_with_data</a></div><div class="ttdeci">char * set_modbus_success_resp_str_with_data(char *tid, cJSON *json_arr)</div><div class="ttdoc">Set modbusd success response string with data (i.e., read func) </div><div class="ttdef"><b>Definition:</b> mb.c:15</div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="mb_8c_a96c8720b01478f38a1ec04ba5757dc3a_cgraph.png" border="0" usemap="#mb_8c_a96c8720b01478f38a1ec04ba5757dc3a_cgraph" alt=""/></div>
 <map name="mb_8c_a96c8720b01478f38a1ec04ba5757dc3a_cgraph" id="mb_8c_a96c8720b01478f38a1ec04ba5757dc3a_cgraph">
-<area shape="rect" id="node3" href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085" title="cJSON_CreateObject" alt="" coords="213,5,363,35"/><area shape="rect" id="node5" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a" title="cJSON_Delete" alt="" coords="233,83,343,112"/><area shape="rect" id="node8" href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4" title="cJSON_PrintUnformatted" alt="" coords="203,136,373,165"/></map>
+<area shape="rect" id="node3" href="mb_8c.html#a90ebde92cd45b8892175bd4eba849d93" title="Set modbusd success response string with data (i.e., read func) " alt="" coords="203,77,352,123"/><area shape="rect" id="node5" href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085" title="cJSON_CreateObject" alt="" coords="413,5,563,35"/><area shape="rect" id="node7" href="c_j_s_o_n_8c.html#a096004811663311569e95aa77518959c" title="cJSON_AddItemToObject" alt="" coords="401,59,575,88"/><area shape="rect" id="node11" href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4" title="cJSON_PrintUnformatted" alt="" coords="403,112,573,141"/><area shape="rect" id="node13" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a" title="cJSON_Delete" alt="" coords="433,189,543,219"/><area shape="rect" id="node9" href="c_j_s_o_n_8c.html#a164dcefd36af8654942116c444bd0b6a" title="cJSON_AddItemToArray" alt="" coords="625,59,791,88"/></map>
 </div>
 </p>
 
@@ -397,21 +378,26 @@ Here is the call graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>Modbus ok response string in JSON format. </dd></dl>
 
 <p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, <a class="el" href="c_j_s_o_n_8c.html#a096004811663311569e95aa77518959c">cJSON_AddItemToObject()</a>, <a class="el" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a>, <a class="el" href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085">cJSON_CreateObject()</a>, <a class="el" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a">cJSON_Delete()</a>, <a class="el" href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4">cJSON_PrintUnformatted()</a>, <a class="el" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <a class="el" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a>, and <a class="el" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a>.</p>
-<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="structc_j_s_o_n.html">cJSON</a> *resp_root;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    resp_root = <a class="code" href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085">cJSON_CreateObject</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a> (resp_root, <span class="stringliteral">&quot;tid&quot;</span>, tid);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="c_j_s_o_n_8c.html#a096004811663311569e95aa77518959c">cJSON_AddItemToObject</a> (resp_root, <span class="stringliteral">&quot;data&quot;</span>, json_arr);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a> (resp_root, <span class="stringliteral">&quot;status&quot;</span>, <span class="stringliteral">&quot;ok&quot;</span>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">char</span> * resp_json_str = <a class="code" href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4">cJSON_PrintUnformatted</a> (resp_root);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;resp: %s&quot;</span>, resp_json_str);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// clean up</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a">cJSON_Delete</a> (resp_root);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> resp_json_str;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+
+<p>Referenced by <a class="el" href="mb_8h.html#a96c8720b01478f38a1ec04ba5757dc3a">set_modbus_success_resp_str()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="structc_j_s_o_n.html">cJSON</a> *resp_root;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    resp_root = <a class="code" href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085">cJSON_CreateObject</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a> (resp_root, <span class="stringliteral">&quot;tid&quot;</span>, tid);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">if</span> (json_arr != NULL) </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="c_j_s_o_n_8c.html#a096004811663311569e95aa77518959c">cJSON_AddItemToObject</a> (resp_root, <span class="stringliteral">&quot;data&quot;</span>, json_arr);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a> (resp_root, <span class="stringliteral">&quot;status&quot;</span>, <span class="stringliteral">&quot;ok&quot;</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">char</span> * resp_json_str = <a class="code" href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4">cJSON_PrintUnformatted</a> (resp_root);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;resp: %s&quot;</span>, resp_json_str);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// clean up</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a">cJSON_Delete</a> (resp_root);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">return</span> resp_json_str;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 <div class="ttc" id="c_j_s_o_n_8h_html_a3e2f334ba489b1c267ca40b3e046d5ee"><div class="ttname"><a href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a></div><div class="ttdeci">#define cJSON_AddStringToObject(object, name, s)</div><div class="ttdef"><b>Definition:</b> cJSON.h:149</div></div>
 <div class="ttc" id="c_j_s_o_n_8c_html_a096004811663311569e95aa77518959c"><div class="ttname"><a href="c_j_s_o_n_8c.html#a096004811663311569e95aa77518959c">cJSON_AddItemToObject</a></div><div class="ttdeci">void cJSON_AddItemToObject(cJSON *object, const char *string, cJSON *item)</div><div class="ttdef"><b>Definition:</b> cJSON.c:676</div></div>
 <div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
@@ -432,6 +418,15 @@ Here is the call graph for this function:</div>
 </div>
 </p>
 
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="mb_8c_a90ebde92cd45b8892175bd4eba849d93_icgraph.png" border="0" usemap="#mb_8c_a90ebde92cd45b8892175bd4eba849d93_icgraph" alt=""/></div>
+<map name="mb_8c_a90ebde92cd45b8892175bd4eba849d93_icgraph" id="mb_8c_a90ebde92cd45b8892175bd4eba849d93_icgraph">
+<area shape="rect" id="node3" href="mb_8h.html#a96c8720b01478f38a1ec04ba5757dc3a" title="Set modbusd success response string without data (i.e., write func) " alt="" coords="203,5,352,51"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -445,7 +440,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="mb_8h.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str()</a>, <a class="el" href="mb_8h.html#a718bd9627e24689dccfe3e9a32477132">set_modbus_fail_resp_str_with_errno()</a>, <a class="el" href="mb_8h.html#a96c8720b01478f38a1ec04ba5757dc3a">set_modbus_success_resp_str()</a>, and <a class="el" href="mb_8h.html#a90ebde92cd45b8892175bd4eba849d93">set_modbus_success_resp_str_with_data()</a>.</p>
+<p>Referenced by <a class="el" href="mb_8h.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str()</a>, <a class="el" href="mb_8h.html#a718bd9627e24689dccfe3e9a32477132">set_modbus_fail_resp_str_with_errno()</a>, and <a class="el" href="mb_8h.html#a90ebde92cd45b8892175bd4eba849d93">set_modbus_success_resp_str_with_data()</a>.</p>
 
 </div>
 </div>
@@ -455,7 +450,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="mb_8c.html">mb.c</a></li>
-    <li class="footer">Generated on Wed Oct 12 2016 16:19:27 for modbusd by
+    <li class="footer">Generated on Wed Oct 12 2016 16:48:10 for modbusd by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

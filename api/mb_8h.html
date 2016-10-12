@@ -151,18 +151,18 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a4a73aba240ae86cd18cebbc0bcb4a01b"><td class="memItemLeft" align="right" valign="top">typedef char *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mb_8h.html#a4a73aba240ae86cd18cebbc0bcb4a01b">mbtcp_fc</a> )(<a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *req)</td></tr>
-<tr class="memdesc:a4a73aba240ae86cd18cebbc0bcb4a01b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function pointer of modbus tcp function code.  <a href="#a4a73aba240ae86cd18cebbc0bcb4a01b">More...</a><br/></td></tr>
-<tr class="separator:a4a73aba240ae86cd18cebbc0bcb4a01b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6883b763e739f8250ac7f612f6e6e2ff"><td class="memItemLeft" align="right" valign="top">typedef char *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mb_8h.html#a6883b763e739f8250ac7f612f6e6e2ff">mbtcp_fc</a> )(<a class="el" href="uthash_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> fc, <a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *req)</td></tr>
+<tr class="memdesc:a6883b763e739f8250ac7f612f6e6e2ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function pointer of modbus tcp function code.  <a href="#a6883b763e739f8250ac7f612f6e6e2ff">More...</a><br/></td></tr>
+<tr class="separator:a6883b763e739f8250ac7f612f6e6e2ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a96c8720b01478f38a1ec04ba5757dc3a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mb_8h.html#a96c8720b01478f38a1ec04ba5757dc3a">set_modbus_success_resp_str</a> (char *tid)</td></tr>
-<tr class="memdesc:a96c8720b01478f38a1ec04ba5757dc3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set modbusd success response string without data (i.e., write func)  <a href="#a96c8720b01478f38a1ec04ba5757dc3a">More...</a><br/></td></tr>
-<tr class="separator:a96c8720b01478f38a1ec04ba5757dc3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90ebde92cd45b8892175bd4eba849d93"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mb_8h.html#a90ebde92cd45b8892175bd4eba849d93">set_modbus_success_resp_str_with_data</a> (char *tid, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *json_arr)</td></tr>
 <tr class="memdesc:a90ebde92cd45b8892175bd4eba849d93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set modbusd success response string with data (i.e., read func)  <a href="#a90ebde92cd45b8892175bd4eba849d93">More...</a><br/></td></tr>
 <tr class="separator:a90ebde92cd45b8892175bd4eba849d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96c8720b01478f38a1ec04ba5757dc3a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mb_8h.html#a96c8720b01478f38a1ec04ba5757dc3a">set_modbus_success_resp_str</a> (char *tid)</td></tr>
+<tr class="memdesc:a96c8720b01478f38a1ec04ba5757dc3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set modbusd success response string without data (i.e., write func)  <a href="#a96c8720b01478f38a1ec04ba5757dc3a">More...</a><br/></td></tr>
+<tr class="separator:a96c8720b01478f38a1ec04ba5757dc3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35b9986ec08788904914d9c01167d9f5"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mb_8h.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str</a> (char *tid, const char *reason)</td></tr>
 <tr class="memdesc:a35b9986ec08788904914d9c01167d9f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set modbusd fail response string.  <a href="#a35b9986ec08788904914d9c01167d9f5">More...</a><br/></td></tr>
 <tr class="separator:a35b9986ec08788904914d9c01167d9f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,50 +184,26 @@ Functions</h2></td></tr>
 <tr class="memitem:a10fdba0f8df3a84f6a1edd2ce82fb746"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mb_8h.html#a10fdba0f8df3a84f6a1edd2ce82fb746">mbtcp_get_connection_status</a> (<a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle)</td></tr>
 <tr class="memdesc:a10fdba0f8df3a84f6a1edd2ce82fb746"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get mbtcp handle's connection status.  <a href="#a10fdba0f8df3a84f6a1edd2ce82fb746">More...</a><br/></td></tr>
 <tr class="separator:a10fdba0f8df3a84f6a1edd2ce82fb746"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02e79cd2e10e04ca269f511ba9085b24"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mb_8h.html#a02e79cd2e10e04ca269f511ba9085b24">mbtcp_cmd_hanlder</a> (<a class="el" href="structc_j_s_o_n.html">cJSON</a> *req, <a class="el" href="mb_8h.html#a4a73aba240ae86cd18cebbc0bcb4a01b">mbtcp_fc</a> fc)</td></tr>
-<tr class="memdesc:a02e79cd2e10e04ca269f511ba9085b24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic mbtcp command handler.  <a href="#a02e79cd2e10e04ca269f511ba9085b24">More...</a><br/></td></tr>
-<tr class="separator:a02e79cd2e10e04ca269f511ba9085b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ebfe4b9c143c562a97772ef570552a9"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mb_8h.html#a9ebfe4b9c143c562a97772ef570552a9">mbtcp_cmd_hanlder</a> (<a class="el" href="uthash_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> fc, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *req, <a class="el" href="mb_8h.html#a6883b763e739f8250ac7f612f6e6e2ff">mbtcp_fc</a> ptr_handler)</td></tr>
+<tr class="memdesc:a9ebfe4b9c143c562a97772ef570552a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic mbtcp command handler.  <a href="#a9ebfe4b9c143c562a97772ef570552a9">More...</a><br/></td></tr>
+<tr class="separator:a9ebfe4b9c143c562a97772ef570552a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada121fb7f9cf6c0975b13d5b3a37e28f"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mb_8h.html#ada121fb7f9cf6c0975b13d5b3a37e28f">mbtcp_set_response_timeout</a> (char *tid, long timeout)</td></tr>
 <tr class="memdesc:ada121fb7f9cf6c0975b13d5b3a37e28f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set mbtcp response timeout in usec.  <a href="#ada121fb7f9cf6c0975b13d5b3a37e28f">More...</a><br/></td></tr>
 <tr class="separator:ada121fb7f9cf6c0975b13d5b3a37e28f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e54b1362b644a8f7da785e9a7b3f561"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mb_8h.html#a3e54b1362b644a8f7da785e9a7b3f561">mbtcp_get_response_timeout</a> (char *tid)</td></tr>
 <tr class="memdesc:a3e54b1362b644a8f7da785e9a7b3f561"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get mbtcp response timeout.  <a href="#a3e54b1362b644a8f7da785e9a7b3f561">More...</a><br/></td></tr>
 <tr class="separator:a3e54b1362b644a8f7da785e9a7b3f561"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acec7eb8cd26d64c73ca68531abb35abe"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mb_8h.html#acec7eb8cd26d64c73ca68531abb35abe">mbtcp_fc1_request</a> (<a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *req)</td></tr>
-<tr class="memdesc:acec7eb8cd26d64c73ca68531abb35abe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modbus TCP Read coils.  <a href="#acec7eb8cd26d64c73ca68531abb35abe">More...</a><br/></td></tr>
-<tr class="separator:acec7eb8cd26d64c73ca68531abb35abe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac30955718174af366207e23931eed63b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mb_8h.html#ac30955718174af366207e23931eed63b">mbtcp_fc2_request</a> (<a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *req)</td></tr>
-<tr class="memdesc:ac30955718174af366207e23931eed63b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modbus TCP Read discrete input.  <a href="#ac30955718174af366207e23931eed63b">More...</a><br/></td></tr>
-<tr class="separator:ac30955718174af366207e23931eed63b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a203227647298a0fe6d401088009f0a52"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mb_8h.html#a203227647298a0fe6d401088009f0a52">mbtcp_fc3_request</a> (<a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *req)</td></tr>
-<tr class="memdesc:a203227647298a0fe6d401088009f0a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modbus TCP Read holding registers.  <a href="#a203227647298a0fe6d401088009f0a52">More...</a><br/></td></tr>
-<tr class="separator:a203227647298a0fe6d401088009f0a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70b5b676d39d2b6ced03699a46d0e671"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mb_8h.html#a70b5b676d39d2b6ced03699a46d0e671">mbtcp_fc4_request</a> (<a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *req)</td></tr>
-<tr class="memdesc:a70b5b676d39d2b6ced03699a46d0e671"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modbus TCP Read input registers.  <a href="#a70b5b676d39d2b6ced03699a46d0e671">More...</a><br/></td></tr>
-<tr class="separator:a70b5b676d39d2b6ced03699a46d0e671"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf0a8a74de44e63938833dfd98d48f0f"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mb_8h.html#acf0a8a74de44e63938833dfd98d48f0f">mbtcp_fc5_request</a> (<a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *req)</td></tr>
-<tr class="memdesc:acf0a8a74de44e63938833dfd98d48f0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modbus TCP Write single coil.  <a href="#acf0a8a74de44e63938833dfd98d48f0f">More...</a><br/></td></tr>
-<tr class="separator:acf0a8a74de44e63938833dfd98d48f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3742b55d75924653baa1ce94b5ee5afe"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mb_8h.html#a3742b55d75924653baa1ce94b5ee5afe">mbtcp_fc6_request</a> (<a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *req)</td></tr>
-<tr class="memdesc:a3742b55d75924653baa1ce94b5ee5afe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modbus TCP Write single register.  <a href="#a3742b55d75924653baa1ce94b5ee5afe">More...</a><br/></td></tr>
-<tr class="separator:a3742b55d75924653baa1ce94b5ee5afe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40780292d66d73db87b4d63a3467bf87"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mb_8h.html#a40780292d66d73db87b4d63a3467bf87">mbtcp_fc15_request</a> (<a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *req)</td></tr>
-<tr class="memdesc:a40780292d66d73db87b4d63a3467bf87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modbus TCP Write multiple coils.  <a href="#a40780292d66d73db87b4d63a3467bf87">More...</a><br/></td></tr>
-<tr class="separator:a40780292d66d73db87b4d63a3467bf87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a877d48611ccac756984d29f9f59d37"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mb_8h.html#a7a877d48611ccac756984d29f9f59d37">mbtcp_fc16_request</a> (<a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *req)</td></tr>
-<tr class="memdesc:a7a877d48611ccac756984d29f9f59d37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modbus TCP Write multiple registers.  <a href="#a7a877d48611ccac756984d29f9f59d37">More...</a><br/></td></tr>
-<tr class="separator:a7a877d48611ccac756984d29f9f59d37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>modbus daemon API(Interface) </p>
 <dl class="section author"><dt>Author</dt><dd>Taka Wang </dd></dl>
 </div><h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="a4a73aba240ae86cd18cebbc0bcb4a01b"></a>
+<a class="anchor" id="a6883b763e739f8250ac7f612f6e6e2ff"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef char*(* mbtcp_fc)(<a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *req)</td>
+          <td class="memname">typedef char*(* mbtcp_fc)(<a class="el" href="uthash_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> fc, <a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *req)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -236,6 +212,7 @@ Functions</h2></td></tr>
 <p>Function pointer to `modbus tcp function code request` for `generic command handle`.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">fc</td><td>function code </td></tr>
     <tr><td class="paramname">handle</td><td>Mbtcp handle. </td></tr>
     <tr><td class="paramname">req</td><td><a class="el" href="structc_j_s_o_n.html">cJSON</a> request object. </td></tr>
   </table>
@@ -246,21 +223,27 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a02e79cd2e10e04ca269f511ba9085b24"></a>
+<a class="anchor" id="a9ebfe4b9c143c562a97772ef570552a9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">char* mbtcp_cmd_hanlder </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="uthash_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
+          <td class="paramname"><em>fc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype"><a class="el" href="structc_j_s_o_n.html">cJSON</a> *&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="mb_8h.html#a4a73aba240ae86cd18cebbc0bcb4a01b">mbtcp_fc</a>&#160;</td>
-          <td class="paramname"><em>fc</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="mb_8h.html#a6883b763e739f8250ac7f612f6e6e2ff">mbtcp_fc</a>&#160;</td>
+          <td class="paramname"><em>ptr_handler</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -273,8 +256,9 @@ Functions</h2></td></tr>
 <p>Generic mbtcp command handler. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">fc</td><td>function code </td></tr>
     <tr><td class="paramname">req</td><td><a class="el" href="structc_j_s_o_n.html">cJSON</a> request object. </td></tr>
-    <tr><td class="paramname">fc</td><td>Function pointer to modbus tcp FC handler. </td></tr>
+    <tr><td class="paramname">ptr_handler</td><td>Function pointer to modbus tcp fc handler. </td></tr>
   </table>
   </dd>
 </dl>
@@ -296,7 +280,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            <span class="keywordtype">int</span> slave = <a class="code" href="json_8c.html#ac981dc081af7677ea42735759628fb25">json_get_int</a> (req, <span class="stringliteral">&quot;slave&quot;</span>);</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            <a class="code" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a>(<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;slave id: %d&quot;</span>, slave);</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            modbus_set_slave (handle-&gt;<a class="code" href="structmbtcp__handle__s.html#a65b629df22e3e4397451ce47bde4eba6">ctx</a>, slave);</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            <span class="keywordflow">return</span> fc (handle, req);</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            <span class="keywordflow">return</span> ptr_handler (fc, handle, req);</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        }</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        {</div>
@@ -309,7 +293,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="mb_8c.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str</a> (tid, <span class="stringliteral">&quot;Fail to init modbus tcp handle&quot;</span>);</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    }</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;}</div>
-<div class="ttc" id="mb_8c_html_a35b9986ec08788904914d9c01167d9f5"><div class="ttname"><a href="mb_8c.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str</a></div><div class="ttdeci">char * set_modbus_fail_resp_str(char *tid, const char *reason)</div><div class="ttdoc">Set modbusd fail response string. </div><div class="ttdef"><b>Definition:</b> mb.c:49</div></div>
+<div class="ttc" id="mb_8c_html_a35b9986ec08788904914d9c01167d9f5"><div class="ttname"><a href="mb_8c.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str</a></div><div class="ttdeci">char * set_modbus_fail_resp_str(char *tid, const char *reason)</div><div class="ttdoc">Set modbusd fail response string. </div><div class="ttdef"><b>Definition:</b> mb.c:40</div></div>
 <div class="ttc" id="structmbtcp__handle__s_html_a65b629df22e3e4397451ce47bde4eba6"><div class="ttname"><a href="structmbtcp__handle__s.html#a65b629df22e3e4397451ce47bde4eba6">mbtcp_handle_s::ctx</a></div><div class="ttdeci">modbus_t * ctx</div><div class="ttdoc">is connect to modbus slave? </div><div class="ttdef"><b>Definition:</b> mb.h:47</div></div>
 <div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
 <div class="ttc" id="json_8c_html_a91211e998de80fee0e090ccd57271773"><div class="ttname"><a href="json_8c.html#a91211e998de80fee0e090ccd57271773">json_get_char</a></div><div class="ttdeci">char * json_get_char(cJSON *inJson, const char *key)</div><div class="ttdoc">Get char string via key from cJSON object. </div><div class="ttdef"><b>Definition:</b> json.c:11</div></div>
@@ -321,8 +305,8 @@ Functions</h2></td></tr>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="mb_8h_a02e79cd2e10e04ca269f511ba9085b24_cgraph.png" border="0" usemap="#mb_8h_a02e79cd2e10e04ca269f511ba9085b24_cgraph" alt=""/></div>
-<map name="mb_8h_a02e79cd2e10e04ca269f511ba9085b24_cgraph" id="mb_8h_a02e79cd2e10e04ca269f511ba9085b24_cgraph">
+<div class="center"><img src="mb_8h_a9ebfe4b9c143c562a97772ef570552a9_cgraph.png" border="0" usemap="#mb_8h_a9ebfe4b9c143c562a97772ef570552a9_cgraph" alt=""/></div>
+<map name="mb_8h_a9ebfe4b9c143c562a97772ef570552a9_cgraph" id="mb_8h_a9ebfe4b9c143c562a97772ef570552a9_cgraph">
 <area shape="rect" id="node3" href="json_8c.html#a91211e998de80fee0e090ccd57271773" title="Get char string via key from cJSON object. " alt="" coords="227,5,328,35"/><area shape="rect" id="node7" href="json_8c.html#ac981dc081af7677ea42735759628fb25" title="Get integer value via key from cJSON object. " alt="" coords="232,59,323,88"/><area shape="rect" id="node10" href="mb_8c.html#a35b9986ec08788904914d9c01167d9f5" title="Set modbusd fail response string. " alt="" coords="192,124,363,153"/><area shape="rect" id="node5" href="c_j_s_o_n_8c.html#aba766c9d2c20996e323522cbf2ba46c6" title="cJSON_GetObjectItem" alt="" coords="417,5,575,35"/><area shape="rect" id="node12" href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085" title="cJSON_CreateObject" alt="" coords="421,59,571,88"/><area shape="rect" id="node14" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a" title="cJSON_Delete" alt="" coords="441,136,551,165"/><area shape="rect" id="node17" href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4" title="cJSON_PrintUnformatted" alt="" coords="411,189,581,219"/></map>
 </div>
 </p>
@@ -330,8 +314,8 @@ Here is the call graph for this function:</div>
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="mb_8h_a02e79cd2e10e04ca269f511ba9085b24_icgraph.png" border="0" usemap="#mb_8h_a02e79cd2e10e04ca269f511ba9085b24_icgraph" alt=""/></div>
-<map name="mb_8h_a02e79cd2e10e04ca269f511ba9085b24_icgraph" id="mb_8h_a02e79cd2e10e04ca269f511ba9085b24_icgraph">
+<div class="center"><img src="mb_8h_a9ebfe4b9c143c562a97772ef570552a9_icgraph.png" border="0" usemap="#mb_8h_a9ebfe4b9c143c562a97772ef570552a9_icgraph" alt=""/></div>
+<map name="mb_8h_a9ebfe4b9c143c562a97772ef570552a9_icgraph" id="mb_8h_a9ebfe4b9c143c562a97772ef570552a9_icgraph">
 <area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="192,5,243,35"/></map>
 </div>
 </p>
@@ -414,445 +398,6 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="mb_8h_a819f6eb596caa2acb6344aecd5daf51a_icgraph.png" border="0" usemap="#mb_8h_a819f6eb596caa2acb6344aecd5daf51a_icgraph" alt=""/></div>
 <map name="mb_8h_a819f6eb596caa2acb6344aecd5daf51a_icgraph" id="mb_8h_a819f6eb596caa2acb6344aecd5daf51a_icgraph">
 <area shape="rect" id="node3" href="mbtcp_8c.html#a7349aa568dc3288417d52543988729f8" title="Init mbtcp handle (to hashtable) and try to connect. " alt="" coords="188,5,313,35"/><area shape="rect" id="node5" href="test_8c.html#a0cb50b32ea20d9e40727ab83bb97d189" title="test_init_tcp_handle\l_and_connect" alt="" coords="363,23,501,70"/><area shape="rect" id="node7" href="test_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="549,32,600,61"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a40780292d66d73db87b4d63a3467bf87"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* mbtcp_fc15_request </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *&#160;</td>
-          <td class="paramname"><em>handle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structc_j_s_o_n.html">cJSON</a> *&#160;</td>
-          <td class="paramname"><em>req</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modbus TCP Write multiple coils. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">handle</td><td>Mbtcp handle. </td></tr>
-    <tr><td class="paramname">req</td><td><a class="el" href="structc_j_s_o_n.html">cJSON</a> request object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Modbus response string in JSON format. </dd></dl>
-
-<p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, and <a class="el" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>.</p>
-
-<p>Referenced by <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;{</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    <span class="keywordflow">return</span> mbtcp_multi_write_req (15, handle, req);</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;}</div>
-<div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
-<div class="ttc" id="mbtcp_8c_html_a56925e79e16dff74446ab63f976df8b2"><div class="ttname"><a href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a></div><div class="ttdeci">int enable_syslog</div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
-</div><!-- fragment -->
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="mb_8h_a40780292d66d73db87b4d63a3467bf87_icgraph.png" border="0" usemap="#mb_8h_a40780292d66d73db87b4d63a3467bf87_icgraph" alt=""/></div>
-<map name="mb_8h_a40780292d66d73db87b4d63a3467bf87_icgraph" id="mb_8h_a40780292d66d73db87b4d63a3467bf87_icgraph">
-<area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="195,5,245,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a7a877d48611ccac756984d29f9f59d37"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* mbtcp_fc16_request </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *&#160;</td>
-          <td class="paramname"><em>handle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structc_j_s_o_n.html">cJSON</a> *&#160;</td>
-          <td class="paramname"><em>req</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modbus TCP Write multiple registers. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">handle</td><td>Mbtcp handle. </td></tr>
-    <tr><td class="paramname">req</td><td><a class="el" href="structc_j_s_o_n.html">cJSON</a> request object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Modbus response string in JSON format. </dd></dl>
-
-<p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, and <a class="el" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>.</p>
-
-<p>Referenced by <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;{</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    <span class="keywordflow">return</span> mbtcp_multi_write_req (16, handle, req);</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;}<div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
-<div class="ttc" id="mbtcp_8c_html_a56925e79e16dff74446ab63f976df8b2"><div class="ttname"><a href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a></div><div class="ttdeci">int enable_syslog</div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
-</div><!-- fragment -->
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="mb_8h_a7a877d48611ccac756984d29f9f59d37_icgraph.png" border="0" usemap="#mb_8h_a7a877d48611ccac756984d29f9f59d37_icgraph" alt=""/></div>
-<map name="mb_8h_a7a877d48611ccac756984d29f9f59d37_icgraph" id="mb_8h_a7a877d48611ccac756984d29f9f59d37_icgraph">
-<area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="195,5,245,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="acec7eb8cd26d64c73ca68531abb35abe"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* mbtcp_fc1_request </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *&#160;</td>
-          <td class="paramname"><em>handle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structc_j_s_o_n.html">cJSON</a> *&#160;</td>
-          <td class="paramname"><em>req</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modbus TCP Read coils. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">handle</td><td>Mbtcp handle. </td></tr>
-    <tr><td class="paramname">req</td><td><a class="el" href="structc_j_s_o_n.html">cJSON</a> request object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Modbus response string in JSON format. </dd></dl>
-
-<p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, and <a class="el" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>.</p>
-
-<p>Referenced by <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;{</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;    <span class="keywordflow">return</span> mbtcp_read_bit_req (1, handle, req);</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;}</div>
-<div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
-<div class="ttc" id="mbtcp_8c_html_a56925e79e16dff74446ab63f976df8b2"><div class="ttname"><a href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a></div><div class="ttdeci">int enable_syslog</div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
-</div><!-- fragment -->
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="mb_8h_acec7eb8cd26d64c73ca68531abb35abe_icgraph.png" border="0" usemap="#mb_8h_acec7eb8cd26d64c73ca68531abb35abe_icgraph" alt=""/></div>
-<map name="mb_8h_acec7eb8cd26d64c73ca68531abb35abe_icgraph" id="mb_8h_acec7eb8cd26d64c73ca68531abb35abe_icgraph">
-<area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="187,5,237,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="ac30955718174af366207e23931eed63b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* mbtcp_fc2_request </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *&#160;</td>
-          <td class="paramname"><em>handle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structc_j_s_o_n.html">cJSON</a> *&#160;</td>
-          <td class="paramname"><em>req</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modbus TCP Read discrete input. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">handle</td><td>Mbtcp handle. </td></tr>
-    <tr><td class="paramname">req</td><td><a class="el" href="structc_j_s_o_n.html">cJSON</a> request object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Modbus response string in JSON format. </dd></dl>
-
-<p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, and <a class="el" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>.</p>
-
-<p>Referenced by <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;{</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <span class="keywordflow">return</span> mbtcp_read_bit_req (2, handle, req);</div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;}</div>
-<div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
-<div class="ttc" id="mbtcp_8c_html_a56925e79e16dff74446ab63f976df8b2"><div class="ttname"><a href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a></div><div class="ttdeci">int enable_syslog</div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
-</div><!-- fragment -->
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="mb_8h_ac30955718174af366207e23931eed63b_icgraph.png" border="0" usemap="#mb_8h_ac30955718174af366207e23931eed63b_icgraph" alt=""/></div>
-<map name="mb_8h_ac30955718174af366207e23931eed63b_icgraph" id="mb_8h_ac30955718174af366207e23931eed63b_icgraph">
-<area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="187,5,237,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a203227647298a0fe6d401088009f0a52"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* mbtcp_fc3_request </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *&#160;</td>
-          <td class="paramname"><em>handle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structc_j_s_o_n.html">cJSON</a> *&#160;</td>
-          <td class="paramname"><em>req</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modbus TCP Read holding registers. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">handle</td><td>Mbtcp handle. </td></tr>
-    <tr><td class="paramname">req</td><td><a class="el" href="structc_j_s_o_n.html">cJSON</a> request object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Modbus response string in JSON format. </dd></dl>
-
-<p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, and <a class="el" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>.</p>
-
-<p>Referenced by <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;{</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);   </div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;    <span class="keywordflow">return</span> mbtcp_read_reg_req (3, handle, req);  </div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;}</div>
-<div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
-<div class="ttc" id="mbtcp_8c_html_a56925e79e16dff74446ab63f976df8b2"><div class="ttname"><a href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a></div><div class="ttdeci">int enable_syslog</div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
-</div><!-- fragment -->
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="mb_8h_a203227647298a0fe6d401088009f0a52_icgraph.png" border="0" usemap="#mb_8h_a203227647298a0fe6d401088009f0a52_icgraph" alt=""/></div>
-<map name="mb_8h_a203227647298a0fe6d401088009f0a52_icgraph" id="mb_8h_a203227647298a0fe6d401088009f0a52_icgraph">
-<area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="187,5,237,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a70b5b676d39d2b6ced03699a46d0e671"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* mbtcp_fc4_request </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *&#160;</td>
-          <td class="paramname"><em>handle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structc_j_s_o_n.html">cJSON</a> *&#160;</td>
-          <td class="paramname"><em>req</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modbus TCP Read input registers. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">handle</td><td>Mbtcp handle. </td></tr>
-    <tr><td class="paramname">req</td><td><a class="el" href="structc_j_s_o_n.html">cJSON</a> request object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Modbus response string in JSON format. </dd></dl>
-
-<p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, and <a class="el" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>.</p>
-
-<p>Referenced by <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;{</div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;    <span class="keywordflow">return</span> mbtcp_read_reg_req (4, handle, req);  </div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;}</div>
-<div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
-<div class="ttc" id="mbtcp_8c_html_a56925e79e16dff74446ab63f976df8b2"><div class="ttname"><a href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a></div><div class="ttdeci">int enable_syslog</div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
-</div><!-- fragment -->
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="mb_8h_a70b5b676d39d2b6ced03699a46d0e671_icgraph.png" border="0" usemap="#mb_8h_a70b5b676d39d2b6ced03699a46d0e671_icgraph" alt=""/></div>
-<map name="mb_8h_a70b5b676d39d2b6ced03699a46d0e671_icgraph" id="mb_8h_a70b5b676d39d2b6ced03699a46d0e671_icgraph">
-<area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="187,5,237,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="acf0a8a74de44e63938833dfd98d48f0f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* mbtcp_fc5_request </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *&#160;</td>
-          <td class="paramname"><em>handle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structc_j_s_o_n.html">cJSON</a> *&#160;</td>
-          <td class="paramname"><em>req</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modbus TCP Write single coil. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">handle</td><td>Mbtcp handle. </td></tr>
-    <tr><td class="paramname">req</td><td><a class="el" href="structc_j_s_o_n.html">cJSON</a> request object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Modbus response string in JSON format. </dd></dl>
-
-<p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, and <a class="el" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>.</p>
-
-<p>Referenced by <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;{</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    <span class="keywordflow">return</span> mbtcp_single_write_req (5, handle, req);</div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;}</div>
-<div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
-<div class="ttc" id="mbtcp_8c_html_a56925e79e16dff74446ab63f976df8b2"><div class="ttname"><a href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a></div><div class="ttdeci">int enable_syslog</div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
-</div><!-- fragment -->
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="mb_8h_acf0a8a74de44e63938833dfd98d48f0f_icgraph.png" border="0" usemap="#mb_8h_acf0a8a74de44e63938833dfd98d48f0f_icgraph" alt=""/></div>
-<map name="mb_8h_acf0a8a74de44e63938833dfd98d48f0f_icgraph" id="mb_8h_acf0a8a74de44e63938833dfd98d48f0f_icgraph">
-<area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="187,5,237,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a3742b55d75924653baa1ce94b5ee5afe"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* mbtcp_fc6_request </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *&#160;</td>
-          <td class="paramname"><em>handle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structc_j_s_o_n.html">cJSON</a> *&#160;</td>
-          <td class="paramname"><em>req</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modbus TCP Write single register. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">handle</td><td>Mbtcp handle. </td></tr>
-    <tr><td class="paramname">req</td><td><a class="el" href="structc_j_s_o_n.html">cJSON</a> request object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Modbus response string in JSON format. </dd></dl>
-
-<p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, and <a class="el" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>.</p>
-
-<p>Referenced by <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;{</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <span class="keywordflow">return</span> mbtcp_single_write_req (6, handle, req);</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;}</div>
-<div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
-<div class="ttc" id="mbtcp_8c_html_a56925e79e16dff74446ab63f976df8b2"><div class="ttname"><a href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a></div><div class="ttdeci">int enable_syslog</div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
-</div><!-- fragment -->
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="mb_8h_a3742b55d75924653baa1ce94b5ee5afe_icgraph.png" border="0" usemap="#mb_8h_a3742b55d75924653baa1ce94b5ee5afe_icgraph" alt=""/></div>
-<map name="mb_8h_a3742b55d75924653baa1ce94b5ee5afe_icgraph" id="mb_8h_a3742b55d75924653baa1ce94b5ee5afe_icgraph">
-<area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="187,5,237,35"/></map>
 </div>
 </p>
 
@@ -1049,8 +594,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    <a class="code" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a">cJSON_Delete</a> (resp_root);</div>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    <a class="code" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a> (<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    <span class="keywordflow">return</span> resp_json_string;</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;}</div>
-<div class="ttc" id="c_j_s_o_n_8h_html_a3e2f334ba489b1c267ca40b3e046d5ee"><div class="ttname"><a href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a></div><div class="ttdeci">#define cJSON_AddStringToObject(object, name, s)</div><div class="ttdef"><b>Definition:</b> cJSON.h:149</div></div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;}<div class="ttc" id="c_j_s_o_n_8h_html_a3e2f334ba489b1c267ca40b3e046d5ee"><div class="ttname"><a href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a></div><div class="ttdeci">#define cJSON_AddStringToObject(object, name, s)</div><div class="ttdef"><b>Definition:</b> cJSON.h:149</div></div>
 <div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
 <div class="ttc" id="c_j_s_o_n_8h_html_aedf8e7037a7332b3653f90be04519862"><div class="ttname"><a href="c_j_s_o_n_8h.html#aedf8e7037a7332b3653f90be04519862">cJSON_AddNumberToObject</a></div><div class="ttdeci">#define cJSON_AddNumberToObject(object, name, n)</div><div class="ttdef"><b>Definition:</b> cJSON.h:148</div></div>
 <div class="ttc" id="c_j_s_o_n_8c_html_a9c5f44afdd781b16dead90042fe74085"><div class="ttname"><a href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085">cJSON_CreateObject</a></div><div class="ttdeci">cJSON * cJSON_CreateObject(void)</div><div class="ttdef"><b>Definition:</b> cJSON.c:708</div></div>
@@ -1140,7 +684,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        </div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="comment">// set tcp connection timeout</span></div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    modbus_set_response_timeout (ctx, 0, <a class="code" href="mbtcp_8c.html#ab0198e1ef10f08107d1da2d4327bf964">tcp_conn_timeout_usec</a>);</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <a class="code" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a>(<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;set response timeout: %ld&quot;</span>, <a class="code" href="mbtcp_8c.html#ab0198e1ef10f08107d1da2d4327bf964">tcp_conn_timeout_usec</a>);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <a class="code" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a> (<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;set response timeout: %ld&quot;</span>, <a class="code" href="mbtcp_8c.html#ab0198e1ef10f08107d1da2d4327bf964">tcp_conn_timeout_usec</a>);</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    </div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="comment">// @add context to mbtcp hashtable</span></div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <a class="code" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle;</div>
@@ -1361,23 +905,23 @@ Here is the caller graph for this function:</div>
 
 <p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, <a class="el" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a>, <a class="el" href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085">cJSON_CreateObject()</a>, <a class="el" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a">cJSON_Delete()</a>, <a class="el" href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4">cJSON_PrintUnformatted()</a>, <a class="el" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <a class="el" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a>, <a class="el" href="log_8h.html#a39d0373831a9619a7160297f6349bf0a">ERR</a>, and <a class="el" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, <a class="el" href="mbtcp_8c.html#a02e79cd2e10e04ca269f511ba9085b24">mbtcp_cmd_hanlder()</a>, and <a class="el" href="mb_8h.html#a718bd9627e24689dccfe3e9a32477132">set_modbus_fail_resp_str_with_errno()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="log_8h.html#a39d0373831a9619a7160297f6349bf0a">ERR</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;fail: %s&quot;</span>, reason);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="structc_j_s_o_n.html">cJSON</a> *resp_root;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    resp_root = <a class="code" href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085">cJSON_CreateObject</a>();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a> (resp_root, <span class="stringliteral">&quot;tid&quot;</span>, tid);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a> (resp_root, <span class="stringliteral">&quot;status&quot;</span>, reason);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">char</span> * resp_json_string = <a class="code" href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4">cJSON_PrintUnformatted</a> (resp_root);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a>(<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;resp: %s&quot;</span>, resp_json_string);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// clean up</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a">cJSON_Delete</a> (resp_root);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> resp_json_string;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<p>Referenced by <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, <a class="el" href="mbtcp_8c.html#a9ebfe4b9c143c562a97772ef570552a9">mbtcp_cmd_hanlder()</a>, and <a class="el" href="mb_8h.html#a718bd9627e24689dccfe3e9a32477132">set_modbus_fail_resp_str_with_errno()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="log_8h.html#a39d0373831a9619a7160297f6349bf0a">ERR</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;fail: %s&quot;</span>, reason);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="structc_j_s_o_n.html">cJSON</a> *resp_root;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    resp_root = <a class="code" href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085">cJSON_CreateObject</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a> (resp_root, <span class="stringliteral">&quot;tid&quot;</span>, tid);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a> (resp_root, <span class="stringliteral">&quot;status&quot;</span>, reason);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">char</span> * resp_json_string = <a class="code" href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4">cJSON_PrintUnformatted</a> (resp_root);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a>(<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;resp: %s&quot;</span>, resp_json_string);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// clean up</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a">cJSON_Delete</a> (resp_root);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> resp_json_string;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
 <div class="ttc" id="c_j_s_o_n_8h_html_a3e2f334ba489b1c267ca40b3e046d5ee"><div class="ttname"><a href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a></div><div class="ttdeci">#define cJSON_AddStringToObject(object, name, s)</div><div class="ttdef"><b>Definition:</b> cJSON.h:149</div></div>
 <div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
 <div class="ttc" id="c_j_s_o_n_8c_html_a9c5f44afdd781b16dead90042fe74085"><div class="ttname"><a href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085">cJSON_CreateObject</a></div><div class="ttdeci">cJSON * cJSON_CreateObject(void)</div><div class="ttdef"><b>Definition:</b> cJSON.c:708</div></div>
@@ -1403,7 +947,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="mb_8h_a35b9986ec08788904914d9c01167d9f5_icgraph.png" border="0" usemap="#mb_8h_a35b9986ec08788904914d9c01167d9f5_icgraph" alt=""/></div>
 <map name="mb_8h_a35b9986ec08788904914d9c01167d9f5_icgraph" id="mb_8h_a35b9986ec08788904914d9c01167d9f5_icgraph">
-<area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="421,5,472,35"/><area shape="rect" id="node5" href="mbtcp_8c.html#a02e79cd2e10e04ca269f511ba9085b24" title="Generic mbtcp command handler. " alt="" coords="229,31,368,60"/><area shape="rect" id="node8" href="mb_8h.html#a718bd9627e24689dccfe3e9a32477132" title="Set modbusd fail response string with error number. " alt="" coords="224,83,373,130"/></map>
+<area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="421,5,472,35"/><area shape="rect" id="node5" href="mbtcp_8c.html#a9ebfe4b9c143c562a97772ef570552a9" title="Generic mbtcp command handler. " alt="" coords="229,31,368,60"/><area shape="rect" id="node8" href="mb_8h.html#a718bd9627e24689dccfe3e9a32477132" title="Set modbusd fail response string with error number. " alt="" coords="224,83,373,130"/></map>
 </div>
 </p>
 
@@ -1451,22 +995,22 @@ Here is the caller graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>Modbus error response string in JSON format. </dd></dl>
 
 <p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, <a class="el" href="structmbtcp__handle__s.html#ab36823025f12a809217f7771125658c2">mbtcp_handle_s::connected</a>, <a class="el" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <a class="el" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a>, <a class="el" href="log_8h.html#a39d0373831a9619a7160297f6349bf0a">ERR</a>, and <a class="el" href="mb_8c.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// [TODO][enhance] reconnect proactively?</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// ... if the request interval is very large, </span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// we should try to reconnect automatically</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span> (errnum == 104) <span class="comment">// Connection reset by peer (i.e, tcp connection timeout)</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        handle-&gt;<a class="code" href="structmbtcp__handle__s.html#ab36823025f12a809217f7771125658c2">connected</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="log_8h.html#a39d0373831a9619a7160297f6349bf0a">ERR</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;%s:%d&quot;</span>, modbus_strerror (errnum), errnum);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="mb_8c.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str</a> (tid, modbus_strerror (errnum));</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
-<div class="ttc" id="mb_8c_html_a35b9986ec08788904914d9c01167d9f5"><div class="ttname"><a href="mb_8c.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str</a></div><div class="ttdeci">char * set_modbus_fail_resp_str(char *tid, const char *reason)</div><div class="ttdoc">Set modbusd fail response string. </div><div class="ttdef"><b>Definition:</b> mb.c:49</div></div>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// [TODO][enhance] reconnect proactively?</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// ... if the request interval is very large, </span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// we should try to reconnect automatically</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span> (errnum == 104) <span class="comment">// Connection reset by peer (i.e, tcp connection timeout)</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        handle-&gt;<a class="code" href="structmbtcp__handle__s.html#ab36823025f12a809217f7771125658c2">connected</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="log_8h.html#a39d0373831a9619a7160297f6349bf0a">ERR</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;%s:%d&quot;</span>, modbus_strerror (errnum), errnum);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="mb_8c.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str</a> (tid, modbus_strerror (errnum));</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="ttc" id="mb_8c_html_a35b9986ec08788904914d9c01167d9f5"><div class="ttname"><a href="mb_8c.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str</a></div><div class="ttdeci">char * set_modbus_fail_resp_str(char *tid, const char *reason)</div><div class="ttdoc">Set modbusd fail response string. </div><div class="ttdef"><b>Definition:</b> mb.c:40</div></div>
 <div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
 <div class="ttc" id="mb_8c_html_a56925e79e16dff74446ab63f976df8b2"><div class="ttname"><a href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a></div><div class="ttdeci">int enable_syslog</div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
 <div class="ttc" id="log_8h_html_a8512450819d3d97d888db1e73bd2aab9"><div class="ttname"><a href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a></div><div class="ttdeci">#define END(flag)</div><div class="ttdef"><b>Definition:</b> log.h:61</div></div>
@@ -1507,37 +1051,18 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Modbus ok response string in JSON format. </dd></dl>
 
-<p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, <a class="el" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a>, <a class="el" href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085">cJSON_CreateObject()</a>, <a class="el" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a">cJSON_Delete()</a>, <a class="el" href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4">cJSON_PrintUnformatted()</a>, <a class="el" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <a class="el" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a>, and <a class="el" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a>.</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="structc_j_s_o_n.html">cJSON</a> *resp_root;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    resp_root = <a class="code" href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085">cJSON_CreateObject</a> ();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a> (resp_root, <span class="stringliteral">&quot;tid&quot;</span>, tid);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a> (resp_root, <span class="stringliteral">&quot;status&quot;</span>, <span class="stringliteral">&quot;ok&quot;</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">char</span> * resp_json_str = <a class="code" href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4">cJSON_PrintUnformatted</a> (resp_root);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;resp: %s&quot;</span>, resp_json_str);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// clean up</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a">cJSON_Delete</a> (resp_root);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> resp_json_str;     </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="ttc" id="c_j_s_o_n_8h_html_a3e2f334ba489b1c267ca40b3e046d5ee"><div class="ttname"><a href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a></div><div class="ttdeci">#define cJSON_AddStringToObject(object, name, s)</div><div class="ttdef"><b>Definition:</b> cJSON.h:149</div></div>
-<div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
-<div class="ttc" id="c_j_s_o_n_8c_html_a9c5f44afdd781b16dead90042fe74085"><div class="ttname"><a href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085">cJSON_CreateObject</a></div><div class="ttdeci">cJSON * cJSON_CreateObject(void)</div><div class="ttdef"><b>Definition:</b> cJSON.c:708</div></div>
-<div class="ttc" id="c_j_s_o_n_8c_html_a5539c9504a8e65390a94852707f105d4"><div class="ttname"><a href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4">cJSON_PrintUnformatted</a></div><div class="ttdeci">char * cJSON_PrintUnformatted(cJSON *item)</div><div class="ttdef"><b>Definition:</b> cJSON.c:347</div></div>
-<div class="ttc" id="mb_8c_html_a56925e79e16dff74446ab63f976df8b2"><div class="ttname"><a href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a></div><div class="ttdeci">int enable_syslog</div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
-<div class="ttc" id="log_8h_html_a8512450819d3d97d888db1e73bd2aab9"><div class="ttname"><a href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a></div><div class="ttdeci">#define END(flag)</div><div class="ttdef"><b>Definition:</b> log.h:61</div></div>
-<div class="ttc" id="c_j_s_o_n_8c_html_ab18060251de70a2b55a18dec694f8f8a"><div class="ttname"><a href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a">cJSON_Delete</a></div><div class="ttdeci">void cJSON_Delete(cJSON *c)</div><div class="ttdef"><b>Definition:</b> cJSON.c:81</div></div>
-<div class="ttc" id="structc_j_s_o_n_html"><div class="ttname"><a href="structc_j_s_o_n.html">cJSON</a></div><div class="ttdef"><b>Definition:</b> cJSON.h:47</div></div>
-<div class="ttc" id="log_8h_html_a19057be3f2da2871a0eb191602d01555"><div class="ttname"><a href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a></div><div class="ttdeci">#define LOG(flag, fmt,...)</div><div class="ttdef"><b>Definition:</b> log.h:37</div></div>
+<p>References <a class="el" href="mb_8c.html#a90ebde92cd45b8892175bd4eba849d93">set_modbus_success_resp_str_with_data()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="mb_8c.html#a90ebde92cd45b8892175bd4eba849d93">set_modbus_success_resp_str_with_data</a>(tid, NULL);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<div class="ttc" id="mb_8c_html_a90ebde92cd45b8892175bd4eba849d93"><div class="ttname"><a href="mb_8c.html#a90ebde92cd45b8892175bd4eba849d93">set_modbus_success_resp_str_with_data</a></div><div class="ttdeci">char * set_modbus_success_resp_str_with_data(char *tid, cJSON *json_arr)</div><div class="ttdoc">Set modbusd success response string with data (i.e., read func) </div><div class="ttdef"><b>Definition:</b> mb.c:15</div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="mb_8h_a96c8720b01478f38a1ec04ba5757dc3a_cgraph.png" border="0" usemap="#mb_8h_a96c8720b01478f38a1ec04ba5757dc3a_cgraph" alt=""/></div>
 <map name="mb_8h_a96c8720b01478f38a1ec04ba5757dc3a_cgraph" id="mb_8h_a96c8720b01478f38a1ec04ba5757dc3a_cgraph">
-<area shape="rect" id="node3" href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085" title="cJSON_CreateObject" alt="" coords="213,5,363,35"/><area shape="rect" id="node5" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a" title="cJSON_Delete" alt="" coords="233,83,343,112"/><area shape="rect" id="node8" href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4" title="cJSON_PrintUnformatted" alt="" coords="203,136,373,165"/></map>
+<area shape="rect" id="node3" href="mb_8c.html#a90ebde92cd45b8892175bd4eba849d93" title="Set modbusd success response string with data (i.e., read func) " alt="" coords="203,89,352,135"/><area shape="rect" id="node5" href="c_j_s_o_n_8c.html#a096004811663311569e95aa77518959c" title="cJSON_AddItemToObject" alt="" coords="401,5,575,35"/><area shape="rect" id="node9" href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085" title="cJSON_CreateObject" alt="" coords="413,59,563,88"/><area shape="rect" id="node11" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a" title="cJSON_Delete" alt="" coords="433,136,543,165"/><area shape="rect" id="node14" href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4" title="cJSON_PrintUnformatted" alt="" coords="403,189,573,219"/><area shape="rect" id="node7" href="c_j_s_o_n_8c.html#a164dcefd36af8654942116c444bd0b6a" title="cJSON_AddItemToArray" alt="" coords="625,5,791,35"/></map>
 </div>
 </p>
 
@@ -1578,21 +1103,26 @@ Here is the call graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>Modbus ok response string in JSON format. </dd></dl>
 
 <p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, <a class="el" href="c_j_s_o_n_8c.html#a096004811663311569e95aa77518959c">cJSON_AddItemToObject()</a>, <a class="el" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a>, <a class="el" href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085">cJSON_CreateObject()</a>, <a class="el" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a">cJSON_Delete()</a>, <a class="el" href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4">cJSON_PrintUnformatted()</a>, <a class="el" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <a class="el" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a>, and <a class="el" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a>.</p>
-<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="structc_j_s_o_n.html">cJSON</a> *resp_root;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    resp_root = <a class="code" href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085">cJSON_CreateObject</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a> (resp_root, <span class="stringliteral">&quot;tid&quot;</span>, tid);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="c_j_s_o_n_8c.html#a096004811663311569e95aa77518959c">cJSON_AddItemToObject</a> (resp_root, <span class="stringliteral">&quot;data&quot;</span>, json_arr);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a> (resp_root, <span class="stringliteral">&quot;status&quot;</span>, <span class="stringliteral">&quot;ok&quot;</span>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">char</span> * resp_json_str = <a class="code" href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4">cJSON_PrintUnformatted</a> (resp_root);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;resp: %s&quot;</span>, resp_json_str);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// clean up</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a">cJSON_Delete</a> (resp_root);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> resp_json_str;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+
+<p>Referenced by <a class="el" href="mb_8h.html#a96c8720b01478f38a1ec04ba5757dc3a">set_modbus_success_resp_str()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="structc_j_s_o_n.html">cJSON</a> *resp_root;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    resp_root = <a class="code" href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085">cJSON_CreateObject</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a> (resp_root, <span class="stringliteral">&quot;tid&quot;</span>, tid);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">if</span> (json_arr != NULL) </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="c_j_s_o_n_8c.html#a096004811663311569e95aa77518959c">cJSON_AddItemToObject</a> (resp_root, <span class="stringliteral">&quot;data&quot;</span>, json_arr);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a> (resp_root, <span class="stringliteral">&quot;status&quot;</span>, <span class="stringliteral">&quot;ok&quot;</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">char</span> * resp_json_str = <a class="code" href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4">cJSON_PrintUnformatted</a> (resp_root);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;resp: %s&quot;</span>, resp_json_str);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// clean up</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a">cJSON_Delete</a> (resp_root);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a> (<a class="code" href="mb_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">return</span> resp_json_str;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 <div class="ttc" id="c_j_s_o_n_8h_html_a3e2f334ba489b1c267ca40b3e046d5ee"><div class="ttname"><a href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a></div><div class="ttdeci">#define cJSON_AddStringToObject(object, name, s)</div><div class="ttdef"><b>Definition:</b> cJSON.h:149</div></div>
 <div class="ttc" id="c_j_s_o_n_8c_html_a096004811663311569e95aa77518959c"><div class="ttname"><a href="c_j_s_o_n_8c.html#a096004811663311569e95aa77518959c">cJSON_AddItemToObject</a></div><div class="ttdeci">void cJSON_AddItemToObject(cJSON *object, const char *string, cJSON *item)</div><div class="ttdef"><b>Definition:</b> cJSON.c:676</div></div>
 <div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
@@ -1613,6 +1143,15 @@ Here is the call graph for this function:</div>
 </div>
 </p>
 
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="mb_8h_a90ebde92cd45b8892175bd4eba849d93_icgraph.png" border="0" usemap="#mb_8h_a90ebde92cd45b8892175bd4eba849d93_icgraph" alt=""/></div>
+<map name="mb_8h_a90ebde92cd45b8892175bd4eba849d93_icgraph" id="mb_8h_a90ebde92cd45b8892175bd4eba849d93_icgraph">
+<area shape="rect" id="node3" href="mb_8h.html#a96c8720b01478f38a1ec04ba5757dc3a" title="Set modbusd success response string without data (i.e., write func) " alt="" coords="203,5,352,51"/></map>
+</div>
+</p>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -1621,7 +1160,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="mb_8h.html">mb.h</a></li>
-    <li class="footer">Generated on Wed Oct 12 2016 16:19:27 for modbusd by
+    <li class="footer">Generated on Wed Oct 12 2016 16:48:10 for modbusd by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

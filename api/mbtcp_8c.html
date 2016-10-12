@@ -137,39 +137,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a10fdba0f8df3a84f6a1edd2ce82fb746"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbtcp_8c.html#a10fdba0f8df3a84f6a1edd2ce82fb746">mbtcp_get_connection_status</a> (<a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle)</td></tr>
 <tr class="memdesc:a10fdba0f8df3a84f6a1edd2ce82fb746"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get mbtcp handle's connection status.  <a href="#a10fdba0f8df3a84f6a1edd2ce82fb746">More...</a><br/></td></tr>
 <tr class="separator:a10fdba0f8df3a84f6a1edd2ce82fb746"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02e79cd2e10e04ca269f511ba9085b24"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbtcp_8c.html#a02e79cd2e10e04ca269f511ba9085b24">mbtcp_cmd_hanlder</a> (<a class="el" href="structc_j_s_o_n.html">cJSON</a> *req, <a class="el" href="mb_8h.html#a4a73aba240ae86cd18cebbc0bcb4a01b">mbtcp_fc</a> fc)</td></tr>
-<tr class="memdesc:a02e79cd2e10e04ca269f511ba9085b24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic mbtcp command handler.  <a href="#a02e79cd2e10e04ca269f511ba9085b24">More...</a><br/></td></tr>
-<tr class="separator:a02e79cd2e10e04ca269f511ba9085b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ebfe4b9c143c562a97772ef570552a9"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbtcp_8c.html#a9ebfe4b9c143c562a97772ef570552a9">mbtcp_cmd_hanlder</a> (<a class="el" href="uthash_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> fc, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *req, <a class="el" href="mb_8h.html#a6883b763e739f8250ac7f612f6e6e2ff">mbtcp_fc</a> ptr_handler)</td></tr>
+<tr class="memdesc:a9ebfe4b9c143c562a97772ef570552a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic mbtcp command handler.  <a href="#a9ebfe4b9c143c562a97772ef570552a9">More...</a><br/></td></tr>
+<tr class="separator:a9ebfe4b9c143c562a97772ef570552a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada121fb7f9cf6c0975b13d5b3a37e28f"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbtcp_8c.html#ada121fb7f9cf6c0975b13d5b3a37e28f">mbtcp_set_response_timeout</a> (char *tid, long timeout)</td></tr>
 <tr class="memdesc:ada121fb7f9cf6c0975b13d5b3a37e28f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set mbtcp response timeout in usec.  <a href="#ada121fb7f9cf6c0975b13d5b3a37e28f">More...</a><br/></td></tr>
 <tr class="separator:ada121fb7f9cf6c0975b13d5b3a37e28f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e54b1362b644a8f7da785e9a7b3f561"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbtcp_8c.html#a3e54b1362b644a8f7da785e9a7b3f561">mbtcp_get_response_timeout</a> (char *tid)</td></tr>
 <tr class="memdesc:a3e54b1362b644a8f7da785e9a7b3f561"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get mbtcp response timeout.  <a href="#a3e54b1362b644a8f7da785e9a7b3f561">More...</a><br/></td></tr>
 <tr class="separator:a3e54b1362b644a8f7da785e9a7b3f561"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acec7eb8cd26d64c73ca68531abb35abe"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbtcp_8c.html#acec7eb8cd26d64c73ca68531abb35abe">mbtcp_fc1_request</a> (<a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *req)</td></tr>
-<tr class="memdesc:acec7eb8cd26d64c73ca68531abb35abe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modbus TCP Read coils.  <a href="#acec7eb8cd26d64c73ca68531abb35abe">More...</a><br/></td></tr>
-<tr class="separator:acec7eb8cd26d64c73ca68531abb35abe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac30955718174af366207e23931eed63b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbtcp_8c.html#ac30955718174af366207e23931eed63b">mbtcp_fc2_request</a> (<a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *req)</td></tr>
-<tr class="memdesc:ac30955718174af366207e23931eed63b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modbus TCP Read discrete input.  <a href="#ac30955718174af366207e23931eed63b">More...</a><br/></td></tr>
-<tr class="separator:ac30955718174af366207e23931eed63b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a203227647298a0fe6d401088009f0a52"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbtcp_8c.html#a203227647298a0fe6d401088009f0a52">mbtcp_fc3_request</a> (<a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *req)</td></tr>
-<tr class="memdesc:a203227647298a0fe6d401088009f0a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modbus TCP Read holding registers.  <a href="#a203227647298a0fe6d401088009f0a52">More...</a><br/></td></tr>
-<tr class="separator:a203227647298a0fe6d401088009f0a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70b5b676d39d2b6ced03699a46d0e671"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbtcp_8c.html#a70b5b676d39d2b6ced03699a46d0e671">mbtcp_fc4_request</a> (<a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *req)</td></tr>
-<tr class="memdesc:a70b5b676d39d2b6ced03699a46d0e671"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modbus TCP Read input registers.  <a href="#a70b5b676d39d2b6ced03699a46d0e671">More...</a><br/></td></tr>
-<tr class="separator:a70b5b676d39d2b6ced03699a46d0e671"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf0a8a74de44e63938833dfd98d48f0f"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbtcp_8c.html#acf0a8a74de44e63938833dfd98d48f0f">mbtcp_fc5_request</a> (<a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *req)</td></tr>
-<tr class="memdesc:acf0a8a74de44e63938833dfd98d48f0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modbus TCP Write single coil.  <a href="#acf0a8a74de44e63938833dfd98d48f0f">More...</a><br/></td></tr>
-<tr class="separator:acf0a8a74de44e63938833dfd98d48f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3742b55d75924653baa1ce94b5ee5afe"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbtcp_8c.html#a3742b55d75924653baa1ce94b5ee5afe">mbtcp_fc6_request</a> (<a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *req)</td></tr>
-<tr class="memdesc:a3742b55d75924653baa1ce94b5ee5afe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modbus TCP Write single register.  <a href="#a3742b55d75924653baa1ce94b5ee5afe">More...</a><br/></td></tr>
-<tr class="separator:a3742b55d75924653baa1ce94b5ee5afe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40780292d66d73db87b4d63a3467bf87"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbtcp_8c.html#a40780292d66d73db87b4d63a3467bf87">mbtcp_fc15_request</a> (<a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *req)</td></tr>
-<tr class="memdesc:a40780292d66d73db87b4d63a3467bf87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modbus TCP Write multiple coils.  <a href="#a40780292d66d73db87b4d63a3467bf87">More...</a><br/></td></tr>
-<tr class="separator:a40780292d66d73db87b4d63a3467bf87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a877d48611ccac756984d29f9f59d37"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbtcp_8c.html#a7a877d48611ccac756984d29f9f59d37">mbtcp_fc16_request</a> (<a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle, <a class="el" href="structc_j_s_o_n.html">cJSON</a> *req)</td></tr>
-<tr class="memdesc:a7a877d48611ccac756984d29f9f59d37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modbus TCP Write multiple registers.  <a href="#a7a877d48611ccac756984d29f9f59d37">More...</a><br/></td></tr>
-<tr class="separator:a7a877d48611ccac756984d29f9f59d37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -182,21 +158,27 @@ Variables</h2></td></tr>
 <div class="textblock"><p>modbus tcp functions </p>
 <dl class="section author"><dt>Author</dt><dd>Taka Wang </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a02e79cd2e10e04ca269f511ba9085b24"></a>
+<a class="anchor" id="a9ebfe4b9c143c562a97772ef570552a9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">char* mbtcp_cmd_hanlder </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="uthash_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
+          <td class="paramname"><em>fc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype"><a class="el" href="structc_j_s_o_n.html">cJSON</a> *&#160;</td>
           <td class="paramname"><em>req</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="mb_8h.html#a4a73aba240ae86cd18cebbc0bcb4a01b">mbtcp_fc</a>&#160;</td>
-          <td class="paramname"><em>fc</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="mb_8h.html#a6883b763e739f8250ac7f612f6e6e2ff">mbtcp_fc</a>&#160;</td>
+          <td class="paramname"><em>ptr_handler</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -209,8 +191,9 @@ Variables</h2></td></tr>
 <p>Generic mbtcp command handler. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">fc</td><td>function code </td></tr>
     <tr><td class="paramname">req</td><td><a class="el" href="structc_j_s_o_n.html">cJSON</a> request object. </td></tr>
-    <tr><td class="paramname">fc</td><td>Function pointer to modbus tcp FC handler. </td></tr>
+    <tr><td class="paramname">ptr_handler</td><td>Function pointer to modbus tcp fc handler. </td></tr>
   </table>
   </dd>
 </dl>
@@ -232,7 +215,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            <span class="keywordtype">int</span> slave = <a class="code" href="json_8c.html#ac981dc081af7677ea42735759628fb25">json_get_int</a> (req, <span class="stringliteral">&quot;slave&quot;</span>);</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            <a class="code" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a>(<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;slave id: %d&quot;</span>, slave);</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            modbus_set_slave (handle-&gt;<a class="code" href="structmbtcp__handle__s.html#a65b629df22e3e4397451ce47bde4eba6">ctx</a>, slave);</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            <span class="keywordflow">return</span> fc (handle, req);</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            <span class="keywordflow">return</span> ptr_handler (fc, handle, req);</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        }</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        {</div>
@@ -245,7 +228,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="mb_8c.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str</a> (tid, <span class="stringliteral">&quot;Fail to init modbus tcp handle&quot;</span>);</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    }</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;}</div>
-<div class="ttc" id="mb_8c_html_a35b9986ec08788904914d9c01167d9f5"><div class="ttname"><a href="mb_8c.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str</a></div><div class="ttdeci">char * set_modbus_fail_resp_str(char *tid, const char *reason)</div><div class="ttdoc">Set modbusd fail response string. </div><div class="ttdef"><b>Definition:</b> mb.c:49</div></div>
+<div class="ttc" id="mb_8c_html_a35b9986ec08788904914d9c01167d9f5"><div class="ttname"><a href="mb_8c.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str</a></div><div class="ttdeci">char * set_modbus_fail_resp_str(char *tid, const char *reason)</div><div class="ttdoc">Set modbusd fail response string. </div><div class="ttdef"><b>Definition:</b> mb.c:40</div></div>
 <div class="ttc" id="structmbtcp__handle__s_html_a65b629df22e3e4397451ce47bde4eba6"><div class="ttname"><a href="structmbtcp__handle__s.html#a65b629df22e3e4397451ce47bde4eba6">mbtcp_handle_s::ctx</a></div><div class="ttdeci">modbus_t * ctx</div><div class="ttdoc">is connect to modbus slave? </div><div class="ttdef"><b>Definition:</b> mb.h:47</div></div>
 <div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
 <div class="ttc" id="json_8c_html_a91211e998de80fee0e090ccd57271773"><div class="ttname"><a href="json_8c.html#a91211e998de80fee0e090ccd57271773">json_get_char</a></div><div class="ttdeci">char * json_get_char(cJSON *inJson, const char *key)</div><div class="ttdoc">Get char string via key from cJSON object. </div><div class="ttdef"><b>Definition:</b> json.c:11</div></div>
@@ -257,8 +240,8 @@ Variables</h2></td></tr>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="mbtcp_8c_a02e79cd2e10e04ca269f511ba9085b24_cgraph.png" border="0" usemap="#mbtcp_8c_a02e79cd2e10e04ca269f511ba9085b24_cgraph" alt=""/></div>
-<map name="mbtcp_8c_a02e79cd2e10e04ca269f511ba9085b24_cgraph" id="mbtcp_8c_a02e79cd2e10e04ca269f511ba9085b24_cgraph">
+<div class="center"><img src="mbtcp_8c_a9ebfe4b9c143c562a97772ef570552a9_cgraph.png" border="0" usemap="#mbtcp_8c_a9ebfe4b9c143c562a97772ef570552a9_cgraph" alt=""/></div>
+<map name="mbtcp_8c_a9ebfe4b9c143c562a97772ef570552a9_cgraph" id="mbtcp_8c_a9ebfe4b9c143c562a97772ef570552a9_cgraph">
 <area shape="rect" id="node3" href="json_8c.html#a91211e998de80fee0e090ccd57271773" title="Get char string via key from cJSON object. " alt="" coords="227,5,328,35"/><area shape="rect" id="node7" href="json_8c.html#ac981dc081af7677ea42735759628fb25" title="Get integer value via key from cJSON object. " alt="" coords="232,59,323,88"/><area shape="rect" id="node10" href="mb_8c.html#a35b9986ec08788904914d9c01167d9f5" title="Set modbusd fail response string. " alt="" coords="192,124,363,153"/><area shape="rect" id="node5" href="c_j_s_o_n_8c.html#aba766c9d2c20996e323522cbf2ba46c6" title="cJSON_GetObjectItem" alt="" coords="417,5,575,35"/><area shape="rect" id="node12" href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085" title="cJSON_CreateObject" alt="" coords="421,59,571,88"/><area shape="rect" id="node14" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a" title="cJSON_Delete" alt="" coords="441,136,551,165"/><area shape="rect" id="node17" href="c_j_s_o_n_8c.html#a5539c9504a8e65390a94852707f105d4" title="cJSON_PrintUnformatted" alt="" coords="411,189,581,219"/></map>
 </div>
 </p>
@@ -266,8 +249,8 @@ Here is the call graph for this function:</div>
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="mbtcp_8c_a02e79cd2e10e04ca269f511ba9085b24_icgraph.png" border="0" usemap="#mbtcp_8c_a02e79cd2e10e04ca269f511ba9085b24_icgraph" alt=""/></div>
-<map name="mbtcp_8c_a02e79cd2e10e04ca269f511ba9085b24_icgraph" id="mbtcp_8c_a02e79cd2e10e04ca269f511ba9085b24_icgraph">
+<div class="center"><img src="mbtcp_8c_a9ebfe4b9c143c562a97772ef570552a9_icgraph.png" border="0" usemap="#mbtcp_8c_a9ebfe4b9c143c562a97772ef570552a9_icgraph" alt=""/></div>
+<map name="mbtcp_8c_a9ebfe4b9c143c562a97772ef570552a9_icgraph" id="mbtcp_8c_a9ebfe4b9c143c562a97772ef570552a9_icgraph">
 <area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="192,5,243,35"/></map>
 </div>
 </p>
@@ -350,445 +333,6 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="mbtcp_8c_a819f6eb596caa2acb6344aecd5daf51a_icgraph.png" border="0" usemap="#mbtcp_8c_a819f6eb596caa2acb6344aecd5daf51a_icgraph" alt=""/></div>
 <map name="mbtcp_8c_a819f6eb596caa2acb6344aecd5daf51a_icgraph" id="mbtcp_8c_a819f6eb596caa2acb6344aecd5daf51a_icgraph">
 <area shape="rect" id="node3" href="mbtcp_8c.html#a7349aa568dc3288417d52543988729f8" title="Init mbtcp handle (to hashtable) and try to connect. " alt="" coords="188,5,313,35"/><area shape="rect" id="node5" href="test_8c.html#a0cb50b32ea20d9e40727ab83bb97d189" title="test_init_tcp_handle\l_and_connect" alt="" coords="363,23,501,70"/><area shape="rect" id="node7" href="test_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="549,32,600,61"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a40780292d66d73db87b4d63a3467bf87"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* mbtcp_fc15_request </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *&#160;</td>
-          <td class="paramname"><em>handle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structc_j_s_o_n.html">cJSON</a> *&#160;</td>
-          <td class="paramname"><em>req</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modbus TCP Write multiple coils. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">handle</td><td>Mbtcp handle. </td></tr>
-    <tr><td class="paramname">req</td><td><a class="el" href="structc_j_s_o_n.html">cJSON</a> request object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Modbus response string in JSON format. </dd></dl>
-
-<p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, and <a class="el" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>.</p>
-
-<p>Referenced by <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;{</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    <span class="keywordflow">return</span> mbtcp_multi_write_req (15, handle, req);</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;}</div>
-<div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
-<div class="ttc" id="mbtcp_8c_html_a56925e79e16dff74446ab63f976df8b2"><div class="ttname"><a href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a></div><div class="ttdeci">int enable_syslog</div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
-</div><!-- fragment -->
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="mbtcp_8c_a40780292d66d73db87b4d63a3467bf87_icgraph.png" border="0" usemap="#mbtcp_8c_a40780292d66d73db87b4d63a3467bf87_icgraph" alt=""/></div>
-<map name="mbtcp_8c_a40780292d66d73db87b4d63a3467bf87_icgraph" id="mbtcp_8c_a40780292d66d73db87b4d63a3467bf87_icgraph">
-<area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="195,5,245,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a7a877d48611ccac756984d29f9f59d37"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* mbtcp_fc16_request </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *&#160;</td>
-          <td class="paramname"><em>handle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structc_j_s_o_n.html">cJSON</a> *&#160;</td>
-          <td class="paramname"><em>req</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modbus TCP Write multiple registers. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">handle</td><td>Mbtcp handle. </td></tr>
-    <tr><td class="paramname">req</td><td><a class="el" href="structc_j_s_o_n.html">cJSON</a> request object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Modbus response string in JSON format. </dd></dl>
-
-<p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, and <a class="el" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>.</p>
-
-<p>Referenced by <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;{</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    <span class="keywordflow">return</span> mbtcp_multi_write_req (16, handle, req);</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;}<div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
-<div class="ttc" id="mbtcp_8c_html_a56925e79e16dff74446ab63f976df8b2"><div class="ttname"><a href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a></div><div class="ttdeci">int enable_syslog</div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
-</div><!-- fragment -->
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="mbtcp_8c_a7a877d48611ccac756984d29f9f59d37_icgraph.png" border="0" usemap="#mbtcp_8c_a7a877d48611ccac756984d29f9f59d37_icgraph" alt=""/></div>
-<map name="mbtcp_8c_a7a877d48611ccac756984d29f9f59d37_icgraph" id="mbtcp_8c_a7a877d48611ccac756984d29f9f59d37_icgraph">
-<area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="195,5,245,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="acec7eb8cd26d64c73ca68531abb35abe"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* mbtcp_fc1_request </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *&#160;</td>
-          <td class="paramname"><em>handle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structc_j_s_o_n.html">cJSON</a> *&#160;</td>
-          <td class="paramname"><em>req</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modbus TCP Read coils. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">handle</td><td>Mbtcp handle. </td></tr>
-    <tr><td class="paramname">req</td><td><a class="el" href="structc_j_s_o_n.html">cJSON</a> request object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Modbus response string in JSON format. </dd></dl>
-
-<p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, and <a class="el" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>.</p>
-
-<p>Referenced by <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;{</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;    <span class="keywordflow">return</span> mbtcp_read_bit_req (1, handle, req);</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;}</div>
-<div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
-<div class="ttc" id="mbtcp_8c_html_a56925e79e16dff74446ab63f976df8b2"><div class="ttname"><a href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a></div><div class="ttdeci">int enable_syslog</div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
-</div><!-- fragment -->
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="mbtcp_8c_acec7eb8cd26d64c73ca68531abb35abe_icgraph.png" border="0" usemap="#mbtcp_8c_acec7eb8cd26d64c73ca68531abb35abe_icgraph" alt=""/></div>
-<map name="mbtcp_8c_acec7eb8cd26d64c73ca68531abb35abe_icgraph" id="mbtcp_8c_acec7eb8cd26d64c73ca68531abb35abe_icgraph">
-<area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="187,5,237,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="ac30955718174af366207e23931eed63b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* mbtcp_fc2_request </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *&#160;</td>
-          <td class="paramname"><em>handle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structc_j_s_o_n.html">cJSON</a> *&#160;</td>
-          <td class="paramname"><em>req</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modbus TCP Read discrete input. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">handle</td><td>Mbtcp handle. </td></tr>
-    <tr><td class="paramname">req</td><td><a class="el" href="structc_j_s_o_n.html">cJSON</a> request object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Modbus response string in JSON format. </dd></dl>
-
-<p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, and <a class="el" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>.</p>
-
-<p>Referenced by <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;{</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <span class="keywordflow">return</span> mbtcp_read_bit_req (2, handle, req);</div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;}</div>
-<div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
-<div class="ttc" id="mbtcp_8c_html_a56925e79e16dff74446ab63f976df8b2"><div class="ttname"><a href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a></div><div class="ttdeci">int enable_syslog</div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
-</div><!-- fragment -->
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="mbtcp_8c_ac30955718174af366207e23931eed63b_icgraph.png" border="0" usemap="#mbtcp_8c_ac30955718174af366207e23931eed63b_icgraph" alt=""/></div>
-<map name="mbtcp_8c_ac30955718174af366207e23931eed63b_icgraph" id="mbtcp_8c_ac30955718174af366207e23931eed63b_icgraph">
-<area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="187,5,237,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a203227647298a0fe6d401088009f0a52"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* mbtcp_fc3_request </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *&#160;</td>
-          <td class="paramname"><em>handle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structc_j_s_o_n.html">cJSON</a> *&#160;</td>
-          <td class="paramname"><em>req</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modbus TCP Read holding registers. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">handle</td><td>Mbtcp handle. </td></tr>
-    <tr><td class="paramname">req</td><td><a class="el" href="structc_j_s_o_n.html">cJSON</a> request object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Modbus response string in JSON format. </dd></dl>
-
-<p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, and <a class="el" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>.</p>
-
-<p>Referenced by <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;{</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);   </div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;    <span class="keywordflow">return</span> mbtcp_read_reg_req (3, handle, req);  </div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;}</div>
-<div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
-<div class="ttc" id="mbtcp_8c_html_a56925e79e16dff74446ab63f976df8b2"><div class="ttname"><a href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a></div><div class="ttdeci">int enable_syslog</div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
-</div><!-- fragment -->
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="mbtcp_8c_a203227647298a0fe6d401088009f0a52_icgraph.png" border="0" usemap="#mbtcp_8c_a203227647298a0fe6d401088009f0a52_icgraph" alt=""/></div>
-<map name="mbtcp_8c_a203227647298a0fe6d401088009f0a52_icgraph" id="mbtcp_8c_a203227647298a0fe6d401088009f0a52_icgraph">
-<area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="187,5,237,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a70b5b676d39d2b6ced03699a46d0e671"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* mbtcp_fc4_request </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *&#160;</td>
-          <td class="paramname"><em>handle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structc_j_s_o_n.html">cJSON</a> *&#160;</td>
-          <td class="paramname"><em>req</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modbus TCP Read input registers. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">handle</td><td>Mbtcp handle. </td></tr>
-    <tr><td class="paramname">req</td><td><a class="el" href="structc_j_s_o_n.html">cJSON</a> request object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Modbus response string in JSON format. </dd></dl>
-
-<p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, and <a class="el" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>.</p>
-
-<p>Referenced by <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;{</div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;    <span class="keywordflow">return</span> mbtcp_read_reg_req (4, handle, req);  </div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;}</div>
-<div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
-<div class="ttc" id="mbtcp_8c_html_a56925e79e16dff74446ab63f976df8b2"><div class="ttname"><a href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a></div><div class="ttdeci">int enable_syslog</div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
-</div><!-- fragment -->
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="mbtcp_8c_a70b5b676d39d2b6ced03699a46d0e671_icgraph.png" border="0" usemap="#mbtcp_8c_a70b5b676d39d2b6ced03699a46d0e671_icgraph" alt=""/></div>
-<map name="mbtcp_8c_a70b5b676d39d2b6ced03699a46d0e671_icgraph" id="mbtcp_8c_a70b5b676d39d2b6ced03699a46d0e671_icgraph">
-<area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="187,5,237,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="acf0a8a74de44e63938833dfd98d48f0f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* mbtcp_fc5_request </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *&#160;</td>
-          <td class="paramname"><em>handle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structc_j_s_o_n.html">cJSON</a> *&#160;</td>
-          <td class="paramname"><em>req</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modbus TCP Write single coil. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">handle</td><td>Mbtcp handle. </td></tr>
-    <tr><td class="paramname">req</td><td><a class="el" href="structc_j_s_o_n.html">cJSON</a> request object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Modbus response string in JSON format. </dd></dl>
-
-<p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, and <a class="el" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>.</p>
-
-<p>Referenced by <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;{</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    <span class="keywordflow">return</span> mbtcp_single_write_req (5, handle, req);</div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;}</div>
-<div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
-<div class="ttc" id="mbtcp_8c_html_a56925e79e16dff74446ab63f976df8b2"><div class="ttname"><a href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a></div><div class="ttdeci">int enable_syslog</div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
-</div><!-- fragment -->
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="mbtcp_8c_acf0a8a74de44e63938833dfd98d48f0f_icgraph.png" border="0" usemap="#mbtcp_8c_acf0a8a74de44e63938833dfd98d48f0f_icgraph" alt=""/></div>
-<map name="mbtcp_8c_acf0a8a74de44e63938833dfd98d48f0f_icgraph" id="mbtcp_8c_acf0a8a74de44e63938833dfd98d48f0f_icgraph">
-<area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="187,5,237,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a3742b55d75924653baa1ce94b5ee5afe"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* mbtcp_fc6_request </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *&#160;</td>
-          <td class="paramname"><em>handle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structc_j_s_o_n.html">cJSON</a> *&#160;</td>
-          <td class="paramname"><em>req</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modbus TCP Write single register. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">handle</td><td>Mbtcp handle. </td></tr>
-    <tr><td class="paramname">req</td><td><a class="el" href="structc_j_s_o_n.html">cJSON</a> request object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Modbus response string in JSON format. </dd></dl>
-
-<p>References <a class="el" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a>, and <a class="el" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>.</p>
-
-<p>Referenced by <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;{</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    <a class="code" href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a> (<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <span class="keywordflow">return</span> mbtcp_single_write_req (6, handle, req);</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;}</div>
-<div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
-<div class="ttc" id="mbtcp_8c_html_a56925e79e16dff74446ab63f976df8b2"><div class="ttname"><a href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a></div><div class="ttdeci">int enable_syslog</div><div class="ttdef"><b>Definition:</b> main.c:16</div></div>
-</div><!-- fragment -->
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="mbtcp_8c_a3742b55d75924653baa1ce94b5ee5afe_icgraph.png" border="0" usemap="#mbtcp_8c_a3742b55d75924653baa1ce94b5ee5afe_icgraph" alt=""/></div>
-<map name="mbtcp_8c_a3742b55d75924653baa1ce94b5ee5afe_icgraph" id="mbtcp_8c_a3742b55d75924653baa1ce94b5ee5afe_icgraph">
-<area shape="rect" id="node3" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="187,5,237,35"/></map>
 </div>
 </p>
 
@@ -985,8 +529,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    <a class="code" href="c_j_s_o_n_8c.html#ab18060251de70a2b55a18dec694f8f8a">cJSON_Delete</a> (resp_root);</div>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    <a class="code" href="log_8h.html#a8512450819d3d97d888db1e73bd2aab9">END</a> (<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>);</div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    <span class="keywordflow">return</span> resp_json_string;</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;}</div>
-<div class="ttc" id="c_j_s_o_n_8h_html_a3e2f334ba489b1c267ca40b3e046d5ee"><div class="ttname"><a href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a></div><div class="ttdeci">#define cJSON_AddStringToObject(object, name, s)</div><div class="ttdef"><b>Definition:</b> cJSON.h:149</div></div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;}<div class="ttc" id="c_j_s_o_n_8h_html_a3e2f334ba489b1c267ca40b3e046d5ee"><div class="ttname"><a href="c_j_s_o_n_8h.html#a3e2f334ba489b1c267ca40b3e046d5ee">cJSON_AddStringToObject</a></div><div class="ttdeci">#define cJSON_AddStringToObject(object, name, s)</div><div class="ttdef"><b>Definition:</b> cJSON.h:149</div></div>
 <div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
 <div class="ttc" id="c_j_s_o_n_8h_html_aedf8e7037a7332b3653f90be04519862"><div class="ttname"><a href="c_j_s_o_n_8h.html#aedf8e7037a7332b3653f90be04519862">cJSON_AddNumberToObject</a></div><div class="ttdeci">#define cJSON_AddNumberToObject(object, name, n)</div><div class="ttdef"><b>Definition:</b> cJSON.h:148</div></div>
 <div class="ttc" id="c_j_s_o_n_8c_html_a9c5f44afdd781b16dead90042fe74085"><div class="ttname"><a href="c_j_s_o_n_8c.html#a9c5f44afdd781b16dead90042fe74085">cJSON_CreateObject</a></div><div class="ttdeci">cJSON * cJSON_CreateObject(void)</div><div class="ttdef"><b>Definition:</b> cJSON.c:708</div></div>
@@ -1076,7 +619,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        </div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="comment">// set tcp connection timeout</span></div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    modbus_set_response_timeout (ctx, 0, <a class="code" href="mbtcp_8c.html#ab0198e1ef10f08107d1da2d4327bf964">tcp_conn_timeout_usec</a>);</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <a class="code" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a>(<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;set response timeout: %ld&quot;</span>, <a class="code" href="mbtcp_8c.html#ab0198e1ef10f08107d1da2d4327bf964">tcp_conn_timeout_usec</a>);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <a class="code" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a> (<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;set response timeout: %ld&quot;</span>, <a class="code" href="mbtcp_8c.html#ab0198e1ef10f08107d1da2d4327bf964">tcp_conn_timeout_usec</a>);</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    </div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="comment">// @add context to mbtcp hashtable</span></div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <a class="code" href="structmbtcp__handle__s.html">mbtcp_handle_s</a> *handle;</div>
@@ -1272,7 +815,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, <a class="el" href="mbtcp_8c.html#a02e79cd2e10e04ca269f511ba9085b24">mbtcp_cmd_hanlder()</a>, <a class="el" href="mbtcp_8c.html#a819f6eb596caa2acb6344aecd5daf51a">mbtcp_do_connect()</a>, <a class="el" href="mbtcp_8c.html#a40780292d66d73db87b4d63a3467bf87">mbtcp_fc15_request()</a>, <a class="el" href="mbtcp_8c.html#a7a877d48611ccac756984d29f9f59d37">mbtcp_fc16_request()</a>, <a class="el" href="mbtcp_8c.html#acec7eb8cd26d64c73ca68531abb35abe">mbtcp_fc1_request()</a>, <a class="el" href="mbtcp_8c.html#ac30955718174af366207e23931eed63b">mbtcp_fc2_request()</a>, <a class="el" href="mbtcp_8c.html#a203227647298a0fe6d401088009f0a52">mbtcp_fc3_request()</a>, <a class="el" href="mbtcp_8c.html#a70b5b676d39d2b6ced03699a46d0e671">mbtcp_fc4_request()</a>, <a class="el" href="mbtcp_8c.html#acf0a8a74de44e63938833dfd98d48f0f">mbtcp_fc5_request()</a>, <a class="el" href="mbtcp_8c.html#a3742b55d75924653baa1ce94b5ee5afe">mbtcp_fc6_request()</a>, <a class="el" href="mbtcp_8c.html#a10fdba0f8df3a84f6a1edd2ce82fb746">mbtcp_get_connection_status()</a>, <a class="el" href="mbtcp_8c.html#a457458d6f5fef93f9bac1bf9365b8a61">mbtcp_get_handle()</a>, <a class="el" href="mbtcp_8c.html#a3e54b1362b644a8f7da785e9a7b3f561">mbtcp_get_response_timeout()</a>, <a class="el" href="mbtcp_8c.html#a7349aa568dc3288417d52543988729f8">mbtcp_init_handle()</a>, <a class="el" href="mbtcp_8c.html#a43d25207b1b4a9a85ad60567cd76f622">mbtcp_list_handles()</a>, <a class="el" href="mbtcp_8c.html#ada121fb7f9cf6c0975b13d5b3a37e28f">mbtcp_set_response_timeout()</a>, <a class="el" href="test_8c.html#a0cb50b32ea20d9e40727ab83bb97d189">test_init_tcp_handle_and_connect()</a>, <a class="el" href="test_8c.html#a6228c9b381c11fd06589201df6f77a9d">test_multiple_add_find()</a>, and <a class="el" href="test_8c.html#ac7831dc95a6c14e20b642da0ccec7d96">test_single_add_find()</a>.</p>
+<p>Referenced by <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, <a class="el" href="mbtcp_8c.html#a9ebfe4b9c143c562a97772ef570552a9">mbtcp_cmd_hanlder()</a>, <a class="el" href="mbtcp_8c.html#a819f6eb596caa2acb6344aecd5daf51a">mbtcp_do_connect()</a>, <a class="el" href="mbtcp_8c.html#a10fdba0f8df3a84f6a1edd2ce82fb746">mbtcp_get_connection_status()</a>, <a class="el" href="mbtcp_8c.html#a457458d6f5fef93f9bac1bf9365b8a61">mbtcp_get_handle()</a>, <a class="el" href="mbtcp_8c.html#a3e54b1362b644a8f7da785e9a7b3f561">mbtcp_get_response_timeout()</a>, <a class="el" href="mbtcp_8c.html#a7349aa568dc3288417d52543988729f8">mbtcp_init_handle()</a>, <a class="el" href="mbtcp_8c.html#a43d25207b1b4a9a85ad60567cd76f622">mbtcp_list_handles()</a>, <a class="el" href="mbtcp_8c.html#ada121fb7f9cf6c0975b13d5b3a37e28f">mbtcp_set_response_timeout()</a>, <a class="el" href="test_8c.html#a0cb50b32ea20d9e40727ab83bb97d189">test_init_tcp_handle_and_connect()</a>, <a class="el" href="test_8c.html#a6228c9b381c11fd06589201df6f77a9d">test_multiple_add_find()</a>, and <a class="el" href="test_8c.html#ac7831dc95a6c14e20b642da0ccec7d96">test_single_add_find()</a>.</p>
 
 </div>
 </div>
@@ -1296,7 +839,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="mbtcp_8c.html">mbtcp.c</a></li>
-    <li class="footer">Generated on Wed Oct 12 2016 16:19:27 for modbusd by
+    <li class="footer">Generated on Wed Oct 12 2016 16:48:10 for modbusd by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
