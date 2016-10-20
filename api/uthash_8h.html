@@ -140,18 +140,22 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:aa56cef9cb86dc1f4b5d27ee3a691077e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#aa56cef9cb86dc1f4b5d27ee3a691077e">UTHASH_VERSION</a>&#160;&#160;&#160;2.0.1</td></tr>
+<tr class="separator:aa56cef9cb86dc1f4b5d27ee3a691077e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a716ba290563c2d955cb0c90d85874073"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a716ba290563c2d955cb0c90d85874073">DECLTYPE</a>(x)&#160;&#160;&#160;(__typeof(x))</td></tr>
 <tr class="separator:a716ba290563c2d955cb0c90d85874073"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c736f2f2dd643f2987b2bc323e269ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a3c736f2f2dd643f2987b2bc323e269ba">DECLTYPE_ASSIGN</a>(dst, src)</td></tr>
 <tr class="separator:a3c736f2f2dd643f2987b2bc323e269ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa56cef9cb86dc1f4b5d27ee3a691077e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#aa56cef9cb86dc1f4b5d27ee3a691077e">UTHASH_VERSION</a>&#160;&#160;&#160;1.9.9</td></tr>
-<tr class="separator:aa56cef9cb86dc1f4b5d27ee3a691077e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03b52301b0ed976b6981ef33613320c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a03b52301b0ed976b6981ef33613320c1">uthash_fatal</a>(msg)&#160;&#160;&#160;exit(-1)        /* fatal error (out of memory,etc) */</td></tr>
 <tr class="separator:a03b52301b0ed976b6981ef33613320c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a861013aff36c0448f1888a2b0b5836d8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a861013aff36c0448f1888a2b0b5836d8">uthash_malloc</a>(sz)&#160;&#160;&#160;malloc(sz)      /* malloc fcn                      */</td></tr>
 <tr class="separator:a861013aff36c0448f1888a2b0b5836d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56cdf8c254fc700332c8e6a7263b4657"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a56cdf8c254fc700332c8e6a7263b4657">uthash_free</a>(ptr, sz)&#160;&#160;&#160;free(ptr)     /* free fcn                        */</td></tr>
 <tr class="separator:a56cdf8c254fc700332c8e6a7263b4657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa14634cb1f894d48256362bae7239be6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#aa14634cb1f894d48256362bae7239be6">uthash_strlen</a>(s)&#160;&#160;&#160;strlen(s)</td></tr>
+<tr class="separator:aa14634cb1f894d48256362bae7239be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ca9a884b81d487034b57f87d2f97fa4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a8ca9a884b81d487034b57f87d2f97fa4">uthash_memcmp</a>(a, b, n)&#160;&#160;&#160;memcmp(a,b,n)</td></tr>
+<tr class="separator:a8ca9a884b81d487034b57f87d2f97fa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cc237d8f87de3836b5390856cfc5c86"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a7cc237d8f87de3836b5390856cfc5c86">uthash_noexpand_fyi</a>(tbl)&#160;&#160;&#160;/* can be defined to log noexpand  */</td></tr>
 <tr class="separator:a7cc237d8f87de3836b5390856cfc5c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86ea78714da520989a6f7a764b4d71b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a86ea78714da520989a6f7a764b4d71b4">uthash_expand_fyi</a>(tbl)&#160;&#160;&#160;/* can be defined to log expands   */</td></tr>
@@ -164,6 +168,12 @@ Macros</h2></td></tr>
 <tr class="separator:a8ae3e6473261f6c4b78c030c94f5d68f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a568e95048979b8b3e4ea1567fd91c186"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a568e95048979b8b3e4ea1567fd91c186">ELMT_FROM_HH</a>(tbl, hhp)&#160;&#160;&#160;((void*)(((char*)(hhp)) - ((tbl)-&gt;hho)))</td></tr>
 <tr class="separator:a568e95048979b8b3e4ea1567fd91c186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46261e43585c404cccf8ab0f5c6d271e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a46261e43585c404cccf8ab0f5c6d271e">HH_FROM_ELMT</a>(tbl, elp)&#160;&#160;&#160;((<a class="el" href="struct_u_t__hash__handle.html">UT_hash_handle</a> *)(((char*)(elp)) + ((tbl)-&gt;hho)))</td></tr>
+<tr class="separator:a46261e43585c404cccf8ab0f5c6d271e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bc1c6438f5d6fc56b8dcbf4bbe50271"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a5bc1c6438f5d6fc56b8dcbf4bbe50271">HASH_VALUE</a>(keyptr, keylen, hashv)</td></tr>
+<tr class="separator:a5bc1c6438f5d6fc56b8dcbf4bbe50271"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc2b27fc2a6b13aece881528f45de693"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#afc2b27fc2a6b13aece881528f45de693">HASH_FIND_BYHASHVALUE</a>(hh, head, keyptr, keylen, hashval, out)</td></tr>
+<tr class="separator:afc2b27fc2a6b13aece881528f45de693"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4a1cd39c3044936c0e49d3f372c9dbf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#ad4a1cd39c3044936c0e49d3f372c9dbf">HASH_FIND</a>(hh, head, keyptr, keylen, out)</td></tr>
 <tr class="separator:ad4a1cd39c3044936c0e49d3f372c9dbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a254f427772a1fe7a2480a8302af8f8b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a254f427772a1fe7a2480a8302af8f8b8">HASH_BLOOM_MAKE</a>(tbl)</td></tr>
@@ -178,21 +188,41 @@ Macros</h2></td></tr>
 <tr class="separator:a81f88a18c0837c77f40926074e7811db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeba971430f623b6334f565d9c7ec9de5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#aeba971430f623b6334f565d9c7ec9de5">HASH_MAKE_TABLE</a>(hh, head)</td></tr>
 <tr class="separator:aeba971430f623b6334f565d9c7ec9de5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf01358e257c8d838eb5e4b189f0c399"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#aaf01358e257c8d838eb5e4b189f0c399">HASH_ADD</a>(hh, head, fieldname, keylen_in, add)&#160;&#160;&#160;<a class="el" href="uthash_8h.html#a0b7468360b5c788762cdb2ccf9cd4d26">HASH_ADD_KEYPTR</a>(hh,head,&amp;((add)-&gt;fieldname),keylen_in,add)</td></tr>
-<tr class="separator:aaf01358e257c8d838eb5e4b189f0c399"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0104b44f5a911bfda7fd9f939e1594f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#aa0104b44f5a911bfda7fd9f939e1594f">HASH_REPLACE_BYHASHVALUE_INORDER</a>(hh, head, fieldname, keylen_in, hashval, add, replaced, cmpfcn)</td></tr>
+<tr class="separator:aa0104b44f5a911bfda7fd9f939e1594f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7fc2175a455ed8e8351737b4f8b2842"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#ab7fc2175a455ed8e8351737b4f8b2842">HASH_REPLACE_BYHASHVALUE</a>(hh, head, fieldname, keylen_in, hashval, add, replaced)</td></tr>
+<tr class="separator:ab7fc2175a455ed8e8351737b4f8b2842"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9897aa8b1ace582e7bbdef05f21cbc54"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a9897aa8b1ace582e7bbdef05f21cbc54">HASH_REPLACE</a>(hh, head, fieldname, keylen_in, add, replaced)</td></tr>
 <tr class="separator:a9897aa8b1ace582e7bbdef05f21cbc54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6d7a872d8855c9b8bf55d62e8eb0430"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#aa6d7a872d8855c9b8bf55d62e8eb0430">HASH_REPLACE_INORDER</a>(hh, head, fieldname, keylen_in, add, replaced, cmpfcn)</td></tr>
+<tr class="separator:aa6d7a872d8855c9b8bf55d62e8eb0430"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeec8f4c804ae5b87ebded933252804fd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#aeec8f4c804ae5b87ebded933252804fd">HASH_APPEND_LIST</a>(hh, head, add)</td></tr>
+<tr class="separator:aeec8f4c804ae5b87ebded933252804fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae1fa76ff12cbf5328bcf4a2375d055f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#aae1fa76ff12cbf5328bcf4a2375d055f">HASH_ADD_KEYPTR_BYHASHVALUE_INORDER</a>(hh, head, keyptr, keylen_in, hashval, add, cmpfcn)</td></tr>
+<tr class="separator:aae1fa76ff12cbf5328bcf4a2375d055f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a5f675b8bbeaff0a25de5f91330eae8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a5a5f675b8bbeaff0a25de5f91330eae8">HASH_ADD_KEYPTR_INORDER</a>(hh, head, keyptr, keylen_in, add, cmpfcn)</td></tr>
+<tr class="separator:a5a5f675b8bbeaff0a25de5f91330eae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7caae291b965a3f618661927481bf960"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a7caae291b965a3f618661927481bf960">HASH_ADD_BYHASHVALUE_INORDER</a>(hh, head, fieldname, keylen_in, hashval, add, cmpfcn)&#160;&#160;&#160;<a class="el" href="uthash_8h.html#aae1fa76ff12cbf5328bcf4a2375d055f">HASH_ADD_KEYPTR_BYHASHVALUE_INORDER</a>(hh, head, &amp;((add)-&gt;fieldname), keylen_in, hashval, add, cmpfcn)</td></tr>
+<tr class="separator:a7caae291b965a3f618661927481bf960"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1befde1b63e6bc0cb4d6b34cb863eebe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a1befde1b63e6bc0cb4d6b34cb863eebe">HASH_ADD_INORDER</a>(hh, head, fieldname, keylen_in, add, cmpfcn)&#160;&#160;&#160;<a class="el" href="uthash_8h.html#a5a5f675b8bbeaff0a25de5f91330eae8">HASH_ADD_KEYPTR_INORDER</a>(hh, head, &amp;((add)-&gt;fieldname), keylen_in, add, cmpfcn)</td></tr>
+<tr class="separator:a1befde1b63e6bc0cb4d6b34cb863eebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0e4d9dcfb23a6616c6439aa0d4a3f4d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#aa0e4d9dcfb23a6616c6439aa0d4a3f4d">HASH_ADD_KEYPTR_BYHASHVALUE</a>(hh, head, keyptr, keylen_in, hashval, add)</td></tr>
+<tr class="separator:aa0e4d9dcfb23a6616c6439aa0d4a3f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b7468360b5c788762cdb2ccf9cd4d26"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a0b7468360b5c788762cdb2ccf9cd4d26">HASH_ADD_KEYPTR</a>(hh, head, keyptr, keylen_in, add)</td></tr>
 <tr class="separator:a0b7468360b5c788762cdb2ccf9cd4d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34a0dfca975d8b5ae83d9c307c8d6305"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a34a0dfca975d8b5ae83d9c307c8d6305">HASH_ADD_BYHASHVALUE</a>(hh, head, fieldname, keylen_in, hashval, add)&#160;&#160;&#160;<a class="el" href="uthash_8h.html#aa0e4d9dcfb23a6616c6439aa0d4a3f4d">HASH_ADD_KEYPTR_BYHASHVALUE</a>(hh, head, &amp;((add)-&gt;fieldname), keylen_in, hashval, add)</td></tr>
+<tr class="separator:a34a0dfca975d8b5ae83d9c307c8d6305"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf01358e257c8d838eb5e4b189f0c399"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#aaf01358e257c8d838eb5e4b189f0c399">HASH_ADD</a>(hh, head, fieldname, keylen_in, add)&#160;&#160;&#160;<a class="el" href="uthash_8h.html#a0b7468360b5c788762cdb2ccf9cd4d26">HASH_ADD_KEYPTR</a>(hh, head, &amp;((add)-&gt;fieldname), keylen_in, add)</td></tr>
+<tr class="separator:aaf01358e257c8d838eb5e4b189f0c399"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d7691544128a6ef265f3e4fa5ed3113"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a4d7691544128a6ef265f3e4fa5ed3113">HASH_TO_BKT</a>(hashv, num_bkts, bkt)</td></tr>
 <tr class="separator:a4d7691544128a6ef265f3e4fa5ed3113"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f83117e1108d63844a58d2d79c3b980"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a3f83117e1108d63844a58d2d79c3b980">HASH_DELETE</a>(hh, head, delptr)</td></tr>
 <tr class="separator:a3f83117e1108d63844a58d2d79c3b980"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a214529083adfab2fa8cd402d2eeb0a84"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a214529083adfab2fa8cd402d2eeb0a84">HASH_FIND_STR</a>(head, findstr, out)&#160;&#160;&#160;<a class="el" href="uthash_8h.html#ad4a1cd39c3044936c0e49d3f372c9dbf">HASH_FIND</a>(hh,head,findstr,(unsigned)strlen(findstr),out)</td></tr>
+<tr class="memitem:a214529083adfab2fa8cd402d2eeb0a84"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a214529083adfab2fa8cd402d2eeb0a84">HASH_FIND_STR</a>(head, findstr, out)&#160;&#160;&#160;<a class="el" href="uthash_8h.html#ad4a1cd39c3044936c0e49d3f372c9dbf">HASH_FIND</a>(hh,head,findstr,(unsigned)<a class="el" href="uthash_8h.html#aa14634cb1f894d48256362bae7239be6">uthash_strlen</a>(findstr),out)</td></tr>
 <tr class="separator:a214529083adfab2fa8cd402d2eeb0a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9724951736f3985f74df17638c8a7885"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a9724951736f3985f74df17638c8a7885">HASH_ADD_STR</a>(head, strfield, add)&#160;&#160;&#160;<a class="el" href="uthash_8h.html#aaf01358e257c8d838eb5e4b189f0c399">HASH_ADD</a>(hh,head,strfield[0],(unsigned int)strlen(add-&gt;strfield),add)</td></tr>
+<tr class="memitem:a9724951736f3985f74df17638c8a7885"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a9724951736f3985f74df17638c8a7885">HASH_ADD_STR</a>(head, strfield, add)&#160;&#160;&#160;<a class="el" href="uthash_8h.html#aaf01358e257c8d838eb5e4b189f0c399">HASH_ADD</a>(hh,head,strfield[0],(unsigned)<a class="el" href="uthash_8h.html#aa14634cb1f894d48256362bae7239be6">uthash_strlen</a>(add-&gt;strfield),add)</td></tr>
 <tr class="separator:a9724951736f3985f74df17638c8a7885"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a069b31f4fbc11094d8d3d5e3b1a641db"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a069b31f4fbc11094d8d3d5e3b1a641db">HASH_REPLACE_STR</a>(head, strfield, add, replaced)&#160;&#160;&#160;<a class="el" href="uthash_8h.html#a9897aa8b1ace582e7bbdef05f21cbc54">HASH_REPLACE</a>(hh,head,strfield[0],(unsigned)strlen(add-&gt;strfield),add,replaced)</td></tr>
+<tr class="memitem:a069b31f4fbc11094d8d3d5e3b1a641db"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a069b31f4fbc11094d8d3d5e3b1a641db">HASH_REPLACE_STR</a>(head, strfield, add, replaced)&#160;&#160;&#160;<a class="el" href="uthash_8h.html#a9897aa8b1ace582e7bbdef05f21cbc54">HASH_REPLACE</a>(hh,head,strfield[0],(unsigned)<a class="el" href="uthash_8h.html#aa14634cb1f894d48256362bae7239be6">uthash_strlen</a>(add-&gt;strfield),add,replaced)</td></tr>
 <tr class="separator:a069b31f4fbc11094d8d3d5e3b1a641db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadcb19b940348f3141bd51505ede0142"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#aadcb19b940348f3141bd51505ede0142">HASH_FIND_INT</a>(head, findint, out)&#160;&#160;&#160;<a class="el" href="uthash_8h.html#ad4a1cd39c3044936c0e49d3f372c9dbf">HASH_FIND</a>(hh,head,findint,sizeof(int),out)</td></tr>
 <tr class="separator:aadcb19b940348f3141bd51505ede0142"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -212,28 +242,26 @@ Macros</h2></td></tr>
 <tr class="separator:a7d882fadb26a4e6c13c134d8be4d0759"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44f9d46e2cc79652492e5dd3e6c40a15"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a44f9d46e2cc79652492e5dd3e6c40a15">HASH_EMIT_KEY</a>(hh, head, keyptr, fieldlen)</td></tr>
 <tr class="separator:a44f9d46e2cc79652492e5dd3e6c40a15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd3356419b386c379116393700a751d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#abd3356419b386c379116393700a751d3">HASH_FCN</a>&#160;&#160;&#160;<a class="el" href="uthash_8h.html#aa16e3ae6125d7f10d3deb4695e0ee51e">HASH_JEN</a></td></tr>
+<tr class="memitem:abd3356419b386c379116393700a751d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#abd3356419b386c379116393700a751d3">HASH_FCN</a>&#160;&#160;&#160;<a class="el" href="uthash_8h.html#a724ff23efd254654ac087ed60233c465">HASH_JEN</a></td></tr>
 <tr class="separator:abd3356419b386c379116393700a751d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7271bf51d7fe2cf2c183578aee73601e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a7271bf51d7fe2cf2c183578aee73601e">HASH_BER</a>(key, keylen, num_bkts, hashv, bkt)</td></tr>
-<tr class="separator:a7271bf51d7fe2cf2c183578aee73601e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4cb140b45415e7bf57237525388af79"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#aa4cb140b45415e7bf57237525388af79">HASH_SAX</a>(key, keylen, num_bkts, hashv, bkt)</td></tr>
-<tr class="separator:aa4cb140b45415e7bf57237525388af79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac99f9a353421537527a80b392089dd9d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#ac99f9a353421537527a80b392089dd9d">HASH_FNV</a>(key, keylen, num_bkts, hashv, bkt)</td></tr>
-<tr class="separator:ac99f9a353421537527a80b392089dd9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc7040b698211c1993441fb4165fa0b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#abc7040b698211c1993441fb4165fa0b4">HASH_OAT</a>(key, keylen, num_bkts, hashv, bkt)</td></tr>
-<tr class="separator:abc7040b698211c1993441fb4165fa0b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fb1644fa1d057a1c124c7548b9146b3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a7fb1644fa1d057a1c124c7548b9146b3">HASH_BER</a>(key, keylen, hashv)</td></tr>
+<tr class="separator:a7fb1644fa1d057a1c124c7548b9146b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8cf38dbd44a475eb0fa4cdb9988e13a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#ae8cf38dbd44a475eb0fa4cdb9988e13a">HASH_SAX</a>(key, keylen, hashv)</td></tr>
+<tr class="separator:ae8cf38dbd44a475eb0fa4cdb9988e13a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65c61fa2c45a7d0cb918407d725e94bc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a65c61fa2c45a7d0cb918407d725e94bc">HASH_FNV</a>(key, keylen, hashv)</td></tr>
+<tr class="separator:a65c61fa2c45a7d0cb918407d725e94bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22c77754346c75bfafd872d2d49c6dc7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a22c77754346c75bfafd872d2d49c6dc7">HASH_OAT</a>(key, keylen, hashv)</td></tr>
+<tr class="separator:a22c77754346c75bfafd872d2d49c6dc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d37144e54d2bd49eb88fbfd04c59dc5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a6d37144e54d2bd49eb88fbfd04c59dc5">HASH_JEN_MIX</a>(a, b, c)</td></tr>
 <tr class="separator:a6d37144e54d2bd49eb88fbfd04c59dc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa16e3ae6125d7f10d3deb4695e0ee51e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#aa16e3ae6125d7f10d3deb4695e0ee51e">HASH_JEN</a>(key, keylen, num_bkts, hashv, bkt)</td></tr>
-<tr class="separator:aa16e3ae6125d7f10d3deb4695e0ee51e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a724ff23efd254654ac087ed60233c465"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a724ff23efd254654ac087ed60233c465">HASH_JEN</a>(key, keylen, hashv)</td></tr>
+<tr class="separator:a724ff23efd254654ac087ed60233c465"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc7d71657be8975a51684e41029b7964"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#abc7d71657be8975a51684e41029b7964">get16bits</a>(d)</td></tr>
 <tr class="separator:abc7d71657be8975a51684e41029b7964"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab595698a74642684dace0dfa47dab445"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#ab595698a74642684dace0dfa47dab445">HASH_SFH</a>(key, keylen, num_bkts, hashv, bkt)</td></tr>
-<tr class="separator:ab595698a74642684dace0dfa47dab445"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35c9b682ebb7a8cbf284b9f0a9594095"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a35c9b682ebb7a8cbf284b9f0a9594095">HASH_KEYCMP</a>(a, b, len)&#160;&#160;&#160;memcmp(a,b,(unsigned long)(len))</td></tr>
-<tr class="separator:a35c9b682ebb7a8cbf284b9f0a9594095"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42ae87cc63106a82601808f19329502c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a42ae87cc63106a82601808f19329502c">HASH_FIND_IN_BKT</a>(tbl, hh, head, keyptr, keylen_in, out)</td></tr>
-<tr class="separator:a42ae87cc63106a82601808f19329502c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91480d6a21f082d49d20faeee0295cbb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a91480d6a21f082d49d20faeee0295cbb">HASH_SFH</a>(key, keylen, hashv)</td></tr>
+<tr class="separator:a91480d6a21f082d49d20faeee0295cbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54951c7b798e8da9931d2b607e97b619"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a54951c7b798e8da9931d2b607e97b619">HASH_FIND_IN_BKT</a>(tbl, hh, head, keyptr, keylen_in, hashval, out)</td></tr>
+<tr class="separator:a54951c7b798e8da9931d2b607e97b619"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78e11adee321f45c5cb31ff2d6eb0348"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a78e11adee321f45c5cb31ff2d6eb0348">HASH_ADD_TO_BKT</a>(head, addhh)</td></tr>
 <tr class="separator:a78e11adee321f45c5cb31ff2d6eb0348"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b2d6f694f98cf6350cdd18225cb3f78"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uthash_8h.html#a1b2d6f694f98cf6350cdd18225cb3f78">HASH_DEL_IN_BKT</a>(hh, head, hh_del)</td></tr>
@@ -316,8 +344,8 @@ Typedefs</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                             \</div>
 <div class="line">  (dst) = <a class="code" href="uthash_8h.html#a716ba290563c2d955cb0c90d85874073">DECLTYPE</a>(dst)(src);                                                    \</div>
-<div class="line">} <span class="keywordflow">while</span>(0)</div>
-<div class="ttc" id="uthash_8h_html_a716ba290563c2d955cb0c90d85874073"><div class="ttname"><a href="uthash_8h.html#a716ba290563c2d955cb0c90d85874073">DECLTYPE</a></div><div class="ttdeci">#define DECLTYPE(x)</div><div class="ttdef"><b>Definition:</b> uthash.h:46</div></div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="uthash_8h_html_a716ba290563c2d955cb0c90d85874073"><div class="ttname"><a href="uthash_8h.html#a716ba290563c2d955cb0c90d85874073">DECLTYPE</a></div><div class="ttdeci">#define DECLTYPE(x)</div><div class="ttdef"><b>Definition:</b> uthash.h:48</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -362,8 +390,8 @@ Typedefs</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">((((<a class="code" href="uthash_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>)(((<span class="keyword">const</span> <a class="code" href="uthash_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *)(d))[1])) &lt;&lt; 8)             \</div>
 <div class="line">                       +(<a class="code" href="uthash_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>)(((<span class="keyword">const</span> <a class="code" href="uthash_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *)(d))[0]) )</div>
-<div class="ttc" id="uthash_8h_html_a435d1572bf3f880d55459d9805097f62"><div class="ttname"><a href="uthash_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a></div><div class="ttdeci">unsigned int uint32_t</div><div class="ttdef"><b>Definition:</b> uthash.h:75</div></div>
-<div class="ttc" id="uthash_8h_html_aba7bc1797add20fe3efdf37ced1182c5"><div class="ttname"><a href="uthash_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a></div><div class="ttdeci">unsigned char uint8_t</div><div class="ttdef"><b>Definition:</b> uthash.h:76</div></div>
+<div class="ttc" id="uthash_8h_html_a435d1572bf3f880d55459d9805097f62"><div class="ttname"><a href="uthash_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a></div><div class="ttdeci">unsigned int uint32_t</div><div class="ttdef"><b>Definition:</b> uthash.h:77</div></div>
+<div class="ttc" id="uthash_8h_html_aba7bc1797add20fe3efdf37ced1182c5"><div class="ttname"><a href="uthash_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a></div><div class="ttdeci">unsigned char uint8_t</div><div class="ttdef"><b>Definition:</b> uthash.h:78</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -404,12 +432,168 @@ Typedefs</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="uthash_8h.html#a0b7468360b5c788762cdb2ccf9cd4d26">HASH_ADD_KEYPTR</a>(hh,head,&amp;((add)-&gt;fieldname),keylen_in,add)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="uthash_8h.html#a0b7468360b5c788762cdb2ccf9cd4d26">HASH_ADD_KEYPTR</a>(hh, head, &amp;((add)-&gt;fieldname), keylen_in, add)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Referenced by <a class="el" href="mbtcp_8c.html#a7349aa568dc3288417d52543988729f8">mbtcp_init_handle()</a>, <a class="el" href="test_8c.html#a6228c9b381c11fd06589201df6f77a9d">test_multiple_add_find()</a>, and <a class="el" href="test_8c.html#ac7831dc95a6c14e20b642da0ccec7d96">test_single_add_find()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a34a0dfca975d8b5ae83d9c307c8d6305"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HASH_ADD_BYHASHVALUE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hh, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">head, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">fieldname, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">keylen_in, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hashval, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">add&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="uthash_8h.html#aa0e4d9dcfb23a6616c6439aa0d4a3f4d">HASH_ADD_KEYPTR_BYHASHVALUE</a>(hh, head, &amp;((add)-&gt;fieldname), keylen_in, hashval, add)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7caae291b965a3f618661927481bf960"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HASH_ADD_BYHASHVALUE_INORDER</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hh, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">head, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">fieldname, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">keylen_in, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hashval, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">add, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">cmpfcn&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="uthash_8h.html#aae1fa76ff12cbf5328bcf4a2375d055f">HASH_ADD_KEYPTR_BYHASHVALUE_INORDER</a>(hh, head, &amp;((add)-&gt;fieldname), keylen_in, hashval, add, cmpfcn)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1befde1b63e6bc0cb4d6b34cb863eebe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HASH_ADD_INORDER</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hh, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">head, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">fieldname, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">keylen_in, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">add, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">cmpfcn&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="uthash_8h.html#a5a5f675b8bbeaff0a25de5f91330eae8">HASH_ADD_KEYPTR_INORDER</a>(hh, head, &amp;((add)-&gt;fieldname), keylen_in, add, cmpfcn)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -487,35 +671,203 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                             \</div>
-<div class="line"> unsigned _ha_bkt;                                                               \</div>
-<div class="line"> (add)-&gt;hh.next = NULL;                                                          \</div>
-<div class="line"> (add)-&gt;hh.key = (<span class="keywordtype">char</span>*)(keyptr);                                                \</div>
-<div class="line"> (add)-&gt;hh.keylen = (<span class="keywordtype">unsigned</span>)(keylen_in);                                       \</div>
-<div class="line"> if (!(head)) {                                                                  \</div>
-<div class="line">    head = (add);                                                                \</div>
-<div class="line">    (head)-&gt;hh.prev = NULL;                                                      \</div>
-<div class="line">    <a class="code" href="uthash_8h.html#aeba971430f623b6334f565d9c7ec9de5">HASH_MAKE_TABLE</a>(hh,head);                                                    \</div>
-<div class="line"> } <span class="keywordflow">else</span> {                                                                        \</div>
-<div class="line">    (head)-&gt;hh.tbl-&gt;tail-&gt;next = (add);                                          \</div>
-<div class="line">    (add)-&gt;hh.prev = <a class="code" href="uthash_8h.html#a568e95048979b8b3e4ea1567fd91c186">ELMT_FROM_HH</a>((head)-&gt;hh.tbl, (head)-&gt;hh.tbl-&gt;tail);         \</div>
-<div class="line">    (head)-&gt;hh.tbl-&gt;tail = &amp;((add)-&gt;hh);                                         \</div>
-<div class="line"> }                                                                               \</div>
-<div class="line"> (head)-&gt;hh.tbl-&gt;num_items++;                                                    \</div>
-<div class="line"> (add)-&gt;hh.tbl = (head)-&gt;hh.tbl;                                                 \</div>
-<div class="line"> <a class="code" href="uthash_8h.html#abd3356419b386c379116393700a751d3">HASH_FCN</a>(keyptr,keylen_in, (head)-&gt;hh.tbl-&gt;num_buckets,                         \</div>
-<div class="line">         (add)-&gt;hh.hashv, _ha_bkt);                                              <a class="code" href="uthash_8h.html#a78e11adee321f45c5cb31ff2d6eb0348">\</a></div>
-<div class="line"><a class="code" href="uthash_8h.html#a78e11adee321f45c5cb31ff2d6eb0348"> HASH_ADD_TO_BKT</a>((head)-&gt;hh.tbl-&gt;buckets[_ha_bkt],&amp;(add)-&gt;hh);                   <a class="code" href="uthash_8h.html#acaad947212056cd8bfe3d660265fb2db">\</a></div>
-<div class="line"><a class="code" href="uthash_8h.html#acaad947212056cd8bfe3d660265fb2db"> HASH_BLOOM_ADD</a>((head)-&gt;hh.tbl,(add)-&gt;hh.hashv);                                 <a class="code" href="uthash_8h.html#a44f9d46e2cc79652492e5dd3e6c40a15">\</a></div>
-<div class="line"><a class="code" href="uthash_8h.html#a44f9d46e2cc79652492e5dd3e6c40a15"> HASH_EMIT_KEY</a>(hh,head,keyptr,keylen_in);                                        <a class="code" href="uthash_8h.html#a7d882fadb26a4e6c13c134d8be4d0759">\</a></div>
-<div class="line"><a class="code" href="uthash_8h.html#a7d882fadb26a4e6c13c134d8be4d0759"> HASH_FSCK</a>(hh,head);                                                             \</div>
-<div class="line">} <span class="keywordflow">while</span>(0)</div>
-<div class="ttc" id="uthash_8h_html_a7d882fadb26a4e6c13c134d8be4d0759"><div class="ttname"><a href="uthash_8h.html#a7d882fadb26a4e6c13c134d8be4d0759">HASH_FSCK</a></div><div class="ttdeci">#define HASH_FSCK(hh, head)</div><div class="ttdef"><b>Definition:</b> uthash.h:342</div></div>
-<div class="ttc" id="uthash_8h_html_abd3356419b386c379116393700a751d3"><div class="ttname"><a href="uthash_8h.html#abd3356419b386c379116393700a751d3">HASH_FCN</a></div><div class="ttdeci">#define HASH_FCN</div><div class="ttdef"><b>Definition:</b> uthash.h:363</div></div>
-<div class="ttc" id="uthash_8h_html_acaad947212056cd8bfe3d660265fb2db"><div class="ttname"><a href="uthash_8h.html#acaad947212056cd8bfe3d660265fb2db">HASH_BLOOM_ADD</a></div><div class="ttdeci">#define HASH_BLOOM_ADD(tbl, hashv)</div><div class="ttdef"><b>Definition:</b> uthash.h:148</div></div>
-<div class="ttc" id="uthash_8h_html_aeba971430f623b6334f565d9c7ec9de5"><div class="ttname"><a href="uthash_8h.html#aeba971430f623b6334f565d9c7ec9de5">HASH_MAKE_TABLE</a></div><div class="ttdeci">#define HASH_MAKE_TABLE(hh, head)</div><div class="ttdef"><b>Definition:</b> uthash.h:153</div></div>
-<div class="ttc" id="uthash_8h_html_a78e11adee321f45c5cb31ff2d6eb0348"><div class="ttname"><a href="uthash_8h.html#a78e11adee321f45c5cb31ff2d6eb0348">HASH_ADD_TO_BKT</a></div><div class="ttdeci">#define HASH_ADD_TO_BKT(head, addhh)</div><div class="ttdef"><b>Definition:</b> uthash.h:628</div></div>
-<div class="ttc" id="uthash_8h_html_a568e95048979b8b3e4ea1567fd91c186"><div class="ttname"><a href="uthash_8h.html#a568e95048979b8b3e4ea1567fd91c186">ELMT_FROM_HH</a></div><div class="ttdeci">#define ELMT_FROM_HH(tbl, hhp)</div><div class="ttdef"><b>Definition:</b> uthash.h:104</div></div>
-<div class="ttc" id="uthash_8h_html_a44f9d46e2cc79652492e5dd3e6c40a15"><div class="ttname"><a href="uthash_8h.html#a44f9d46e2cc79652492e5dd3e6c40a15">HASH_EMIT_KEY</a></div><div class="ttdeci">#define HASH_EMIT_KEY(hh, head, keyptr, fieldlen)</div><div class="ttdef"><b>Definition:</b> uthash.h:356</div></div>
+<div class="line">  unsigned _ha_hashv;                                                            <a class="code" href="uthash_8h.html#a5bc1c6438f5d6fc56b8dcbf4bbe50271">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#a5bc1c6438f5d6fc56b8dcbf4bbe50271">  HASH_VALUE</a>(keyptr, keylen_in, _ha_hashv);                                      <a class="code" href="uthash_8h.html#aa0e4d9dcfb23a6616c6439aa0d4a3f4d">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#aa0e4d9dcfb23a6616c6439aa0d4a3f4d">  HASH_ADD_KEYPTR_BYHASHVALUE</a>(hh, head, keyptr, keylen_in, _ha_hashv, add);      \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="uthash_8h_html_a5bc1c6438f5d6fc56b8dcbf4bbe50271"><div class="ttname"><a href="uthash_8h.html#a5bc1c6438f5d6fc56b8dcbf4bbe50271">HASH_VALUE</a></div><div class="ttdeci">#define HASH_VALUE(keyptr, keylen, hashv)</div><div class="ttdef"><b>Definition:</b> uthash.h:114</div></div>
+<div class="ttc" id="uthash_8h_html_aa0e4d9dcfb23a6616c6439aa0d4a3f4d"><div class="ttname"><a href="uthash_8h.html#aa0e4d9dcfb23a6616c6439aa0d4a3f4d">HASH_ADD_KEYPTR_BYHASHVALUE</a></div><div class="ttdeci">#define HASH_ADD_KEYPTR_BYHASHVALUE(hh, head, keyptr, keylen_in, hashval, add)</div><div class="ttdef"><b>Definition:</b> uthash.h:284</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa0e4d9dcfb23a6616c6439aa0d4a3f4d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HASH_ADD_KEYPTR_BYHASHVALUE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hh, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">head, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">keyptr, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">keylen_in, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hashval, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">add&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                             \</div>
+<div class="line">  unsigned _ha_bkt;                                                              \</div>
+<div class="line">  (add)-&gt;hh.hashv = (hashval);                                                   \</div>
+<div class="line">  (add)-&gt;hh.key = (<span class="keywordtype">char</span>*) (keyptr);                                              \</div>
+<div class="line">  (add)-&gt;hh.keylen = (<span class="keywordtype">unsigned</span>) (keylen_in);                                     \</div>
+<div class="line">  if (!(head)) {                                                                 \</div>
+<div class="line">    (add)-&gt;hh.next = NULL;                                                       \</div>
+<div class="line">    (add)-&gt;hh.prev = NULL;                                                       \</div>
+<div class="line">    (head) = (add);                                                              <a class="code" href="uthash_8h.html#aeba971430f623b6334f565d9c7ec9de5">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#aeba971430f623b6334f565d9c7ec9de5">    HASH_MAKE_TABLE</a>(hh, head);                                                   \</div>
+<div class="line">  } <span class="keywordflow">else</span> {                                                                       \</div>
+<div class="line">    (add)-&gt;hh.tbl = (head)-&gt;hh.tbl;                                              <a class="code" href="uthash_8h.html#aeec8f4c804ae5b87ebded933252804fd">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#aeec8f4c804ae5b87ebded933252804fd">    HASH_APPEND_LIST</a>(hh, head, add);                                             \</div>
+<div class="line">  }                                                                              \</div>
+<div class="line">  (head)-&gt;hh.tbl-&gt;num_items++;                                                   \</div>
+<div class="line">  <a class="code" href="uthash_8h.html#a4d7691544128a6ef265f3e4fa5ed3113">HASH_TO_BKT</a>(hashval, (head)-&gt;hh.tbl-&gt;num_buckets, _ha_bkt);                    <a class="code" href="uthash_8h.html#a78e11adee321f45c5cb31ff2d6eb0348">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#a78e11adee321f45c5cb31ff2d6eb0348">  HASH_ADD_TO_BKT</a>((head)-&gt;hh.tbl-&gt;buckets[_ha_bkt], &amp;(add)-&gt;hh);                 <a class="code" href="uthash_8h.html#acaad947212056cd8bfe3d660265fb2db">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#acaad947212056cd8bfe3d660265fb2db">  HASH_BLOOM_ADD</a>((head)-&gt;hh.tbl, hashval);                                       <a class="code" href="uthash_8h.html#a44f9d46e2cc79652492e5dd3e6c40a15">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#a44f9d46e2cc79652492e5dd3e6c40a15">  HASH_EMIT_KEY</a>(hh, head, keyptr, keylen_in);                                    <a class="code" href="uthash_8h.html#a7d882fadb26a4e6c13c134d8be4d0759">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#a7d882fadb26a4e6c13c134d8be4d0759">  HASH_FSCK</a>(hh, head);                                                           \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="uthash_8h_html_a7d882fadb26a4e6c13c134d8be4d0759"><div class="ttname"><a href="uthash_8h.html#a7d882fadb26a4e6c13c134d8be4d0759">HASH_FSCK</a></div><div class="ttdeci">#define HASH_FSCK(hh, head)</div><div class="ttdef"><b>Definition:</b> uthash.h:452</div></div>
+<div class="ttc" id="uthash_8h_html_a4d7691544128a6ef265f3e4fa5ed3113"><div class="ttname"><a href="uthash_8h.html#a4d7691544128a6ef265f3e4fa5ed3113">HASH_TO_BKT</a></div><div class="ttdeci">#define HASH_TO_BKT(hashv, num_bkts, bkt)</div><div class="ttdef"><b>Definition:</b> uthash.h:320</div></div>
+<div class="ttc" id="uthash_8h_html_acaad947212056cd8bfe3d660265fb2db"><div class="ttname"><a href="uthash_8h.html#acaad947212056cd8bfe3d660265fb2db">HASH_BLOOM_ADD</a></div><div class="ttdeci">#define HASH_BLOOM_ADD(tbl, hashv)</div><div class="ttdef"><b>Definition:</b> uthash.h:167</div></div>
+<div class="ttc" id="uthash_8h_html_aeba971430f623b6334f565d9c7ec9de5"><div class="ttname"><a href="uthash_8h.html#aeba971430f623b6334f565d9c7ec9de5">HASH_MAKE_TABLE</a></div><div class="ttdeci">#define HASH_MAKE_TABLE(hh, head)</div><div class="ttdef"><b>Definition:</b> uthash.h:172</div></div>
+<div class="ttc" id="uthash_8h_html_a78e11adee321f45c5cb31ff2d6eb0348"><div class="ttname"><a href="uthash_8h.html#a78e11adee321f45c5cb31ff2d6eb0348">HASH_ADD_TO_BKT</a></div><div class="ttdeci">#define HASH_ADD_TO_BKT(head, addhh)</div><div class="ttdef"><b>Definition:</b> uthash.h:736</div></div>
+<div class="ttc" id="uthash_8h_html_aeec8f4c804ae5b87ebded933252804fd"><div class="ttname"><a href="uthash_8h.html#aeec8f4c804ae5b87ebded933252804fd">HASH_APPEND_LIST</a></div><div class="ttdeci">#define HASH_APPEND_LIST(hh, head, add)</div><div class="ttdef"><b>Definition:</b> uthash.h:225</div></div>
+<div class="ttc" id="uthash_8h_html_a44f9d46e2cc79652492e5dd3e6c40a15"><div class="ttname"><a href="uthash_8h.html#a44f9d46e2cc79652492e5dd3e6c40a15">HASH_EMIT_KEY</a></div><div class="ttdeci">#define HASH_EMIT_KEY(hh, head, keyptr, fieldlen)</div><div class="ttdef"><b>Definition:</b> uthash.h:466</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aae1fa76ff12cbf5328bcf4a2375d055f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HASH_ADD_KEYPTR_BYHASHVALUE_INORDER</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hh, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">head, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">keyptr, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">keylen_in, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hashval, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">add, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">cmpfcn&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5a5f675b8bbeaff0a25de5f91330eae8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HASH_ADD_KEYPTR_INORDER</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hh, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">head, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">keyptr, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">keylen_in, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">add, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">cmpfcn&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                             \</div>
+<div class="line">  unsigned _hs_hashv;                                                            <a class="code" href="uthash_8h.html#a5bc1c6438f5d6fc56b8dcbf4bbe50271">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#a5bc1c6438f5d6fc56b8dcbf4bbe50271">  HASH_VALUE</a>(keyptr, keylen_in, _hs_hashv);                                      <a class="code" href="uthash_8h.html#aae1fa76ff12cbf5328bcf4a2375d055f">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#aae1fa76ff12cbf5328bcf4a2375d055f">  HASH_ADD_KEYPTR_BYHASHVALUE_INORDER</a>(hh, head, keyptr, keylen_in, _hs_hashv, add, cmpfcn); \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="uthash_8h_html_a5bc1c6438f5d6fc56b8dcbf4bbe50271"><div class="ttname"><a href="uthash_8h.html#a5bc1c6438f5d6fc56b8dcbf4bbe50271">HASH_VALUE</a></div><div class="ttdeci">#define HASH_VALUE(keyptr, keylen, hashv)</div><div class="ttdef"><b>Definition:</b> uthash.h:114</div></div>
+<div class="ttc" id="uthash_8h_html_aae1fa76ff12cbf5328bcf4a2375d055f"><div class="ttname"><a href="uthash_8h.html#aae1fa76ff12cbf5328bcf4a2375d055f">HASH_ADD_KEYPTR_BYHASHVALUE_INORDER</a></div><div class="ttdeci">#define HASH_ADD_KEYPTR_BYHASHVALUE_INORDER(hh, head, keyptr, keylen_in, hashval, add, cmpfcn)</div><div class="ttdef"><b>Definition:</b> uthash.h:233</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -576,7 +928,7 @@ Typedefs</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="uthash_8h.html#aaf01358e257c8d838eb5e4b189f0c399">HASH_ADD</a>(hh,head,strfield[0],(unsigned int)strlen(add-&gt;strfield),add)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="uthash_8h.html#aaf01358e257c8d838eb5e4b189f0c399">HASH_ADD</a>(hh,head,strfield[0],(unsigned)<a class="el" href="uthash_8h.html#aa14634cb1f894d48256362bae7239be6">uthash_strlen</a>(add-&gt;strfield),add)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -616,16 +968,55 @@ Typedefs</h2></td></tr>
 <div class="line">     &amp;&amp; ((addhh)-&gt;tbl-&gt;noexpand != 1U)) {                                        <a class="code" href="uthash_8h.html#a6439fd6271474e61b1840fbf83132f03">\</a></div>
 <div class="line"><a class="code" href="uthash_8h.html#a6439fd6271474e61b1840fbf83132f03">       HASH_EXPAND_BUCKETS</a>((addhh)-&gt;<a class="code" href="struct_u_t__hash__handle.html#af0deeb3fe5f35a4c85d105090b498c8d">tbl</a>);                                        \</div>
 <div class="line"> }                                                                               \</div>
-<div class="line">} <span class="keywordflow">while</span>(0)</div>
-<div class="ttc" id="struct_u_t__hash__handle_html_a42ef2993dcaaebd656c4a40d174e0c78"><div class="ttname"><a href="struct_u_t__hash__handle.html#a42ef2993dcaaebd656c4a40d174e0c78">UT_hash_handle::hh_next</a></div><div class="ttdeci">struct UT_hash_handle * hh_next</div><div class="ttdef"><b>Definition:</b> uthash.h:960</div></div>
-<div class="ttc" id="uthash_8h_html_a6439fd6271474e61b1840fbf83132f03"><div class="ttname"><a href="uthash_8h.html#a6439fd6271474e61b1840fbf83132f03">HASH_EXPAND_BUCKETS</a></div><div class="ttdeci">#define HASH_EXPAND_BUCKETS(tbl)</div><div class="ttdef"><b>Definition:</b> uthash.h:683</div></div>
-<div class="ttc" id="struct_u_t__hash__handle_html_af0deeb3fe5f35a4c85d105090b498c8d"><div class="ttname"><a href="struct_u_t__hash__handle.html#af0deeb3fe5f35a4c85d105090b498c8d">UT_hash_handle::tbl</a></div><div class="ttdeci">struct UT_hash_table * tbl</div><div class="ttdef"><b>Definition:</b> uthash.h:956</div></div>
-<div class="ttc" id="struct_u_t__hash__handle_html_a079301c7093356547fb4601a85503c01"><div class="ttname"><a href="struct_u_t__hash__handle.html#a079301c7093356547fb4601a85503c01">UT_hash_handle::hh_prev</a></div><div class="ttdeci">struct UT_hash_handle * hh_prev</div><div class="ttdef"><b>Definition:</b> uthash.h:959</div></div>
-<div class="ttc" id="uthash_8h_html_a8ae3e6473261f6c4b78c030c94f5d68f"><div class="ttname"><a href="uthash_8h.html#a8ae3e6473261f6c4b78c030c94f5d68f">HASH_BKT_CAPACITY_THRESH</a></div><div class="ttdeci">#define HASH_BKT_CAPACITY_THRESH</div><div class="ttdef"><b>Definition:</b> uthash.h:101</div></div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="struct_u_t__hash__handle_html_a42ef2993dcaaebd656c4a40d174e0c78"><div class="ttname"><a href="struct_u_t__hash__handle.html#a42ef2993dcaaebd656c4a40d174e0c78">UT_hash_handle::hh_next</a></div><div class="ttdeci">struct UT_hash_handle * hh_next</div><div class="ttdef"><b>Definition:</b> uthash.h:1068</div></div>
+<div class="ttc" id="uthash_8h_html_a6439fd6271474e61b1840fbf83132f03"><div class="ttname"><a href="uthash_8h.html#a6439fd6271474e61b1840fbf83132f03">HASH_EXPAND_BUCKETS</a></div><div class="ttdeci">#define HASH_EXPAND_BUCKETS(tbl)</div><div class="ttdef"><b>Definition:</b> uthash.h:791</div></div>
+<div class="ttc" id="struct_u_t__hash__handle_html_af0deeb3fe5f35a4c85d105090b498c8d"><div class="ttname"><a href="struct_u_t__hash__handle.html#af0deeb3fe5f35a4c85d105090b498c8d">UT_hash_handle::tbl</a></div><div class="ttdeci">struct UT_hash_table * tbl</div><div class="ttdef"><b>Definition:</b> uthash.h:1064</div></div>
+<div class="ttc" id="struct_u_t__hash__handle_html_a079301c7093356547fb4601a85503c01"><div class="ttname"><a href="struct_u_t__hash__handle.html#a079301c7093356547fb4601a85503c01">UT_hash_handle::hh_prev</a></div><div class="ttdeci">struct UT_hash_handle * hh_prev</div><div class="ttdef"><b>Definition:</b> uthash.h:1067</div></div>
+<div class="ttc" id="uthash_8h_html_a8ae3e6473261f6c4b78c030c94f5d68f"><div class="ttname"><a href="uthash_8h.html#a8ae3e6473261f6c4b78c030c94f5d68f">HASH_BKT_CAPACITY_THRESH</a></div><div class="ttdeci">#define HASH_BKT_CAPACITY_THRESH</div><div class="ttdef"><b>Definition:</b> uthash.h:107</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a7271bf51d7fe2cf2c183578aee73601e"></a>
+<a class="anchor" id="aeec8f4c804ae5b87ebded933252804fd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HASH_APPEND_LIST</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hh, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">head, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">add&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                             \</div>
+<div class="line">  (add)-&gt;hh.next = NULL;                                                         \</div>
+<div class="line">  (add)-&gt;hh.prev = <a class="code" href="uthash_8h.html#a568e95048979b8b3e4ea1567fd91c186">ELMT_FROM_HH</a>((head)-&gt;hh.tbl, (head)-&gt;hh.tbl-&gt;tail);           \</div>
+<div class="line">  (head)-&gt;hh.tbl-&gt;tail-&gt;next = (add);                                            \</div>
+<div class="line">  (head)-&gt;hh.tbl-&gt;tail = &amp;((add)-&gt;hh);                                           \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="uthash_8h_html_a568e95048979b8b3e4ea1567fd91c186"><div class="ttname"><a href="uthash_8h.html#a568e95048979b8b3e4ea1567fd91c186">ELMT_FROM_HH</a></div><div class="ttdeci">#define ELMT_FROM_HH(tbl, hhp)</div><div class="ttdef"><b>Definition:</b> uthash.h:110</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a7fb1644fa1d057a1c124c7548b9146b3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -645,19 +1036,7 @@ Typedefs</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">num_bkts, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">hashv, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">bkt&#160;</td>
+          <td class="paramname">hashv&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -673,11 +1052,10 @@ Typedefs</h2></td></tr>
 <div class="line">  while (_hb_keylen-- != 0U) {                                                   \</div>
 <div class="line">      (<a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">hashv</a>) = (((<a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">hashv</a>) &lt;&lt; 5) + (<a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">hashv</a>)) + *_hb_key++;                         \</div>
 <div class="line">  }                                                                              \</div>
-<div class="line">  bkt = (<a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">hashv</a>) &amp; (num_bkts-1U);                                                 \</div>
 <div class="line">} <span class="keywordflow">while</span> (0)</div>
-<div class="ttc" id="struct_u_t__hash__handle_html_ab5c000aec752f2206131e183daf5efbf"><div class="ttname"><a href="struct_u_t__hash__handle.html#ab5c000aec752f2206131e183daf5efbf">UT_hash_handle::key</a></div><div class="ttdeci">void * key</div><div class="ttdef"><b>Definition:</b> uthash.h:961</div></div>
-<div class="ttc" id="struct_u_t__hash__handle_html_a4563ea2b1ae1597aa9fd62e005d447b4"><div class="ttname"><a href="struct_u_t__hash__handle.html#a4563ea2b1ae1597aa9fd62e005d447b4">UT_hash_handle::keylen</a></div><div class="ttdeci">unsigned keylen</div><div class="ttdef"><b>Definition:</b> uthash.h:962</div></div>
-<div class="ttc" id="struct_u_t__hash__handle_html_ae73531e09ac884600d96a71ad9afbfa4"><div class="ttname"><a href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">UT_hash_handle::hashv</a></div><div class="ttdeci">unsigned hashv</div><div class="ttdef"><b>Definition:</b> uthash.h:963</div></div>
+<div class="ttc" id="struct_u_t__hash__handle_html_ab5c000aec752f2206131e183daf5efbf"><div class="ttname"><a href="struct_u_t__hash__handle.html#ab5c000aec752f2206131e183daf5efbf">UT_hash_handle::key</a></div><div class="ttdeci">void * key</div><div class="ttdef"><b>Definition:</b> uthash.h:1069</div></div>
+<div class="ttc" id="struct_u_t__hash__handle_html_a4563ea2b1ae1597aa9fd62e005d447b4"><div class="ttname"><a href="struct_u_t__hash__handle.html#a4563ea2b1ae1597aa9fd62e005d447b4">UT_hash_handle::keylen</a></div><div class="ttdeci">unsigned keylen</div><div class="ttdef"><b>Definition:</b> uthash.h:1070</div></div>
+<div class="ttc" id="struct_u_t__hash__handle_html_ae73531e09ac884600d96a71ad9afbfa4"><div class="ttname"><a href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">UT_hash_handle::hashv</a></div><div class="ttdeci">unsigned hashv</div><div class="ttdef"><b>Definition:</b> uthash.h:1071</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -832,11 +1210,11 @@ Typedefs</h2></td></tr>
 <div class="line"><a class="code" href="uthash_8h.html#a56cdf8c254fc700332c8e6a7263b4657">    uthash_free</a>((head)-&gt;hh.tbl, <span class="keyword">sizeof</span>(<a class="code" href="struct_u_t__hash__table.html">UT_hash_table</a>));                          \</div>
 <div class="line">    (head)=NULL;                                                                 \</div>
 <div class="line">  }                                                                              \</div>
-<div class="line">} <span class="keywordflow">while</span>(0)</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
 <div class="ttc" id="uthash_8h_html_a56cdf8c254fc700332c8e6a7263b4657"><div class="ttname"><a href="uthash_8h.html#a56cdf8c254fc700332c8e6a7263b4657">uthash_free</a></div><div class="ttdeci">#define uthash_free(ptr, sz)</div><div class="ttdef"><b>Definition:</b> uthash.h:88</div></div>
-<div class="ttc" id="uthash_8h_html_ad6847ad938fc26bfd0726d7f159efd0a"><div class="ttname"><a href="uthash_8h.html#ad6847ad938fc26bfd0726d7f159efd0a">HASH_BLOOM_FREE</a></div><div class="ttdeci">#define HASH_BLOOM_FREE(tbl)</div><div class="ttdef"><b>Definition:</b> uthash.h:147</div></div>
-<div class="ttc" id="struct_u_t__hash__table_html"><div class="ttname"><a href="struct_u_t__hash__table.html">UT_hash_table</a></div><div class="ttdef"><b>Definition:</b> uthash.h:922</div></div>
-<div class="ttc" id="struct_u_t__hash__bucket_html"><div class="ttname"><a href="struct_u_t__hash__bucket.html">UT_hash_bucket</a></div><div class="ttdef"><b>Definition:</b> uthash.h:898</div></div>
+<div class="ttc" id="uthash_8h_html_ad6847ad938fc26bfd0726d7f159efd0a"><div class="ttname"><a href="uthash_8h.html#ad6847ad938fc26bfd0726d7f159efd0a">HASH_BLOOM_FREE</a></div><div class="ttdeci">#define HASH_BLOOM_FREE(tbl)</div><div class="ttdef"><b>Definition:</b> uthash.h:166</div></div>
+<div class="ttc" id="struct_u_t__hash__table_html"><div class="ttname"><a href="struct_u_t__hash__table.html">UT_hash_table</a></div><div class="ttdef"><b>Definition:</b> uthash.h:1030</div></div>
+<div class="ttc" id="struct_u_t__hash__bucket_html"><div class="ttname"><a href="struct_u_t__hash__bucket.html">UT_hash_bucket</a></div><div class="ttdef"><b>Definition:</b> uthash.h:1006</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1045,7 +1423,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define HASH_FCN&#160;&#160;&#160;<a class="el" href="uthash_8h.html#aa16e3ae6125d7f10d3deb4695e0ee51e">HASH_JEN</a></td>
+          <td class="memname">#define HASH_FCN&#160;&#160;&#160;<a class="el" href="uthash_8h.html#a724ff23efd254654ac087ed60233c465">HASH_JEN</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1094,26 +1472,83 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                             \</div>
-<div class="line">  out=NULL;                                                                      \</div>
-<div class="line">  if (head != NULL) {                                                            \</div>
-<div class="line">     unsigned _hf_bkt,_hf_hashv;                                                 <a class="code" href="uthash_8h.html#abd3356419b386c379116393700a751d3">\</a></div>
-<div class="line"><a class="code" href="uthash_8h.html#abd3356419b386c379116393700a751d3">     HASH_FCN</a>(keyptr,<a class="code" href="struct_u_t__hash__handle.html#a4563ea2b1ae1597aa9fd62e005d447b4">keylen</a>, (head)-&gt;hh.tbl-&gt;num_buckets, _hf_hashv, _hf_bkt);   \</div>
-<div class="line">     if (<a class="code" href="uthash_8h.html#a06bfbf880899d54da35487d0d39c1009">HASH_BLOOM_TEST</a>((head)-&gt;hh.tbl, _hf_hashv) != 0) {                      <a class="code" href="uthash_8h.html#a42ae87cc63106a82601808f19329502c">\</a></div>
-<div class="line"><a class="code" href="uthash_8h.html#a42ae87cc63106a82601808f19329502c">       HASH_FIND_IN_BKT</a>((head)-&gt;hh.tbl, hh, (head)-&gt;hh.tbl-&gt;buckets[ _hf_bkt ],  \</div>
-<div class="line">                        keyptr,<a class="code" href="struct_u_t__hash__handle.html#a4563ea2b1ae1597aa9fd62e005d447b4">keylen</a>,out);                                      \</div>
-<div class="line">     }                                                                           \</div>
-<div class="line">  }                                                                              \</div>
+<div class="line">  unsigned _hf_hashv;                                                            <a class="code" href="uthash_8h.html#a5bc1c6438f5d6fc56b8dcbf4bbe50271">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#a5bc1c6438f5d6fc56b8dcbf4bbe50271">  HASH_VALUE</a>(keyptr, <a class="code" href="struct_u_t__hash__handle.html#a4563ea2b1ae1597aa9fd62e005d447b4">keylen</a>, _hf_hashv);                                         <a class="code" href="uthash_8h.html#afc2b27fc2a6b13aece881528f45de693">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#afc2b27fc2a6b13aece881528f45de693">  HASH_FIND_BYHASHVALUE</a>(hh, head, keyptr, <a class="code" href="struct_u_t__hash__handle.html#a4563ea2b1ae1597aa9fd62e005d447b4">keylen</a>, _hf_hashv, out);               \</div>
 <div class="line">} <span class="keywordflow">while</span> (0)</div>
-<div class="ttc" id="uthash_8h_html_abd3356419b386c379116393700a751d3"><div class="ttname"><a href="uthash_8h.html#abd3356419b386c379116393700a751d3">HASH_FCN</a></div><div class="ttdeci">#define HASH_FCN</div><div class="ttdef"><b>Definition:</b> uthash.h:363</div></div>
-<div class="ttc" id="struct_u_t__hash__handle_html_a4563ea2b1ae1597aa9fd62e005d447b4"><div class="ttname"><a href="struct_u_t__hash__handle.html#a4563ea2b1ae1597aa9fd62e005d447b4">UT_hash_handle::keylen</a></div><div class="ttdeci">unsigned keylen</div><div class="ttdef"><b>Definition:</b> uthash.h:962</div></div>
-<div class="ttc" id="uthash_8h_html_a06bfbf880899d54da35487d0d39c1009"><div class="ttname"><a href="uthash_8h.html#a06bfbf880899d54da35487d0d39c1009">HASH_BLOOM_TEST</a></div><div class="ttdeci">#define HASH_BLOOM_TEST(tbl, hashv)</div><div class="ttdef"><b>Definition:</b> uthash.h:149</div></div>
-<div class="ttc" id="uthash_8h_html_a42ae87cc63106a82601808f19329502c"><div class="ttname"><a href="uthash_8h.html#a42ae87cc63106a82601808f19329502c">HASH_FIND_IN_BKT</a></div><div class="ttdeci">#define HASH_FIND_IN_BKT(tbl, hh, head, keyptr, keylen_in, out)</div><div class="ttdef"><b>Definition:</b> uthash.h:614</div></div>
+<div class="ttc" id="struct_u_t__hash__handle_html_a4563ea2b1ae1597aa9fd62e005d447b4"><div class="ttname"><a href="struct_u_t__hash__handle.html#a4563ea2b1ae1597aa9fd62e005d447b4">UT_hash_handle::keylen</a></div><div class="ttdeci">unsigned keylen</div><div class="ttdef"><b>Definition:</b> uthash.h:1070</div></div>
+<div class="ttc" id="uthash_8h_html_a5bc1c6438f5d6fc56b8dcbf4bbe50271"><div class="ttname"><a href="uthash_8h.html#a5bc1c6438f5d6fc56b8dcbf4bbe50271">HASH_VALUE</a></div><div class="ttdeci">#define HASH_VALUE(keyptr, keylen, hashv)</div><div class="ttdef"><b>Definition:</b> uthash.h:114</div></div>
+<div class="ttc" id="uthash_8h_html_afc2b27fc2a6b13aece881528f45de693"><div class="ttname"><a href="uthash_8h.html#afc2b27fc2a6b13aece881528f45de693">HASH_FIND_BYHASHVALUE</a></div><div class="ttdeci">#define HASH_FIND_BYHASHVALUE(hh, head, keyptr, keylen, hashval, out)</div><div class="ttdef"><b>Definition:</b> uthash.h:119</div></div>
 </div><!-- fragment -->
 <p>Referenced by <a class="el" href="mbtcp_8c.html#a457458d6f5fef93f9bac1bf9365b8a61">mbtcp_get_handle()</a>, <a class="el" href="test_8c.html#a6228c9b381c11fd06589201df6f77a9d">test_multiple_add_find()</a>, and <a class="el" href="test_8c.html#ac7831dc95a6c14e20b642da0ccec7d96">test_single_add_find()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a42ae87cc63106a82601808f19329502c"></a>
+<a class="anchor" id="afc2b27fc2a6b13aece881528f45de693"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HASH_FIND_BYHASHVALUE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hh, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">head, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">keyptr, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">keylen, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hashval, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">out&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                             \</div>
+<div class="line">  (out) = NULL;                                                                  \</div>
+<div class="line">  if (head) {                                                                    \</div>
+<div class="line">    unsigned _hf_bkt;                                                            <a class="code" href="uthash_8h.html#a4d7691544128a6ef265f3e4fa5ed3113">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#a4d7691544128a6ef265f3e4fa5ed3113">    HASH_TO_BKT</a>(hashval, (head)-&gt;hh.tbl-&gt;num_buckets, _hf_bkt);                  \</div>
+<div class="line">    if (<a class="code" href="uthash_8h.html#a06bfbf880899d54da35487d0d39c1009">HASH_BLOOM_TEST</a>((head)-&gt;hh.tbl, hashval) != 0) {                         <a class="code" href="uthash_8h.html#a54951c7b798e8da9931d2b607e97b619">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#a54951c7b798e8da9931d2b607e97b619">      HASH_FIND_IN_BKT</a>((head)-&gt;hh.tbl, hh, (head)-&gt;hh.tbl-&gt;buckets[ _hf_bkt ], keyptr, <a class="code" href="struct_u_t__hash__handle.html#a4563ea2b1ae1597aa9fd62e005d447b4">keylen</a>, hashval, out); \</div>
+<div class="line">    }                                                                            \</div>
+<div class="line">  }                                                                              \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="uthash_8h_html_a4d7691544128a6ef265f3e4fa5ed3113"><div class="ttname"><a href="uthash_8h.html#a4d7691544128a6ef265f3e4fa5ed3113">HASH_TO_BKT</a></div><div class="ttdeci">#define HASH_TO_BKT(hashv, num_bkts, bkt)</div><div class="ttdef"><b>Definition:</b> uthash.h:320</div></div>
+<div class="ttc" id="struct_u_t__hash__handle_html_a4563ea2b1ae1597aa9fd62e005d447b4"><div class="ttname"><a href="struct_u_t__hash__handle.html#a4563ea2b1ae1597aa9fd62e005d447b4">UT_hash_handle::keylen</a></div><div class="ttdeci">unsigned keylen</div><div class="ttdef"><b>Definition:</b> uthash.h:1070</div></div>
+<div class="ttc" id="uthash_8h_html_a06bfbf880899d54da35487d0d39c1009"><div class="ttname"><a href="uthash_8h.html#a06bfbf880899d54da35487d0d39c1009">HASH_BLOOM_TEST</a></div><div class="ttdeci">#define HASH_BLOOM_TEST(tbl, hashv)</div><div class="ttdef"><b>Definition:</b> uthash.h:168</div></div>
+<div class="ttc" id="uthash_8h_html_a54951c7b798e8da9931d2b607e97b619"><div class="ttname"><a href="uthash_8h.html#a54951c7b798e8da9931d2b607e97b619">HASH_FIND_IN_BKT</a></div><div class="ttdeci">#define HASH_FIND_IN_BKT(tbl, hh, head, keyptr, keylen_in, hashval, out)</div><div class="ttdef"><b>Definition:</b> uthash.h:714</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a54951c7b798e8da9931d2b607e97b619"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1151,6 +1586,12 @@ Typedefs</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
+          <td class="paramname">hashval, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
           <td class="paramname">out&#160;</td>
         </tr>
         <tr>
@@ -1161,20 +1602,28 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                             \</div>
-<div class="line"> if (head.hh_head != NULL) { <a class="code" href="uthash_8h.html#a3c736f2f2dd643f2987b2bc323e269ba">DECLTYPE_ASSIGN</a>(out,<a class="code" href="uthash_8h.html#a568e95048979b8b3e4ea1567fd91c186">ELMT_FROM_HH</a>(<a class="code" href="struct_u_t__hash__handle.html#af0deeb3fe5f35a4c85d105090b498c8d">tbl</a>,head.hh_head)); } \</div>
-<div class="line"> else { out=NULL; }                                                              \</div>
-<div class="line"> while (out != NULL) {                                                           \</div>
-<div class="line">    if ((out)-&gt;hh.keylen == (keylen_in)) {                                       \</div>
-<div class="line">        if ((<a class="code" href="uthash_8h.html#a35c9b682ebb7a8cbf284b9f0a9594095">HASH_KEYCMP</a>((out)-&gt;hh.key,keyptr,keylen_in)) == 0) { <span class="keywordflow">break</span>; }         \</div>
+<div class="line">  if ((head).hh_head != NULL) {                                                  <a class="code" href="uthash_8h.html#a3c736f2f2dd643f2987b2bc323e269ba">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#a3c736f2f2dd643f2987b2bc323e269ba">    DECLTYPE_ASSIGN</a>(out, <a class="code" href="uthash_8h.html#a568e95048979b8b3e4ea1567fd91c186">ELMT_FROM_HH</a>(<a class="code" href="struct_u_t__hash__handle.html#af0deeb3fe5f35a4c85d105090b498c8d">tbl</a>, (head).hh_head));                     \</div>
+<div class="line">  } <span class="keywordflow">else</span> {                                                                       \</div>
+<div class="line">    (out) = NULL;                                                                \</div>
+<div class="line">  }                                                                              \</div>
+<div class="line">  while ((out) != NULL) {                                                        \</div>
+<div class="line">    if ((out)-&gt;hh.hashv == (hashval) &amp;&amp; (out)-&gt;hh.keylen == (keylen_in)) {       \</div>
+<div class="line">      if (<a class="code" href="uthash_8h.html#a8ca9a884b81d487034b57f87d2f97fa4">uthash_memcmp</a>((out)-&gt;hh.key, keyptr, keylen_in) == 0) {                \</div>
+<div class="line">        break;                                                                   \</div>
+<div class="line">      }                                                                          \</div>
 <div class="line">    }                                                                            \</div>
-<div class="line">    if ((out)-&gt;hh.hh_next != NULL) { <a class="code" href="uthash_8h.html#a3c736f2f2dd643f2987b2bc323e269ba">DECLTYPE_ASSIGN</a>(out,<a class="code" href="uthash_8h.html#a568e95048979b8b3e4ea1567fd91c186">ELMT_FROM_HH</a>(<a class="code" href="struct_u_t__hash__handle.html#af0deeb3fe5f35a4c85d105090b498c8d">tbl</a>,(out)-&gt;hh.hh_next)); } \</div>
-<div class="line">    else { out = NULL; }                                                         \</div>
-<div class="line"> }                                                                               \</div>
-<div class="line">} <span class="keywordflow">while</span>(0)</div>
-<div class="ttc" id="struct_u_t__hash__handle_html_af0deeb3fe5f35a4c85d105090b498c8d"><div class="ttname"><a href="struct_u_t__hash__handle.html#af0deeb3fe5f35a4c85d105090b498c8d">UT_hash_handle::tbl</a></div><div class="ttdeci">struct UT_hash_table * tbl</div><div class="ttdef"><b>Definition:</b> uthash.h:956</div></div>
-<div class="ttc" id="uthash_8h_html_a3c736f2f2dd643f2987b2bc323e269ba"><div class="ttname"><a href="uthash_8h.html#a3c736f2f2dd643f2987b2bc323e269ba">DECLTYPE_ASSIGN</a></div><div class="ttdeci">#define DECLTYPE_ASSIGN(dst, src)</div><div class="ttdef"><b>Definition:</b> uthash.h:56</div></div>
-<div class="ttc" id="uthash_8h_html_a35c9b682ebb7a8cbf284b9f0a9594095"><div class="ttname"><a href="uthash_8h.html#a35c9b682ebb7a8cbf284b9f0a9594095">HASH_KEYCMP</a></div><div class="ttdeci">#define HASH_KEYCMP(a, b, len)</div><div class="ttdef"><b>Definition:</b> uthash.h:611</div></div>
-<div class="ttc" id="uthash_8h_html_a568e95048979b8b3e4ea1567fd91c186"><div class="ttname"><a href="uthash_8h.html#a568e95048979b8b3e4ea1567fd91c186">ELMT_FROM_HH</a></div><div class="ttdeci">#define ELMT_FROM_HH(tbl, hhp)</div><div class="ttdef"><b>Definition:</b> uthash.h:104</div></div>
+<div class="line">    if ((out)-&gt;hh.hh_next != NULL) {                                             <a class="code" href="uthash_8h.html#a3c736f2f2dd643f2987b2bc323e269ba">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#a3c736f2f2dd643f2987b2bc323e269ba">      DECLTYPE_ASSIGN</a>(out, <a class="code" href="uthash_8h.html#a568e95048979b8b3e4ea1567fd91c186">ELMT_FROM_HH</a>(<a class="code" href="struct_u_t__hash__handle.html#af0deeb3fe5f35a4c85d105090b498c8d">tbl</a>, (out)-&gt;hh.hh_next));                \</div>
+<div class="line">    } <span class="keywordflow">else</span> {                                                                     \</div>
+<div class="line">      (out) = NULL;                                                              \</div>
+<div class="line">    }                                                                            \</div>
+<div class="line">  }                                                                              \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="struct_u_t__hash__handle_html_af0deeb3fe5f35a4c85d105090b498c8d"><div class="ttname"><a href="struct_u_t__hash__handle.html#af0deeb3fe5f35a4c85d105090b498c8d">UT_hash_handle::tbl</a></div><div class="ttdeci">struct UT_hash_table * tbl</div><div class="ttdef"><b>Definition:</b> uthash.h:1064</div></div>
+<div class="ttc" id="uthash_8h_html_a3c736f2f2dd643f2987b2bc323e269ba"><div class="ttname"><a href="uthash_8h.html#a3c736f2f2dd643f2987b2bc323e269ba">DECLTYPE_ASSIGN</a></div><div class="ttdeci">#define DECLTYPE_ASSIGN(dst, src)</div><div class="ttdef"><b>Definition:</b> uthash.h:58</div></div>
+<div class="ttc" id="uthash_8h_html_a8ca9a884b81d487034b57f87d2f97fa4"><div class="ttname"><a href="uthash_8h.html#a8ca9a884b81d487034b57f87d2f97fa4">uthash_memcmp</a></div><div class="ttdeci">#define uthash_memcmp(a, b, n)</div><div class="ttdef"><b>Definition:</b> uthash.h:94</div></div>
+<div class="ttc" id="uthash_8h_html_a568e95048979b8b3e4ea1567fd91c186"><div class="ttname"><a href="uthash_8h.html#a568e95048979b8b3e4ea1567fd91c186">ELMT_FROM_HH</a></div><div class="ttdeci">#define ELMT_FROM_HH(tbl, hhp)</div><div class="ttdef"><b>Definition:</b> uthash.h:110</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1267,14 +1716,14 @@ Typedefs</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="uthash_8h.html#ad4a1cd39c3044936c0e49d3f372c9dbf">HASH_FIND</a>(hh,head,findstr,(unsigned)strlen(findstr),out)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="uthash_8h.html#ad4a1cd39c3044936c0e49d3f372c9dbf">HASH_FIND</a>(hh,head,findstr,(unsigned)<a class="el" href="uthash_8h.html#aa14634cb1f894d48256362bae7239be6">uthash_strlen</a>(findstr),out)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="ac99f9a353421537527a80b392089dd9d"></a>
+<a class="anchor" id="a65c61fa2c45a7d0cb918407d725e94bc"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1294,19 +1743,7 @@ Typedefs</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">num_bkts, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">hashv, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">bkt&#160;</td>
+          <td class="paramname">hashv&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1323,11 +1760,10 @@ Typedefs</h2></td></tr>
 <div class="line"><a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">      hashv</a> = <a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">hashv</a> ^ _hf_key[_fn_i];                                            <a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">\</a></div>
 <div class="line"><a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">      hashv</a> = <a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">hashv</a> * 16777619U;                                                 \</div>
 <div class="line">  }                                                                              \</div>
-<div class="line">  bkt = <a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">hashv</a> &amp; (num_bkts-1U);                                                   \</div>
-<div class="line">} <span class="keywordflow">while</span>(0)</div>
-<div class="ttc" id="struct_u_t__hash__handle_html_ab5c000aec752f2206131e183daf5efbf"><div class="ttname"><a href="struct_u_t__hash__handle.html#ab5c000aec752f2206131e183daf5efbf">UT_hash_handle::key</a></div><div class="ttdeci">void * key</div><div class="ttdef"><b>Definition:</b> uthash.h:961</div></div>
-<div class="ttc" id="struct_u_t__hash__handle_html_a4563ea2b1ae1597aa9fd62e005d447b4"><div class="ttname"><a href="struct_u_t__hash__handle.html#a4563ea2b1ae1597aa9fd62e005d447b4">UT_hash_handle::keylen</a></div><div class="ttdeci">unsigned keylen</div><div class="ttdef"><b>Definition:</b> uthash.h:962</div></div>
-<div class="ttc" id="struct_u_t__hash__handle_html_ae73531e09ac884600d96a71ad9afbfa4"><div class="ttname"><a href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">UT_hash_handle::hashv</a></div><div class="ttdeci">unsigned hashv</div><div class="ttdef"><b>Definition:</b> uthash.h:963</div></div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="struct_u_t__hash__handle_html_ab5c000aec752f2206131e183daf5efbf"><div class="ttname"><a href="struct_u_t__hash__handle.html#ab5c000aec752f2206131e183daf5efbf">UT_hash_handle::key</a></div><div class="ttdeci">void * key</div><div class="ttdef"><b>Definition:</b> uthash.h:1069</div></div>
+<div class="ttc" id="struct_u_t__hash__handle_html_a4563ea2b1ae1597aa9fd62e005d447b4"><div class="ttname"><a href="struct_u_t__hash__handle.html#a4563ea2b1ae1597aa9fd62e005d447b4">UT_hash_handle::keylen</a></div><div class="ttdeci">unsigned keylen</div><div class="ttdef"><b>Definition:</b> uthash.h:1070</div></div>
+<div class="ttc" id="struct_u_t__hash__handle_html_ae73531e09ac884600d96a71ad9afbfa4"><div class="ttname"><a href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">UT_hash_handle::hashv</a></div><div class="ttdeci">unsigned hashv</div><div class="ttdef"><b>Definition:</b> uthash.h:1071</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1418,13 +1854,13 @@ Typedefs</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">for</span>(((el)=(head)), ((tmp)=<a class="code" href="uthash_8h.html#a716ba290563c2d955cb0c90d85874073">DECLTYPE</a>(el)((head!=NULL)?(head)-&gt;hh.next:NULL));      \</div>
 <div class="line">  (el) != NULL; ((el)=(tmp)), ((tmp)=<a class="code" href="uthash_8h.html#a716ba290563c2d955cb0c90d85874073">DECLTYPE</a>(el)((tmp!=NULL)?(tmp)-&gt;hh.next:NULL)))</div>
-<div class="ttc" id="uthash_8h_html_a716ba290563c2d955cb0c90d85874073"><div class="ttname"><a href="uthash_8h.html#a716ba290563c2d955cb0c90d85874073">DECLTYPE</a></div><div class="ttdeci">#define DECLTYPE(x)</div><div class="ttdef"><b>Definition:</b> uthash.h:46</div></div>
+<div class="ttc" id="uthash_8h_html_a716ba290563c2d955cb0c90d85874073"><div class="ttname"><a href="uthash_8h.html#a716ba290563c2d955cb0c90d85874073">DECLTYPE</a></div><div class="ttdeci">#define DECLTYPE(x)</div><div class="ttdef"><b>Definition:</b> uthash.h:48</div></div>
 </div><!-- fragment -->
 <p>Referenced by <a class="el" href="test_8c.html#ac7831dc95a6c14e20b642da0ccec7d96">test_single_add_find()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aa16e3ae6125d7f10d3deb4695e0ee51e"></a>
+<a class="anchor" id="a724ff23efd254654ac087ed60233c465"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1444,19 +1880,7 @@ Typedefs</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">num_bkts, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">hashv, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">bkt&#160;</td>
+          <td class="paramname">hashv&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1511,38 +1935,6 @@ Typedefs</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a35c9b682ebb7a8cbf284b9f0a9594095"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define HASH_KEYCMP</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">a, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">b, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">len&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;memcmp(a,b,(unsigned long)(len))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="aeba971430f623b6334f565d9c7ec9de5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1582,19 +1974,19 @@ Typedefs</h2></td></tr>
 <div class="line">          <a class="code" href="uthash_8h.html#a361cdc5e8d6d8fe5fae6912588ae15d0">HASH_INITIAL_NUM_BUCKETS</a>*<span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code" href="struct_u_t__hash__bucket.html">UT_hash_bucket</a>));               <a class="code" href="uthash_8h.html#a254f427772a1fe7a2480a8302af8f8b8">\</a></div>
 <div class="line"><a class="code" href="uthash_8h.html#a254f427772a1fe7a2480a8302af8f8b8">  HASH_BLOOM_MAKE</a>((head)-&gt;hh.tbl);                                               \</div>
 <div class="line">  (head)-&gt;hh.tbl-&gt;signature = <a class="code" href="uthash_8h.html#a4a7a46b9b92a9c73e4f9321e8e6b6bb2">HASH_SIGNATURE</a>;                                    \</div>
-<div class="line">} <span class="keywordflow">while</span>(0)</div>
-<div class="ttc" id="uthash_8h_html_a361cdc5e8d6d8fe5fae6912588ae15d0"><div class="ttname"><a href="uthash_8h.html#a361cdc5e8d6d8fe5fae6912588ae15d0">HASH_INITIAL_NUM_BUCKETS</a></div><div class="ttdeci">#define HASH_INITIAL_NUM_BUCKETS</div><div class="ttdef"><b>Definition:</b> uthash.h:99</div></div>
-<div class="ttc" id="uthash_8h_html_a4a7a46b9b92a9c73e4f9321e8e6b6bb2"><div class="ttname"><a href="uthash_8h.html#a4a7a46b9b92a9c73e4f9321e8e6b6bb2">HASH_SIGNATURE</a></div><div class="ttdeci">#define HASH_SIGNATURE</div><div class="ttdef"><b>Definition:</b> uthash.h:919</div></div>
-<div class="ttc" id="uthash_8h_html_a0b39a5cf1d6c05c43bd8530db2ec908c"><div class="ttname"><a href="uthash_8h.html#a0b39a5cf1d6c05c43bd8530db2ec908c">HASH_INITIAL_NUM_BUCKETS_LOG2</a></div><div class="ttdeci">#define HASH_INITIAL_NUM_BUCKETS_LOG2</div><div class="ttdef"><b>Definition:</b> uthash.h:100</div></div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="uthash_8h_html_a361cdc5e8d6d8fe5fae6912588ae15d0"><div class="ttname"><a href="uthash_8h.html#a361cdc5e8d6d8fe5fae6912588ae15d0">HASH_INITIAL_NUM_BUCKETS</a></div><div class="ttdeci">#define HASH_INITIAL_NUM_BUCKETS</div><div class="ttdef"><b>Definition:</b> uthash.h:105</div></div>
+<div class="ttc" id="uthash_8h_html_a4a7a46b9b92a9c73e4f9321e8e6b6bb2"><div class="ttname"><a href="uthash_8h.html#a4a7a46b9b92a9c73e4f9321e8e6b6bb2">HASH_SIGNATURE</a></div><div class="ttdeci">#define HASH_SIGNATURE</div><div class="ttdef"><b>Definition:</b> uthash.h:1027</div></div>
+<div class="ttc" id="uthash_8h_html_a0b39a5cf1d6c05c43bd8530db2ec908c"><div class="ttname"><a href="uthash_8h.html#a0b39a5cf1d6c05c43bd8530db2ec908c">HASH_INITIAL_NUM_BUCKETS_LOG2</a></div><div class="ttdeci">#define HASH_INITIAL_NUM_BUCKETS_LOG2</div><div class="ttdef"><b>Definition:</b> uthash.h:106</div></div>
 <div class="ttc" id="uthash_8h_html_a861013aff36c0448f1888a2b0b5836d8"><div class="ttname"><a href="uthash_8h.html#a861013aff36c0448f1888a2b0b5836d8">uthash_malloc</a></div><div class="ttdeci">#define uthash_malloc(sz)</div><div class="ttdef"><b>Definition:</b> uthash.h:85</div></div>
-<div class="ttc" id="uthash_8h_html_a254f427772a1fe7a2480a8302af8f8b8"><div class="ttname"><a href="uthash_8h.html#a254f427772a1fe7a2480a8302af8f8b8">HASH_BLOOM_MAKE</a></div><div class="ttdeci">#define HASH_BLOOM_MAKE(tbl)</div><div class="ttdef"><b>Definition:</b> uthash.h:146</div></div>
-<div class="ttc" id="struct_u_t__hash__table_html"><div class="ttname"><a href="struct_u_t__hash__table.html">UT_hash_table</a></div><div class="ttdef"><b>Definition:</b> uthash.h:922</div></div>
+<div class="ttc" id="uthash_8h_html_a254f427772a1fe7a2480a8302af8f8b8"><div class="ttname"><a href="uthash_8h.html#a254f427772a1fe7a2480a8302af8f8b8">HASH_BLOOM_MAKE</a></div><div class="ttdeci">#define HASH_BLOOM_MAKE(tbl)</div><div class="ttdef"><b>Definition:</b> uthash.h:165</div></div>
+<div class="ttc" id="struct_u_t__hash__table_html"><div class="ttname"><a href="struct_u_t__hash__table.html">UT_hash_table</a></div><div class="ttdef"><b>Definition:</b> uthash.h:1030</div></div>
 <div class="ttc" id="uthash_8h_html_a03b52301b0ed976b6981ef33613320c1"><div class="ttname"><a href="uthash_8h.html#a03b52301b0ed976b6981ef33613320c1">uthash_fatal</a></div><div class="ttdeci">#define uthash_fatal(msg)</div><div class="ttdef"><b>Definition:</b> uthash.h:82</div></div>
-<div class="ttc" id="struct_u_t__hash__bucket_html"><div class="ttname"><a href="struct_u_t__hash__bucket.html">UT_hash_bucket</a></div><div class="ttdef"><b>Definition:</b> uthash.h:898</div></div>
+<div class="ttc" id="struct_u_t__hash__bucket_html"><div class="ttname"><a href="struct_u_t__hash__bucket.html">UT_hash_bucket</a></div><div class="ttdef"><b>Definition:</b> uthash.h:1006</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="abc7040b698211c1993441fb4165fa0b4"></a>
+<a class="anchor" id="a22c77754346c75bfafd872d2d49c6dc7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1614,19 +2006,7 @@ Typedefs</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">num_bkts, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">hashv, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">bkt&#160;</td>
+          <td class="paramname">hashv&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1647,11 +2027,10 @@ Typedefs</h2></td></tr>
 <div class="line"><a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">  hashv</a> += (<a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">hashv</a> &lt;&lt; 3);                                                         <a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">\</a></div>
 <div class="line"><a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">  hashv</a> ^= (<a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">hashv</a> &gt;&gt; 11);                                                        <a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">\</a></div>
 <div class="line"><a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">  hashv</a> += (<a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">hashv</a> &lt;&lt; 15);                                                        \</div>
-<div class="line">  bkt = <a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">hashv</a> &amp; (num_bkts-1U);                                                   \</div>
-<div class="line">} <span class="keywordflow">while</span>(0)</div>
-<div class="ttc" id="struct_u_t__hash__handle_html_ab5c000aec752f2206131e183daf5efbf"><div class="ttname"><a href="struct_u_t__hash__handle.html#ab5c000aec752f2206131e183daf5efbf">UT_hash_handle::key</a></div><div class="ttdeci">void * key</div><div class="ttdef"><b>Definition:</b> uthash.h:961</div></div>
-<div class="ttc" id="struct_u_t__hash__handle_html_a4563ea2b1ae1597aa9fd62e005d447b4"><div class="ttname"><a href="struct_u_t__hash__handle.html#a4563ea2b1ae1597aa9fd62e005d447b4">UT_hash_handle::keylen</a></div><div class="ttdeci">unsigned keylen</div><div class="ttdef"><b>Definition:</b> uthash.h:962</div></div>
-<div class="ttc" id="struct_u_t__hash__handle_html_ae73531e09ac884600d96a71ad9afbfa4"><div class="ttname"><a href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">UT_hash_handle::hashv</a></div><div class="ttdeci">unsigned hashv</div><div class="ttdef"><b>Definition:</b> uthash.h:963</div></div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="struct_u_t__hash__handle_html_ab5c000aec752f2206131e183daf5efbf"><div class="ttname"><a href="struct_u_t__hash__handle.html#ab5c000aec752f2206131e183daf5efbf">UT_hash_handle::key</a></div><div class="ttdeci">void * key</div><div class="ttdef"><b>Definition:</b> uthash.h:1069</div></div>
+<div class="ttc" id="struct_u_t__hash__handle_html_a4563ea2b1ae1597aa9fd62e005d447b4"><div class="ttname"><a href="struct_u_t__hash__handle.html#a4563ea2b1ae1597aa9fd62e005d447b4">UT_hash_handle::keylen</a></div><div class="ttdeci">unsigned keylen</div><div class="ttdef"><b>Definition:</b> uthash.h:1070</div></div>
+<div class="ttc" id="struct_u_t__hash__handle_html_ae73531e09ac884600d96a71ad9afbfa4"><div class="ttname"><a href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">UT_hash_handle::hashv</a></div><div class="ttdeci">unsigned hashv</div><div class="ttdef"><b>Definition:</b> uthash.h:1071</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1684,9 +2063,9 @@ Typedefs</h2></td></tr>
 <div class="line">           sizeof(<a class="code" href="struct_u_t__hash__table.html">UT_hash_table</a>)                                   +             \</div>
 <div class="line">           (<a class="code" href="uthash_8h.html#a81f88a18c0837c77f40926074e7811db">HASH_BLOOM_BYTELEN</a>))) : 0U)</div>
 <div class="ttc" id="uthash_8h_html_a3ba3da0ca59a082c35a0d6b52e803ddf"><div class="ttname"><a href="uthash_8h.html#a3ba3da0ca59a082c35a0d6b52e803ddf">UT_hash_bucket</a></div><div class="ttdeci">struct UT_hash_bucket UT_hash_bucket</div></div>
-<div class="ttc" id="struct_u_t__hash__table_html"><div class="ttname"><a href="struct_u_t__hash__table.html">UT_hash_table</a></div><div class="ttdef"><b>Definition:</b> uthash.h:922</div></div>
-<div class="ttc" id="uthash_8h_html_a81f88a18c0837c77f40926074e7811db"><div class="ttname"><a href="uthash_8h.html#a81f88a18c0837c77f40926074e7811db">HASH_BLOOM_BYTELEN</a></div><div class="ttdeci">#define HASH_BLOOM_BYTELEN</div><div class="ttdef"><b>Definition:</b> uthash.h:150</div></div>
-<div class="ttc" id="struct_u_t__hash__handle_html"><div class="ttname"><a href="struct_u_t__hash__handle.html">UT_hash_handle</a></div><div class="ttdef"><b>Definition:</b> uthash.h:955</div></div>
+<div class="ttc" id="struct_u_t__hash__table_html"><div class="ttname"><a href="struct_u_t__hash__table.html">UT_hash_table</a></div><div class="ttdef"><b>Definition:</b> uthash.h:1030</div></div>
+<div class="ttc" id="uthash_8h_html_a81f88a18c0837c77f40926074e7811db"><div class="ttname"><a href="uthash_8h.html#a81f88a18c0837c77f40926074e7811db">HASH_BLOOM_BYTELEN</a></div><div class="ttdeci">#define HASH_BLOOM_BYTELEN</div><div class="ttdef"><b>Definition:</b> uthash.h:169</div></div>
+<div class="ttc" id="struct_u_t__hash__handle_html"><div class="ttname"><a href="struct_u_t__hash__handle.html">UT_hash_handle</a></div><div class="ttdef"><b>Definition:</b> uthash.h:1063</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1738,16 +2117,215 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                             \</div>
-<div class="line">  replaced=NULL;                                                                 <a class="code" href="uthash_8h.html#ad4a1cd39c3044936c0e49d3f372c9dbf">\</a></div>
-<div class="line"><a class="code" href="uthash_8h.html#ad4a1cd39c3044936c0e49d3f372c9dbf">  HASH_FIND</a>(hh,head,&amp;((add)-&gt;fieldname),keylen_in,replaced);                     \</div>
-<div class="line">  if (replaced!=NULL) {                                                          <a class="code" href="uthash_8h.html#a3f83117e1108d63844a58d2d79c3b980">\</a></div>
-<div class="line"><a class="code" href="uthash_8h.html#a3f83117e1108d63844a58d2d79c3b980">     HASH_DELETE</a>(hh,head,replaced);                                              \</div>
-<div class="line">  }                                                                              <a class="code" href="uthash_8h.html#aaf01358e257c8d838eb5e4b189f0c399">\</a></div>
-<div class="line"><a class="code" href="uthash_8h.html#aaf01358e257c8d838eb5e4b189f0c399">  HASH_ADD</a>(hh,head,fieldname,keylen_in,add);                                     \</div>
-<div class="line">} <span class="keywordflow">while</span>(0)</div>
-<div class="ttc" id="uthash_8h_html_a3f83117e1108d63844a58d2d79c3b980"><div class="ttname"><a href="uthash_8h.html#a3f83117e1108d63844a58d2d79c3b980">HASH_DELETE</a></div><div class="ttdeci">#define HASH_DELETE(hh, head, delptr)</div><div class="ttdef"><b>Definition:</b> uthash.h:227</div></div>
-<div class="ttc" id="uthash_8h_html_aaf01358e257c8d838eb5e4b189f0c399"><div class="ttname"><a href="uthash_8h.html#aaf01358e257c8d838eb5e4b189f0c399">HASH_ADD</a></div><div class="ttdeci">#define HASH_ADD(hh, head, fieldname, keylen_in, add)</div><div class="ttdef"><b>Definition:</b> uthash.h:172</div></div>
-<div class="ttc" id="uthash_8h_html_ad4a1cd39c3044936c0e49d3f372c9dbf"><div class="ttname"><a href="uthash_8h.html#ad4a1cd39c3044936c0e49d3f372c9dbf">HASH_FIND</a></div><div class="ttdeci">#define HASH_FIND(hh, head, keyptr, keylen, out)</div><div class="ttdef"><b>Definition:</b> uthash.h:106</div></div>
+<div class="line">  unsigned _hr_hashv;                                                            <a class="code" href="uthash_8h.html#a5bc1c6438f5d6fc56b8dcbf4bbe50271">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#a5bc1c6438f5d6fc56b8dcbf4bbe50271">  HASH_VALUE</a>(&amp;((add)-&gt;fieldname), keylen_in, _hr_hashv);                         <a class="code" href="uthash_8h.html#ab7fc2175a455ed8e8351737b4f8b2842">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#ab7fc2175a455ed8e8351737b4f8b2842">  HASH_REPLACE_BYHASHVALUE</a>(hh, head, fieldname, keylen_in, _hr_hashv, add, replaced); \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="uthash_8h_html_ab7fc2175a455ed8e8351737b4f8b2842"><div class="ttname"><a href="uthash_8h.html#ab7fc2175a455ed8e8351737b4f8b2842">HASH_REPLACE_BYHASHVALUE</a></div><div class="ttdeci">#define HASH_REPLACE_BYHASHVALUE(hh, head, fieldname, keylen_in, hashval, add, replaced)</div><div class="ttdef"><b>Definition:</b> uthash.h:201</div></div>
+<div class="ttc" id="uthash_8h_html_a5bc1c6438f5d6fc56b8dcbf4bbe50271"><div class="ttname"><a href="uthash_8h.html#a5bc1c6438f5d6fc56b8dcbf4bbe50271">HASH_VALUE</a></div><div class="ttdeci">#define HASH_VALUE(keyptr, keylen, hashv)</div><div class="ttdef"><b>Definition:</b> uthash.h:114</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ab7fc2175a455ed8e8351737b4f8b2842"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HASH_REPLACE_BYHASHVALUE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hh, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">head, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">fieldname, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">keylen_in, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hashval, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">add, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">replaced&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                             \</div>
+<div class="line">  (replaced) = NULL;                                                             <a class="code" href="uthash_8h.html#afc2b27fc2a6b13aece881528f45de693">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#afc2b27fc2a6b13aece881528f45de693">  HASH_FIND_BYHASHVALUE</a>(hh, head, &amp;((add)-&gt;fieldname), keylen_in, hashval, replaced); \</div>
+<div class="line">  if (replaced) {                                                                <a class="code" href="uthash_8h.html#a3f83117e1108d63844a58d2d79c3b980">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#a3f83117e1108d63844a58d2d79c3b980">     HASH_DELETE</a>(hh, head, replaced);                                            \</div>
+<div class="line">  }                                                                              <a class="code" href="uthash_8h.html#aa0e4d9dcfb23a6616c6439aa0d4a3f4d">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#aa0e4d9dcfb23a6616c6439aa0d4a3f4d">  HASH_ADD_KEYPTR_BYHASHVALUE</a>(hh, head, &amp;((add)-&gt;fieldname), keylen_in, hashval, add); \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="uthash_8h_html_a3f83117e1108d63844a58d2d79c3b980"><div class="ttname"><a href="uthash_8h.html#a3f83117e1108d63844a58d2d79c3b980">HASH_DELETE</a></div><div class="ttdeci">#define HASH_DELETE(hh, head, delptr)</div><div class="ttdef"><b>Definition:</b> uthash.h:337</div></div>
+<div class="ttc" id="uthash_8h_html_afc2b27fc2a6b13aece881528f45de693"><div class="ttname"><a href="uthash_8h.html#afc2b27fc2a6b13aece881528f45de693">HASH_FIND_BYHASHVALUE</a></div><div class="ttdeci">#define HASH_FIND_BYHASHVALUE(hh, head, keyptr, keylen, hashval, out)</div><div class="ttdef"><b>Definition:</b> uthash.h:119</div></div>
+<div class="ttc" id="uthash_8h_html_aa0e4d9dcfb23a6616c6439aa0d4a3f4d"><div class="ttname"><a href="uthash_8h.html#aa0e4d9dcfb23a6616c6439aa0d4a3f4d">HASH_ADD_KEYPTR_BYHASHVALUE</a></div><div class="ttdeci">#define HASH_ADD_KEYPTR_BYHASHVALUE(hh, head, keyptr, keylen_in, hashval, add)</div><div class="ttdef"><b>Definition:</b> uthash.h:284</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa0104b44f5a911bfda7fd9f939e1594f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HASH_REPLACE_BYHASHVALUE_INORDER</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hh, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">head, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">fieldname, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">keylen_in, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hashval, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">add, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">replaced, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">cmpfcn&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                             \</div>
+<div class="line">  (replaced) = NULL;                                                             <a class="code" href="uthash_8h.html#afc2b27fc2a6b13aece881528f45de693">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#afc2b27fc2a6b13aece881528f45de693">  HASH_FIND_BYHASHVALUE</a>(hh, head, &amp;((add)-&gt;fieldname), keylen_in, hashval, replaced); \</div>
+<div class="line">  if (replaced) {                                                                <a class="code" href="uthash_8h.html#a3f83117e1108d63844a58d2d79c3b980">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#a3f83117e1108d63844a58d2d79c3b980">     HASH_DELETE</a>(hh, head, replaced);                                            \</div>
+<div class="line">  }                                                                              <a class="code" href="uthash_8h.html#aae1fa76ff12cbf5328bcf4a2375d055f">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#aae1fa76ff12cbf5328bcf4a2375d055f">  HASH_ADD_KEYPTR_BYHASHVALUE_INORDER</a>(hh, head, &amp;((add)-&gt;fieldname), keylen_in, hashval, add, cmpfcn); \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="uthash_8h_html_a3f83117e1108d63844a58d2d79c3b980"><div class="ttname"><a href="uthash_8h.html#a3f83117e1108d63844a58d2d79c3b980">HASH_DELETE</a></div><div class="ttdeci">#define HASH_DELETE(hh, head, delptr)</div><div class="ttdef"><b>Definition:</b> uthash.h:337</div></div>
+<div class="ttc" id="uthash_8h_html_afc2b27fc2a6b13aece881528f45de693"><div class="ttname"><a href="uthash_8h.html#afc2b27fc2a6b13aece881528f45de693">HASH_FIND_BYHASHVALUE</a></div><div class="ttdeci">#define HASH_FIND_BYHASHVALUE(hh, head, keyptr, keylen, hashval, out)</div><div class="ttdef"><b>Definition:</b> uthash.h:119</div></div>
+<div class="ttc" id="uthash_8h_html_aae1fa76ff12cbf5328bcf4a2375d055f"><div class="ttname"><a href="uthash_8h.html#aae1fa76ff12cbf5328bcf4a2375d055f">HASH_ADD_KEYPTR_BYHASHVALUE_INORDER</a></div><div class="ttdeci">#define HASH_ADD_KEYPTR_BYHASHVALUE_INORDER(hh, head, keyptr, keylen_in, hashval, add, cmpfcn)</div><div class="ttdef"><b>Definition:</b> uthash.h:233</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa6d7a872d8855c9b8bf55d62e8eb0430"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HASH_REPLACE_INORDER</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hh, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">head, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">fieldname, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">keylen_in, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">add, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">replaced, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">cmpfcn&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                             \</div>
+<div class="line">  unsigned _hr_hashv;                                                            <a class="code" href="uthash_8h.html#a5bc1c6438f5d6fc56b8dcbf4bbe50271">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#a5bc1c6438f5d6fc56b8dcbf4bbe50271">  HASH_VALUE</a>(&amp;((add)-&gt;fieldname), keylen_in, _hr_hashv);                         <a class="code" href="uthash_8h.html#aa0104b44f5a911bfda7fd9f939e1594f">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#aa0104b44f5a911bfda7fd9f939e1594f">  HASH_REPLACE_BYHASHVALUE_INORDER</a>(hh, head, fieldname, keylen_in, _hr_hashv, add, replaced, cmpfcn); \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="uthash_8h_html_aa0104b44f5a911bfda7fd9f939e1594f"><div class="ttname"><a href="uthash_8h.html#aa0104b44f5a911bfda7fd9f939e1594f">HASH_REPLACE_BYHASHVALUE_INORDER</a></div><div class="ttdeci">#define HASH_REPLACE_BYHASHVALUE_INORDER(hh, head, fieldname, keylen_in, hashval, add, replaced, cmpfcn)</div><div class="ttdef"><b>Definition:</b> uthash.h:191</div></div>
+<div class="ttc" id="uthash_8h_html_a5bc1c6438f5d6fc56b8dcbf4bbe50271"><div class="ttname"><a href="uthash_8h.html#a5bc1c6438f5d6fc56b8dcbf4bbe50271">HASH_VALUE</a></div><div class="ttdeci">#define HASH_VALUE(keyptr, keylen, hashv)</div><div class="ttdef"><b>Definition:</b> uthash.h:114</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1858,14 +2436,14 @@ Typedefs</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="uthash_8h.html#a9897aa8b1ace582e7bbdef05f21cbc54">HASH_REPLACE</a>(hh,head,strfield[0],(unsigned)strlen(add-&gt;strfield),add,replaced)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="uthash_8h.html#a9897aa8b1ace582e7bbdef05f21cbc54">HASH_REPLACE</a>(hh,head,strfield[0],(unsigned)<a class="el" href="uthash_8h.html#aa14634cb1f894d48256362bae7239be6">uthash_strlen</a>(add-&gt;strfield),add,replaced)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="aa4cb140b45415e7bf57237525388af79"></a>
+<a class="anchor" id="ae8cf38dbd44a475eb0fa4cdb9988e13a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1885,19 +2463,7 @@ Typedefs</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">num_bkts, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">hashv, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">bkt&#160;</td>
+          <td class="paramname">hashv&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1913,11 +2479,10 @@ Typedefs</h2></td></tr>
 <div class="line">  for(_sx_i=0; _sx_i &lt; <a class="code" href="struct_u_t__hash__handle.html#a4563ea2b1ae1597aa9fd62e005d447b4">keylen</a>; _sx_i++) {                                        <a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">\</a></div>
 <div class="line"><a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">      hashv</a> ^= (hashv &lt;&lt; 5) + (hashv &gt;&gt; 2) + _hs_key[_sx_i];                     \</div>
 <div class="line">  }                                                                              \</div>
-<div class="line">  bkt = <a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">hashv</a> &amp; (num_bkts-1U);                                                   \</div>
 <div class="line">} <span class="keywordflow">while</span> (0)</div>
-<div class="ttc" id="struct_u_t__hash__handle_html_ab5c000aec752f2206131e183daf5efbf"><div class="ttname"><a href="struct_u_t__hash__handle.html#ab5c000aec752f2206131e183daf5efbf">UT_hash_handle::key</a></div><div class="ttdeci">void * key</div><div class="ttdef"><b>Definition:</b> uthash.h:961</div></div>
-<div class="ttc" id="struct_u_t__hash__handle_html_a4563ea2b1ae1597aa9fd62e005d447b4"><div class="ttname"><a href="struct_u_t__hash__handle.html#a4563ea2b1ae1597aa9fd62e005d447b4">UT_hash_handle::keylen</a></div><div class="ttdeci">unsigned keylen</div><div class="ttdef"><b>Definition:</b> uthash.h:962</div></div>
-<div class="ttc" id="struct_u_t__hash__handle_html_ae73531e09ac884600d96a71ad9afbfa4"><div class="ttname"><a href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">UT_hash_handle::hashv</a></div><div class="ttdeci">unsigned hashv</div><div class="ttdef"><b>Definition:</b> uthash.h:963</div></div>
+<div class="ttc" id="struct_u_t__hash__handle_html_ab5c000aec752f2206131e183daf5efbf"><div class="ttname"><a href="struct_u_t__hash__handle.html#ab5c000aec752f2206131e183daf5efbf">UT_hash_handle::key</a></div><div class="ttdeci">void * key</div><div class="ttdef"><b>Definition:</b> uthash.h:1069</div></div>
+<div class="ttc" id="struct_u_t__hash__handle_html_a4563ea2b1ae1597aa9fd62e005d447b4"><div class="ttname"><a href="struct_u_t__hash__handle.html#a4563ea2b1ae1597aa9fd62e005d447b4">UT_hash_handle::keylen</a></div><div class="ttdeci">unsigned keylen</div><div class="ttdef"><b>Definition:</b> uthash.h:1070</div></div>
+<div class="ttc" id="struct_u_t__hash__handle_html_ae73531e09ac884600d96a71ad9afbfa4"><div class="ttname"><a href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">UT_hash_handle::hashv</a></div><div class="ttdeci">unsigned hashv</div><div class="ttdef"><b>Definition:</b> uthash.h:1071</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1965,7 +2530,7 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab595698a74642684dace0dfa47dab445"></a>
+<a class="anchor" id="a91480d6a21f082d49d20faeee0295cbb"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1985,19 +2550,7 @@ Typedefs</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">num_bkts, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">hashv, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">bkt&#160;</td>
+          <td class="paramname">hashv&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2110,9 +2663,73 @@ Typedefs</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                             \</div>
 <div class="line">  bkt = ((<a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">hashv</a>) &amp; ((num_bkts) - 1U));                                           \</div>
-<div class="line">} <span class="keywordflow">while</span>(0)</div>
-<div class="ttc" id="struct_u_t__hash__handle_html_ae73531e09ac884600d96a71ad9afbfa4"><div class="ttname"><a href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">UT_hash_handle::hashv</a></div><div class="ttdeci">unsigned hashv</div><div class="ttdef"><b>Definition:</b> uthash.h:963</div></div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="struct_u_t__hash__handle_html_ae73531e09ac884600d96a71ad9afbfa4"><div class="ttname"><a href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">UT_hash_handle::hashv</a></div><div class="ttdeci">unsigned hashv</div><div class="ttdef"><b>Definition:</b> uthash.h:1071</div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a5bc1c6438f5d6fc56b8dcbf4bbe50271"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HASH_VALUE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">keyptr, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">keylen, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hashv&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                             <a class="code" href="uthash_8h.html#abd3356419b386c379116393700a751d3">\</a></div>
+<div class="line"><a class="code" href="uthash_8h.html#abd3356419b386c379116393700a751d3">  HASH_FCN</a>(keyptr, <a class="code" href="struct_u_t__hash__handle.html#a4563ea2b1ae1597aa9fd62e005d447b4">keylen</a>, <a class="code" href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">hashv</a>);                                               \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="uthash_8h_html_abd3356419b386c379116393700a751d3"><div class="ttname"><a href="uthash_8h.html#abd3356419b386c379116393700a751d3">HASH_FCN</a></div><div class="ttdeci">#define HASH_FCN</div><div class="ttdef"><b>Definition:</b> uthash.h:473</div></div>
+<div class="ttc" id="struct_u_t__hash__handle_html_a4563ea2b1ae1597aa9fd62e005d447b4"><div class="ttname"><a href="struct_u_t__hash__handle.html#a4563ea2b1ae1597aa9fd62e005d447b4">UT_hash_handle::keylen</a></div><div class="ttdeci">unsigned keylen</div><div class="ttdef"><b>Definition:</b> uthash.h:1070</div></div>
+<div class="ttc" id="struct_u_t__hash__handle_html_ae73531e09ac884600d96a71ad9afbfa4"><div class="ttname"><a href="struct_u_t__hash__handle.html#ae73531e09ac884600d96a71ad9afbfa4">UT_hash_handle::hashv</a></div><div class="ttdeci">unsigned hashv</div><div class="ttdef"><b>Definition:</b> uthash.h:1071</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a46261e43585c404cccf8ab0f5c6d271e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HH_FROM_ELMT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">tbl, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">elp&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((<a class="el" href="struct_u_t__hash__handle.html">UT_hash_handle</a> *)(((char*)(elp)) + ((tbl)-&gt;hho)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <a class="anchor" id="a86ea78714da520989a6f7a764b4d71b4"></a>
@@ -2189,6 +2806,38 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a8ca9a884b81d487034b57f87d2f97fa4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define uthash_memcmp</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;memcmp(a,b,n)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a7cc237d8f87de3836b5390856cfc5c86"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2205,12 +2854,28 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aa14634cb1f894d48256362bae7239be6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define uthash_strlen</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">s</td><td>)</td>
+          <td>&#160;&#160;&#160;strlen(s)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aa56cef9cb86dc1f4b5d27ee3a691077e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define UTHASH_VERSION&#160;&#160;&#160;1.9.9</td>
+          <td class="memname">#define UTHASH_VERSION&#160;&#160;&#160;2.0.1</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2284,7 +2949,7 @@ Typedefs</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="uthash_8h.html">uthash.h</a></li>
-    <li class="footer">Generated on Thu Oct 20 2016 16:01:37 for modbusd by
+    <li class="footer">Generated on Thu Oct 20 2016 17:50:08 for modbusd by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
