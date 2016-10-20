@@ -857,44 +857,46 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="keywordtype">char</span> * tid = <a class="code" href="json_8c.html#a91211e998de80fee0e090ccd57271773">json_get_char</a> (req, <span class="stringliteral">&quot;tid&quot;</span>);</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <a class="code" href="structc_j_s_o_n.html">cJSON</a> * data = NULL;</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="keywordtype">int</span> ret = 0;</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <span class="keywordflow">switch</span> (fc)</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    {</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <span class="keywordflow">case</span> 15:</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;            <a class="code" href="uthash_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> bits[len];  <span class="comment">// FC15, VLAs</span></div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            data = <a class="code" href="c_j_s_o_n_8c.html#aba766c9d2c20996e323522cbf2ba46c6">cJSON_GetObjectItem</a> (req, <span class="stringliteral">&quot;data&quot;</span>);</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0 ; i &lt; <a class="code" href="c_j_s_o_n_8c.html#adb5c049d3211599c90cd5a3d5e68d854">cJSON_GetArraySize</a> (data) ; i++)</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            {</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                <a class="code" href="uthash_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> subitem = <a class="code" href="c_j_s_o_n_8c.html#ac48335f22f743aff913991d809e0d620">cJSON_GetArrayItem</a> (data, i)-&gt;<a class="code" href="structc_j_s_o_n.html#af69506d34291edd0be9fa15660ac01ec">valueint</a>;</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                bits[i] = subitem;</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                <a class="code" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a>(<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;[%d]=%d&quot;</span>, i, bits[i]);</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            }</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            ret = modbus_write_bits (handle-&gt;<a class="code" href="structmbtcp__handle__s.html#a65b629df22e3e4397451ce47bde4eba6">ctx</a>, addr, len, bits);</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        <span class="keywordflow">case</span> 16:</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;            uint16_t regs[len]; <span class="comment">// FC16, VLAs</span></div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;            data = <a class="code" href="c_j_s_o_n_8c.html#aba766c9d2c20996e323522cbf2ba46c6">cJSON_GetObjectItem</a> (req, <span class="stringliteral">&quot;data&quot;</span>);</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0 ; i &lt; <a class="code" href="c_j_s_o_n_8c.html#adb5c049d3211599c90cd5a3d5e68d854">cJSON_GetArraySize</a> (data) ; i++)</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            {</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                uint16_t subitem = <a class="code" href="c_j_s_o_n_8c.html#ac48335f22f743aff913991d809e0d620">cJSON_GetArrayItem</a> (data, i)-&gt;<a class="code" href="structc_j_s_o_n.html#af69506d34291edd0be9fa15660ac01ec">valueint</a>;</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                regs[i] = subitem;</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                <a class="code" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a>(<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;[%d]=%d&quot;</span>, i, regs[i]);</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            }</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            ret = modbus_write_registers (handle-&gt;<a class="code" href="structmbtcp__handle__s.html#a65b629df22e3e4397451ce47bde4eba6">ctx</a>, addr, len, regs);</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="mb_8c.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str</a> (tid, <span class="stringliteral">&quot;Invalid function code&quot;</span>);</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    }</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="keywordflow">if</span> (ret &lt; 0) </div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    {</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="mb_8c.html#a718bd9627e24689dccfe3e9a32477132">set_modbus_fail_resp_str_with_errno</a> (tid, handle, errno);</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    } </div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    {</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="mb_8c.html#a96c8720b01478f38a1ec04ba5757dc3a">set_modbus_success_resp_str</a> (tid);         </div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    }</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;}<div class="ttc" id="mb_8c_html_a35b9986ec08788904914d9c01167d9f5"><div class="ttname"><a href="mb_8c.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str</a></div><div class="ttdeci">char * set_modbus_fail_resp_str(char *tid, const char *reason)</div><div class="ttdoc">Set modbusd fail response string. </div><div class="ttdef"><b>Definition:</b> mb.c:40</div></div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <a class="code" href="uthash_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> bits[len];  <span class="comment">// FC15, VLAs</span></div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    uint16_t regs[len]; <span class="comment">// FC16, VLAs</span></div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <span class="keywordflow">switch</span> (fc)</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    {</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        <span class="keywordflow">case</span> 15:</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;            </div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            data = <a class="code" href="c_j_s_o_n_8c.html#aba766c9d2c20996e323522cbf2ba46c6">cJSON_GetObjectItem</a> (req, <span class="stringliteral">&quot;data&quot;</span>);</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0 ; i &lt; <a class="code" href="c_j_s_o_n_8c.html#adb5c049d3211599c90cd5a3d5e68d854">cJSON_GetArraySize</a> (data) ; i++)</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;            {</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                <a class="code" href="uthash_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> subitem = <a class="code" href="c_j_s_o_n_8c.html#ac48335f22f743aff913991d809e0d620">cJSON_GetArrayItem</a> (data, i)-&gt;<a class="code" href="structc_j_s_o_n.html#af69506d34291edd0be9fa15660ac01ec">valueint</a>;</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                bits[i] = subitem;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                <a class="code" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a>(<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;[%d]=%d&quot;</span>, i, bits[i]);</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            }</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;            ret = modbus_write_bits (handle-&gt;<a class="code" href="structmbtcp__handle__s.html#a65b629df22e3e4397451ce47bde4eba6">ctx</a>, addr, len, bits);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <span class="keywordflow">case</span> 16:</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            </div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            data = <a class="code" href="c_j_s_o_n_8c.html#aba766c9d2c20996e323522cbf2ba46c6">cJSON_GetObjectItem</a> (req, <span class="stringliteral">&quot;data&quot;</span>);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0 ; i &lt; <a class="code" href="c_j_s_o_n_8c.html#adb5c049d3211599c90cd5a3d5e68d854">cJSON_GetArraySize</a> (data) ; i++)</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;            {</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                uint16_t subitem = <a class="code" href="c_j_s_o_n_8c.html#ac48335f22f743aff913991d809e0d620">cJSON_GetArrayItem</a> (data, i)-&gt;<a class="code" href="structc_j_s_o_n.html#af69506d34291edd0be9fa15660ac01ec">valueint</a>;</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                regs[i] = subitem;</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                <a class="code" href="log_8h.html#a19057be3f2da2871a0eb191602d01555">LOG</a>(<a class="code" href="mbtcp_8c.html#a56925e79e16dff74446ab63f976df8b2">enable_syslog</a>, <span class="stringliteral">&quot;[%d]=%d&quot;</span>, i, regs[i]);</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            }</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            ret = modbus_write_registers (handle-&gt;<a class="code" href="structmbtcp__handle__s.html#a65b629df22e3e4397451ce47bde4eba6">ctx</a>, addr, len, regs);</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="mb_8c.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str</a> (tid, <span class="stringliteral">&quot;Invalid function code&quot;</span>);</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    }</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <span class="keywordflow">if</span> (ret &lt; 0) </div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    {</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="mb_8c.html#a718bd9627e24689dccfe3e9a32477132">set_modbus_fail_resp_str_with_errno</a> (tid, handle, errno);</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    } </div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    {</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="mb_8c.html#a96c8720b01478f38a1ec04ba5757dc3a">set_modbus_success_resp_str</a> (tid);         </div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    }</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;}<div class="ttc" id="mb_8c_html_a35b9986ec08788904914d9c01167d9f5"><div class="ttname"><a href="mb_8c.html#a35b9986ec08788904914d9c01167d9f5">set_modbus_fail_resp_str</a></div><div class="ttdeci">char * set_modbus_fail_resp_str(char *tid, const char *reason)</div><div class="ttdoc">Set modbusd fail response string. </div><div class="ttdef"><b>Definition:</b> mb.c:40</div></div>
 <div class="ttc" id="structmbtcp__handle__s_html_a65b629df22e3e4397451ce47bde4eba6"><div class="ttname"><a href="structmbtcp__handle__s.html#a65b629df22e3e4397451ce47bde4eba6">mbtcp_handle_s::ctx</a></div><div class="ttdeci">modbus_t * ctx</div><div class="ttdoc">is connect to modbus slave? </div><div class="ttdef"><b>Definition:</b> mb.h:47</div></div>
 <div class="ttc" id="c_j_s_o_n_8c_html_aba766c9d2c20996e323522cbf2ba46c6"><div class="ttname"><a href="c_j_s_o_n_8c.html#aba766c9d2c20996e323522cbf2ba46c6">cJSON_GetObjectItem</a></div><div class="ttdeci">cJSON * cJSON_GetObjectItem(cJSON *object, const char *string)</div><div class="ttdef"><b>Definition:</b> cJSON.c:666</div></div>
 <div class="ttc" id="log_8h_html_a89818c7fd76794ec7f5ae7ed337c7f87"><div class="ttname"><a href="log_8h.html#a89818c7fd76794ec7f5ae7ed337c7f87">BEGIN</a></div><div class="ttdeci">#define BEGIN(flag)</div><div class="ttdef"><b>Definition:</b> log.h:49</div></div>
@@ -1675,7 +1677,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="mb_8h.html">mb.h</a></li>
-    <li class="footer">Generated on Thu Oct 20 2016 15:43:38 for modbusd by
+    <li class="footer">Generated on Thu Oct 20 2016 16:01:37 for modbusd by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
