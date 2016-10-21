@@ -1,8 +1,8 @@
 <map id="json_get_int" name="json_get_int">
-<area shape="rect" id="node3" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="355,121,405,150"/>
-<area shape="rect" id="node5" href="$mbtcp_8c.html#a9ebfe4b9c143c562a97772ef570552a9" title="Generic mbtcp command handler. " alt="" coords="157,41,296,70"/>
-<area shape="rect" id="node8" href="$mbtcp_8c.html#acecd6c2e7e6f05dbcc444f1bcd9eaf8c" title="Help function. " alt="" coords="151,94,303,124"/>
-<area shape="rect" id="node11" href="$mbtcp_8c.html#a8b4d495a60a2c8b91e46539b37695651" title="Help function. " alt="" coords="159,148,295,177"/>
-<area shape="rect" id="node14" href="$mbtcp_8c.html#a22c0b3686a76ccab2a4f4b43d3cf046d" title="Help function. " alt="" coords="157,201,296,230"/>
-<area shape="rect" id="node17" href="$mbtcp_8c.html#ac950de4d0fcf9c697570bd0e30a71c48" title="Help function. " alt="" coords="148,254,305,284"/>
+<area shape="rect" id="node3" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="365,123,416,152"/>
+<area shape="rect" id="node5" href="$mbtcp_8c.html#a9ebfe4b9c143c562a97772ef570552a9" title="Generic mbtcp command handler. " alt="" coords="163,43,301,72"/>
+<area shape="rect" id="node8" href="$mbtcp_8c.html#a79b104572e8c10d160de3354ffbff2c9" title="Help function. " alt="" coords="147,96,317,125"/>
+<area shape="rect" id="node11" href="$mbtcp_8c.html#a53a38b4e4b380edc8e4406d34e1a208c" title="Help function. " alt="" coords="155,149,309,179"/>
+<area shape="rect" id="node14" href="$mbtcp_8c.html#a2c1fa428ab60a549b0da8b1ce2865245" title="Help function. " alt="" coords="153,203,311,232"/>
+<area shape="rect" id="node17" href="$mbtcp_8c.html#abf0b9bedd137012cd306ab27340a9080" title="Help function. " alt="" coords="165,255,299,302"/>
 </map>

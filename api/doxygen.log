@@ -255,22 +255,19 @@ Generating call/home/travis/build/taka-wang/modbusd/json.h:50: warning: argument
 /home/travis/build/taka-wang/modbusd/json.h:50: warning: The following parameters of json_set_double(cJSON *inJson, const char *key, double value) are not documented:
   parameter 'value'
 /home/travis/build/taka-wang/modbusd/mb.h:213: warning: Found unknown command `\fc'
-/home/travis/build/taka-wang/modbusd/mb.h:211: warning: The following parameters of mbtcp_multi_write_req(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
+/home/travis/build/taka-wang/modbusd/mb.h:211: warning: The following parameters of mbtcp_multi_write_req_fn(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
   parameter 'fc'
 /home/travis/build/taka-wang/modbusd/mb.h:183: warning: Found unknown command `\fc'
-/home/travis/build/taka-wang/modbusd/mb.h:181: warning: The following parameters of mbtcp_read_bit_req(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
+/home/travis/build/taka-wang/modbusd/mb.h:181: warning: The following parameters of mbtcp_read_bit_req_fn(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
   parameter 'fc'
 /home/travis/build/taka-wang/modbusd/mb.h:193: warning: Found unknown command `\fc'
-/home/travis/build/taka-wang/modbusd/mb.h:191: warning: The following parameters of mbtcp_read_reg_req(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
+/home/travis/build/taka-wang/modbusd/mb.h:191: warning: The following parameters of mbtcp_read_reg_req_fn(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
   parameter 'fc'
 /home/travis/build/taka-wang/modbusd/mb.h:203: warning: Found unknown command `\fc'
-/home/travis/build/taka-wang/modbusd/mb.h:201: warning: The following parameters of mbtcp_single_write_req(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
+/home/travis/build/taka-wang/modbusd/mb.h:201: warning: The following parameters of mbtcp_single_write_req_fn(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
   parameter 'fc'
 /home/travis/build/taka-wang/modbusd/mb.h:213: warning: Found unknown command `\fc'
-/home/travis/build/taka-wang/modbusd/mb.h:211: warning: The following parameters of mbtcp_multi_write_req(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
-  parameter 'fc'
-/home/travis/build/taka-wang/modbusd/mb.h:183: warning: Found unknown command `\fc'
-/home/travis/build/taka-wang/modbusd/mb.h:181: warning: The following parameters of mbtcp_read_bit_req(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
+/home/travis/build/taka-wang/modbusd/mb.h:211: warning: The following parameters of mbtcp_multi_write_req_fn(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
   parameter 'fc'
 er graph for function json_get_char
 Generating call graph for function json_get_double
@@ -316,16 +313,16 @@ Generating call graph for function mbtcp_get_response_timeout
 Generating caller graph for function mbtcp_get_response_timeout
 Generating call graph for function mbtcp_init_handle
 Generating caller graph for function mbtcp_init_handle
-Generating call graph for function mbtcp_multi_write_req
-Generating caller graph for function mbtcp_multi_write_req
-Generating call graph for function mbtcp_read_bit_req
-Generating caller graph for function mbtcp_read_bit_req
-Generating call graph for function mbtcp_read_reg_req
-Generating caller graph for function mbtcp_read_reg_req
+Generating call graph for function mbtcp_multi_write_req_fn
+Generating caller graph for function mbtcp_multi_write_req_fn
+Generating call graph for function mbtcp_read_bit_req_fn
+Generating caller graph for function mbtcp_read_bit_req_fn
+Generating call graph for function mbtcp_read_reg_req_fn
+Generating caller graph for function mbtcp_read_reg_req_fn
 Generating call graph for function mbtcp_set_response_timeout
 Generating caller graph for function mbtcp_set_response_timeout
-Generating call graph for function mbtcp_single_write_req
-Generating caller graph for function mbtcp_single_write_req
+Generating call graph for function mbtcp_single_write_req_fn
+Generating caller graph for function mbtcp_single_write_req_fn
 Generating call graph for function set_modbus_fail_resp_str
 Generating caller graph for function set_modbus_fail_resp_str
 Generating call graph for function set_modbus_fail_resp_str_with_errno
@@ -344,22 +341,25 @@ Generating call graph for function mbtcp_get_response_timeout
 Generating caller graph for function mbtcp_get_response_timeout
 Generating call graph for function mbtcp_init_handle
 Generating caller graph for function mbtcp_init_handle
-Generating call graph for function mbtcp_multi_write_req
-Generating caller graph for function mbtcp_multi_write_req
-Generating call graph for fun/home/travis/build/taka-wang/modbusd/mb.h:193: warning: Found unknown command `\fc'
-/home/travis/build/taka-wang/modbusd/mb.h:191: warning: The following parameters of mbtcp_read_reg_req(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
+Generating call graph for function mbtcp_multi_write_req_fn
+Generating caller graph for function mbtcp_multi_write_req_fn/home/travis/build/taka-wang/modbusd/mb.h:183: warning: Found unknown command `\fc'
+/home/travis/build/taka-wang/modbusd/mb.h:181: warning: The following parameters of mbtcp_read_bit_req_fn(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
+  parameter 'fc'
+/home/travis/build/taka-wang/modbusd/mb.h:193: warning: Found unknown command `\fc'
+/home/travis/build/taka-wang/modbusd/mb.h:191: warning: The following parameters of mbtcp_read_reg_req_fn(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
   parameter 'fc'
 /home/travis/build/taka-wang/modbusd/mb.h:203: warning: Found unknown command `\fc'
-/home/travis/build/taka-wang/modbusd/mb.h:201: warning: The following parameters of mbtcp_single_write_req(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
+/home/travis/build/taka-wang/modbusd/mb.h:201: warning: The following parameters of mbtcp_single_write_req_fn(uint8_t fc, mbtcp_handle_s *handle, cJSON *req) are not documented:
   parameter 'fc'
-ction mbtcp_read_bit_req
-Generating caller graph for function mbtcp_read_bit_req
-Generating call graph for function mbtcp_read_reg_req
-Generating caller graph for function mbtcp_read_reg_req
+
+Generating call graph for function mbtcp_read_bit_req_fn
+Generating caller graph for function mbtcp_read_bit_req_fn
+Generating call graph for function mbtcp_read_reg_req_fn
+Generating caller graph for function mbtcp_read_reg_req_fn
 Generating call graph for function mbtcp_set_response_timeout
 Generating caller graph for function mbtcp_set_response_timeout
-Generating call graph for function mbtcp_single_write_req
-Generating caller graph for function mbtcp_single_write_req
+Generating call graph for function mbtcp_single_write_req_fn
+Generating caller graph for function mbtcp_single_write_req_fn
 Generating docs for file test.c...
 Generating call graph for function main
 Generating call graph for function test_init_tcp_handle_and_connect
