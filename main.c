@@ -170,28 +170,28 @@ int main (int argc, char *argv[])
                     switch (cmd)
                     {
                         case FC1:
-                            send_modbus_resp (cmd, mbtcp_cmd_hanlder (cmd, req_json_obj, mbtcp_read_bit_req));
+                            send_modbus_resp (cmd, mbtcp_cmd_hanlder (cmd, req_json_obj, mbtcp_read_bit_req_fn));
                             break;
                         case FC2:
-                            send_modbus_resp (cmd, mbtcp_cmd_hanlder (cmd, req_json_obj, mbtcp_read_bit_req));
+                            send_modbus_resp (cmd, mbtcp_cmd_hanlder (cmd, req_json_obj, mbtcp_read_bit_req_fn));
                             break;
                         case FC3:
-                            send_modbus_resp (cmd, mbtcp_cmd_hanlder (cmd, req_json_obj, mbtcp_read_reg_req));
+                            send_modbus_resp (cmd, mbtcp_cmd_hanlder (cmd, req_json_obj, mbtcp_read_reg_req_fn));
                             break;
                         case FC4:
-                            send_modbus_resp (cmd, mbtcp_cmd_hanlder (cmd, req_json_obj, mbtcp_read_reg_req));
+                            send_modbus_resp (cmd, mbtcp_cmd_hanlder (cmd, req_json_obj, mbtcp_read_reg_req_fn));
                             break;
                         case FC5:
-                            send_modbus_resp (cmd, mbtcp_cmd_hanlder (cmd, req_json_obj, mbtcp_single_write_req));
+                            send_modbus_resp (cmd, mbtcp_cmd_hanlder (cmd, req_json_obj, mbtcp_single_write_req_fn));
                             break;
                         case FC6:
-                            send_modbus_resp (cmd, mbtcp_cmd_hanlder (cmd, req_json_obj, mbtcp_single_write_req));
+                            send_modbus_resp (cmd, mbtcp_cmd_hanlder (cmd, req_json_obj, mbtcp_single_write_req_fn));
                             break;
                         case FC15:
-                            send_modbus_resp (cmd, mbtcp_cmd_hanlder (cmd, req_json_obj, mbtcp_multi_write_req));
+                            send_modbus_resp (cmd, mbtcp_cmd_hanlder (cmd, req_json_obj, mbtcp_multi_write_req_fn));
                             break;
                         case FC16:
-                            send_modbus_resp (cmd, mbtcp_cmd_hanlder (cmd, req_json_obj, mbtcp_multi_write_req));
+                            send_modbus_resp (cmd, mbtcp_cmd_hanlder (cmd, req_json_obj, mbtcp_multi_write_req_fn));
                             break;
                         case SET_TCP_TIMEOUT:
                             send_modbus_resp (cmd, mbtcp_set_response_timeout (tid, json_get_long (req_json_obj, "timeout")));

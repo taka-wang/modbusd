@@ -285,7 +285,7 @@ char * mbtcp_get_response_timeout (char *tid)
     return resp_json_string;
 }
 
-char * mbtcp_read_bit_req (uint8_t fc, mbtcp_handle_s *handle, cJSON *req)
+char * mbtcp_read_bit_req_fn (uint8_t fc, mbtcp_handle_s *handle, cJSON *req)
 {
     BEGIN (enable_syslog);
 
@@ -334,7 +334,7 @@ char * mbtcp_read_bit_req (uint8_t fc, mbtcp_handle_s *handle, cJSON *req)
     }    
 }
 
-char * mbtcp_read_reg_req (uint8_t fc, mbtcp_handle_s *handle, cJSON *req)
+char * mbtcp_read_reg_req_fn (uint8_t fc, mbtcp_handle_s *handle, cJSON *req)
 {
     BEGIN (enable_syslog);
 
@@ -383,7 +383,7 @@ char * mbtcp_read_reg_req (uint8_t fc, mbtcp_handle_s *handle, cJSON *req)
     }
 }
 
-char * mbtcp_single_write_req (uint8_t fc, mbtcp_handle_s *handle, cJSON *req)
+char * mbtcp_single_write_req_fn (uint8_t fc, mbtcp_handle_s *handle, cJSON *req)
 {
     BEGIN (enable_syslog);
 
@@ -414,7 +414,7 @@ char * mbtcp_single_write_req (uint8_t fc, mbtcp_handle_s *handle, cJSON *req)
     }
 }
 
-char * mbtcp_multi_write_req (uint8_t fc, mbtcp_handle_s *handle, cJSON *req)
+char * mbtcp_multi_write_req_fn (uint8_t fc, mbtcp_handle_s *handle, cJSON *req)
 {
     BEGIN (enable_syslog);
 

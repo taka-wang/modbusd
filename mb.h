@@ -186,7 +186,7 @@ char * mbtcp_get_response_timeout (char *tid);
  * @param req cJSON request object.
  * @return Modbus response string in JSON format.
  */
-char * mbtcp_read_bit_req (uint8_t fc, mbtcp_handle_s *handle, cJSON *req);
+char * mbtcp_read_bit_req_fn (uint8_t fc, mbtcp_handle_s *handle, cJSON *req);
 
 /**
  * @brief Help function. FC3, FC4 request handler
@@ -196,7 +196,7 @@ char * mbtcp_read_bit_req (uint8_t fc, mbtcp_handle_s *handle, cJSON *req);
  * @param req cJSON request object.
  * @return Modbus response string in JSON format.
  */
-char * mbtcp_read_reg_req (uint8_t fc, mbtcp_handle_s *handle, cJSON *req);
+char * mbtcp_read_reg_req_fn (uint8_t fc, mbtcp_handle_s *handle, cJSON *req);
 
 /**
  * @brief Help function. FC5, FC6 request handler
@@ -206,7 +206,7 @@ char * mbtcp_read_reg_req (uint8_t fc, mbtcp_handle_s *handle, cJSON *req);
  * @param req cJSON request object.
  * @return Modbus response string in JSON format.
  */
-char * mbtcp_single_write_req (uint8_t fc, mbtcp_handle_s *handle, cJSON *req);
+char * mbtcp_single_write_req_fn (uint8_t fc, mbtcp_handle_s *handle, cJSON *req);
 
 /**
  * @brief Help function. FC15, FC16 request handler
@@ -216,6 +216,6 @@ char * mbtcp_single_write_req (uint8_t fc, mbtcp_handle_s *handle, cJSON *req);
  * @param req cJSON request object.
  * @return Modbus response string in JSON format.
  */
-char * mbtcp_multi_write_req (uint8_t fc, mbtcp_handle_s *handle, cJSON *req);
+char * mbtcp_multi_write_req_fn (uint8_t fc, mbtcp_handle_s *handle, cJSON *req);
 
 #endif  // MB_H
