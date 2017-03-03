@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['msg_5flen',['MSG_LEN',['../log_8h.html#a1f15293623649a310a7c68ff240f9647',1,'log.h']]]
+  ['log',['LOG',['../log_8h.html#a19057be3f2da2871a0eb191602d01555',1,'log.h']]]
 ];

@@ -15,7 +15,7 @@ var indexSectionsWithContent =
   5: "cmu",
   6: "c",
   7: "fgs",
-  8: "bcdeghlmuv"
+  8: "bcdeghklmuv"
 };
 
 var indexSectionNames =

@@ -106,29 +106,26 @@ $(document).ready(function(){initNavTree('json_8h_source.html','');});
 </div><!--header-->
 <div class="contents">
 <a href="json_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef JSON_H</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define JSON_H</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="c_j_s_o_n_8h.html">json/cJSON.h</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">char</span> * <a class="code" href="json_8h.html#a91211e998de80fee0e090ccd57271773">json_get_char</a> (<a class="code" href="structc_j_s_o_n.html">cJSON</a> *inJson, <span class="keyword">const</span> <span class="keywordtype">char</span> *key);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">int</span> <a class="code" href="json_8h.html#ac981dc081af7677ea42735759628fb25">json_get_int</a> (<a class="code" href="structc_j_s_o_n.html">cJSON</a> *inJson, <span class="keyword">const</span> <span class="keywordtype">char</span> *key);</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="c_j_s_o_n_8h.html">json/cJSON.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordtype">char</span> * <a class="code" href="json_8h.html#a91211e998de80fee0e090ccd57271773">json_get_char</a> (<a class="code" href="structc_j_s_o_n.html">cJSON</a> *inJson, <span class="keyword">const</span> <span class="keywordtype">char</span> *key);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">int</span> <a class="code" href="json_8h.html#ac981dc081af7677ea42735759628fb25">json_get_int</a> (<a class="code" href="structc_j_s_o_n.html">cJSON</a> *inJson, <span class="keyword">const</span> <span class="keywordtype">char</span> *key);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordtype">void</span> <a class="code" href="json_8h.html#a4f6d16e31228acdfc80a17a1b104fd4f">json_set_int</a> (<a class="code" href="structc_j_s_o_n.html">cJSON</a> *inJson, <span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> value);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">double</span> <a class="code" href="json_8h.html#ae6f2dd3e4ca83ee4aa6f6c50c77eeb3a">json_get_double</a> (<a class="code" href="structc_j_s_o_n.html">cJSON</a> *inJson, <span class="keyword">const</span> <span class="keywordtype">char</span> *key);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">void</span> <a class="code" href="json_8h.html#a2e44147ddc03a68e23ad5aa69988e5f7">json_set_double</a> (<a class="code" href="structc_j_s_o_n.html">cJSON</a> *inJson, <span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">double</span> value);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keywordtype">long</span> <a class="code" href="json_8h.html#ac33032f6eaa3857ef1299050dc22e9d9">json_get_long</a> (<a class="code" href="structc_j_s_o_n.html">cJSON</a> *inJson, <span class="keyword">const</span> <span class="keywordtype">char</span> *key);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keywordtype">int</span> <a class="code" href="json_8h.html#a3b06e6df7d64b81679fdd3e14cd7d1b4">file_to_json</a> (<span class="keyword">const</span> <span class="keywordtype">char</span> *fname, <a class="code" href="structc_j_s_o_n.html">cJSON</a> **outJson);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keywordtype">int</span> <a class="code" href="json_8h.html#a1985ca512dcf630f29bf75b18f113f60">json_to_file</a> (<span class="keyword">const</span> <span class="keywordtype">char</span> *fname, <a class="code" href="structc_j_s_o_n.html">cJSON</a> *inJson);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#endif // JSON_H</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">void</span> <a class="code" href="json_8h.html#a4f6d16e31228acdfc80a17a1b104fd4f">json_set_int</a> (<a class="code" href="structc_j_s_o_n.html">cJSON</a> *inJson, <span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> value);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">double</span> <a class="code" href="json_8h.html#ae6f2dd3e4ca83ee4aa6f6c50c77eeb3a">json_get_double</a> (<a class="code" href="structc_j_s_o_n.html">cJSON</a> *inJson, <span class="keyword">const</span> <span class="keywordtype">char</span> *key);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordtype">void</span> <a class="code" href="json_8h.html#a2e44147ddc03a68e23ad5aa69988e5f7">json_set_double</a> (<a class="code" href="structc_j_s_o_n.html">cJSON</a> *inJson, <span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">double</span> value);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keywordtype">long</span> <a class="code" href="json_8h.html#ac33032f6eaa3857ef1299050dc22e9d9">json_get_long</a> (<a class="code" href="structc_j_s_o_n.html">cJSON</a> *inJson, <span class="keyword">const</span> <span class="keywordtype">char</span> *key);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keywordtype">int</span> <a class="code" href="json_8h.html#a3b06e6df7d64b81679fdd3e14cd7d1b4">file_to_json</a> (<span class="keyword">const</span> <span class="keywordtype">char</span> *fname, <a class="code" href="structc_j_s_o_n.html">cJSON</a> **outJson);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keywordtype">int</span> <a class="code" href="json_8h.html#a1985ca512dcf630f29bf75b18f113f60">json_to_file</a> (<span class="keyword">const</span> <span class="keywordtype">char</span> *fname, <a class="code" href="structc_j_s_o_n.html">cJSON</a> *inJson);</div>
 <div class="ttc" id="json_8h_html_ae6f2dd3e4ca83ee4aa6f6c50c77eeb3a"><div class="ttname"><a href="json_8h.html#ae6f2dd3e4ca83ee4aa6f6c50c77eeb3a">json_get_double</a></div><div class="ttdeci">double json_get_double(cJSON *inJson, const char *key)</div><div class="ttdoc">Get double integer value via key from cJSON object. </div><div class="ttdef"><b>Definition:</b> json.c:26</div></div>
 <div class="ttc" id="json_8h_html_ac33032f6eaa3857ef1299050dc22e9d9"><div class="ttname"><a href="json_8h.html#ac33032f6eaa3857ef1299050dc22e9d9">json_get_long</a></div><div class="ttdeci">long json_get_long(cJSON *inJson, const char *key)</div><div class="ttdoc">Get long integer value via key from cJSON object. </div><div class="ttdef"><b>Definition:</b> json.c:36</div></div>
 <div class="ttc" id="json_8h_html_a4f6d16e31228acdfc80a17a1b104fd4f"><div class="ttname"><a href="json_8h.html#a4f6d16e31228acdfc80a17a1b104fd4f">json_set_int</a></div><div class="ttdeci">void json_set_int(cJSON *inJson, const char *key, int value)</div><div class="ttdoc">Set integer value via key to existed cJSON object. </div><div class="ttdef"><b>Definition:</b> json.c:21</div></div>
@@ -145,7 +142,7 @@ $(document).ready(function(){initNavTree('json_8h_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="json_8h.html">json.h</a></li>
-    <li class="footer">Generated on Fri Oct 21 2016 14:47:34 for modbusd by
+    <li class="footer">Generated on Fri Mar 3 2017 14:50:58 for modbusd by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
