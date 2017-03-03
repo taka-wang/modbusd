@@ -4,8 +4,7 @@
  * @brief modbus daemon API(Interface)
 */
 
-#ifndef MB_H
-#define MB_H
+#pragma once
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -217,5 +216,3 @@ char * mbtcp_single_write_req_fn (uint8_t fc, mbtcp_handle_s *handle, cJSON *req
  * @return Modbus response string in JSON format.
  */
 char * mbtcp_multi_write_req_fn (uint8_t fc, mbtcp_handle_s *handle, cJSON *req);
-
-#endif  // MB_H

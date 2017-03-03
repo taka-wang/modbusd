@@ -4,8 +4,7 @@
  * @brief Logging system (Syslog Marcos)
 */
 
-#ifndef _LOG_H_
-#define _LOG_H_
+#pragma once
 
 #include <syslog.h>
 #include <stdio.h>
@@ -68,5 +67,3 @@ static char cstr[MSG_LEN];
             default: { syslog(LOG_DEBUG, "%s", cstr); break; } \
         } \
     } while (0)
-
-#endif // END OF _LOG_H_

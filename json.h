@@ -4,8 +4,7 @@
  * @brief cJSON helper functions header
 */
 
-#ifndef JSON_H
-#define JSON_H
+#pragma once
 
 #include "json/cJSON.h"
 
@@ -83,5 +82,3 @@ int file_to_json (const char *fname, cJSON **outJson);
  * @return Success or not. 
  */
 int json_to_file (const char *fname, cJSON *inJson);
-
-#endif // JSON_H

@@ -4,9 +4,39 @@
  * @brief main flow with zmq related functions
 */
 
-#include "main.h"
-#include "mb.h"
 #include <czmq.h>
+#include "mb.h"
+
+// define version string from cmake
+#ifndef VERSION
+    #define VERSION @MODBUSD_VERSION@
+#endif
+
+// command mapping table
+typedef enum
+{
+    FC1             = 1,
+    FC2             = 2,
+    FC3             = 3,
+    FC4             = 4,
+    FC5             = 5,
+    FC6             = 6,
+    FC15            = 15,
+    FC16            = 16,
+    SET_TCP_TIMEOUT = 50,
+    GET_TCP_TIMEOUT = 51
+} cmd_s;
+
+/* ==================================================
+ *  configuration keys
+================================================== */
+
+#define KEY_LOGGER              "syslog"
+#define KEY_IPC_TYPE            "zmq"
+#define KEY_IPC_PUB             "pub"
+#define KEY_IPC_SUB             "sub"
+#define KEY_MB_TYPE             "mbtcp"
+#define KEY_MBTCP_CONN_TIMEOUT  "connect_timeout"
 
 /* ==================================================
  *  global variable
@@ -86,12 +116,11 @@ static void send_modbus_resp (cmd_s cmd, char *json_resp)
     if (zmq_pub != NULL)
     {
         zmsg_t * zmq_resp = zmsg_new ();
-        zmsg_addstrf (zmq_resp, "%d", cmd);  // frame 1: cmd
-        zmsg_addstr (zmq_resp, json_resp);   // frame 2: resp
-        // send zmq msg
-        zmsg_send (&zmq_resp, zmq_pub);
-        // cleanup zmsg
-        zmsg_destroy (&zmq_resp);
+        zmsg_addstrf (zmq_resp, "%d", cmd); // frame 1: cmd
+        zmsg_addstr (zmq_resp, json_resp);  // frame 2: resp
+        
+        zmsg_send (&zmq_resp, zmq_pub);     // send zmq msg
+        zmsg_destroy (&zmq_resp);           // cleanup zmsg
     }
     else
     {

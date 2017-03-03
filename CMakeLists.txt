@@ -16,7 +16,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_P
 include(GetGitRevisionDescription)
 # set latest git tag as modbusd version string
 git_describe(MODBUSD_VERSION --abbrev=0 --tags)
-# define version string to main.h
+# define version string to main
 #add_definitions(-DVERSION="${MODBUSD_VERSION}" )
 add_definitions(-DVERSION="0.7.1" )
 
